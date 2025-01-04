@@ -1,0 +1,35 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:tnt"
+		},
+		"title": {
+			"text": "获得真正的升级",
+			"italic": false
+		},
+		"description": {
+			"text": "你需要改进。我可以教你如何使用TNT掘进隧道",
+			"italic": false
+		},
+		"frame": "goal",
+		"hidden": false
+	},
+	"parent": "minecraft:story/mine_stone",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:tnt"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"experience": 1
+	}
+}

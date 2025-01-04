@@ -1,0 +1,35 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:enchanted_book"
+		},
+		"title": {
+			"text": "便携知识",
+			"italic": false
+		},
+		"description": {
+			"text": "获得一本附魔书",
+			"italic": false
+		},
+		"frame": "goal",
+		"hidden": false
+	},
+	"parent": "minecraft:story/enchant_item",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:enchanted_book"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"experience": 0
+	}
+}

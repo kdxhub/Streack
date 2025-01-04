@@ -1,0 +1,30 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:cake"
+		},
+		"title": {
+			"text": "蛋糕是个谎言",
+			"italic": false
+		},
+		"description": {
+			"text": "小麦、糖、牛奶和鸡蛋！",
+			"italic": false
+		}
+	},
+	"parent": "minecraft:husbandry/plant_seed",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:cake"
+						]
+					}
+				]
+			}
+		}
+	}
+}

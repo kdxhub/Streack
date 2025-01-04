@@ -1,0 +1,30 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:leather"
+		},
+		"title": {
+			"text": "斗牛士",
+			"italic": false
+		},
+		"description": {
+			"text": "获得一些皮革",
+			"italic": false
+		}
+	},
+	"parent": "minecraft:adventure/root",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:leather"
+						]
+					}
+				]
+			}
+		}
+	}
+}

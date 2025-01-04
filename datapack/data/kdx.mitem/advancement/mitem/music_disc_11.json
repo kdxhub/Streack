@@ -1,0 +1,37 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:music_disc_11"
+		},
+		"title": {
+			"text": "诡谲唱片之谜",
+			"italic": true
+		},
+		"description": {
+			"text": "获得任意一款**名字带有数字**的唱片",
+			"italic": false
+		},
+		"frame": "goal",
+		"hidden": false
+	},
+	"parent": "kdx:_mystery",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:music_disc_11",
+							"minecraft:music_disc_13",
+							"minecraft:music_disc_5"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"experience": 20
+	}
+}

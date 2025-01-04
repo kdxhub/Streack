@@ -1,0 +1,35 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:red_bed"
+		},
+		"title": {
+			"text": "床应该是红色的",
+			"italic": false
+		},
+		"description": {
+			"text": "2017年4月12日发布的17w15a版本中，彩色床首次被加入游戏。",
+			"italic": false
+		},
+		"frame": "goal",
+		"hidden": false
+	},
+	"parent": "minecraft:adventure/salvage_sherd",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:red_bed"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"experience": 0
+	}
+}

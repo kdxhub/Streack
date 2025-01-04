@@ -1,0 +1,35 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:coarse_dirt"
+		},
+		"title": {
+			"text": "无限泥土模式",
+			"italic": false
+		},
+		"description": {
+			"text": "获得一块理论可以无限量产泥土的砂土",
+			"italic": false
+		},
+		"frame": "task",
+		"hidden": true
+	},
+	"parent": "minecraft:husbandry/plant_seed",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:coarse_dirt"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"experience": 0
+	}
+}

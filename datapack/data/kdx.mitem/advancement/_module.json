@@ -1,0 +1,37 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:end_crystal"
+		},
+		"title": {
+			"text": "更有成就感的物品们",
+			"italic": false
+		},
+		"description": {
+			"text": "为一些物品添加进度，让您获得它们时更有成就感（应该？）。\n\nkdx.mitem:*",
+			"italic": false
+		},
+		"frame": "task",
+		"hidden": false,
+		"announce_to_chat": false,
+		"show_toast": false
+	},
+	"parent": "kdx:_module",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:crafting_table"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"experience": 0
+	}
+}

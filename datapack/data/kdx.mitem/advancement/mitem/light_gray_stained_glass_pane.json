@@ -1,0 +1,35 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:light_gray_stained_glass_pane"
+		},
+		"title": {
+			"text": "进行人机身份验证",
+			"italic": false
+		},
+		"description": {
+			"text": "请选择包含 淡灰色染色玻璃板 的物品栏",
+			"italic": false
+		},
+		"frame": "task",
+		"hidden": true
+	},
+	"parent": "kdx:_mystery",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:light_gray_stained_glass_pane"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"experience": 0
+	}
+}
