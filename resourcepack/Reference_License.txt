@@ -1,0 +1,20 @@
+在此材质包制作时借用了一些信息，在此列出并表示感谢。
+如有侵权请联系删除。
+---
+
+·胜利结算屏幕引言翻译与出处标明（/assets/minecraft/texts/postcredits.txt）
+胜利屏幕, 中文我的世界Wiki.
+https://zh.minecraft.wiki/w/胜利屏幕#引言
+
+·终末之诗改写部分参考文案
+[1]《绝区零OST》《Golden Sign_F》, 三Z-Studio/HOYO-MIX.
+https://i.y.qq.com/n2/m/musiclite/playsong/index.html?app_type=qmlite&&songmid=000n1nF92VtGWa
+[2] 绝区零部分配乐 歌词带翻译, kdxiaoyi.
+https://kdxiaoyi.top/blogs/2024/26/
+
+·部分方块材质
+别催了，来啦！护眼大补丸材质包1.20-1.21·我的世界资源包, 黑山大叔.
+https://www.bilibili.com/video/BV1Dx4y1E7HZ/
+
+---
+另有一些信息无法找到出处和作者信息，在此无法列出并表示歉意。如果您看到了由您创作的信息但未在此处列出，请联系我们。

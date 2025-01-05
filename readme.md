@@ -7,6 +7,11 @@ kdxSMP用于管理服务器、微调服务器表现的数据包，内含很多�
 
 [组件文件夹](/datapack) \| [下载发行版](/release/kdxsmp_dp.zip)
 
+### kdxSMP 专用材质包
+用于统一部分内容表现的材质包，设计通过服务器建议材质包功能分发。
+
+[组件文件夹](/resourcepack) \| [下载发行版](/release/kdxsmp_res.zip)
+
 ## License
 本仓库以[MIT协议](/license.md)开源，**但本仓库内组件有自己的授权协议**。<br>
 即**若非注明，本仓库剩余部分以MIT协议开源**。

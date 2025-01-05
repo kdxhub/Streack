@@ -1,0 +1,37 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:chest"
+		},
+		"title": {
+			"text": "Kits",
+			"italic": false
+		},
+		"description": {
+			"text": "允许管理员创建游戏礼包并自动发放\n\nkdx.kits:*",
+			"italic": false
+		},
+		"frame": "task",
+		"hidden": false,
+		"announce_to_chat": false,
+		"show_toast": false
+	},
+	"parent": "kdx:_module",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:crafting_table"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"experience": 0
+	}
+}

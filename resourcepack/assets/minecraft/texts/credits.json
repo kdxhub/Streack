@@ -1,0 +1,75 @@
+[
+    {
+        "section": "kdxSMP",
+        "disciplines": [
+            {
+                "discipline": "运营团队",
+                "titles": [
+                    {
+                        "title": "服主",
+                        "names": [
+                            "@kdxiaoyi"
+                        ]
+                    },
+                    {
+                        "title": "管理",
+                        "names": [
+                            "虚位以待，欢迎申请"
+                        ]
+                    },
+                    {
+                        "title": "插件维护",
+                        "names": [
+                            "@kdxiaoyi"
+                        ]
+                    },
+                    {
+                        "title": "宣发",
+                        "names": [
+                            "暂无"
+                        ]
+                    }
+                ]
+            },{
+                "discipline": "鸣谢列表",
+                "titles": [
+                    {
+                        "title": "赞助者",
+                        "names": [
+                            "@Hzc"
+                        ]
+                    },
+                    {
+                        "title": "其它",
+                        "names": [
+                            "简幻欢 [https://simpfun.com/]",
+                            "OpenFRP [https://openfrp.net/]",
+                            "米哈游 MiHoYo [https://mihoyo.com/]",
+                            "中文我的世界Wiki [https://zh.minecraft.wiki/]",
+                            "小可 AkariBot [https://github.com/Teahouse-Studios/akari-bot/]"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },{
+        "section": "Mojang Studio",
+        "disciplines": [
+            {
+                "discipline": "抱歉以下这些内容都被精简了",
+                "titles": [
+                    {
+                        "title": "( ๑ŏ ﹏ ŏ๑ )",
+                        "names": [
+                            "总而言之，原版游戏在这个很长的著作人列表之后还有一段话",
+                            "为了快速向你展示那段话，我就删掉了这些内容",
+                            "毕竟原版这些内容长达55分钟",
+                            "退出服务器后，你可以通过主界面右下角Mojang的版权声明进入原版的著作人列表",
+                            "除非你不是通过服务器建议材质安装的材质包"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
