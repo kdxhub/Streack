@@ -1,4 +1,4 @@
-在此材质包制作时借用了一些信息，在此列出并表示感谢。
+在此资源包制作时借用了一些信息，在此列出并表示感谢。
 如有侵权请联系删除。
 ---
 
@@ -12,8 +12,8 @@ https://i.y.qq.com/n2/m/musiclite/playsong/index.html?app_type=qmlite&&songmid=0
 [2] 绝区零部分配乐 歌词带翻译, kdxiaoyi.
 https://kdxiaoyi.top/blogs/2024/26/
 
-·部分方块材质
-别催了，来啦！护眼大补丸材质包1.20-1.21·我的世界资源包, 黑山大叔.
+·部分方块资源
+别催了，来啦！护眼大补丸材质包1.20-1.21·我的世界材质包, 黑山大叔.
 https://www.bilibili.com/video/BV1Dx4y1E7HZ/
 
 ---
