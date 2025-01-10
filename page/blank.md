@@ -6,4 +6,4 @@ description: " "
  创建：2025- | 最后更新：2025-</small><br>
 
 
-<script src="https://rs.kdxiaoyi.top/res/scripts/js/sober.min.js"></script><script src="https://kdxiaoyi.top/kdxSMP/pmd-reRender.min.js"></script>
+<script src="https://rs.kdxiaoyi.top/res/scripts/js/sober.min.js"></script><script src="https://kdxiaoyi.top/kdxSMP/page/pmd-reRender.min.js"></script>
