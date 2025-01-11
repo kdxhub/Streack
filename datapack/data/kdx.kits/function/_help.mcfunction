@@ -21,7 +21,7 @@ tellraw @s [\
       "action":"suggest_command",\
       "value":"/function kdx.kits:_set"}\
   },{\
-    "text":"zreset_WARNING 重置所有玩家的领取记录\n",\
+    "text":"zreset_warning 重置所有玩家的领取记录\n",\
     "color":"white",\
     "clickEvent":{\
       "action":"suggest_command",\
@@ -33,7 +33,7 @@ tellraw @s [\
       "action":"suggest_command",\
       "value":"/function kdx.kits:_reset"}\
   },{\
-    "text":"\n礼包的添加方法是把东西拿在手上并执行_set函数",\
-    "color":"white"
+    "text":"\n礼包的添加方法是把东西放在脚下的箱子里并执行_set函数",\
+    "color":"white"\
   }\
 ]

@@ -12,13 +12,15 @@
 			"italic": false
 		},
 		"frame": "task",
-		"hidden": false
+		"hidden": false,
+		"announce_to_chat": false,
+		"show_toast": false
 	},
 	"parent": "kdx:_hidden",
 	"criteria": {
 		"requirement": {
 			"trigger": "minecraft:location",
-			"conditions": {
+			"condition": {
 				"player": [
 					{"flags": {
 						"is_on_ground": true,
