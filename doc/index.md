@@ -6,7 +6,7 @@ description: "致力于解决您所想知道的一切"
 
 ## 基本
 * [栈流Streack基本方针](./rule)
-* [如何加入服务器](./join)
+* [如何加入服务器](./connect/join)
 
 ## 连接到服务器
 * [如何连接到服务器](./connect/how)
@@ -16,6 +16,9 @@ description: "致力于解决您所想知道的一切"
 * [使用EasyAuth保护您的离线账户](./safe/ea)
 * [将Bedrock账户绑定至Java版账户](./safe/linkaccount)
 
+## 其它
+* [栈流Streack隐私政策](./other/privacy)
+* [栈流Streack用户协议](./other/user)
 
 <div id="mdRender_config" data-sideship-hide="2"></div>
 <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/pmd-reRender.min.js"></script>
