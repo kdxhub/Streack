@@ -16,7 +16,7 @@
 	},
 	"parent": "minecraft:husbandry/plant_seed",
 	"criteria": {
-		"requirement": {
+		"coarse_dirt": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

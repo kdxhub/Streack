@@ -14,7 +14,7 @@
 	},
 	"parent": "minecraft:husbandry/plant_seed",
 	"criteria": {
-		"requirement": {
+		"cake": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

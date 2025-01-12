@@ -16,7 +16,7 @@
 	},
 	"parent": "kdx:_mystery",
 	"criteria": {
-		"requirement": {
+		"mon3tr": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

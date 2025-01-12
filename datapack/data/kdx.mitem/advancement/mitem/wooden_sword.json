@@ -14,7 +14,7 @@
 	},
 	"parent": "kdx.mitem:mitem/wooden_hoe",
 	"criteria": {
-		"requirement": {
+		"eat_my_bang": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

@@ -16,7 +16,7 @@
 	},
 	"parent": "minecraft:story/enchant_item",
 	"criteria": {
-		"requirement": {
+		"enchanted_book": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

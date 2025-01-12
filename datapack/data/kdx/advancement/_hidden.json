@@ -5,11 +5,11 @@
 			"id": "minecraft:barrier" 
 		},
 		"title": {
-			"text": "kdxSMP 功能性进度统一落地页",
+			"text": "Streack 功能性进度统一落地页",
 			"italic": false
 		},
 		"description": {
-			"text": "本页面不应出现在进度中，如果您意外看到了此页面，请向我们反馈。\nhttp://gitee.com/kdxiaoyi/kdxSMP/\nhttp://github.com/kdxhub/kdxSMP",
+			"text": "本页面不应出现在进度中，如果您意外看到了此页面，请向我们反馈。\nhttp://gitee.com/kdxiaoyi/Streack/\nhttp://github.com/kdxhub/Streack",
 			"bold": true
 		},
 		"frame": "task",

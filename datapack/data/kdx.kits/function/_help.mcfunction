@@ -1,6 +1,6 @@
 tellraw @s [\
   {\
-    "text":"kdxSMP Service Datapack - Kits - 帮助列表\n",\
+    "text":"Streack Service Datapack - Kits - 帮助列表\n",\
     "color":"green"\
   },{\
     "text":"使用/function kdx.kits:_*** 来执行操作\n",\

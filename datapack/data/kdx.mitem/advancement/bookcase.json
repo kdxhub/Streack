@@ -15,7 +15,7 @@
 	},
 	"parent": "minecraft:story/enchant_item",
 	"criteria": {
-		"requirement": {
+		"bookcase": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

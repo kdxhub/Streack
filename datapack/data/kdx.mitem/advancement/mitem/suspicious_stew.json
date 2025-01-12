@@ -16,7 +16,7 @@
 	},
 	"parent": "kdx:_mystery",
 	"criteria": {
-		"requirement": {
+		"sus": {
 			"trigger": "minecraft:consume_item",
 			"conditions": {
 				"items": [

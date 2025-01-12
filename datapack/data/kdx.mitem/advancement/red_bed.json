@@ -16,7 +16,7 @@
 	},
 	"parent": "minecraft:adventure/salvage_sherd",
 	"criteria": {
-		"requirement": {
+		"red_bed": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

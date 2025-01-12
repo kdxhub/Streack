@@ -5,11 +5,11 @@
 			"id": "minecraft:command_block" 
 		},
 		"title": {
-			"text": "kdxSMP Service Datapack",
+			"text": "Streack Service Datapack",
 			"italic": false
 		},
 		"description": {
-			"text": "已加载kdxSMP Service Datapack核心组件\n您可以在此处查看加载的拓展包\n\nkdx:*\n\nPowered by kdxSMP Service Datapack.\nhttp://gitee.com/kdxiaoyi/kdxSMP/\nhttp://github.com/kdxhub/kdxSMP",
+			"text": "已加载Streack Service Datapack核心组件\n您可以在此处查看加载的拓展包\n\nkdx:*\n\nPowered by Streack Service Datapack.\nhttp://gitee.com/kdxiaoyi/Streack/\nhttp://github.com/kdxhub/Streack",
 			"italic": false
 		},
 		"frame": "task",

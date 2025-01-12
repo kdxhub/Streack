@@ -16,7 +16,7 @@
 	},
 	"parent": "minecraft:husbandry/plant_seed",
 	"criteria": {
-		"requirement": {
+		"poisonous_potato": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

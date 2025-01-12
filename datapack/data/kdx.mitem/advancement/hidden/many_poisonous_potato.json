@@ -16,7 +16,7 @@
 	},
 	"parent": "kdx.mitem:poisonous_potato",
 	"criteria": {
-		"requirement": {
+		"poisonous_potato": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

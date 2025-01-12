@@ -16,7 +16,7 @@
 	},
 	"parent": "minecraft:nether/obtain_ancient_debris",
 	"criteria": {
-		"requirement": {
+		"netherite_block": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

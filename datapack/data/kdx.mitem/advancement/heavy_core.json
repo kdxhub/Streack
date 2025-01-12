@@ -16,7 +16,7 @@
 	},
 	"parent": "minecraft:adventure/minecraft_trials_edition",
 	"criteria": {
-		"requirement": {
+		"heavy_core": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

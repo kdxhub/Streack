@@ -16,7 +16,7 @@
 	},
 	"parent": "kdx.mitem:mitem/command_block",
 	"criteria": {
-		"requirement": {
+		"cbm": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

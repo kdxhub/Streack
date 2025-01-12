@@ -14,7 +14,7 @@
 	},
 	"parent": "minecraft:adventure/root",
 	"criteria": {
-		"requirement": {
+		"leather": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

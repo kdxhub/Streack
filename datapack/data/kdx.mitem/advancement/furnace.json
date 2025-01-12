@@ -14,7 +14,7 @@
 	},
 	"parent": "minecraft:story/mine_stone",
 	"criteria": {
-		"requirement": {
+		"furnace": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

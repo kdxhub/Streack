@@ -16,7 +16,7 @@
 	},
 	"parent": "kdx:_mystery",
 	"criteria": {
-		"requirement": {
+		"anvil": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

@@ -16,7 +16,7 @@
 	},
 	"parent": "minecraft:end/find_end_city",
 	"criteria": {
-		"requirement": {
+		"end_rod": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

@@ -14,7 +14,7 @@
 	},
 	"parent": "kdx:_mystery",
 	"criteria": {
-		"requirement": {
+		"only_3_durability": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

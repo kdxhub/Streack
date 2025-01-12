@@ -16,7 +16,7 @@
 	},
 	"parent": "kdx:_mystery",
 	"criteria": {
-		"requirement": {
+		"furnace_minecart": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

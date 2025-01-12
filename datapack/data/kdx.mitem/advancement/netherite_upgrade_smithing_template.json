@@ -15,7 +15,7 @@
 	},
 	"parent": "kdx.mitem:smithing_table",
 	"criteria": {
-		"requirement": {
+		"netherite_upgrade_smithing_template": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

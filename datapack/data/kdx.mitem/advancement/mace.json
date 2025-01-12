@@ -16,7 +16,7 @@
 	},
 	"parent": "kdx.mitem:heavy_core",
 	"criteria": {
-		"requirement": {
+		"mace": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [

@@ -16,7 +16,7 @@
 	},
 	"parent": "kdx:_mystery",
 	"criteria": {
-		"requirement": {
+		"ender_chest": {
 			"trigger": "minecraft:inventory_changed",
 			"conditions": {
 				"items": [
