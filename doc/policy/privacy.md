@@ -110,5 +110,4 @@ description: "约等于玩家守则？"
 </p>
 
 
-<div id="mdRender_config" data-sideship-hide="1"></div>
 <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/pmd-reRender.min.js"></script>
