@@ -111,7 +111,7 @@ function newsh {
   return 0
 }
 function mcs {
-  "${mcs_cmdline}"
+  bash -c "${mcs_cmdline}"
   if [[ -z $1 ]];then 
     echo -e "\033[0;31m\033[0m"
     echo -e "\033[0;31m$(date +"%Y-%m-%d  %H:%M:%S.%6N  [$Z]")\033[0m"

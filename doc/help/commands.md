@@ -5,6 +5,8 @@ description: "Practical Commands"
 <small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="../">←返回</a> |
  创建：2025-01-14 | 最后更新：2025-01-14</small><br>
 
+> [!] 这篇文章的内容可能已过时，仍有待更新。
+
 ## 传送与地标
 ### 玩家互传
 请求传送到玩家：

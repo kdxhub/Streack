@@ -1,0 +1,35 @@
+<!DOCTYPE HTML><html lang="zh-cn">
+<head>
+  <title>栈流Streack | HELLO.</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./page/css/index.css" />
+  <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober.min.js"></script>
+  <link rel="stylesheet" href="https://rs.kdxiaoyi.top/res/css/font.css" />
+  <link rel="stylesheet" href="https://rs.kdxiaoyi.top/res/css/sober-theme-turquoise.css" />
+  <link rel="stylesheet" href="https://rs.kdxiaoyi.top/res/css/background.css" />
+  <link rel="stylesheet" href="./page/css/background.css" />
+</head>
+<body>
+  <s-page>
+    <s-drawer>
+      <div id="sidebar_left_parent" slot="start">
+        <s-scroll-view style="max-height:100%;">
+          <div id="sidebar_left" style="padding:5px 5px 5px 5px;">
+            <!--左侧边栏内容-->
+            
+          </div>
+        </s-scroll-view>
+      </div>
+      <div>
+        <s-scroll-view id="contentScroll" style="max-height:100%;">
+          <div id="contentBG" class="selectable" style="width:100vw;min-height:90%">
+            <div id="no_script"><h3><b><center>由于您似乎禁用了Javascript或者出于其它原因，页面无法正常加载。<br>此外，该应用不兼容IE系浏览器。</center></b></h3></div>
+            
+          </div>
+        </s-scroll-view>
+      </div>
+    </s-drawer>
+  </s-page>
+  <script src="./page/js/index.js"></script>
+</body>
+</html>

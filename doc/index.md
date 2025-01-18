@@ -7,13 +7,14 @@ description: "致力于解决您所想知道的一切"
 ## 基本
 * [栈流Streack基本方针](./policy/rule)
 * [如何加入服务器](./connect/join)
+* [更新日志](./updata)
+* [服务器Mod与特性](./info/feature)
 
 ## 游玩教程
 * [常用命令列表](./help/commands)
 * [无法连接到服务器的一般解决方案](./connect/solution)
 
 ## 账户安全
-* [使用EasyAuth保护您的离线账户](./safe/ea)
 * [将Bedrock账户绑定至Java版账户](./safe/linkaccount)
 
 ## 其它
