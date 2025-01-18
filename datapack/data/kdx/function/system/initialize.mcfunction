@@ -1,4 +1,4 @@
-function kdx:system/carpet_auto_setting
+#function kdx:system/carpet_auto_setting
 scoreboard objectives add kdx dummy "KDX.BASENUM"
 scoreboard players set "kdx.state.ok" kdx 200 
 data modify storage kdx:initialized status set value 1b
