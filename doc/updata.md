@@ -1,9 +1,26 @@
 ---
-title: " "
-description: " "
+title: "更新日志"
+description: "见证每一次变化"
 ---
-<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="../">←返回</a> |
- 创建：2025- | 最后更新：2025-</small><br>
+<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="./">←返回</a></small><br>
 
+### 25w3a
+> [i] 更新补偿：限定闪烁的西瓜×16
+
+* 修复了更新礼包无法获取的问题
+* 修复了礼包不会自动发放的问题
+* 禁用部分mod协议支持以修复部分玩家无法进入服务器的问题
+* 修复TPA不能使用的问题
+* 修复部分指令没有权限的问题
+* 添加了主城
+* 更新了新手礼包
+* 修复Java版菜单可以凭借特定操作获取非法物品的问题
+* 修复基岩版菜单中丢失材质的问题
+* 解决了许多问题和提出问题的人
+
+### beta1
+> [i] 更新补偿：限定钻石×5
+
+* 刚开服热乎着呢~
 
 <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/pmd-reRender.min.js"></script>

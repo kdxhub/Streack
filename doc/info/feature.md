@@ -1,9 +1,18 @@
 ---
-title: " "
-description: " "
+title: "服务器支持特性一览"
+description: "MOD与协议支持"
 ---
 <small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="../">←返回</a> |
- 创建：2025- | 最后更新：2025-</small><br>
+ 创建：2025-01-20 | 最后更新：2025-01-20</small><br>
+
+
+> [@] 本服务器为生电友好型服务器，支持**Carpet**协议与**轻松放置v3 [LITEMATICA]**协议；所有生电特性均可使用。
+
+> [!] 请注意由于Leaves服务端特性，您需要使用`/bot`命令召唤假人。
+
+> [i] 服务器已安装[CoreProtect฿](https://modrinth.com/plugin/coreprotect)，可以`/co i`进入检查模式。
+
+> [i] 服务器安装了多世界：使用数据包定义，兼容Xaero's World Map或体素地图。
 
 
 <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/pmd-reRender.min.js"></script>
