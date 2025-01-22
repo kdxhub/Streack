@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "#bamboo"
+  ],
+  "result": {
+    "id": "minecraft:bamboo_mosaic_slab",
+    "count": 16
+  }
+}

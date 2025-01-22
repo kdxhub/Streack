@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "#log"
+  ],
+  "result": {
+    "id": "minecraft:ladder",
+    "count": 6
+  }
+}

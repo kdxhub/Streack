@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "minecraft:leather_chestplate"
+  ],
+  "result": {
+    "id": "minecraft:leather",
+    "count": 3
+  }
+}

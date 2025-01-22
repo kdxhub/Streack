@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "minecraft:bamboo_block"
+  ],
+  "result": {
+    "id": "minecraft:bamboo_mosaic",
+    "count": 4
+  }
+}

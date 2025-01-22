@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "minecraft:bone_block"
+  ],
+  "result": {
+    "id": "minecraft:bone",
+    "count": 3
+  }
+}

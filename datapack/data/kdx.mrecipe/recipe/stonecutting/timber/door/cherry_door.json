@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "#cherry"
+  ],
+  "result": {
+    "id": "minecraft:cherry_door",
+    "count": 2
+  }
+}

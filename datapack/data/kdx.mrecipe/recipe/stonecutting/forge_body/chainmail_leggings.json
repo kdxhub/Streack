@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "minecraft:chainmail_leggings"
+  },
+  "result": {
+    "id": "minecraft:chain",
+    "count": 1
+  }
+}

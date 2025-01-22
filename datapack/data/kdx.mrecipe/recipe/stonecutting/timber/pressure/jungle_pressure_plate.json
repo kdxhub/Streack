@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "#jungle"
+  ],
+  "result": {
+    "id": "minecraft:jungle_pressure_plate",
+    "count": 4
+  }
+}

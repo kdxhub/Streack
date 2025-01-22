@@ -1,0 +1,37 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:command_block"
+		},
+		"title": {
+			"text": "开发者模式",
+			"italic": false
+		},
+		"description": {
+			"text": "获得「规则的掌控者」——命令方块",
+			"italic": true
+		},
+		"frame": "challenge",
+		"hidden": true
+	},
+	"parent": "kdx:_streack",
+	"criteria": {
+		"cb": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:command_block",
+							"minecraft:repeating_command_block",
+							"minecraft:chain_command_block"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"experience": 0
+	}
+}

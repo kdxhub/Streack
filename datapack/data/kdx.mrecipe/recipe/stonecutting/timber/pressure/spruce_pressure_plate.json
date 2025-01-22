@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "#spruce"
+  ],
+  "result": {
+    "id": "minecraft:spruce_pressure_plate",
+    "count": 4
+  }
+}

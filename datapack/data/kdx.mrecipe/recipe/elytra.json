@@ -1,0 +1,16 @@
+{
+  "result":{
+    "id":"minecraft:elytra"
+  },
+  "pattern":[
+    "aba",
+    "aca",
+    "a a"
+  ],
+  "type":"crafting_shaped",
+  "key":{
+    "a": "item":"phantom_membrane",
+    "b": "item":"nether_star",
+    "c": "item":"echo_shard"
+  }
+}

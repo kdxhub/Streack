@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "concrete_color",
+  "category": "building",
+  "pattern": [
+    "bbb",
+    "bab",
+    "bbb"
+  ],
+  "key": {
+    "a": [
+      "minecraft:black_dye"
+    ],
+    "b":[
+      "concrete"
+    ]
+  },
+  "result": {
+    "id": "minecraft:black_concrete",
+    "count": 8
+  }
+}

@@ -1,1 +1,1 @@
-function kdx.kits:on_tick
+function kdx:system/call_tick

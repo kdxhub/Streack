@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "#dark_oak"
+  ],
+  "result": {
+    "id": "minecraft:dark_oak_stairs",
+    "count": 4
+  }
+}

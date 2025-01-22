@@ -1,0 +1,1 @@
+execute as @a at @s if entity @e[distance=..40,type=warden] run advancement grant @s only kdx.ma:action/near_warden

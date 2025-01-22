@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "minecraft:iron_chestplate"
+  ],
+  "result": {
+    "id": "minecraft:iron_ingot",
+    "count": 3
+  }
+}

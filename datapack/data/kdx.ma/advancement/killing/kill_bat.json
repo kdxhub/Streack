@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id":"minecraft:bat_spawn_egg"
+    },
+    "frame": "task",
+    "title": "吓死我了！",
+    "description": "你为什么会闲到去杀死蝙蝠？"
+  },
+  "parent": "kdx:_joyose",
+  "hidden": true,
+  "criteria": {
+    "kill_bat":{
+      "trigger": "minecraft:kill_mob_near_sculk_catalyst",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:bat"
+        }
+      }
+    }
+  }
+}

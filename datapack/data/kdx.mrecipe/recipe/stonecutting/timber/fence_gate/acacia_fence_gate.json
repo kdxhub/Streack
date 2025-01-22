@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "#acacia"
+  ],
+  "result": {
+    "id": "minecraft:acacia_fence_gate",
+    "count": 1
+  }
+}

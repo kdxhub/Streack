@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "minecraft:yellow_wool"
+  ],
+  "result": {
+    "id": "minecraft:yellow_carpet",
+    "count": 2
+  }
+}

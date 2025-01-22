@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "minecraft:melon"
+  ],
+  "result": {
+    "id": "minecraft:melon_slice",
+    "count": 9
+  }
+}

@@ -1,6 +1,6 @@
 {
-    "replace": false,
-    "values": [
-        "kdx:on_load"
-    ]
+  "replace": false,
+  "values": [
+    "minecraft:kdx:on_load"
+  ]
 }

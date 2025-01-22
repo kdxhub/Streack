@@ -4,6 +4,15 @@ description: "见证每一次变化"
 ---
 <small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="./">←返回</a></small><br>
 
+### 25w3b
+> [i] 更新补偿：<br>
+> * 限定闪烁的西瓜×16
+> * 耐久为1且不能附魔的顶配钻石镐×1
+
+* 重写Data Pack中部分内容，导致全体玩家所有非原版进度丢失
+* Data Pack新增更多配方
+* 新增更多进度
+
 ### 25w3a
 > [i] 更新补偿：限定闪烁的西瓜×16
 

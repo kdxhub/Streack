@@ -1,0 +1,20 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    [
+      
+       "minecraft:chipped_anvil",
+      
+      
+         "minecraft:damaged_anvil"
+      
+    ]
+  ],
+  "result": {
+    "id": "minecraft:anvil",
+    "count": 1
+  }
+}

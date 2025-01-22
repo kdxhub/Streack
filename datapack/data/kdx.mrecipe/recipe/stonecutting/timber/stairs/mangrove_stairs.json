@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "#mangrove"
+  ],
+  "result": {
+    "id": "minecraft:mangrove_stairs",
+    "count": 4
+  }
+}

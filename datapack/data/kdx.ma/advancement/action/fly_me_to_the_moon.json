@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id":"minecraft:elytra"
+    },
+    "frame": "challenge",
+    "title": {
+      "text": "扶摇直上九万里"
+    },
+    "description": {
+      "text": "大鹏一去不复返，白云千载空悠悠。\n§7飞上90000米的高空，见证太空。"
+    }
+  },
+  "parent": "kdx:_streack",
+  "criteria": {
+    "fly_me2_the_moon":{
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "position": {
+              "y": {
+                "min": 90000
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 200
+  }
+}

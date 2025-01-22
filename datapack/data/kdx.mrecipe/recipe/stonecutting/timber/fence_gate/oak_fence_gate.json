@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": [
+    "#oak"
+  ],
+  "result": {
+    "id": "minecraft:oak_fence_gate",
+    "count": 1
+  }
+}

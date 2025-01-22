@@ -1,0 +1,30 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:wooden_hoe"
+		},
+		"title": {
+			"text": "圈地时间到！",
+			"italic": false
+		},
+		"description": {
+			"text": "使用木板和木棍来制作一把圈地工具",
+			"italic": false
+		}
+	},
+	"parent": "kdx.ma:mitem/wooden_pickaxe",
+	"criteria": {
+		"res_tools": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:wooden_hoe"
+						]
+					}
+				]
+			}
+		}
+	}
+}

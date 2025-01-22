@@ -1,0 +1,37 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:craft_table"
+		},
+		"title": {
+			"text": "更多配方",
+			"italic": false
+		},
+		"description": {
+			"text": "添加很多实用配方\n\nkdx.mrecipe:*",
+			"italic": false
+		},
+		"frame": "task",
+		"hidden": false,
+		"announce_to_chat": false,
+		"show_toast": false
+	},
+	"parent": "kdx:_module",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:crafting_table"
+						]
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"experience": 0
+	}
+}
