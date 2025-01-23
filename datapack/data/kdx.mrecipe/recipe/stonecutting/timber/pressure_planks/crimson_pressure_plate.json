@@ -1,7 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:crimson_planks"
+  "ingredient": {
+    "item": "minecraft:crimson_planks"
   },
   "result": {
     "id": "minecraft:crimson_pressure_plate",

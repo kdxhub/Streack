@@ -1,8 +1,12 @@
 {
   "type": "stonecutting",
   "ingredient": [
-    "minecraft:bamboo_planks",
-    "minecraft:bamboo_mosaic"
+    {
+      "item": "minecraft:bamboo_planks"
+    },
+    {
+      "item": "minecraft:bamboo_mosaic"
+    }
   ],
   "result": {
     "id": "minecraft:bamboo_button",

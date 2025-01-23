@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "§7Created by @kdxiaoyi.§fFind more @ http://gitee.com/kdxiaoyi/Streack/",
+    "name": "§6栈流Streack§b基岩版附加包",
+    "uuid": "ac30013e-686a-4ddc-8193-0c156e5ba169",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 13, 0]
+  },
+  "modules": [
+    {
+      "description": "§r§6栈流Streack§b基岩版附加包§7[§f§l资源包模块§r§7]",
+      "type": "resources",
+      "uuid": "2ac897c9-e8e1-4fc7-9254-63e0119eccfd",
+      "version": [1, 0, 0]
+    }
+  ]
+}

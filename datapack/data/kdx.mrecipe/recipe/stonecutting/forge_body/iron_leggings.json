@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:iron_leggings"
-  ],
+  "ingredient": {
+    "item": "minecraft:iron_leggings"
+  },
   "result": {
     "id": "minecraft:iron_ingot",
     "count": 2

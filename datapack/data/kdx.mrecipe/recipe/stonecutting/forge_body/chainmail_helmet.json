@@ -1,7 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:chainmail_helmet"
+  "ingredient": {
+    "item": "minecraft:chainmail_helmet"
   },
   "result": {
     "id": "minecraft:chain",

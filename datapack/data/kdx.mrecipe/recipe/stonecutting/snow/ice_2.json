@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:blue_ice"
-  ],
+  "ingredient": {
+    "item": "minecraft:blue_ice"
+  },
   "result": {
     "id": "minecraft:ice",
     "count": 81

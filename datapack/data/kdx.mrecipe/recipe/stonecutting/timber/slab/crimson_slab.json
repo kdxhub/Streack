@@ -1,7 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "#crimson"
+  "ingredient": {
+    "tag": "crimson"
   },
   "result": {
     "id": "minecraft:crimson_slab",

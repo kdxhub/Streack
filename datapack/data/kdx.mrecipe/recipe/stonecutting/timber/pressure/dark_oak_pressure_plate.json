@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "#dark_oak"
-  ],
+  "ingredient": {
+    "tag": "dark_oak"
+  },
   "result": {
     "id": "minecraft:dark_oak_pressure_plate",
     "count": 4

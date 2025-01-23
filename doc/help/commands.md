@@ -2,7 +2,7 @@
 title: "常用命令列表"
 description: "Practical Commands"
 ---
-<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="../">←返回</a> |
+<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="/Streack/doc">←返回</a> |
  创建：2025-01-14 | 最后更新：2025-01-14</small><br>
 
 > [!] 这篇文章的内容可能已过时，仍有待更新。

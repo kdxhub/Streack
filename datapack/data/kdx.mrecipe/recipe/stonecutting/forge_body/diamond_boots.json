@@ -1,7 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:diamond_boots"
+  "ingredient": {
+    "item": "minecraft:diamond_boots"
   },
   "result": {
     "id": "minecraft:diamond",

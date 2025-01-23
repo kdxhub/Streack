@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "#wool"
-  ],
+  "ingredient": {
+    "tag": "wool"
+  },
   "result": {
     "id": "minecraft:string",
     "count": 4

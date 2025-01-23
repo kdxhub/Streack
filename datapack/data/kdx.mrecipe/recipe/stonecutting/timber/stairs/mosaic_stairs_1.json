@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "#bamboo"
-  ],
+  "ingredient": {
+    "tag": "bamboo"
+  },
   "result": {
     "id": "minecraft:bamboo_mosaic_stairs",
     "count": 8

@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:pumpkin"
-  ],
+  "ingredient": {
+    "item": "minecraft:pumpkin"
+  },
   "result": {
     "id": "minecraft:carved_pumpkin",
     "count": 1

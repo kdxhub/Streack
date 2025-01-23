@@ -14,7 +14,7 @@
 		"frame": "goal",
 		"hidden": false
 	},
-	"parent": "kdx.ma:heavy_core",
+	"parent": "kdx.ma:mitem/insert/heavy_core",
 	"criteria": {
 		"mace": {
 			"trigger": "minecraft:inventory_changed",

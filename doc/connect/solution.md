@@ -2,7 +2,7 @@
 title: "无法连接到服务器常见问题"
 description: "快速疑难解答"
 ---
-<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="../">←返回</a> |
+<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="/Streack/doc">←返回</a> |
  创建：2025-01-19 | 最后更新：2025-01-19</small><br>
 
 > [@] 在左侧边栏可以找到目录树，您也可以使用`Ctrl/Command`+`F`快捷键打开「在网页上查找」等类似功能。<br>

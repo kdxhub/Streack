@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:leather_helmet"
-  ],
+  "ingredient": {
+    "item": "minecraft:leather_helmet"
+  },
   "result": {
     "id": "minecraft:leather",
     "count": 2

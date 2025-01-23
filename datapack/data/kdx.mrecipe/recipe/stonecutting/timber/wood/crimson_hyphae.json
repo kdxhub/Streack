@@ -1,7 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:crimson_hyphae"
+  "ingredient": {
+    "item": "minecraft:crimson_hyphae"
   },
   "result": {
     "id": "minecraft:stripped_crimson_wood",

@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:white_stained_glass"
-  ],
+  "ingredient": {
+    "item": "minecraft:white_stained_glass"
+  },
   "result": {
     "id": "minecraft:white_stained_glass_pane",
     "count": 4

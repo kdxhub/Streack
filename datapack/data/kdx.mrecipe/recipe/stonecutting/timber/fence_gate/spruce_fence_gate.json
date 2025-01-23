@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "#spruce"
-  ],
+  "ingredient": {
+    "tag": "spruce"
+  },
   "result": {
     "id": "minecraft:spruce_fence_gate",
     "count": 1

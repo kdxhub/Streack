@@ -1,10 +1,18 @@
 {
   "type": "stonecutting",
   "ingredient": [
-    "minecraft:cherry_planks",
-    "minecraft:mangrove_planks",
-    "minecraft:bamboo_planks",
-    "minecraft:bamboo_mosaic"
+    {
+      "item": "minecraft:cherry_planks"
+    },
+    {
+      "item": "minecraft:mangrove_planks"
+    },
+    {
+      "item": "minecraft:bamboo_planks"
+    },
+    {
+      "item": "minecraft:bamboo_mosaic"
+    }
   ],
   "result": {
     "id": "minecraft:stick",

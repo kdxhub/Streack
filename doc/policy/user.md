@@ -2,7 +2,7 @@
 title: "栈流Streack用户协议"
 description: "用户协议页"
 ---
-<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="../">←返回</a> |
+<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="/Streack/doc">←返回</a> |
  创建：2025-01-13 | 最后更新：2025-01-13</small><br>
 
 <h1>用户协议</h1>

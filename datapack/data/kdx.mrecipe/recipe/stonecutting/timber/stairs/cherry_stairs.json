@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "#cherry"
-  ],
+  "ingredient": {
+    "tag": "cherry"
+  },
   "result": {
     "id": "minecraft:cherry_stairs",
     "count": 4

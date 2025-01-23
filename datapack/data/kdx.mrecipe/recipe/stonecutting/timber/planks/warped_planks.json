@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "#warped"
-  ],
+  "ingredient": {
+    "tag": "warped"
+  },
   "result": {
     "id": "minecraft:warped_planks",
     "count": 4

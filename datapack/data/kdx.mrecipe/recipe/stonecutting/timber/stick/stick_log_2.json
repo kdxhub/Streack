@@ -1,9 +1,15 @@
 {
   "type": "stonecutting",
   "ingredient": [
-    "#cherry",
-    "#mangrove",
-    "#bamboo"
+    {
+      "tag": "cherry"
+    },
+    {
+      "tag": "mangrove"
+    },
+    {
+      "tag": "bamboo"
+    }
   ],
   "result": {
     "id": "minecraft:stick",

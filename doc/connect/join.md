@@ -2,7 +2,7 @@
 title: "加入服务器"
 description: "Join Us"
 ---
-<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><br><small><a href="../">←返回</a> |
+<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><br><small><a href="/Streack/doc">←返回</a> |
  创建：2025-01-21 | 最后更新：2025-01-21</small><br>
 
 欢迎加入**栈流Streack**！<br>

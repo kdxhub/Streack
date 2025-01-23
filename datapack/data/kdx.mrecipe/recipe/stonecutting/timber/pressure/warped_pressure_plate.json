@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "#warped"
-  ],
+  "ingredient": {
+    "tag": "warped"
+  },
   "result": {
     "id": "minecraft:warped_pressure_plate",
     "count": 4

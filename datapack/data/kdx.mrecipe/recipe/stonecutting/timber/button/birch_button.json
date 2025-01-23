@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "#birch"
-  ],
+  "ingredient": {
+    "tag": "birch"
+  },
   "result": {
     "id": "minecraft:birch_button",
     "count": 4

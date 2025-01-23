@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:black_stained_glass"
-  ],
+  "ingredient": {
+    "item": "minecraft:black_stained_glass"
+  },
   "result": {
     "id": "minecraft:black_stained_glass_pane",
     "count": 4

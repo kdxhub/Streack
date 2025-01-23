@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:leather_boots"
-  ],
+  "ingredient": {
+    "item": "minecraft:leather_boots"
+  },
   "result": {
     "id": "minecraft:leather",
     "count": 1

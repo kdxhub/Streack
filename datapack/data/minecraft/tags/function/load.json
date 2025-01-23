@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "minecraft:kdx:on_load"
+    "kdx:on_load"
   ]
 }

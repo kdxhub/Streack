@@ -1,7 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "#oak"
+  "ingredient": {
+    "tag": "oak"
   },
   "result": {
     "id": "minecraft:oak_stairs",

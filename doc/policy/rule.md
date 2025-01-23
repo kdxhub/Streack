@@ -2,7 +2,7 @@
 title: "栈流Streack基本方针"
 description: "约等于玩家守则？"
 ---
-<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><br><small><a href="../">←返回</a> |
+<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><br><small><a href="/Streack/doc">←返回</a> |
  创建：2025-01-13 | 最后更新：2025-01-14</small><br>
 
 ## 前言

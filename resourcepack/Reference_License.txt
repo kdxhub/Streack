@@ -16,5 +16,9 @@ https://kdxiaoyi.top/blogs/2024/26/
 别催了，来啦！护眼大补丸材质包1.20-1.21·我的世界材质包, 黑山大叔.
 https://www.bilibili.com/video/BV1Dx4y1E7HZ/
 
+·基岩版译名修正材料
+To bedrock, KAIYOHUGO.
+https://github.com/KAIYOHUGO/to-bedrock?tab=MIT-1-ov-file
+
 ---
 另有一些信息无法找到出处和作者信息，在此无法列出并表示歉意。如果您看到了由您创作的信息但未在此处列出，请联系我们。

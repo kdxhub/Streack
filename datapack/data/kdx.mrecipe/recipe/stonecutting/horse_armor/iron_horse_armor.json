@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:iron_horse_armor"
-  ],
+  "ingredient": {
+    "item": "minecraft:iron_horse_armor"
+  },
   "result": {
     "id": "minecraft:iron_ingot",
     "count": 2

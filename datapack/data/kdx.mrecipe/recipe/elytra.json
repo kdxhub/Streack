@@ -9,8 +9,8 @@
   ],
   "type":"crafting_shaped",
   "key":{
-    "a": "item":"phantom_membrane",
-    "b": "item":"nether_star",
-    "c": "item":"echo_shard"
+    "a": "phantom_membrane",
+    "b": "nether_star",
+    "c": "echo_shard"
   }
 }

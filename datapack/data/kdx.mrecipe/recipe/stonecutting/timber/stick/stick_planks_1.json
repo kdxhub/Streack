@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "#log_planks"
-  ],
+  "ingredient": {
+    "tag": "log_planks"
+  },
   "result": {
     "id": "minecraft:stick",
     "count": 4

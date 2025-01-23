@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:chainmail_boots"
-  ],
+  "ingredient": {
+    "item": "minecraft:chainmail_boots"
+  },
   "result": {
     "id": "minecraft:chain",
     "count": 1

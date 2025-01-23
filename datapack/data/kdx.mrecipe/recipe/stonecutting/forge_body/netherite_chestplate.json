@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": [
-    "minecraft:netherite_chestplate"
-  ],
+  "ingredient": {
+    "item": "minecraft:netherite_chestplate"
+  },
   "result": {
     "id": "minecraft:netherite_scrap",
     "count": 2
