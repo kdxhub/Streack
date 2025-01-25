@@ -5,12 +5,12 @@
 ### Streack Service Datapack
 Streack用于管理服务器、微调服务器表现的数据包，内含很多快捷指令与功能。请参阅其中的readme以获取更多信息。<br>
 
-[组件文件夹](/datapack) \| [下载发行版](/release/Streack_dp.zip)
+[组件文件夹](/datapack) \| [下载发行版](/release/streack_dp.zip)
 
 ### Streack 专用资源包
 用于统一部分内容表现的资源包，设计通过服务器建议资源包功能分发。
 
-[组件文件夹](/resourcepack) \| [下载发行版](/release/Streack_res.zip)
+[组件文件夹](/resourcepack) \| [下载发行版](/release/streack_res.zip)
 
 ### Streack Doc
 服务器帮助文档目录
