@@ -1,8 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "tag": "oak"
-  },
+  "ingredient": "#oak"
+  ,
   "result": {
     "id": "minecraft:oak_planks",
     "count": 4

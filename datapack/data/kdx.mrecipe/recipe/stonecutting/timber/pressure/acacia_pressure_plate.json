@@ -1,8 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "tag": "acacia"
-  },
+  "ingredient": "#acacia"
+  ,
   "result": {
     "id": "minecraft:acacia_pressure_plate",
     "count": 4

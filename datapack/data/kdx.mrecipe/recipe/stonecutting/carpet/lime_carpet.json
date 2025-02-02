@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "item": "minecraft:lime_wool"
-  },
+  "ingredient": [
+    "minecraft:lime_wool"
+  ],
   "result": {
     "id": "minecraft:lime_carpet",
     "count": 2

@@ -1,8 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "tag": "spruce"
-  },
+  "ingredient": "#spruce"
+  ,
   "result": {
     "id": "minecraft:spruce_stairs",
     "count": 4

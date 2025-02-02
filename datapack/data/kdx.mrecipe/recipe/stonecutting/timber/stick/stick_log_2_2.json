@@ -1,0 +1,8 @@
+{
+  "type": "stonecutting",
+  "ingredient": "#mangrove",
+  "result": {
+    "id": "minecraft:stick",
+    "count": 16
+  }
+}

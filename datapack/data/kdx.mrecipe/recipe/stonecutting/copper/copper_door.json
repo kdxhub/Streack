@@ -1,27 +1,19 @@
 {
   "type": "stonecutting",
   "ingredient": [
-    {
-      "item": "minecraft:exposed_copper_door"
-    },
-    {
-      "item": "minecraft:weathered_copper_door"
-    },
-    {
-      "item": "minecraft:oxidized_copper_door"
-    },
-    {
-      "item": "minecraft:waxed_copper_door"
-    },
-    {
-      "item": "minecraft:waxed_exposed_copper_door"
-    },
-    {
-      "item": "minecraft:waxed_weathered_copper_door"
-    },
-    {
-      "item": "minecraft:waxed_oxidized_copper_door"
-    }
+      "minecraft:exposed_copper_door"
+    ,
+      "minecraft:weathered_copper_door"
+    ,
+      "minecraft:oxidized_copper_door"
+    ,
+      "minecraft:waxed_copper_door"
+    ,
+      "minecraft:waxed_exposed_copper_door"
+    ,
+      "minecraft:waxed_weathered_copper_door"
+    ,
+      "minecraft:waxed_oxidized_copper_door"
   ],
   "result": {
     "id": "minecraft:copper_door",

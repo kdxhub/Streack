@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "item": "minecraft:diamond_chestplate"
-  },
+  "ingredient": [
+    "minecraft:diamond_chestplate"
+  ],
   "result": {
     "id": "minecraft:diamond",
     "count": 3

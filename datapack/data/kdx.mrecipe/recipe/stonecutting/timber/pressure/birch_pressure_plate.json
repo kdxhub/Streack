@@ -1,8 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "tag": "birch"
-  },
+  "ingredient": "#birch"
+  ,
   "result": {
     "id": "minecraft:birch_pressure_plate",
     "count": 4

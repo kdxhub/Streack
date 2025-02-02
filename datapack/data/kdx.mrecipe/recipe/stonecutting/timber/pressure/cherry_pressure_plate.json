@@ -1,8 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "tag": "cherry"
-  },
+  "ingredient": "#cherry"
+  ,
   "result": {
     "id": "minecraft:cherry_pressure_plate",
     "count": 4

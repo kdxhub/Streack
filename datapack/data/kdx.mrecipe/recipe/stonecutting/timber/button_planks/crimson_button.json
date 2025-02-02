@@ -1,10 +1,10 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "item": "minecraft:crimson_planks"
-  },
+  "ingredient": [
+    "minecraft:crimson_planks"
+  ],
   "result": {
-    "id": "minecraft:crimosn_button",
+    "id": "minecraft:crimson_button",
     "count": 1
   }
 }

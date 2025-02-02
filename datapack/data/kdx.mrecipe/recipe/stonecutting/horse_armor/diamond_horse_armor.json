@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "item": "minecraft:diamond_horse_armor"
-  },
+  "ingredient": [
+    "minecraft:diamond_horse_armor"
+  ],
   "result": {
     "id": "minecraft:diamond",
     "count": 2

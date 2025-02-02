@@ -1,8 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "tag": "warped"
-  },
+  "ingredient": "#warped"
+  ,
   "result": {
     "id": "minecraft:warped_fence_gate",
     "count": 1

@@ -1,8 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "tag": "crimson"
-  },
+  "ingredient": "#crimson"
+  ,
   "result": {
     "id": "minecraft:crimson_button",
     "count": 4

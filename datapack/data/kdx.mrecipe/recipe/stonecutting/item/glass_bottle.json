@@ -1,12 +1,7 @@
 {
   "type": "stonecutting",
   "ingredient": [
-    {
-      "item": "minecraft:glass"
-    },
-    {
-      "tag": "stained_glass"
-    }
+      "minecraft:glass"
   ],
   "result": {
     "id": "minecraft:glass_bottle",

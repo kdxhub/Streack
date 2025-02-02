@@ -1,27 +1,19 @@
 {
   "type": "stonecutting",
   "ingredient": [
-    {
-      "item": "minecraft:exposed_copper_bulb"
-    },
-    {
-      "item": "minecraft:weathered_copper_bulb"
-    },
-    {
-      "item": "minecraft:oxidized_copper_bulb"
-    },
-    {
-      "item": "minecraft:waxed_copper_bulb"
-    },
-    {
-      "item": "minecraft:waxed_exposed_copper_bulb"
-    },
-    {
-      "item": "minecraft:waxed_weathered_copper_bulb"
-    },
-    {
-      "item": "minecraft:waxed_oxidized_copper_bulb"
-    }
+      "minecraft:exposed_copper_bulb"
+    ,
+      "minecraft:weathered_copper_bulb"
+    ,
+      "minecraft:oxidized_copper_bulb"
+    ,
+      "minecraft:waxed_copper_bulb"
+    ,
+      "minecraft:waxed_exposed_copper_bulb"
+    ,
+      "minecraft:waxed_weathered_copper_bulb"
+    ,
+      "minecraft:waxed_oxidized_copper_bulb"
   ],
   "result": {
     "id": "minecraft:copper_bulb",

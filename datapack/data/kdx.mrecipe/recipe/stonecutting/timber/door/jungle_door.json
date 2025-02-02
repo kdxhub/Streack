@@ -1,8 +1,7 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "tag": "jungle"
-  },
+  "ingredient": "#jungle"
+  ,
   "result": {
     "id": "minecraft:jungle_door",
     "count": 2

@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "item": "minecraft:golden_chestplate"
-  },
+  "ingredient": [
+    "minecraft:golden_chestplate"
+  ],
   "result": {
     "id": "minecraft:gold_ingot",
     "count": 3

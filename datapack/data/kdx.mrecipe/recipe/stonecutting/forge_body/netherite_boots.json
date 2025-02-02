@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "item": "minecraft:netherite_boots"
-  },
+  "ingredient": [
+    "minecraft:netherite_boots"
+  ],
   "result": {
     "id": "minecraft:netherite_scrap",
     "count": 1

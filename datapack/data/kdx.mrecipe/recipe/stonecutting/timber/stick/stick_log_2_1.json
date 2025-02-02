@@ -1,0 +1,8 @@
+{
+  "type": "stonecutting",
+  "ingredient": "#cherry",
+  "result": {
+    "id": "minecraft:stick",
+    "count": 16
+  }
+}

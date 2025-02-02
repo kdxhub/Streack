@@ -1,8 +1,8 @@
 {
   "type": "stonecutting",
-  "ingredient": {
-    "item": "minecraft:iron_helmet"
-  },
+  "ingredient": [
+    "minecraft:iron_helmet"
+  ],
   "result": {
     "id": "minecraft:iron_ingot",
     "count": 2
