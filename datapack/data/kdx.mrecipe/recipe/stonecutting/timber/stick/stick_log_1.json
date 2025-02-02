@@ -1,7 +1,6 @@
 {
   "type": "stonecutting",
-  "ingredient": "#log"
-  ],
+  "ingredient": "#log",
   "result": {
     "id": "minecraft:stick",
     "count": 16
