@@ -13,7 +13,7 @@ Streack用于管理服务器、微调服务器表现的数据包，内含很多�
 [组件文件夹](/resourcepack) \| [下载发行版](/release/streack_res.zip)
 
 ### Streack Doc
-服务器帮助文档目录
+服务器帮助文档目录。
 
 [组件文件夹](/doc)
 
@@ -23,7 +23,7 @@ Streack用于管理服务器、微调服务器表现的数据包，内含很多�
 [组件文件夹](/console)
 
 ### Email
-电子邮件模板
+电子邮件模板。
 
 [组件文件夹](/email)
 
