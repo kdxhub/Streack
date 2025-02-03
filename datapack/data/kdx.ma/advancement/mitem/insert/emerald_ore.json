@@ -1,35 +1,35 @@
 {
-	"display": {
-		"icon": {
-			"id": "minecraft:emerald_ore"
-		},
-		"title": {
-			"text": "浅藏不露…？",
-			"italic": false
-		},
-		"description": {
-			"text": "使用丝绸之触开采一块长得像铀一样的矿石",
-			"italic": false
-		},
-		"frame": "goal",
-		"hidden": false
-	},
-	"parent": "minecraft:story/enchant_item",
-	"criteria": {
-		"emerald_ore": {
-			"trigger": "minecraft:inventory_changed",
-			"conditions": {
-				"items": [
-					{
-						"items": [
-							"minecraft:emerald_ore"
-						]
-					}
-				]
-			}
-		}
-	},
-	"rewards": {
-		"experience": 10
-	}
+  "display": {
+    "icon": {
+      "id": "minecraft:emerald_ore"
+    },
+    "title": {
+      "text": "浅藏不露…？",
+      "italic": false
+    },
+    "description": {
+      "text": "使用丝绸之触开采一块长得像铀一样的矿石",
+      "italic": false
+    },
+    "frame": "goal",
+    "hidden": false
+  },
+  "parent": "minecraft:story/enchant_item",
+  "criteria": {
+    "emerald_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:emerald_ore"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
 }

@@ -1,35 +1,35 @@
 {
-	"display": {
-		"icon": {
-			"id": "minecraft:poisonous_potato"
-		},
-		"title": {
-			"text": "2%？2%！",
-			"italic": false
-		},
-		"description": {
-			"text": "获得出率仅2%的毒马铃薯\n老实说这概率比你出金都高的好嘛",
-			"italic": false
-		},
-		"frame": "task",
-		"hidden": false
-	},
-	"parent": "minecraft:husbandry/plant_seed",
-	"criteria": {
-		"poisonous_potato": {
-			"trigger": "minecraft:inventory_changed",
-			"conditions": {
-				"items": [
-					{
-						"items": [
-							"minecraft:poisonous_potato"
-						]
-					}
-				]
-			}
-		}
-	},
-	"rewards": {
-		"experience": 0
-	}
+  "display": {
+    "icon": {
+      "id": "minecraft:poisonous_potato"
+    },
+    "title": {
+      "text": "2%？2%！",
+      "italic": false
+    },
+    "description": {
+      "text": "获得出率仅2%的毒马铃薯\n老实说这概率比你出金都高的好嘛",
+      "italic": false
+    },
+    "frame": "task",
+    "hidden": false
+  },
+  "parent": "minecraft:husbandry/plant_seed",
+  "criteria": {
+    "poisonous_potato": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:poisonous_potato"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0
+  }
 }

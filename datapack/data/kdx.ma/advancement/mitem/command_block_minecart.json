@@ -1,35 +1,35 @@
 {
-	"display": {
-		"icon": {
-			"id": "minecraft:command_block_minecart"
-		},
-		"title": {
-			"text": "开发者模式 V2",
-			"italic": false
-		},
-		"description": {
-			"text": "获得「带有命令块的《我的世界》」——命令方块矿车",
-			"italic": true
-		},
-		"frame": "challenge",
-		"hidden": true
-	},
-	"parent": "kdx.ma:mitem/command_block",
-	"criteria": {
-		"cbm": {
-			"trigger": "minecraft:inventory_changed",
-			"conditions": {
-				"items": [
-					{
-						"items": [
-							"minecraft:command_block_minecart"
-						]
-					}
-				]
-			}
-		}
-	},
-	"rewards": {
-		"experience": 0
-	}
+  "display": {
+    "icon": {
+      "id": "minecraft:command_block_minecart"
+    },
+    "title": {
+      "text": "开发者模式 V2",
+      "italic": false
+    },
+    "description": {
+      "text": "获得「带有命令块的《我的世界》」——命令方块矿车",
+      "italic": true
+    },
+    "frame": "challenge",
+    "hidden": true
+  },
+  "parent": "kdx.ma:mitem/command_block",
+  "criteria": {
+    "cbm": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:command_block_minecart"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0
+  }
 }

@@ -1,35 +1,35 @@
 {
-	"display": {
-		"icon": {
-			"id": "minecraft:"
-		},
-		"title": {
-			"text": "",
-			"italic": false
-		},
-		"description": {
-			"text": "",
-			"italic": false
-		},
-		"frame": "goal/challenge/task",
-		"hidden": false
-	},
-	"parent": "minecraft:",
-	"criteria": {
-		"requirement": {
-			"trigger": "minecraft:inventory_changed",
-			"conditions": {
-				"items": [
-					{
-						"items": [
-							"minecraft:"
-						]
-					}
-				]
-			}
-		}
-	},
-	"rewards": {
-		"experience": 0
-	}
+  "display": {
+    "icon": {
+      "id": "minecraft:"
+    },
+    "title": {
+      "text": "",
+      "italic": false
+    },
+    "description": {
+      "text": "",
+      "italic": false
+    },
+    "frame": "goal/challenge/task",
+    "hidden": false
+  },
+  "parent": "minecraft:",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0
+  }
 }

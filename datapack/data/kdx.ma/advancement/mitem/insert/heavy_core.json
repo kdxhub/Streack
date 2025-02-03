@@ -1,35 +1,35 @@
 {
-	"display": {
-		"icon": {
-			"id": "minecraft:heavy_core"
-		},
-		"title": {
-			"text": "罡风沉降之源",
-			"italic": false
-		},
-		"description": {
-			"text": "获得沉重核心",
-			"italic": false
-		},
-		"frame": "task",
-		"hidden": true
-	},
-	"parent": "minecraft:adventure/minecraft_trials_edition",
-	"criteria": {
-		"heavy_core": {
-			"trigger": "minecraft:inventory_changed",
-			"conditions": {
-				"items": [
-					{
-						"items": [
-							"minecraft:heavy_core"
-						]
-					}
-				]
-			}
-		}
-	},
-	"rewards": {
-		"experience": 2
-	}
+  "display": {
+    "icon": {
+      "id": "minecraft:heavy_core"
+    },
+    "title": {
+      "text": "罡风沉降之源",
+      "italic": false
+    },
+    "description": {
+      "text": "获得沉重核心",
+      "italic": false
+    },
+    "frame": "task",
+    "hidden": true
+  },
+  "parent": "minecraft:adventure/minecraft_trials_edition",
+  "criteria": {
+    "heavy_core": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:heavy_core"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 2
+  }
 }

@@ -1,35 +1,35 @@
 {
-	"display": {
-		"icon": {
-			"id": "minecraft:ender_chest"
-		},
-		"title": {
-			"text": "网盘",
-			"italic": false
-		},
-		"description": {
-			"text": "获得一个末影箱",
-			"italic": false
-		},
-		"frame": "task",
-		"hidden": false
-	},
-	"parent": "kdx:_mystery",
-	"criteria": {
-		"ender_chest": {
-			"trigger": "minecraft:inventory_changed",
-			"conditions": {
-				"items": [
-					{
-						"items": [
-							"minecraft:ender_chest"
-						]
-					}
-				]
-			}
-		}
-	},
-	"rewards": {
-		"experience": 0
-	}
+  "display": {
+    "icon": {
+      "id": "minecraft:ender_chest"
+    },
+    "title": {
+      "text": "网盘",
+      "italic": false
+    },
+    "description": {
+      "text": "获得一个末影箱",
+      "italic": false
+    },
+    "frame": "task",
+    "hidden": false
+  },
+  "parent": "kdx:_mystery",
+  "criteria": {
+    "ender_chest": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:ender_chest"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0
+  }
 }
