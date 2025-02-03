@@ -4,3 +4,4 @@ function kdx:system/call_load
 say [#] Server Started!
 
 function kdx.kits:on_load
+function kdx.policynotice:on_load

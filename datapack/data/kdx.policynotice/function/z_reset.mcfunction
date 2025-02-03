@@ -1,0 +1,1 @@
+tellraw @s {"text": "没有补全命令，操作取消。","color": "gold"}

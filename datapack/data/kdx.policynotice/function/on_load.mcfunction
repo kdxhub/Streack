@@ -1,0 +1,1 @@
+scoreboard objectives add kdx.policynotice.update dummy "HasReadUpdatedPolicy"

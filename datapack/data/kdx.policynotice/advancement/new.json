@@ -1,0 +1,23 @@
+{
+  "display": {
+    "title": "阅读用户协议",
+    "hidden": true,
+    "announce_to_chat": false,
+    "show_toast": false,
+    "icon": {
+      "id": "minecraft:enchanted_book"
+    },
+    "frame": "task",
+    "description": "\n"
+  },
+  "parent": "kdx:_hidden",
+  "sends_telemetry_event": false,
+  "criteria": {
+    "on_tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "rewards": {
+    "function": "kdx.policynotice:new"
+  }
+}

@@ -40,6 +40,11 @@
 
 默认禁用
 
+## Policy Helper kdx.policynotice:*
+
+允许创建用户协议通知，支持通过控制台/op推送新版本更新通知。
+注意协议链接需要自行修改`./data/kdx.policynotice/function/links.mcfunction`中的内容。
+
 ## Mutiple World kdx.mworld:*
 
 创建一堆预定义维度以备用。

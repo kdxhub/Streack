@@ -1,0 +1,1 @@
+tellraw @s {"text": "警告：您正在向全体玩家推送隐私政策更新，这是不可逆行为！如要继续请点击我并补完命令！","bold": true,"color": "red","clickEvent": {"action": "suggest_command","value": "/function kdx.policynotice:z_reset"}}

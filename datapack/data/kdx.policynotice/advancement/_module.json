@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:enchanted_book"
+    },
+    "title": {
+      "text": "Policy Helper",
+      "italic": false
+    },
+    "description": {
+      "text": "允许创建用户协议通知，支持通过控制台/op推送新版本更新通知。\n\nkdx.policynotice:*",
+      "italic": false
+    },
+    "frame": "task",
+    "hidden": false,
+    "announce_to_chat": false,
+    "show_toast": false
+  },
+  "parent": "kdx:_module",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:crafting_table"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0
+  }
+}
