@@ -8,6 +8,11 @@ description: "Join Us"
 欢迎加入**栈流Streack**！<br>
 这里是开放而又包容的MINECRAFT社区，由原kdxSMP重构而成，并且公开部分服务器数据。
 
+## 加入QQ群
+加入QQ群获取更多信息和即时的消息！<br>
+→ 939658305 ←<br>
+[点我直达฿](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=vkCLJqaLsSrddbs6UKzzK_JxWpLg8GAl&authKey=N%2Fpa8kEtWtqkhQ7VypcGZcZwQMa1dFFhg14XsGtXp3EV3Z%2BKFexQgnfcRMqxWCMQ&noverify=0&group_code=939658305)
+
 ## Java版地址
 由ViaVersion强力驱动的多版本支持！Java 1.10.x~1.21.4均可即刻开始游玩。
 ```address
