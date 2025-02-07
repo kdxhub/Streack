@@ -4,6 +4,14 @@ description: "见证每一次变化"
 ---
 <small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="./">←返回</a></small><br>
 
+### 25w6b
+> [!] 此次更新没有补偿
+
+* 新增兑换码插件：`/redeem xxx`或`/cdk use xxx`以使用兑换码。
+* 移除快速创建假人菜单
+* 实装mcMMO技能插件
+* 实装精英怪玩法
+
 ### 25w6a
 > [!] 此次更新没有补偿
 
