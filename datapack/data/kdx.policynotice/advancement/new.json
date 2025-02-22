@@ -3,14 +3,14 @@
     "title": "阅读用户协议",
     "hidden": true,
     "announce_to_chat": false,
-    "show_toast": false,
+    "show_toast": true,
     "icon": {
       "id": "minecraft:enchanted_book"
     },
     "frame": "task",
-    "description": "\n"
+    "description": "继续游玩本服务器视为您已认真阅读并同意我们的《用户协议》与《隐私政策》，请知悉。\n若您需要撤回同意，请联系管理员。"
   },
-  "parent": "kdx:_hidden",
+  "parent": "kdx:_streack",
   "sends_telemetry_event": false,
   "criteria": {
     "on_tick": {
