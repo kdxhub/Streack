@@ -5,10 +5,10 @@
     },
     "frame": "task",
     "title": "吓死我了！",
-    "description": "你为什么会闲到去杀死蝙蝠？"
+    "description": "你为什么会闲到去杀死蝙蝠？",
+    "hidden": true
   },
   "parent": "kdx:_joyose",
-  "hidden": true,
   "criteria": {
     "kill_bat":{
       "trigger": "minecraft:kill_mob_near_sculk_catalyst",

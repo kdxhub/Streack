@@ -15,10 +15,10 @@
     "description": {
       "text": "他还只是个孩子啊",
       "color": "black"
-    }
+    },
+    "hidden": true
   },
   "parent": "minecraft:adventure/root",
-  "hidden": true,
   "criteria": {
     "■": {
       "trigger": "minecraft:player_killed_entity",
