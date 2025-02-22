@@ -19,6 +19,8 @@ description: "MOD与协议支持"
 
 > [i] 服务器添加了更多类原版玩法、进度、配方等等，欢迎体验！
 
+> [!] 服务器每隔10分钟自动清除一次掉落物
+
 > [i] 服务器已安装[CoreProtect฿](https://modrinth.com/plugin/coreprotect)，可以`/co i`进入检查模式。
 
 > [i] 服务器安装了多世界：使用数据包定义，兼容Xaero's World Map或体素地图。
