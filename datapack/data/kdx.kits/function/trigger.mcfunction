@@ -1,5 +1,5 @@
 # 此trigger由同名进度控制
-# 触发条件：玩家不着火、没有位移、着陆，每秒触发一次
+# 触发条件：玩家不着火、没有位移、着陆，每秒触发一次、附近空旷
 execute at @s \
   if block ~-1 ~ ~-1 air \
   if block ~-1 ~ ~ air \
@@ -28,5 +28,5 @@ execute at @s \
   if block ~1 ~2 ~-1 air \
   if block ~1 ~2 ~ air \
   if block ~1 ~2 ~1 air \
-  unless score @s kdx.kits.record >= "kdx.state.ok" kdx \
+  unless score @s kdx.kits.record >= "kdx:state.ok" kdx \
   run function kdx.kits:_get
