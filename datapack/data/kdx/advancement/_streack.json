@@ -1,6 +1,6 @@
 {
   "display": {
-    "background": "minecraft:textures/block/water.png",
+    "background": "minecraft:textures/block/cyan_concrete_powder.png",
     "icon": {
       "id": "minecraft:glass" 
     },

@@ -1,6 +1,6 @@
 {
   "display": {
-    "background": "minecraft:textures/block/tnt.png",
+    "background": "minecraft:textures/block/tnt_side.png",
     "icon": {
       "id": "minecraft:tnt" 
     },
