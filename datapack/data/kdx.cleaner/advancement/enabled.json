@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:slime_ball"
+    },
+    "title": {
+      "text": "扫地姬",
+      "italic": false
+    },
+    "description": {
+      "text": "如果您获得了此进度，那么说明服务器已启用此功能。",
+      "italic": false
+    },
+    "frame": "task",
+    "hidden": false,
+    "announce_to_chat": false,
+    "show_toast": false
+  },
+  "parent": "kdx.cleaner:_module",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:impossible",
+      "conditions": {
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0
+  }
+}
