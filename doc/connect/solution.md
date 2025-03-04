@@ -3,7 +3,7 @@ title: "无法连接到服务器常见问题"
 description: "快速疑难解答"
 ---
 <small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="/Streack/doc">←返回</a> |
- 创建：2025-01-19 | 最后更新：2025-01-19</small><br>
+ 创建：2025-01-19 | 最后更新：2025-03-05</small><br>
 
 > [@] 在左侧边栏可以找到目录树，您也可以使用`Ctrl/Command`+`F`快捷键打开「在网页上查找」等类似功能。<br>
 > 但本文列出的错误原因通常只列出关键字，请考虑搜索单词而不是输入整个错误提示。
@@ -26,6 +26,14 @@ description: "快速疑难解答"
 > [i] 以上教程还是太高级了？看不懂？<br>
 > 那我也没办法，要不你[百度一下฿](https://www.baidu.com/s?wd=%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%20Unknown%20Host%20%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA)？
 
+## Server Closed （服务器已关闭）
+服务器正在重启，请稍后再试
+
+## 服务器已满
+出于性能考虑，栈流Streack限制最大加入玩家数量，请等候有玩家退出再试。
+
+> [!] 在「多人游戏」菜单中展示的最大玩家数不是真实的最大玩家数
+
 ## 因为不使用自定义资源包而被踢出游戏
 **为了您的游玩体验，请考虑使用服务器资源包。**
 
@@ -38,6 +46,5 @@ description: "快速疑难解答"
 
 ## 无法连接至身份验证服务器
 巨硬和Mojang抽风，没有什么解决方案。<br>
-如果您善于折腾，可以试试[xmdhs/mcping฿](https://github.com/xmdhs/mcping)工具。<br>
 
 <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/pmd-reRender.min.js"></script>
