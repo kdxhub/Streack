@@ -1,21 +1,21 @@
 {
   "replace": false,
   "values": [
-    "minecraft:black_bed",
-    "minecraft:blue_bed",
-    "minecraft:brown_bed",
-    "minecraft:cyan_bed",
-    "minecraft:gray_bed",
-    "minecraft:green_bed",
-    "minecraft:light_blue_bed",
-    "minecraft:light_gray_bed",
-    "minecraft:lime_bed",
-    "minecraft:magenta_bed",
-    "minecraft:orange_bed",
-    "minecraft:pink_bed",
-    "minecraft:purple_bed",
-    "minecraft:red_bed",
-    "minecraft:white_bed",
-    "minecraft:yellow_bed"
+    "black_bed",
+    "blue_bed",
+    "brown_bed",
+    "cyan_bed",
+    "gray_bed",
+    "green_bed",
+    "light_blue_bed",
+    "light_gray_bed",
+    "lime_bed",
+    "magenta_bed",
+    "orange_bed",
+    "pink_bed",
+    "purple_bed",
+    "red_bed",
+    "white_bed",
+    "yellow_bed"
   ]
 }

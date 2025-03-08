@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:damaged_anvil"
+    },
+    "title": {
+      "text": "不再为火",
+      "italic": false
+    },
+    "description": {
+      "text": "获取一件也许可以用「火」合成的装备……",
+      "italic": false
+    },
+    "frame": "task",
+    "hidden": false
+  },
+  "parent": "kdx:_streack",
+  "criteria": {
+    "anvil": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:chainmail_boots",
+              "minecraft:chainmail_chestplate",
+              "minecraft:chainmail_helmet",
+              "minecraft:chainmail_leggings"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  }
+}

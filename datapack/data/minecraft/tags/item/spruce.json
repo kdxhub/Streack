@@ -1,9 +1,9 @@
 {
   "replace": false,
   "values": [
-    "minecraft:spruce_log",
-    "minecraft:spruce_wood",
-    "minecraft:stripped_spruce_log",
-    "minecraft:stripped_spruce_wood"
+    "spruce_log",
+    "spruce_wood",
+    "stripped_spruce_log",
+    "stripped_spruce_wood"
   ]
 }

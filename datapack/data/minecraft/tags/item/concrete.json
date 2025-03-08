@@ -1,21 +1,21 @@
 {
   "replace": false,
   "values": [
-    "minecraft:black_concrete",
-    "minecraft:blue_concrete",
-    "minecraft:brown_concrete",
-    "minecraft:cyan_concrete",
-    "minecraft:gray_concrete",
-    "minecraft:green_concrete",
-    "minecraft:light_blue_concrete",
-    "minecraft:light_gray_concrete",
-    "minecraft:lime_concrete",
-    "minecraft:magenta_concrete",
-    "minecraft:orange_concrete",
-    "minecraft:pink_concrete",
-    "minecraft:purple_concrete",
-    "minecraft:red_concrete",
-    "minecraft:white_concrete",
-    "minecraft:yellow_concrete"
+    "black_concrete",
+    "blue_concrete",
+    "brown_concrete",
+    "cyan_concrete",
+    "gray_concrete",
+    "green_concrete",
+    "light_blue_concrete",
+    "light_gray_concrete",
+    "lime_concrete",
+    "magenta_concrete",
+    "orange_concrete",
+    "pink_concrete",
+    "purple_concrete",
+    "red_concrete",
+    "white_concrete",
+    "yellow_concrete"
   ]
 }

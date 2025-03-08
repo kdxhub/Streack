@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "id": "minecraft:command_block_minecart"
+      "id": "minecraft:spawner"
     },
     "title": {
-      "text": "打包权限",
+      "text": "可持续发展",
       "italic": false
     },
     "description": {
-      "text": "获得「带有命令块的《我的世界》」——命令方块矿车",
+      "text": "获得可靠的生物来源",
       "italic": true
     },
     "frame": "challenge",
     "hidden": false
   },
-  "parent": "kdx.ma:mitem/command_block",
+  "parent": "kdx.ma:mitem/command_block_minecart",
   "criteria": {
     "cbm": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "minecraft:command_block_minecart"
+              "minecraft:spawner"
             ]
           }
         ]

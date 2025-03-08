@@ -1,0 +1,15 @@
+{
+  "result":{
+    "id":"minecraft:spawner"
+  },
+  "pattern":[
+    "axa",
+    "x x",
+    "axa"
+  ],
+  "type":"crafting_shaped",
+  "key":{
+    "x": "command_block_minecart",
+    "a": "iron_bars"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "result":{
+    "id":"minecraft:command_block"
+  },
+  "pattern":[
+    "aba",
+    "cdc",
+    "aba"
+  ],
+  "type":"crafting_shaped",
+  "key":{
+    "a": "reinforced_deepslate",
+    "b": "nether_star",
+    "c": "echo_shard",
+    "d": "heavy_core"
+  }
+}
