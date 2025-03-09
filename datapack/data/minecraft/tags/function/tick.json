@@ -1,6 +1,1 @@
-{
-  "replace": false,
-  "values": [
-  "kdx:on_tick"
-  ]
-}
+{"replace": false,"values": ["kdx:on_tick"]}
