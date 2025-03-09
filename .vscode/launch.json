@@ -1,10 +1,25 @@
 {
-    "configurations": [
+  "configurations": [
     {
-        "command": "bash ./assets/deploy/release.bash",
-        "name": "打包新版本 (Linux)",
-        "request": "launch",
-        "type": "node-terminal"
+      "name": "启动Chrome",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}",
+      "file": "${workspaceFolder}/index.html",
+      "linux": {
+        "runtimeArgs": [
+          "--disable-extensions",
+          "--ignore-gpu-blacklist",
+          "--no-sandbox"
+        ]
+      }
+    },
+    {
+      "command": "bash ./assets/deploy/release.bash",
+      "name": "打包新版本 (Linux)",
+      "request": "launch",
+      "type": "node-terminal"
     }
-    ]
+  ]
 }
