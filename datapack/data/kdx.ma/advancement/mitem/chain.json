@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "id": "minecraft:damaged_anvil"
+      "id": "minecraft:chainmail_chestplate"
     },
     "title": {
       "text": "不再为火",
@@ -16,7 +16,7 @@
   },
   "parent": "kdx:_streack",
   "criteria": {
-    "anvil": {
+    "chain": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
