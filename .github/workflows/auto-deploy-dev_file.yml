@@ -26,7 +26,7 @@ jobs:
       - name: 推送更新
         uses: actions/upload-artifact@v2
         with:
-          name: streack_artifacts
+          name: 打包预览新版本(Github Actions Workflow)
           path: |
             release/streack_dp-dev.zip
             release/streack_res-dev.zip
