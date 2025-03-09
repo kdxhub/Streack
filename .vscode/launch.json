@@ -1,0 +1,10 @@
+{
+    "configurations": [
+    {
+        "command": "bash ./assets/deploy/release.bash",
+        "name": "打包新版本 (Linux)",
+        "request": "launch",
+        "type": "node-terminal"
+    }
+    ]
+}

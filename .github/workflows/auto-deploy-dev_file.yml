@@ -1,0 +1,32 @@
+name: 自动推送dev版本更新
+
+on:
+  push:
+    paths:
+      - 'datapack/**'
+      - 'resourcepack/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 签出仓库
+        uses: actions/checkout@v2
+
+      - name: 发布预览版数据包
+        run: |
+          mkdir -p release
+          zip -r release/streack_dp-dev.zip datapack
+
+      - name: 发布预览版资源包
+        run: |
+          zip -r release/streack_res-dev.zip resourcepack
+
+      - name: 推送更新
+        uses: actions/upload-artifact@v2
+        with:
+          name: streack_artifacts
+          path: |
+            release/streack_dp-dev.zip
+            release/streack_res-dev.zip
