@@ -30,4 +30,4 @@ Java版地址的基础上，端口为25882
 <center><big>海纳百川，有容乃大。</big></center><br>
 
 <div id="mdRender_config" data-sideship-hide="1"></div>
-<script src="https://rs.kdxiaoyi.top/res/scripts/js/sober.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/pmd-reRender.min.js"></script>
+<script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/js/pmd.js"></script><script src="https://rs.kdxiaoyi.top/res/scripts/js/pmd-reRender.min.js"></script>

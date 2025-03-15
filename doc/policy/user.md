@@ -46,4 +46,4 @@ description: "用户协议页"
   4.3 本协议可能会根据法律法规、业务发展等需要进行更新。如协议内容发生重大变更，我们将通过公告或其他合理方式通知您。如您继续使用我们的服务，即表示您同意接受更新后的协议。
 </p>
 
-<script src="https://rs.kdxiaoyi.top/res/scripts/js/sober.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/pmd-reRender.min.js"></script>
+<script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/js/pmd.js"></script><script src="https://rs.kdxiaoyi.top/res/scripts/js/pmd-reRender.min.js"></script>
