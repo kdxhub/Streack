@@ -7,7 +7,7 @@ description: "调研结果公示"
 
 > [i] [调研问卷网址฿](https://wj.qq.com/s2/18233207/e73e/)
 
-> [i] [下载源结果文件（已剔除隐私信息）](./result.csv)<br>其SHA256为``
+> [i] [下载源结果文件（已剔除隐私信息）](./22cd56378f30921da5219c5ce3883964845c8e599b23c2739415e880b5c6e52f.csv)<br>其SHA256为`22cd56378f30921da5219c5ce3883964845c8e599b23c2739415e880b5c6e52f`
 
 
 <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/js/pmd.js"></script><script src="https://rs.kdxiaoyi.top/res/scripts/js/pmd-reRender.min.js"></script>
