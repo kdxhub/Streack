@@ -4,6 +4,10 @@ description: "见证每一次变化"
 ---
 <small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="./">←返回</a></small><br>
 
+### 25w11a
+
+* 更新文档细节
+
 ### 25w10b
 > [i] 更新补偿：<br>
 > `/redeem coreprotect-003010`<br>
