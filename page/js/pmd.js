@@ -83,7 +83,7 @@ const conf = {
     /*在标题的最后添加一个按钮以复制链接指向这个标题*/
     header_link: true,
     /*在页面底端增加文章脚注，为空不额外添加*/
-    footer: ``,
+    footer: `Copyright © 2025, Streack & kdxiaoyi.<br>此站点与Mojang Studio、Microsoft或网易Netease没有任何关联。`,
     /*检查引用部分高级语法，详见文档*/
     quotepro: [true,`#1A73E7`,`#FBC116`,`#E23B2E`,`#30C496`],
   },
