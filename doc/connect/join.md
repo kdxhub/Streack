@@ -21,7 +21,7 @@ streack.kdx233.eu.org
 ```
 
 ## 基岩版地址
-Geyser强力驱动的跨服体验，支持Bedrock 1.20.40~1.20.51全版本。
+Geyser强力驱动的跨服体验，支持Bedrock 1.21.40~1.21.70全版本。
 ```address
 Java版地址的基础上，端口为25882
 ```
