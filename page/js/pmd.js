@@ -58,6 +58,10 @@ const conf = {
       src: `http://kdxiaoyi.top/Streack/assets/img/cover.png`,
       /*左侧边栏·第1格·背景图片描述*/
       alt: `栈流 Streack`,
+      /*左侧边栏·第1格·描述文案背景，依次亮色透明度、暗色透明度、亮色模糊度、暗色模糊度*/
+      background: [0.8, 0.82, -1, -1],
+      /*左侧边栏·第1格·图片标题（悬浮提示内容）*/
+      title: "栈流Streack题图",
     },
     solt_2: {
       /*左侧边栏·第2格内容*/
