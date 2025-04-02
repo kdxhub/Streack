@@ -4,6 +4,11 @@ description: "见证每一次变化"
 ---
 <small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="./">←返回</a></small><br>
 
+### 25w14c
+
+* 实装*粘液科技*玩法
+* 实装*称号系统*
+
 ### 25w14b
 
 * 更新*维护模式*表现
