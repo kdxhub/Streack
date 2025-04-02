@@ -4,6 +4,11 @@ description: "见证每一次变化"
 ---
 <small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="./">←返回</a></small><br>
 
+### 25w14b
+
+* 更新*维护模式*表现
+* 此类小更新不再以*群待办*形式同步到群内
+
 ### 25w14a
 
 * 更新*栈流巡礼*机制
