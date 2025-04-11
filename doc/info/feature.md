@@ -3,7 +3,7 @@ title: "服务器支持特性一览"
 description: "MOD与协议支持"
 ---
 <small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="/Streack/doc">←返回</a> |
- 创建：2025-01-20 | 最后更新：2025-03-05</small><br>
+ 创建：2025-01-20 | 最后更新：2025-04-11</small><br>
 
 ## 连接与安全
 
@@ -73,6 +73,12 @@ description: "MOD与协议支持"
 * 可能持有不死图腾/烟花火箭等高级装备
 * **苦力怕默认生成闪电变体版本**
 * **僵尸犹猪兽会将附近地形转变为下界风格**
+
+### 粘液科技
+
+服务器已安装粘液科技（Slimefun），并由多个拓展包提供多元体验。
+
+[安装粘液科技可选资源包](./slimefun)
 
 ## 其它
 ### Streack Console
