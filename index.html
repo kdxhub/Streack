@@ -20,7 +20,7 @@
       display: none;
     }
   </style>
-  <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober.min.js"></script>
+  <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script>
   <link rel="stylesheet" href="https://rs.kdxiaoyi.top/res/css/font.css" />
   <link rel="stylesheet" href="https://rs.kdxiaoyi.top/res/css/sober-theme-turquoise.css" />
   <link rel="stylesheet" href="./page/css/index.css" />
@@ -30,12 +30,40 @@
     <div id="no_script"><h1>您似乎没有启用JavaScript，而这是此网站正常运行所必须的。<br>此外，该页面不支持过老的浏览器内核。</h1></div>
     <div id="main" class="main">
       <div class="slot" slot="true" slot_id="0">
-        <h1>栈流Streack</h1>
-        <h3>#类原版 #公益 #生存服 #低限制 #高版本 #生电友好</h3>
+        <h1>栈流<span style="color:var(--s-color-primary);">Streack</span></h1>
+        <h3 style="color:var(--s-color-secondary);">#类原版 #公益 #生存服 #低限制 #高版本 #生电友好</h3>
+        <p style="color:var(--s-color-outline);">↑上滑以继续</p>
       </div>
-      <div class="slot" slot="true" slot_id="1"></div>
-      <div class="slot" slot="true" slot_id="2"></div>
-      <div class="slot" slot="true" slot_id="3"></div>
+      <div class="slot" slot="true" slot_id="1">
+        <h1>Under construction ...</h1>
+        <p>新版首页正在准备中，但这并不妨碍您即刻加入我们！</p>
+      </div>
+    </div>
+    <s-dialog id="go-play">
+      <div slot="headline">加入<span style="color:var(--s-color-primary);">栈流Streack</span></div>
+      <div class="dialog">
+        <p>欢迎，您可以使用<b>Java版1.10～1.21.4</b>或<b>基岩版1.21.40～1.21.70</b>加入服务器。
+          <br>以下是我们的IP地址，您可以点击复制。
+        </p>
+        <s-chip onclick="CopyText('streack.kdxiaoyi.top');" type="outlined" clickable="true" style="width:100%">
+          <s-icon slot="start"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M440-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h160v80H280q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h320v80H320Zm200 160v-80h160q50 0 85-35t35-85q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H520Z"></path></svg></s-icon>
+          streack.kdxiaoyi.top
+        </s-chip><br>
+        <s-chip onclick="CopyText('streack.kdx233.eu.org');" type="outlined" clickable="true" style="width:100%">
+          <s-icon slot="start"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M440-280H280q-83 0-141.5-58.5T80-480q0-83 58.5-141.5T280-680h160v80H280q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h320v80H320Zm200 160v-80h160q50 0 85-35t35-85q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 83-58.5 141.5T680-280H520Z"></path></svg></s-icon>
+          streack.kdx233.eu.org
+        </s-chip>
+        <p>端口号：<b style="user-select:text;">25882</b>。</p>
+        <p>您还可以：<a target="_blank" href="minecraft://?addExternalServer=栈流Streack|streack.kdxiaoyi.top:25882">现在打开基岩版</a>、<a target="_blank" href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=nJmppz-vffJ13O78E4yvbgrrp1_yPhzm&authKey=57EdgvRfwd4Jg1up1b2tYJlabJpm6VV1mDoscaIYgA2R9oGtDvBfOHCseG6BXqQG&noverify=0&group_code=939658305">加入QQ群</a>或<a href="./doc/">查阅我们的文档。</a></p>
+      </div>
+    </s-dialog>
+    <div id="floating">
+      <s-tooltip>
+        <s-fab id="go-play-trigger" onclick="document.getElementById('go-play').showed='true'" slot="trigger">
+          <s-icon><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M160-240q-33 0-56.5-23.5T80-320v-320q0-33 23.5-56.5T160-720h640q33 0 56.5 23.5T880-640v320q0 33-23.5 56.5T800-240H160Zm0-80h640v-320H160v320Zm120-40h80v-80h80v-80h-80v-80h-80v80h-80v80h80v80Zm300 0q25 0 42.5-17.5T640-420q0-25-17.5-42.5T580-480q-25 0-42.5 17.5T520-420q0 25 17.5 42.5T580-360Zm120-120q25 0 42.5-17.5T760-540q0-25-17.5-42.5T700-600q-25 0-42.5 17.5T640-540q0 25 17.5 42.5T700-480ZM160-320v-320 320Z"></path></svg></s-icon>
+        </s-fab>
+        开始游玩
+      </s-tooltip>
     </div>
   </s-page>
   <script src="./page/js/index.js"></script>

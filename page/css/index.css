@@ -3,7 +3,7 @@ s-page {
   background-color: rgba(222, 222, 222, 0);
   backdrop-filter: blur(100px);
 }
-s-page[dark] {
+s-page[theme="dark"] {
   background-color: rgba(22, 22, 22, 0.5);
   backdrop-filter: blur(100px);
 }
@@ -34,21 +34,77 @@ body {
   background-repeat: no-repeat;
 }
 
+/*统一一下链接样式*/
+a {
+  text-decoration: underline dotted;
+}
+a:hover {
+  text-decoration: underline;
+}
+a s-icon {
+  width: 1em;
+  height: 1em;
+  transform: translateY(-0.05em) translateX(-0.05em);
+}
+
+/*悬浮按钮*/
+#floating {
+  position: fixed;
+  right: 5vw;
+  bottom: 5rem;
+}
+#floating s-fab {
+  background-color: transparent;
+  backdrop-filter: blur(200px);
+}
+
 /*滚动栏*/
+s-page {
+  height: 100vh;
+}
 .main {
-  display: flex;
-  flex-direction: column;
   width: 100vw;
-  height: auto;
+  height: 100vh;
   background: transparent;
+  overflow-x: scroll;
+  scrollbar-width: none;
 }
 .slot {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 90%;
   height: 100vh;
   background: transparent;
+  padding: 0 5% 0 5%;
+}
+
+/*弹窗样式表*/
+s-dialog div.dialog {
+  padding: 0 7% 0.3rem 7%;
+  user-select: none;
 }
 
 /*第一栏-标题*/
-div[slot_id="0"] h1 {}
+div[slot_id="0"] h1,h3 {
+  margin: auto;
+  margin-top: 0.67rem;
+  margin-bottom: 0.67em;
+}
+div[slot_id="0"] h1 {
+  margin-top: 45%;
+  font-size: 4.75rem;
+  font-weight: 650;
+  font-family: "MiSans Normal", "MiSans L3" !important;
+}
+div[slot_id="0"] h3 {
+  font-size: 2rem;
+  font-weight: 550;
+  font-family: "MiSans Normal", "MiSans L3" !important;
+}
+div[slot_id="0"] p {
+  font-size: 1.4rem;
+  font-weight: 450;
+  margin: auto;
+  margin-top: auto;
+  margin-bottom: 5rem;
+}

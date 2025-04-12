@@ -3,8 +3,23 @@ pageElements = {
   root: document.getElementById("page"),
   no_script: document.getElementById("no_script"),
   main: {
+    _: {
+      CurrentSlot: 0,
+      scrollTimeout: 0,
+      onScroll: false,
+      totalSlots: 0,
+      startY: 0,
+      scrollIntervalID: -1,
+    },
     root: document.getElementById("main"),
-    slot: [],
+    slot: document.querySelectorAll("div[slot='true']"),
+  },
+  startPlay: {
+    root: document.getElementById("go-play"),
+  },
+  floatBtn: {
+    root: document.getElementById("floating"),
+    startPlay: document.getElementById("go-play-trigger"),
   },
 };
 pageElements.main.slot = document.querySelectorAll("div[slot='true']");
@@ -24,7 +39,7 @@ function openURL(URI, IsInPresentWindow) {
 };
 function msg(Message, ConfirmBtnText, isWarning, duration, onclick, align, icon) {
   let infoJSON = {
-    root: pmdElements.pageRoot,
+    root: pageElements.root,
     text: Message,
     type: "basic",
     action: {},
@@ -38,9 +53,27 @@ function msg(Message, ConfirmBtnText, isWarning, duration, onclick, align, icon)
   customElements.get("s-snackbar").builder(infoJSON);
   return infoJSON;
 };
+function CopyText(text) {
+  if (!navigator.clipboard) {
+    msg("未能复制文本，因为方法不支持", "好", true);
+    return false;
+  };
+  navigator.clipboard.writeText(text.toString()).then(
+    function () {
+      msg(`✓ 已复制文本`, `好`);
+      return true;
+    },
+    function () {
+      msg("未能复制文本，因为拒绝访问剪贴板", "好", true);
+      console.error(err);
+      return false;
+    },
+  );
+  
+};
 /*引入pmd里的存储api*/const pmdStorage={Cookies:{set:function(e,t,o,n){const s=`${encodeURIComponent(e)}=${encodeURIComponent(t)}`;if(o){const e=new Date;e.setTime(e.getTime()+1e3*o),document.cookie=`${s}; expires=${e.toUTCString()}; path=${n}`}else document.cookie=`${s}; path=${n}`},get:function(e){const t=document.cookie.split("; ");for(const o of t){const[t,n]=o.split("=",2);if(decodeURIComponent(t)===e)return decodeURIComponent(n)}return null},remove:function(e){this.set(e,"",{expires:-1})},getAll:function(){const e=document.cookie.split("; "),t={};for(const o of e){const[e,n]=o.split("=",2);t[decodeURIComponent(e)]=decodeURIComponent(n)}return t},reset_dangerous:function(){const e=this.getAll();for(const t in e)this.remove(t)}},Local:{set:function(e,t){localStorage.setItem(e,JSON.stringify(t))},get:function(e){const t=localStorage.getItem(e);try{return JSON.parse(t)}catch(e){return t}},remove:function(e){localStorage.removeItem(e)},getAll:function(){const e={};for(let t=0;t<localStorage.length;t++){const o=localStorage.key(t);e[o]=this.get(o)}return e},reset_dangerous:function(){localStorage.clear()}},Session:{set:function(e,t){sessionStorage.setItem(e,JSON.stringify(t))},get:function(e){const t=sessionStorage.getItem(e);try{return JSON.parse(t)}catch(e){return t}},remove:function(e){sessionStorage.removeItem(e)},getAll:function(){const e={};for(let t=0;t<sessionStorage.length;t++){const o=sessionStorage.key(t);e[o]=this.get(o)}return e},reset_dangerous:function(){sessionStorage.clear()}}};
 
-/**TODO 首页施工自动跳转文档 */openURL("./doc",true)
+// /**TODO 首页施工自动跳转文档 */openURL("./doc",true)
 
 //safari user-scalable=no
 document.addEventListener('gesturestart', (event) => event.preventDefault())
@@ -56,10 +89,70 @@ if (!!pmdStorage.Cookies.get("pmd-prefer_color_theme")) {
   if (pmdStorage.Cookies.get("pmd-prefer_color_theme") == "light") {ChangeColorTheme("light")};
 };
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  if ((pmdStorage.Cookies.get("pmd-prefer_color_theme") == "dark" || pmdStorage.Cookies.get("pmd-prefer_color_theme") == "light")) { return; };
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     ChangeColorTheme("dark");
   } else {
     ChangeColorTheme("light");
+  };
+});
+if (!!(pmdStorage.Cookies.get("pmd-prefer_color_theme") == "dark" || pmdStorage.Cookies.get("pmd-prefer_color_theme") == "light")) {
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    ChangeColorTheme("dark");
+  } else {
+    ChangeColorTheme("light");
+  };
+};
+
+//抽屉滚动动态支持
+pageElements.main._.totalSlots = pageElements.main.slot.length;
+function handleScroll(e) {
+  e.preventDefault();
+  if (/*若有正在播放的动画则不响应事件*/pageElements.main._.onScroll) {return;};
+  let delta;
+  if (e.type === 'wheel') {
+    delta = e.deltaY;
+  } else if (e.type === 'touchmove') {
+    delta = pageElements.main._.startY - e.touches[0].clientY;
+  };
+  if (delta > 5) {/*向下*/
+    if (pageElements.main._.CurrentSlot < pageElements.main._.totalSlots - 1) {
+      pageElements.main._.CurrentSlot++;
+      scrollToSlot(pageElements.main._.CurrentSlot);
+    };
+  } else if (delta < -5) {/*向上*/
+    if (pageElements.main._.CurrentSlot > 0) {
+      pageElements.main._.CurrentSlot--;
+      scrollToSlot(pageElements.main._.CurrentSlot);
+    };
+  };
+  pageElements.main._.onScroll = true;
+  pageElements.main._.scrollTimeout = setTimeout(() => {
+    pageElements.main._.onScroll = false;
+  }, /*在800毫秒内不允许再次触发事件*/800);
+};
+function scrollToSlot(slotIndex) {
+  let slot = pageElements.main.slot[slotIndex];
+  if (!!slot) {
+    pageElements.main.root.scrollTo({
+      top: slot.offsetTop,
+      behavior: 'smooth',
+    });
+    pageElements.main._.CurrentSlot = slotIndex;
+    window.location.hash = slotIndex;
+  };
+};
+pageElements.main.root.addEventListener('wheel', handleScroll, { passive: false });
+pageElements.main.root.addEventListener('touchstart', (e) => {
+  pageElements.main._.startY = e.touches[0].clientY;
+}, { passive: true });
+pageElements.main.root.addEventListener('touchmove', handleScroll, { passive: false });
+
+//当hash变更时也要滚动
+window.addEventListener('hashchange', () => {
+  let slotIndex = parseInt(window.location.hash.replace('#', ''));
+  if (!isNaN(slotIndex) && slotIndex >= 0 && slotIndex < pageElements.main._.totalSlots) {
+    scrollToSlot(slotIndex);
   };
 });
 
