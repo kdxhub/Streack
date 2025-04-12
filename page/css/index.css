@@ -1,3 +1,6 @@
+.unselectable {user-select:text;}
+.selectable {user-select:none;}
+
 /*页面背景*/
 s-page {
   background-color: rgba(222, 222, 222, 0);
@@ -91,12 +94,13 @@ div[slot_id="0"] h1,h3 {
   margin-bottom: 0.67em;
 }
 div[slot_id="0"] h1 {
-  margin-top: 45%;
+  margin-top: auto;
   font-size: 4.75rem;
   font-weight: 650;
   font-family: "MiSans Normal", "MiSans L3" !important;
 }
 div[slot_id="0"] h3 {
+  margin-bottom: auto;
   font-size: 2rem;
   font-weight: 550;
   font-family: "MiSans Normal", "MiSans L3" !important;
