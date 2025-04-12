@@ -1,6 +1,6 @@
 ---
 title: "栈流Streack隐私政策"
-description: "约等于玩家守则？"
+description: " "
 ---
 <small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><br><small><a href="/Streack/doc">←返回</a></small><br>
 

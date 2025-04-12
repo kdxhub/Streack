@@ -4,6 +4,24 @@ description: "见证每一次变化"
 ---
 <small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="./">←返回</a></small><br>
 
+## 未来计划
+
+> [i] 以下内容不一定会实装。<br>若您有其它建议、BUG反馈、申诉需求等，请前往[Github฿](https://github.com/kdxhub/Streack/issues/new)或[Gitee฿](https://gitee.com/kdxiaoyi/Streack/issues/new)发起Issue。
+
+### 已知问题
+
+* 限时活动「雨纷纷」的兑换商人无法访问，该问题将在后续版本更新修复。
+
+## 历史日志
+
+### 25w15a
+
+* 新增对[*Slimefun Resourcepack*฿](https://modrinth.com/resourcepack/slimefun-resourcepack)和[*Slimefun Essentials*฿](https://modrinth.com/mod/slimefun-essentials)的支持
+
+### 25w14d
+
+* 将WorldEdit更换为FastAsyncWorldEdit以提升性能
+
 ### 25w14c
 
 * 实装*粘液科技*玩法

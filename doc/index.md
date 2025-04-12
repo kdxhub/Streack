@@ -12,6 +12,7 @@ description: "致力于解决您所想知道的一切"
 
 ## 游玩教程
 * [无法连接到服务器的一般解决方案](./connect/solution)
+* [优化粘液科技体验](./info/slimefun)
 
 ## 账户安全
 * [将Bedrock账户绑定至Java版账户](./safe/linkaccount)
