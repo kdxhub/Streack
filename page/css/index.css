@@ -1,0 +1,54 @@
+/*页面背景*/
+s-page {
+  background-color: rgba(222, 222, 222, 0);
+  backdrop-filter: blur(100px);
+}
+s-page[dark] {
+  background-color: rgba(22, 22, 22, 0.5);
+  backdrop-filter: blur(100px);
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: 
+    radial-gradient(closest-side, rgba(226, 126, 198, 1), rgba(226, 126, 198, 0)),
+    radial-gradient(closest-side, rgba(195, 166, 202, 1), rgba(195, 166, 202, 0)),
+    radial-gradient(closest-side, rgba(145, 226, 141, 1), rgba(145, 226, 141, 0)),
+    radial-gradient(closest-side, rgba(145, 208, 212, 1), rgba(145, 208, 212, 0)),
+    radial-gradient(closest-side, rgba(225, 179, 129, 1), rgba(225, 179, 129, 0)),
+    radial-gradient(closest-side, rgba(118, 160, 254, 1), rgba(118, 160, 254, 0));
+  background-size: 
+    130vmax 130vmax,
+    80vmax 80vmax,
+    90vmax 90vmax,
+    110vmax 110vmax,
+    110vmax 110vmax,
+    90vmax 90vmax;
+  background-position: 
+    -100vmax -80vmax,
+    60vmax -30vmax,
+    10vmax 10vmax,
+    -30vmax -10vmax,
+    -30vmax 20vmax,
+    50vmax 50vmax;
+  background-repeat: no-repeat;
+}
+
+/*滚动栏*/
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: auto;
+  background: transparent;
+}
+.slot {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+}
+
+/*第一栏-标题*/
+div[slot_id="0"] h1 {}
