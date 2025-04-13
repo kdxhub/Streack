@@ -5,7 +5,7 @@
 ·Page-markdown-reRender
 pmd-reRender, kdxiaoyi.
 https://gitee.com/kdxiaoyi/Pages-md-reRender/
-Licensed as AGPL-3.0, 取得原作者授权协议豁免.
+Licensed as MIT
 
 ---
 另有一些信息无法找到出处和作者信息，在此无法列出并表示歉意。如果您看到了由您创作的信息但未在此处列出，请联系我们。

@@ -1,5 +1,5 @@
-.unselectable {user-select:text;}
-.selectable {user-select:none;}
+.unselectable,#unselectable {user-select:none;}
+.selectable,#selectable {user-select:text;}
 
 /*页面背景*/
 s-page {
@@ -88,7 +88,7 @@ s-dialog div.dialog {
 }
 
 /*第一栏-标题*/
-div[slot_id="0"] h1,h3 {
+div[slot_id="0"] h1, div[slot_id="0"] h3 {
   margin: auto;
   margin-top: 0.67rem;
   margin-bottom: 0.67em;
@@ -103,6 +103,9 @@ div[slot_id="0"] h3 {
   margin-bottom: auto;
   font-size: 2rem;
   font-weight: 550;
+  font-family: "MiSans Normal", "MiSans L3" !important;
+}
+div[slot_id="0"] span {
   font-family: "MiSans Normal", "MiSans L3" !important;
 }
 div[slot_id="0"] p {
