@@ -6,7 +6,7 @@ s-page {
   background-color: rgba(222, 222, 222, 0);
   backdrop-filter: blur(100px);
 }
-s-page[theme="dark"] {
+s-page[dark] {
   background-color: rgba(22, 22, 22, 0.5);
   backdrop-filter: blur(100px);
 }
