@@ -13,11 +13,16 @@ description: "致力于解决您所想知道的一切"
 ## 游玩教程
 * [无法连接到服务器的一般解决方案](./connect/solution)
 * [优化粘液科技体验](./info/slimefun)
-
-## 账户安全
 * [将Bedrock账户绑定至Java版账户](./safe/linkaccount)
 
+## 活动一览
+* [「雨纷纷」限时掉落物倍增](./event/20250402)
+* [「栈流回」回归连签奖励](./event/20250401b)
+* [「栈流巡礼」签到奖励](./event/20250401a)
+* [*历史活动*](./event)
+
 ## 其它
+* [调研结果公示](./survey/)
 * [栈流Streack隐私政策](./policy/privacy)
 * [栈流Streack用户协议](./policy/user)
 

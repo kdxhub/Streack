@@ -1,6 +1,6 @@
 ---
 title: "服务器支持特性一览"
-description: "MOD与协议支持"
+description: "拓展与协议支持"
 ---
 <small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="/Streack/doc">←返回</a> |
  创建：2025-01-20 | 最后更新：2025-04-11</small><br>
