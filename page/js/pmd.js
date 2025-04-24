@@ -45,7 +45,7 @@ const conf = {
     error: "https://rs.kdxiaoyi.top/res/images/load_err.svg",
     background: {
       /*背景图片（自动应用不透明遮罩）*/
-      src: "http://kdxiaoyi.top/Streack/assets/img/cover.png",
+      src: "https://s21.ax1x.com/2025/04/22/pEIZ9AA.png",
       /*背景图片遮罩透明度，分别为亮色和暗色遮罩，范围0~1*/
       alpha: [0.8, 0.82],
       /*背景图片模糊度，为-1禁用*/
