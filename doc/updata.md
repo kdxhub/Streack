@@ -10,9 +10,14 @@ description: "见证每一次变化"
 
 ### 已知问题
 
-* 服务器资源包与[Polytone฿](https://www.mcmod.cn/class/14820.html)和部分客户端存在潜在冲突，该问题会在后续更新中尽量修复。
+* 服务器资源包与[Polytone฿](https://www.mcmod.cn/class/14820.html)和[Xplus生电整合客户端฿](https://www.mcmod.cn/modpack/467.html)存在潜在冲突，该问题会在后续更新中尽量修复。
+* 粘液科技拓展包*下界乌托邦 Netheopoiesis*表现异常，该问题会在后续版本中修复。
 
 ## 历史日志
+
+### 25w18a
+
+* 移除玩家传送后获得的5秒无敌时间，以解决无敌时间被覆盖为更短时间的问题
 
 ### 25w17b
 
