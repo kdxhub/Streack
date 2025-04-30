@@ -1,0 +1,88 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:prismarine_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": "{knize:shard}"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": 64
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "一个神秘的碎片，似乎蕴含着可以影响世界的力量。",
+                  "color": "white",
+                  "italic": false
+                },
+                {
+                  "text": "击败特定精英怪时概率掉落\n",
+                  "color": "gray",
+                  "italic": true
+                },
+                {
+                  "text": "当食用后：",
+                  "color": "gray",
+                  "italic": false
+                },
+                {
+                  "text": "降低一定精英怪等级",
+                  "color": "green",
+                  "italic": false
+                }
+              ],
+              "mode": "replace_all"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "custom_name",
+              "name": {
+                "text": "等级碎片",
+                "color": "aqua",
+                "italic": false
+              }
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:enchantment_glint_override": true,
+                "minecraft:consumable": {
+                  "consume_seconds": 8,
+                  "animation": "eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:nausea",
+                          "amplifier": 1,
+                          "duration": 14
+                        }
+                      ],
+                      "probability": 1
+                    }
+                  ]
+                },
+                "minecraft:food": {
+                  "nutrition": 0,
+                  "saturation": 0,
+                  "can_always_eat": true
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

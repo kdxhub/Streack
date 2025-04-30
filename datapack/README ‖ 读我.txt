@@ -56,6 +56,10 @@
 允许创建用户协议通知，支持通过控制台/op推送新版本更新通知。
 注意协议链接需要自行修改`./data/kdx.policynotice/function/links.mcfunction`中的内容。
 
+## Other
+
+本数据包包含其它硬编码数据包的汉化文件，但这些文件无法单独工作，需要搭配目标数据包才可工作。
+需要将此数据包的优先级设为最高。
 
 ---
 Copyright (C) 2025, kdxiaoyi.
