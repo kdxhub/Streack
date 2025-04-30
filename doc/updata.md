@@ -10,10 +10,17 @@ description: "见证每一次变化"
 
 ### 已知问题
 
-* 服务器资源包与[Polytone฿](https://www.mcmod.cn/class/14820.html)和[Xplus生电整合客户端฿](https://www.mcmod.cn/modpack/467.html)存在潜在冲突，该问题会在后续更新中尽量修复。
 * 粘液科技拓展包*下界乌托邦 Netheopoiesis*表现异常，该问题会在后续版本中修复。
 
 ## 历史日志
+
+### 25w18b
+
+* Streack Service Datapack 更新
+  * 新增针对Hostile Mobs的硬编码文本的翻译调整包
+* 资源包更新
+  * 新增部分Vanilla Refresh汉化支持；目前汉化进度约30.57%
+  * 修改资源包的MCMETA文件以修复与[Polytone฿](https://www.mcmod.cn/class/14820.html)和[Xplus生电整合客户端฿](https://www.mcmod.cn/modpack/467.html)存在潜在冲突的问题
 
 ### 25w18a
 
