@@ -25,8 +25,13 @@
                   "italic": false
                 },
                 {
-                  "text": "击败特定精英怪时概率掉落\n",
+                  "text": "击败特定精英怪时概率掉落",
                   "color": "gray",
+                  "italic": true
+                },
+                {
+                  "text": "§a",
+                  "color": "white",
                   "italic": true
                 },
                 {
@@ -36,7 +41,7 @@
                 },
                 {
                   "text": "降低一定精英怪等级",
-                  "color": "green",
+                  "color": "dark_green",
                   "italic": false
                 }
               ],
