@@ -14,6 +14,10 @@ description: "见证每一次变化"
 
 ## 历史日志
 
+### 25w18c
+
+* 修复资源包的MCMETA文件未转义特殊字符导致JSON解析错误的问题
+
 ### 25w18b
 
 * Streack Service Datapack 更新
