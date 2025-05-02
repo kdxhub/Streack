@@ -14,6 +14,10 @@ description: "见证每一次变化"
 
 ## 历史日志
 
+### 25w18e
+
+* 新卡池[「熵流·赠」](http://kdxiaoyi.top/Streack/doc/info/entroprix/#熵流·赠)
+
 ### 25w18d
 
 * 实装[「熵流」](https://kdxiaoyi.top/Streack/doc/info/entroprix)
