@@ -2,7 +2,7 @@
 title: "优化粘液科技体验"
 description: "需要修改的Java版"
 ---
-<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="../">←返回</a> |
+<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="../../">←返回</a> |
  创建：2025-04-11 | 最后更新：2025-04-11</small><br>
 
 ## 使用资源包

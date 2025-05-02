@@ -2,7 +2,7 @@
 title: "用户调研结果公示"
 description: "Streack User Research"
 ---
-<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="../">←返回</a> |
+<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="../../">←返回</a> |
 </small><br>
 
 > [@] 我们承诺以下公开信息不含被调研用户的隐私信息；其*隐私信息收集知情与同意权*已在提交调研问卷时征得授权。
