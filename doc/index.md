@@ -23,7 +23,7 @@ description: "致力于解决您所想知道的一切"
 * [*历史活动*](./event)
 
 ## 其它
-* [「熵流」概率公示](./entroprix)
+* [「熵流」概率公示](./info/entroprix)
 * [调研结果公示](./survey/)
 * [封禁公示](./info/ban)
 * [栈流Streack隐私政策](./policy/privacy)
