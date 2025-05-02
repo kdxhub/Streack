@@ -51,6 +51,7 @@ body {
 /*统一一下链接样式*/
 a {
   text-decoration: underline dotted;
+  color: #1e6bb8;
 }
 a:hover {
   text-decoration: underline;
