@@ -140,6 +140,9 @@ function scrollToSlot(slotIndex) {
     });
     pageElements.main._.CurrentSlot = slotIndex;
     window.location.hash = slotIndex;
+  } else {
+    msg("不存在的分栏……", "好", true);
+    console.error(`不存在的分栏${slotIndex}`);
   };
 };
 pageElements.main.root.addEventListener('wheel', handleScroll, { passive: false });
