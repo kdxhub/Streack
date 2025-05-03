@@ -46,7 +46,7 @@ description: "Entroprix Probability Publicity"
 |20.2%|[栈钱×31]|-|
 |20%|无|-|
 
-* 每玩家最多可抽31次
+* 每玩家最多可抽41次
 
 # 注释
 \* 我们保留上述文本的最终解释权利。<br>
