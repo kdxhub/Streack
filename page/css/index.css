@@ -106,21 +106,16 @@ s-dialog div.dialog {
   user-select: none;
 }
 
-/*第一栏-标题*/
+/*第一栏*/
 div[slot_id="0"] h1, div[slot_id="0"] h3 {
   margin: auto;
   margin-top: 0.67rem;
-  margin-bottom: 0.67em;
+  margin-bottom: 0.2em;
 }
 div[slot_id="0"] h1 {
   margin-top: auto;
   font-size: 4.75rem;
   font-weight: 650;
-}
-div[slot_id="0"] h3 {
-  margin-bottom: auto;
-  font-size: 2rem;
-  font-weight: 550;
 }
 div[slot_id="0"] p {
   font-size: 1.4rem;
@@ -128,4 +123,8 @@ div[slot_id="0"] p {
   margin: auto;
   margin-top: auto;
   margin-bottom: 5rem;
+}
+div[slot_id="0"] s-chip {
+  font-size: 1.2rem;
+  margin-top: 0.1rem;
 }
