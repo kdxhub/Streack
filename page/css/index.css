@@ -128,3 +128,14 @@ div[slot_id="0"] s-chip {
   font-size: 1.2rem;
   margin-top: 0.1rem;
 }
+div[slot_id="0"] .chip {
+  margin: auto;
+  margin-top: .2em;
+  margin-bottom: .8rem;
+  font-size: 1rem;
+}
+div[slot_id="0"] #btn {
+  margin: auto;
+  margin-top: 0.8rem;
+  margin-bottom: .2em;
+}

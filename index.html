@@ -18,7 +18,7 @@
     <div id="main" class="main">
       <div class="slot unselectable" slot="true" slot_id="0">
         <h1><span class="WenQuanWeiMiHei">栈流</span><span class="MiSans" style="color:var(--s-color-primary);">Streack</span></h1>
-        <p style="margin-top: 0;font-size: 1rem;">
+        <div class="chip unselectable">
           <s-chip class="MiSans unselectable" checked="true" type="outlined">
             <s-icon slot="start">
               <svg viewBox="0 -960 960 960">
@@ -59,7 +59,12 @@
             </s-icon>
             跨版本
           </s-chip>
-        </p>
+        </div>
+        <div id="btn">
+          <s-button onclick="document.getElementById('go-play').showed='true'"> 立即加入 </s-button>
+          <s-button type="elevated" onclick="openURL('http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=nJmppz-vffJ13O78E4yvbgrrp1_yPhzm&authKey=57EdgvRfwd4Jg1up1b2tYJlabJpm6VV1mDoscaIYgA2R9oGtDvBfOHCseG6BXqQG&noverify=0&group_code=939658305',false)"> 加入Q群 </s-button>
+          <s-button type="elevated" onclick="openURL('./doc/',false)"> 帮助文档 </s-button>
+        </div>
         <p style="color:var(--s-color-outline);cursor:pointer;" onclick="openURL('#1',true);">↑上滑以继续</p>
       </div>
       <div class="slot unselectable" slot="true" slot_id="1">
@@ -68,6 +73,12 @@
         <p>我们是成立于2024年12月25日的类纯净公益生存服务器，支持Java正版/Java离线/基岩版入服。<br>
             我们的服务器提供许多并不影响平衡的游戏玩法，并且将通过举办各类活动增强玩家游戏体验。<br>
             ※ 我们承诺，除“赞助列表”外服务器内所有物品、特权等能且仅能通过非赞助方法获取。</p>
+      </div>
+      <div class="slot unselectable" slot="true" slot_id="2">
+        <p></p>
+      </div>
+      <div class="slot unselectable" slot="true" slot_id="3">
+        <footer></footer>
       </div>
     </div>
     <s-dialog id="go-play">
