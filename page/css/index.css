@@ -12,6 +12,13 @@ html,body {
   display: none;
 }
 
+/*字体设置*/
+html body s-page * .WenQuanWeiMiHei {font-family: "WenQuanWeiMiHei" !important;}
+html body s-page * .DIN {font-family: "din" !important;}
+html body s-page * .MiSans {font-family: "MiSans Normal" !important;}
+html body s-page * .MiSansL3 {font-family: "MiSans L3" !important;}
+html body s-page * .SourceHanSerifCN {font-family: "SourceHanSerifCN" !important;}
+
 /*页面背景*/
 s-page {
   background-color: rgba(222, 222, 222, 0);
@@ -109,16 +116,11 @@ div[slot_id="0"] h1 {
   margin-top: auto;
   font-size: 4.75rem;
   font-weight: 650;
-  font-family: "MiSans Normal", "MiSans L3" !important;
 }
 div[slot_id="0"] h3 {
   margin-bottom: auto;
   font-size: 2rem;
   font-weight: 550;
-  font-family: "MiSans Normal", "MiSans L3" !important;
-}
-div[slot_id="0"] span {
-  font-family: "MiSans Normal", "MiSans L3" !important;
 }
 div[slot_id="0"] p {
   font-size: 1.4rem;
