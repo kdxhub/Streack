@@ -8,6 +8,10 @@ description: "见证每一次变化"
 
 > [i] 以下内容不一定会实装。<br>若您有其它建议、BUG反馈、申诉需求等，请前往[Github฿](https://github.com/kdxhub/Streack/issues/new)或[Gitee฿](https://gitee.com/kdxiaoyi/Streack/issues/new)发起Issue。
 
+### 即将到来
+
+* 在菜单中添加PlaceholderAPI支持以呈现更加丰富的菜单界面。
+
 ### 已知问题
 
 * 粘液科技拓展包*下界乌托邦 Netheopoiesis*表现异常，该问题会在后续版本中修复。
@@ -16,15 +20,17 @@ description: "见证每一次变化"
 
 ### 25w18e
 
-* 新卡池[「熵流·赠」](https://kdxiaoyi.top/Streack/doc/info/entroprix/#%E7%86%B5%E6%B5%81%E8%B5%A0)
+* 新增卡池[「熵流·赠」](https://kdxiaoyi.top/Streack/doc/info/entroprix/#%E7%86%B5%E6%B5%81%E8%B5%A0)
 
 ### 25w18d
 
-* 实装[「熵流」](https://kdxiaoyi.top/Streack/doc/info/entroprix)
+* 实装「熵流」系统，用以提供抽卡（*Gacha*）相关玩法支持
+  * [相关概率公示见于此处฿](https://kdxiaoyi.top/Streack/doc/info/entroprix)
 
 ### 25w18c
 
-* 修复资源包的MCMETA文件未转义特殊字符导致JSON解析错误的问题
+* 资源包更新
+  * 修复资源包的MCMETA文件未转义特殊字符导致JSON解析错误的问题
 
 ### 25w18b
 
@@ -70,19 +76,21 @@ description: "见证每一次变化"
 ### 25w15a
 
 * 新增对[*Slimefun Resourcepack*฿](https://modrinth.com/resourcepack/slimefun-resourcepack)和[*Slimefun Essentials*฿](https://modrinth.com/mod/slimefun-essentials)的支持
+  * 由于技术限制，**其它的**粘液科技资源包暂时无法提供支持：安装后可能无效。
 
 ### 25w14d
 
-* 将WorldEdit更换为FastAsyncWorldEdit以提升性能
+* 优化服务器内存占用
+* 将WorldEdit更换为FastAsyncWorldEdit以提升性能并降低卡顿
 
 ### 25w14c
 
 * 实装*粘液科技*玩法
-* 实装*称号系统*
+* 实装*称号系统*以提供相关奖励支持
 
 ### 25w14b
 
-* 更新*维护模式*表现
+* 更新*维护模式*表现与文案
 * 此类小更新不再以*群待办*形式同步到群内
 
 ### 25w14a
@@ -172,7 +180,7 @@ description: "见证每一次变化"
 ### 25w9a
 
 * 优化*正版验证*流程
-  * 修复无法启用*正版免密登录*的bug
+  * 修复无法启用*正版免密登录*的Bug
   * 优化交互体验
   * 不再允许使用`/premium`命令手动成为正版玩家
 * 添加`streack.*`权限以便区分玩家登录方式（基岩版/Java离线/Java正版/假人）
@@ -370,6 +378,8 @@ description: "见证每一次变化"
 ### beta1
 > [i] 更新补偿：限定钻石×5
 
-* 刚开服热乎着呢~
+* 完成由kdxSMP的重构
+  * 将服务器底层由Fabric更换为leaves以提供更丰富的功能支持
+  * 更换服务器基础功能实现
 
 <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/js/pmd.js"></script><script src="https://rs.kdxiaoyi.top/res/scripts/js/pmd-reRender.min.js"></script>
