@@ -11,16 +11,32 @@ description: "见证每一次变化"
 ### 即将到来
 
 * 在菜单中添加PlaceholderAPI支持以呈现更加丰富的菜单界面。
+* 游戏内账户绑定指南
 
 ### 已知问题
 
-* 粘液科技拓展包*下界乌托邦 Netheopoiesis*表现异常，该问题会在后续版本中修复。
+* 加群链接中的`&`字符被自动转义导致链接错误，该问题会在后续版本中修复
+* 粘液科技拓展包*下界乌托邦 Netheopoiesis*表现异常，该问题会在后续版本扩充粘液科技拓展时修复
+* 资源包
+  * 在基岩版客户端的「设置」选项卡中不会正确展示GeyserExtra设置菜单，该问题会在后续版本中修复
+* Streack Service Datapack
+  * 自定义配方`kdx.mrecipe:stonecutting/snow/ice_2`因最大堆叠数过大导致无法加载此配方，该问题会在后续版本中修复
 
 ## 历史日志
+
+### 25w19a
+
+* 现在已进行正版验证的玩家更名时会自动迁移玩家数据
+* 更新[*账户绑定系统*](./safe/linkaccount)
+  * 修复已绑定的基岩版账户无法连接至服务器的问题（问题发现者[@hzcyc_Crazy฿](https://namemc.com/profile/hzcyq_Crazy.1)）
+  * 现在未验证正版账户的账户也可进行绑定
+  * 不再支持GlobalLink，改为使用自建数据库
+* 缅怀因为调试上述系统而精分的Lighting_bug（*因为ta的账号分裂成了两个*）
 
 ### 25w18e
 
 * 新增卡池[「熵流·赠」](https://kdxiaoyi.top/Streack/doc/info/entroprix/#%E7%86%B5%E6%B5%81%E8%B5%A0)
+* 开抽~
 
 ### 25w18d
 
