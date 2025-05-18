@@ -2,7 +2,7 @@
 如有侵权请联系删除。
 ---
 
-·胜利结算屏幕引言翻译与出处标明（/assets/minecraft/texts/postcredits.txt）
+·胜利结算屏幕引言出处标明（/assets/minecraft/texts/postcredits.txt）
 胜利屏幕, 中文我的世界Wiki.
 https://zh.minecraft.wiki/w/胜利屏幕#引言
 
@@ -19,6 +19,10 @@ https://www.bilibili.com/video/BV1Dx4y1E7HZ/
 ·基岩版译名修正材料
 To bedrock, KAIYOHUGO.
 https://github.com/KAIYOHUGO/to-bedrock?tab=MIT-1-ov-file
+
+·部分基岩版资源包
+MCBE_RainbowPieUI2, MintCoolMC.
+https://github.com/MintCoolMC/MCBE_RainbowPieUI2
 
 ---
 另有一些信息无法找到出处和作者信息，在此无法列出并表示歉意。如果您看到了由您创作的信息但未在此处列出，请联系我们。
