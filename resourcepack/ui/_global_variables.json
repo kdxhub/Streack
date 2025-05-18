@@ -1,0 +1,10 @@
+{
+  // Streack
+  "$streack_example": false,
+  // 兼容性声明
+  "$is_zeqa": false, // Zeqa Network (服务器)
+  "$cubecraft_green": "string", // CubeCraft (服务器)
+  "$is_netease": false, // 网易版
+  "$streack_res": true // 栈流Streack (服务器)
+}
+
