@@ -24,12 +24,14 @@ description: "致力于解决您所想知道的一切"
 * [「正伴我行」验证正版享专属福利](./event/20250422)
 * [*历史活动*](./event)
 
-## 其它
+## 政策方针
 * [「熵流」概率公示](./info/entroprix)
 * [调研结果公示](./survey/)
 * [封禁公示](./info/ban)
 * [栈流Streack隐私政策](./policy/privacy)
 * [栈流Streack用户协议](./policy/user)
+
+## 新闻
 
 <div id="mdRender_config" data-sideship-hide="2"></div>
 <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/js/pmd.js"></script><script src="https://rs.kdxiaoyi.top/res/scripts/js/pmd-reRender.min.js"></script>
