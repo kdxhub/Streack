@@ -63,6 +63,9 @@ szip() {
     return 1
   fi
 }
+log() {
+  echo "$(date +"%Y-%m-%d  %H:%M:%S.%6N  [$Z]") ‖ $1">>./_streack-console.log
+}
 
 #定义命令集
 function help {
@@ -116,6 +119,7 @@ function mcs {
     echo -e "\033[0;31m\033[0m"
     echo -e "\033[0;31m$(date +"%Y-%m-%d  %H:%M:%S.%6N  [$Z]")\033[0m"
     echo -e "\033[0;31m[mcs]服务器已停止\033[0m"
+    log "服务器已停止"
     exit 0
   else
     echo -e "\033[0;31m\033[0m"
@@ -123,7 +127,7 @@ function mcs {
     echo -e "\033[0;31m[mcs]服务器停止，3秒后自动重启\033[0m"
     echo -e "\033[0;31m\033[0m"
     sleep 3
-    echo "$(date +"%Y-%m-%d  %H:%M:%S.%6N  [$Z]") ‖ 服务器已自动重启">>./_mcs_autoreboot.log
+    log "服务器已自动重启"
     mcs true
   fi
 }
