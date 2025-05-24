@@ -71,10 +71,16 @@ const conf = {
 首页</s-chip>
 <s-chip id="side_ship_1" onclick="openURL('/Streack/doc/connect/join',true)" clickable="true" class="sidebar_btn">
 <s-icon slot="start"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"></path></svg></s-icon>
-加入服务器</s-chip>
+加入我们</s-chip>
 <s-chip id="side_ship_2" onclick="openURL('/Streack/doc/',true)" clickable="true" class="sidebar_btn">
 <s-icon slot="start"><svg viewBox="0 -960 960 960"><path d="M80-720v-200h200v80H160v120H80Zm720 0v-120H680v-80h200v200h-80ZM80-40v-200h80v120h120v80H80Zm600 0v-80h120v-120h80v200H680ZM280-240h400v-480H280v480Zm0 80q-33 0-56.5-23.5T200-240v-480q0-33 23.5-56.5T280-800h400q33 0 56.5 23.5T760-720v480q0 33-23.5 56.5T680-160H280Zm80-400h240v-80H360v80Zm0 120h240v-80H360v80Zm0 120h240v-80H360v80Zm-80 80v-480 480Z"></path></svg></s-icon>
-文档</s-chip>`,
+文档目录</s-chip>
+<s-chip id="side_ship_3" onclick="openURL('/Streack/doc/news/',true)" clickable="true" class="sidebar_btn">
+<s-icon slot="start"><svg viewBox="0 -960 960 960"><path d="M160-120q-33 0-56.5-23.5T80-200v-640l67 67 66-67 67 67 67-67 66 67 67-67 67 67 66-67 67 67 67-67 66 67 67-67v640q0 33-23.5 56.5T800-120H160Zm0-80h280v-240H160v240Zm360 0h280v-80H520v80Zm0-160h280v-80H520v80ZM160-520h640v-120H160v120Z"></path></svg></s-icon>
+近期资讯</s-chip>
+<s-chip id="side_ship_4" onclick="openURL('/Streack/doc/event/',true)" clickable="true" class="sidebar_btn">
+<s-icon slot="start"><svg viewBox="0 -960 960 960"><path d="M580-240q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z"></path></svg></s-icon>
+活动一览</s-chip>`,
       /*左侧边栏·第2格内容中没有按文档编写请启用此项*/
       preventDefault: false,
     },
