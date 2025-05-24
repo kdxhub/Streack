@@ -7,7 +7,7 @@ description: "致力于解决您所想知道的一切"
 ![栈流Streack的宣传图片，含有栈流Streack的基本信息](https://kdxiaoyi.top/Streack/assets/img/referral_1.png "宣传图")
 
 ## 基本
-* [栈流Streack基本方针](./policy/rule)
+* [**Blog与公告**](./news/)
 * [如何加入服务器](./connect/join)
 * [更新日志](./updata)
 * [服务器特性](./info/feature)
@@ -17,7 +17,7 @@ description: "致力于解决您所想知道的一切"
 * [优化粘液科技体验](./info/slimefun)
 * [将Bedrock账户绑定至Java版账户](./safe/linkaccount)
 
-## 活动一览
+## 近期活动一览
 * [「熵流巡礼」签到奖励再加码](./event/20250502)
 * [「栈流回」回归连签奖励](./event/20250401b)
 * [「栈流巡礼」签到奖励](./event/20250401a)
@@ -25,13 +25,12 @@ description: "致力于解决您所想知道的一切"
 * [*历史活动*](./event)
 
 ## 政策方针
+* [栈流Streack基本方针](./policy/rule)
 * [「熵流」概率公示](./info/entroprix)
-* [调研结果公示](./survey/)
-* [封禁公示](./info/ban)
+* [历次调研结果公示](./survey/)
+* [封禁信息公示](./info/ban)
 * [栈流Streack隐私政策](./policy/privacy)
 * [栈流Streack用户协议](./policy/user)
-
-## 新闻
 
 <div id="mdRender_config" data-sideship-hide="2"></div>
 <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/js/pmd.js"></script><script src="https://rs.kdxiaoyi.top/res/scripts/js/pmd-reRender.min.js"></script>
