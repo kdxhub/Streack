@@ -2,7 +2,7 @@
 title: "文档目录"
 description: "致力于解决您所想知道的一切"
 ---
-<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><br><small><a href="/Streack/doc/">←返回</a></small><br>
+<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><br><small><a href="/Streack/">←返回</a></small><br>
 
 ![栈流Streack的宣传图片，含有栈流Streack的基本信息](https://kdxiaoyi.top/Streack/assets/img/referral_1.png "宣传图")
 
