@@ -62,7 +62,7 @@
         </div>
         <div id="btn">
           <s-button onclick="document.getElementById('go-play').showed='true'"> 立即加入 </s-button>
-          <s-button type="elevated" onclick="openURL('http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=nJmppz-vffJ13O78E4yvbgrrp1_yPhzm&authKey=57EdgvRfwd4Jg1up1b2tYJlabJpm6VV1mDoscaIYgA2R9oGtDvBfOHCseG6BXqQG&noverify=0&group_code=939658305',false)"> 加入Q群 </s-button>
+          <s-button type="elevated" onclick="openURL('#qqun',true)"> 加入Q群 </s-button>
           <s-button type="elevated" onclick="openURL('./doc/',false)"> 帮助文档 </s-button>
         </div>
         <p style="color:var(--s-color-outline);cursor:pointer;" onclick="openURL('#1',true);">↑上滑以继续</p>
@@ -101,7 +101,7 @@
           streack.kdx233.eu.org
         </s-chip>
         <p>端口号：<b class="selectable">25882</b>。</p>
-        <p>您还可以：<a target="_blank" href="minecraft://?addExternalServer=Streack|streack.kdxiaoyi.top:25882">现在打开基岩版</a>、<a target="_blank" href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=nJmppz-vffJ13O78E4yvbgrrp1_yPhzm&authKey=57EdgvRfwd4Jg1up1b2tYJlabJpm6VV1mDoscaIYgA2R9oGtDvBfOHCseG6BXqQG&noverify=0&group_code=939658305">加入QQ群</a>或<a href="./doc/">查阅我们的文档。</a></p>
+        <p>您还可以：<a target="_blank" href="minecraft://?addExternalServer=Streack|streack.kdxiaoyi.top:25882">现在打开基岩版</a>、<a target="_self" href="#qqun">加入QQ群</a>或<a href="./doc/">查阅我们的文档。</a></p>
       </div>
     </s-dialog>
     <div id="floating">
@@ -112,6 +112,15 @@
         开始游玩
       </s-tooltip>
     </div>
+    <s-bottom-sheet id="qun_message">
+      <div slot="text" class="unselectable">
+        <p>
+          <h2>欢迎加入我们。</h2>
+          <big>将在<span id="qun_message_timer">稍</span>后跳转加群链接。<br></big>
+          <small class="MiSans">若无法跳转，请检查是否安装最新版QQ，或手动搜索群号<b class="selectable MiSans">939658305</b>。</small>
+        </p>
+      </div>
+    </s-bottom-sheet>
   </s-page>
   <script src="./page/js/index.js"></script>
 </body>
