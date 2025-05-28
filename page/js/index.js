@@ -23,7 +23,7 @@ pageElements = {
   },
   qunMessage: {
     root: document.getElementById("qun_message"),
-    timer: document.getElementById("qun_message_timer"),
+    id: document.getElementById("qqunid"),
   },
 };
 pageElements.main.slot = document.querySelectorAll("div[slot='true']");
@@ -156,22 +156,11 @@ pageElements.main.root.addEventListener('touchstart', (e) => {
 pageElements.main.root.addEventListener('touchmove', handleScroll, { passive: false });
 
 //加群Hash识别与处理
-function qqunlink_setTimerText(text) {pageElements.qunMessage.timer.innerHTML=text;};
 function qqunlink() {
-  openURL("#qqun_done", true);
   pageElements.startPlay.root.showed = false;
   pageElements.qunMessage.root.showed = true;
-  setTimeout(() => {
-    if/*如果窗口已关闭那么不跳转*/ (pageElements.qunMessage.root.showed != true) {return;};
-    openURL("http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=nJmppz-vffJ13O78E4yvbgrrp1_yPhzm&authKey=57EdgvRfwd4Jg1up1b2tYJlabJpm6VV1mDoscaIYgA2R9oGtDvBfOHCseG6BXqQG&noverify=0&group_code=939658305", false);
-  }, 5000);
-  qqunlink_setTimerText("5秒");
-  setTimeout(() => {qqunlink_setTimerText("4秒");},1000);
-  setTimeout(() => {qqunlink_setTimerText("3秒");},2000);
-  setTimeout(() => {qqunlink_setTimerText("2秒");},3000);
-  setTimeout(() => {qqunlink_setTimerText("1秒");},4000);
-  setTimeout(() => {qqunlink_setTimerText("0秒");},5000);
-  setTimeout(() => {qqunlink_setTimerText("稍");},6000);
+  openURL(pageElements.qunMessage.id.href, false);
+  openURL("#qqun_done", true);
 };
 if/*加群hash在首次进入时识别*/ (window.location.hash.replace('#', '').toLowerCase() == "qqun") {qqunlink();};
 if/*加群Hash调试用*/ (window.location.hash.replace('#', '').toLowerCase() == "qqun_test") {  pageElements.qunMessage.root.showed = true;};
