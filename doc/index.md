@@ -8,14 +8,15 @@ description: "致力于解决您所想知道的一切"
 
 ## 基本
 * [资讯一览](./news/)
-* [如何加入服务器](./connect/join)
+* [如何加入服务器](./help/join)
 * [更新日志](./updata)
 * [服务器特性](./info/feature)
 
-## 游玩教程
-* [无法连接到服务器的一般解决方案](./connect/solution)
+## 教程
+* [无法连接到服务器的一般解决方案](./help/solution)
 * [优化粘液科技体验](./info/slimefun)
-* [将Bedrock账户绑定至Java版账户](./safe/linkaccount)
+* [将Bedrock账户绑定至Java版账户](./help/linkaccount)
+* [群智能体指南](./help/qbot)
 
 ## 近期活动一览
 * [「熵流巡礼」签到奖励再加码](./event/20250502)
