@@ -95,9 +95,10 @@ description: "QQBOT"
 ### `百科`
 
 * 参数：`<pagetitle> <id <pageid>> <search <str>> [-l <lang>]`
-* 别名：`~w`/`~wiki`
+* 别名：`~w`/`~wiki`/`[[<pqgetitle>]]`
 
-根据条件返回对应MediaWiki页面的基本信息和Infobox截图。
+根据条件返回对应MediaWiki页面的基本信息和Infobox截图。<br>
+可以使用`[[<pqgetitle>]]`快速触发，例如`[[akari:首页]]`
 
 * `<pagetitle>`指MediaWiki页面标题查询页面
 * `id <pageid>`指根据MediaWiki页面PID查询页面
@@ -137,12 +138,25 @@ description: "QQBOT"
 返回当前具有的花瓣数。<br>
 花瓣可以依靠签到和小游戏获得。
 
+> [i] 趣闻之小可的一朵花瓣等价一分钱。<br> ![小可开发者之一的@DoroWolf 提到一朵花瓣的价值为1分钱](https://s21.ax1x.com/2025/05/30/pV9Fawj.png "@多洛狼 评价「花瓣」")
+
 ### `小可`
 
-* 参数：`<Content>`
+* 参数：`<question> [--llm <model>]`
 * 别名：`~ai`
 
-AI问答，需要消耗花瓣。
+AI问答，可能需要消耗花瓣。<br>
+使用`--llm`参数可以指定大模型回答，可用模型如下：
+
+* `deepseek-chat`
+* `deepseek-r1-distill-qwen-7b`
+* `deepseek-reasoner`
+* `gpt-3.5-turbo`
+* `gpt-4o`
+* `gpt-4o-mini`
+* `gpt-o3-mini`
+* `qwen2.5-7b-instruct`
+
 
 ### `签到`
 
