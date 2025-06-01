@@ -11,9 +11,9 @@ description: "见证每一次变化"
 ### 即将到来
 
 * 在菜单中添加PlaceholderAPI支持以呈现更加丰富的菜单界面
-* 游戏内账户绑定指南
+* 游戏内账户绑定指南等帮助文本
 * 后续版本将优化基岩版菜单UI样式和图标展示
-* 后续版本将调整兑换码系统实现
+* 后续版本将添加更多扫地姬白名单物品，例如带有自定义NBT的物品
 
 ### 已知问题
 
@@ -24,6 +24,22 @@ description: "见证每一次变化"
 * 基岩版表单背景色和文字颜色对比度过低导致难以辨认，该问题会在后续版本中修复
 
 ## 历史日志
+
+### 25w22g
+
+* *Streack Service Datapack*更新
+  * *扫地姬*模块
+    * 现在不再清除以下*下落的方块*
+      * 「龙蛋」*minecraft:dragon_egg*
+    * 现在不再清除以下*掉落物*
+      * 「龙蛋」*minecraft:dragon_egg*
+      * 「鞘翅」*minecraft:elytra*
+      * 「强化深板岩」*minecraft:reinforced_deepslate*
+      * 「命令方块」*minecraft:command_block*
+      * 「连锁型命令方块」*minecraft:chain_command_block*
+      * 「重复型命令方块」*minecraft:repeating_command_block*
+* 移除了全部可售卖物品的售价
+  * 未来会添加更加灵活多变的售卖机制
 
 ### 25w22f
 

@@ -6,6 +6,54 @@
       "entity": "this",
       "predicate": {
         "type": "item",
+        "nbt": "{Item:{id:\"minecraft:command_block\"}}"
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "item",
+        "nbt": "{Item:{id:\"minecraft:chain_command_block\"}}"
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "item",
+        "nbt": "{Item:{id:\"minecraft:repeating_command_block\"}}"
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "item",
+        "nbt": "{Item:{id:\"minecraft:dragon_egg\"}}"
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "item",
+        "nbt": "{Item:{id:\"minecraft:elytra\"}}"
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "item",
+        "nbt": "{Item:{id:\"minecraft:reinforced_deepslate\"}}"
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "item",
         "nbt": "{Item:{id:\"minecraft:minecart\"}}"
       }
     },

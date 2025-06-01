@@ -1,0 +1,13 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "falling_block",
+        "nbt": "{BlockState:{Name:\"minecraft:dragon_egg\"}}"
+      }
+    }
+  ]
+}
