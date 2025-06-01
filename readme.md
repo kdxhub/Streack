@@ -20,7 +20,6 @@ Streack用于管理服务器、微调服务器表现的数据包，内含很多�
 ### Streack Client
 专为游玩[栈流Streack服务器](https://rs.kdxiaoyi.top/s/streack)制作的整合包，不过拿来玩原版生存也是可以的。相较于XPLUS等专为生电设计的整合包，此整合包修改部分较少——除了常见的投影和地毯，就是优化和美化了。<br>
 **此整合包设计时考虑了[FCL](https://github.com/FCL-Team/FoldCraftLauncher/)的兼容性**，但请使用LTW/MobileGlues等支持原生钠的渲染器。<br>
-<br>![栈流Streack的宣传图片，含有栈流Streack的基本信息](https://kdxiaoyi.top/Streack/assets/img/ad.png "宣传图")
 
 [下载发行版](https://github.com/kdxhub/Streack/releases)
 
