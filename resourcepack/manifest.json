@@ -14,5 +14,11 @@
       "uuid": "2ac897c9-e8e1-4fc7-9254-63e0119eccfd",
       "version": [1, 0, 0]
     }
-  ]
+  ],
+  "settings": [
+    {
+      "type": "label",
+      "text": "§7Created by @kdxiaoyi.\n§fFind more @ http://gitee.com/kdxiaoyi/Streack/"
+    }
+  ],
 }
