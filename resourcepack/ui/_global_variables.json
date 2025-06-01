@@ -6,5 +6,5 @@
   "$cubecraft_green": "string", // CubeCraft (服务器)
   "$is_netease": false, // 网易版
   "$streack_res": true // 栈流Streack (服务器)
+  "$rainbowpie_ui_theme_global_title_text": "§b栈流§2Streack",
 }
-
