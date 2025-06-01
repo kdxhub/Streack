@@ -40,6 +40,7 @@ description: "见证每一次变化"
       * 「重复型命令方块」*minecraft:repeating_command_block*
 * 移除了全部可售卖物品的售价
   * 未来会添加更加灵活多变的售卖机制
+* 为基岩版引入服务器侧Rainbow Pie UI资源包
 
 ### 25w22f
 
