@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:reinforced_deepslate"
+    },
+    "title": {
+      "text": "极其昂贵！"
+    },
+    "description": {
+      "text": "同时持有64块「强化深板岩」——富哥vivo50看看实力！"
+    },
+    "frame": "challenge",
+    "hidden": false
+  },
+  "parent": "kdx.mrecipe:craft_reinforced_deepslate",
+  "criteria": {
+    "cbm": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "kdx.mrecipe:craft/block/reinforced_deepslate"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 300
+  }
+}
