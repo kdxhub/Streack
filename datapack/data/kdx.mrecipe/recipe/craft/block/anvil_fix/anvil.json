@@ -2,14 +2,7 @@
   "type": "crafting_shapeless",
   "ingredients": [
     "minecraft:iron_ingot",
-    [
-      
-       "minecraft:chipped_anvil",
-      
-      
-         "minecraft:damaged_anvil"
-      
-    ]
+    ["minecraft:chipped_anvil","minecraft:damaged_anvil"]
   ],
   "result": {
     "id": "minecraft:anvil",
