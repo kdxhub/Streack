@@ -10,7 +10,7 @@
             "offhand": {
               "components": {
                 "custom_data": {
-                  "kdx.cleaner_extra_whitelist": "disallow"
+                  "kdx.cleaner_extra_whitelist": true
                 }
               }
             }

@@ -6,7 +6,7 @@
       "entity": "this",
       "predicate": {
         "type": "item",
-        "nbt": "{Item:{custom_data:{\"kdx.cleaner_extra_whitelist\":\"disallow\"}}}"
+        "nbt": "{Item:{components:{\"minecraft:custom_data\":{\"kdx.cleaner_extra_whitelist\":1b}}}}"
       }
     },
     {
