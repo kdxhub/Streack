@@ -1,0 +1,17 @@
+[
+  {
+    "function": "set_lore",
+    "lore": [
+      {"text": "§r"},
+      {"text": "§r§7冥河抗性："},
+      {"text": "§r§2此物品不受§b[冥河彼岸]§2效果影响"}
+    ],
+    "mode": "append"
+  },
+  {
+    "function": "set_custom_data",
+    "tag": {
+      "kdx.cleaner_extra_whitelist": true
+    }
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "enchanted_book"
+    },
+    "title": {
+      "text": "注魔书检测",
+      "italic": false
+    },
+    "description": {
+      "text": "aaa",
+      "italic": false
+    },
+    "frame": "task",
+    "hidden": true,
+    "announce_to_chat": false,
+    "show_toast": false
+  },
+  "parent": "kdx:_hidden",
+  "criteria": {
+    "consume_book": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "custom_data": {
+              "kdx.cleaner": "extra_whitelist_book"
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "kdx.cleaner:extra_whitelist/enchant_ife"
+  }
+}

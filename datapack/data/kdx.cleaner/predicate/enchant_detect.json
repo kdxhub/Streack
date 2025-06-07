@@ -1,0 +1,48 @@
+[
+  {
+    "condition": "any_of",
+    "terms": [
+      {
+        "condition": "entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "offhand": {
+              "components": {
+                "custom_data": {
+                  "kdx.cleaner_extra_whitelist": true
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "offhand": {
+              "components": {
+                "custom_data": {
+                  "kdx.cleaner": "extra_whitelist_book"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "condition": "entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "offhand": {
+              "items": "air"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

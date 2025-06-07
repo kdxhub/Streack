@@ -6,6 +6,14 @@
       "entity": "this",
       "predicate": {
         "type": "item",
+        "nbt": "{Item:{components:{\"minecraft:custom_data\":{\"kdx.cleaner_extra_whitelist\":1b}}}}"
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "item",
         "nbt": "{Item:{id:\"minecraft:command_block\"}}"
       }
     },

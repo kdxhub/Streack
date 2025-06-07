@@ -2,7 +2,6 @@
   "env": {
     "gameVersion": "1.21.3",
     "exclude": ["*.empty.json*"],
-    "language": "zh_CN",
-    "feature": {"documentLinks": true}
+    "language": "zh_CN"
   }
 }
