@@ -20,6 +20,11 @@
         "sound": {
           "sound_id": "block.enchantment_table.use"
         }
+      },
+      "food": {
+        "can_always_eat": true,
+        "nutrition": 0,
+        "saturation": 0
       }
     }
   },
