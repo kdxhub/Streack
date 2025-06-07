@@ -12,7 +12,7 @@
       "italic": false
     },
     "frame": "task",
-    "hidden": false,
+    "hidden": true,
     "announce_to_chat": false,
     "show_toast": false
   },

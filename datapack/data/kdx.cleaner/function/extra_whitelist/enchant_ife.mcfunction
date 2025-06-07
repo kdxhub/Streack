@@ -1,4 +1,3 @@
-execute if items entity @s weapon.offhand air if items entity @s weapon.mainhand air run item modify entity @s weapon.mainhand kdx.cleaner:extra_whitelist_book
-execute if items entity @s weapon.offhand air unless items entity @s weapon.mainhand air run item modify entity @s weapon.mainhand kdx.cleaner:extra_whitelist_adder
-execute unless items entity @s weapon.offhand air if items entity @s weapon.mainhand air run item modify entity @s weapon.offhand kdx.cleaner:extra_whitelist_adder
-execute unless items entity @s weapon.offhand air unless items entity @s weapon.mainhand air run item modify entity @s weapon.mainhand kdx.cleaner:extra_whitelist_adder
+execute if predicate kdx.cleaner:enchant_detect run item modify entity @s weapon.offhand kdx.cleaner:extra_whitelist_adder
+execute unless predicate kdx.cleaner:enchant_detect run function kdx.cleaner:extra_whitelist/get_book
+advancement revoke @s only kdx.cleaner:enchant_detect
