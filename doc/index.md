@@ -34,5 +34,9 @@ description: "致力于解决您所想知道的一切"
 * [栈流Streack隐私政策](./policy/privacy)
 * [栈流Streack用户协议](./policy/user)
 
+## 外部链接
+* [MCMOD找服玩上的栈流Streack฿]()
+* [MCLists.cn上的栈流Streack฿](https://www.mclists.cn/server/8373.html)
+
 <div id="mdRender_config" data-sideship-hide="2"></div>
 <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/js/pmd.js"></script><script src="https://rs.kdxiaoyi.top/res/scripts/js/pmd-reRender.min.js"></script>
