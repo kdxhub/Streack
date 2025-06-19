@@ -25,6 +25,13 @@ pageElements = {
     root: document.getElementById("qun_message"),
     id: document.getElementById("qqunid"),
   },
+  commentMessage: {
+    root: document.getElementById("comment_message"),
+    id: document.getElementById("commentid"),
+  },
+  issueMessage: {
+    root: document.getElementById("issue_message"),
+  },
 };
 pageElements.main.slot = document.querySelectorAll("div[slot='true']");
 
@@ -155,15 +162,37 @@ pageElements.main.root.addEventListener('touchstart', (e) => {
 }, { passive: true });
 pageElements.main.root.addEventListener('touchmove', handleScroll, { passive: false });
 
-//加群Hash识别与处理
-function qqunlink() {
+//Hash识别与处理
+function qqunlink(/*加群*/) {
   pageElements.startPlay.root.showed = false;
   pageElements.qunMessage.root.showed = true;
-  openURL(pageElements.qunMessage.id.href, false);
+  pageElements.commentMessage.root.showed = false;
+  pageElements.issueMessage.root.showed = false;
   openURL("#qqun_done", true);
+  openURL(pageElements.qunMessage.id.href, true);
 };
-if/*加群hash在首次进入时识别*/ (window.location.hash.replace('#', '').toLowerCase() == "qqun") {qqunlink();};
-if/*加群Hash调试用*/ (window.location.hash.replace('#', '').toLowerCase() == "qqun_test") {  pageElements.qunMessage.root.showed = true;};
+if (window.location.hash.replace('#', '').toLowerCase() == "qqun") {qqunlink();};
+if (window.location.hash.replace('#', '').toLowerCase() == "qqun_done") {pageElements.qunMessage.root.showed = true;};
+function commentlink(/*评论*/) {
+  pageElements.startPlay.root.showed = false;
+  pageElements.qunMessage.root.showed = false;
+  pageElements.commentMessage.root.showed = true;
+  pageElements.issueMessage.root.showed = false;
+  openURL("#comment_done", true);
+  openURL(pageElements.commentMessage.id.href, true);
+};
+if (window.location.hash.replace('#', '').toLowerCase() == "comment") {qqunlink();};
+if (window.location.hash.replace('#', '').toLowerCase() == "comment_done") {pageElements.commentMessage.root.showed = true;};
+function issuelink(/*发起issue*/open) {
+  pageElements.startPlay.root.showed = false;
+  pageElements.qunMessage.root.showed = false;
+  pageElements.commentMessage.root.showed = false;
+  pageElements.issueMessage.root.showed = true;
+  openURL("#issue_done", true);
+};
+if (window.location.hash.replace('#', '').toLowerCase() == "issue") {issuelink();};
+if (window.location.hash.replace('#', '').toLowerCase() == "issue_done") {pageElements.issueMessage.root.showed = true;};
+
 
 //当hash变更时也要滚动
 window.addEventListener('hashchange', () => {
