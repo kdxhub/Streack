@@ -168,6 +168,12 @@ pageElements.main.root.addEventListener('touchstart', (e) => {
 pageElements.main.root.addEventListener('touchmove', handleScroll, { passive: false });
 
 //Hash识别与处理
+if/*开始游玩*/ (window.location.hash.replace('#', '').toLowerCase() == "play") {
+  pageElements.startPlay.root.showed = true;
+  pageElements.qunMessage.root.showed = false;
+  pageElements.commentMessage.root.showed = false;
+  pageElements.issueMessage.root.showed = false;
+};
 function qqunlink(/*加群*/) {
   pageElements.startPlay.root.showed = false;
   pageElements.qunMessage.root.showed = true;
@@ -197,7 +203,7 @@ function issuelink(/*发起issue*/open) {
 };
 if (window.location.hash.replace('#', '').toLowerCase() == "issue") {issuelink();};
 if (window.location.hash.replace('#', '').toLowerCase() == "issue_done") {pageElements.issueMessage.root.showed = true;};
-
+/*TODO:分栏Hash跳转修复*/
 
 //当hash变更时也要滚动
 window.addEventListener('hashchange', () => {

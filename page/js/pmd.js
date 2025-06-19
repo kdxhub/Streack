@@ -69,7 +69,7 @@ const conf = {
 <s-chip id="side_ship_0" onclick="openURL('/Streack/',true)" clickable="true" class="sidebar_btn">
 <s-icon slot="start" name="home"></s-icon>
 首页</s-chip>
-<s-chip id="side_ship_1" onclick="openURL('/Streack/doc/help/join',true)" clickable="true" class="sidebar_btn">
+<s-chip id="side_ship_1" onclick="openURL('/Streack/#play',true)" clickable="true" class="sidebar_btn">
 <s-icon slot="start"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"></path></svg></s-icon>
 加入我们</s-chip>
 <s-chip id="side_ship_2" onclick="openURL('/Streack/doc/',true)" clickable="true" class="sidebar_btn">
@@ -80,7 +80,10 @@ const conf = {
 近期资讯</s-chip>
 <s-chip id="side_ship_4" onclick="openURL('/Streack/doc/event/',true)" clickable="true" class="sidebar_btn">
 <s-icon slot="start"><svg viewBox="0 -960 960 960"><path d="M580-240q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z"></path></svg></s-icon>
-活动一览</s-chip>`,
+活动一览</s-chip>
+<s-chip id="side_ship_5" onclick="openURL('/Streack/#issue',true)" clickable="true" class="sidebar_btn">
+<s-icon slot="start"><svg viewBox="0 -960 960 960"><path d="M480-200q66 0 113-47t47-113v-160q0-66-47-113t-113-47q-66 0-113 47t-47 113v160q0 66 47 113t113 47Zm-80-120h160v-80H400v80Zm0-160h160v-80H400v80Zm80 40Zm0 320q-65 0-120.5-32T272-240H160v-80h84q-3-20-3.5-40t-.5-40h-80v-80h80q0-20 .5-40t3.5-40h-84v-80h112q14-23 31.5-43t40.5-35l-64-66 56-56 86 86q28-9 57-9t57 9l88-86 56 56-66 66q23 15 41.5 34.5T688-640h112v80h-84q3 20 3.5 40t.5 40h80v80h-80q0 20-.5 40t-3.5 40h84v80H688q-32 56-87.5 88T480-120Z"></path></svg></s-icon>
+反馈与申诉</s-chip>`,
       /*左侧边栏·第2格内容中没有按文档编写请启用此项*/
       preventDefault: false,
     },
