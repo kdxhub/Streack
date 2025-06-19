@@ -158,7 +158,7 @@ function scrollToSlot(slotIndex) {
     window.location.hash = slotIndex;
   } else {
     msg("不存在的分栏……", "好", true);
-    console.error(`不存在的分栏${slotIndex}`);
+    console.error("捕获了错误：","\n> StreackPage：不存在的分栏\n",`准备跳转目标分栏，但发现了${slotIndex}，其不存在于分栏表中。\n分栏表：`,pageElements.main.slot,`\n上下文：`,this);
   };
 };
 pageElements.main.root.addEventListener('wheel', handleScroll, { passive: false });
@@ -215,7 +215,7 @@ pageElements.issueMessage.selector.addEventListener("change", (event) => {
     openURL(pageElements.issueMessage._.link[index],true);
   } else {
     msg("不存在的工单链接标识","好",true);
-    
+    console.error("捕获了错误：","\n> JavaScript：数组下标越界\n",`位于Issue_Link_Selector的OpenURL()调用的数组，允许最大下标为${pageElements.issueMessage._.link.length - 1}，但发现了${index}，上下文为`,event,"\n> StreackPage：未知的Issue Link\n",`位于Issue_Link_Selector的getValue，允许的值有`,pageElements.issueMessage._.value,`，但发现了`,event.target.value);
   };
   event.target.value = "";
 });
