@@ -25,6 +25,11 @@ description: "见证每一次变化"
 
 ## 历史日志
 
+### 25w25b
+
+* 现在每IP最多注册2账号
+* 调整签到奖励
+
 ### 25w25a
 
 * *Streack Service Datapack*中新增配方
