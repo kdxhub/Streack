@@ -124,7 +124,18 @@
     <s-bottom-sheet id="issue_message">
       <div slot="text" class="unselectable">
         <p>
-          <h2>请选择您的问题：</h2>
+          <h2>反馈与申诉</h2>
+          <p>如果您有任何建议、诉求或是其它留言，请通过以下<b>官方渠道</b>进行。</p>
+          <s-segmented-button id="issue_link_selector" style="width:100%;">
+            <s-segmented-button-item value="github">Github</s-segmented-button-item>
+            <s-segmented-button-item value="gitee">Gitee</s-segmented-button-item>
+            <s-segmented-button-item value="qq">QQ群</s-segmented-button-item>
+            <s-segmented-button-item value="email">邮件</s-segmented-button-item>
+          </s-segmented-button>
+          <p>
+            对于申诉相关内容，我们会在收到工单后的14个工作日内给予回复。
+            <br>在Github/Gitee上发起的Issue可被其他人浏览。
+          </p>
         </p>
       </div>
     </s-bottom-sheet>

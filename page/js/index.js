@@ -30,7 +30,12 @@ pageElements = {
     id: document.getElementById("commentid"),
   },
   issueMessage: {
+    _: {
+      value: ["github","gitee","qq","email"],
+      link: ["https://github.com/kdxhub/Streack/issues/new","https://gitee.com/kdxiaoyi/Streack/issues/new","javascript:qqunlink()","mailto:streack@kdxiaoyi.top"],
+    },
     root: document.getElementById("issue_message"),
+    selector: document.getElementById("issue_link_selector"),
   },
 };
 pageElements.main.slot = document.querySelectorAll("div[slot='true']");
@@ -201,6 +206,18 @@ window.addEventListener('hashchange', () => {
   if (!isNaN(slotIndex) && slotIndex >= 0 && slotIndex < pageElements.main._.totalSlots) {
     scrollToSlot(slotIndex);
   };
+});
+
+//处理Issue Link Selector
+pageElements.issueMessage.selector.addEventListener("change", (event) => {
+  let index = pageElements.issueMessage._.value.indexOf(event.target.value);
+  if (index >= 0 && index <= pageElements.issueMessage._.link.length -1) {
+    openURL(pageElements.issueMessage._.link[index],true);
+  } else {
+    msg("不存在的工单链接标识","好",true);
+    
+  };
+  event.target.value = "";
 });
 
 //移除no_script标签
