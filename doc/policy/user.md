@@ -2,8 +2,7 @@
 title: "栈流Streack用户协议"
 description: " "
 ---
-<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="/Streack/doc">←返回</a> |
- 创建：2025-01-13 | 最后更新：2025-05-01</small><br>
+<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="/Streack/doc">←返回</a></small><br>
 
 > [i] 历史版本一览：<br>
 > 
