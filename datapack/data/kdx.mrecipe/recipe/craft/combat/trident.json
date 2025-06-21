@@ -1,0 +1,16 @@
+{
+  "result":{
+    "id":"minecraft:trident"
+  },
+  "pattern":[
+    "aaa",
+    " b ",
+    " c "
+  ],
+  "type":"crafting_shaped",
+  "key":{
+    "a": "diamond_sword",
+    "b": "heart_of_the_sea",
+    "c": "reinforced_deepslate"
+  }
+}
