@@ -10,6 +10,7 @@ description: "见证每一次变化"
 
 ### 即将到来
 
+* 在线查询服务器状态功能
 * 在菜单中添加PlaceholderAPI支持以呈现更加丰富的菜单界面
 
 > [x] 关于Vanilla Refresh汉化问题：<br>
