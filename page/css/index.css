@@ -1,0 +1,171 @@
+.unselectable,#unselectable {user-select:none;}
+.selectable,#selectable {user-select:text;}
+
+html,body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  /**禁用字体缩放**/
+  -webkit-text-size-adjust: none;
+}
+/**隐藏未加载的组件**/:not(:defined) {
+  display: none;
+}
+
+/*字体设置*/
+html body s-page * .WenQuanWeiMiHei {font-family: "WenQuanWeiMiHei" !important;}
+html body s-page * .DIN {font-family: "din" !important;}
+html body s-page * .MiSans {font-family: "MiSans Normal" !important;}
+html body s-page * .MiSansL3 {font-family: "MiSans L3" !important;}
+html body s-page * .SourceHanSerifCN {font-family: "SourceHanSerifCN" !important;}
+
+/*页面背景*/
+s-page {
+  background-color: rgba(222, 222, 222, 0);
+  backdrop-filter: blur(100px);
+}
+s-page[dark] {
+  background-color: rgba(22, 22, 22, 0.5);
+  backdrop-filter: blur(100px);
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: 
+    radial-gradient(closest-side, rgba(226, 126, 198, 1), rgba(226, 126, 198, 0)),
+    radial-gradient(closest-side, rgba(195, 166, 202, 1), rgba(195, 166, 202, 0)),
+    radial-gradient(closest-side, rgba(145, 226, 141, 1), rgba(145, 226, 141, 0)),
+    radial-gradient(closest-side, rgba(145, 208, 212, 1), rgba(145, 208, 212, 0)),
+    radial-gradient(closest-side, rgba(225, 179, 129, 1), rgba(225, 179, 129, 0)),
+    radial-gradient(closest-side, rgba(118, 160, 254, 1), rgba(118, 160, 254, 0));
+  background-size: 
+    130vmax 130vmax,
+    80vmax 80vmax,
+    90vmax 90vmax,
+    110vmax 110vmax,
+    110vmax 110vmax,
+    90vmax 90vmax;
+  background-position: 
+    -100vmax -80vmax,
+    60vmax -30vmax,
+    10vmax 10vmax,
+    -30vmax -10vmax,
+    -30vmax 20vmax,
+    50vmax 50vmax;
+  background-repeat: no-repeat;
+}
+
+/*统一一下链接样式*/
+a {
+  text-decoration: underline dotted;
+  color: #1e6bb8;
+}
+a:hover {
+  text-decoration: underline;
+}
+a s-icon {
+  width: 1em;
+  height: 1em;
+  transform: translateY(-0.05em) translateX(-0.05em);
+}
+
+/*悬浮按钮*/
+#floating {
+  position: fixed;
+  right: 5vw;
+  bottom: 5rem;
+}
+#floating s-fab {
+  background-color: transparent;
+  backdrop-filter: blur(200px);
+}
+
+/*滚动栏*/
+s-page {
+  height: 100vh;
+}
+.main {
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+.slot {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100vh;
+  background: transparent;
+  padding: 0 5% 0 5%;
+}
+
+/*弹窗样式表*/
+s-dialog div.dialog {
+  padding: 0 7% 0.3rem 7%;
+  user-select: none;
+}
+
+/*第一栏*/
+div[slot_id="0"] h1, div[slot_id="0"] h3 {
+  margin: auto;
+  margin-top: 0.67rem;
+  margin-bottom: 0.2em;
+}
+div[slot_id="0"] h1 {
+  margin-top: auto;
+  font-size: 4.75rem;
+  font-weight: 650;
+}
+div[slot_id="0"] p {
+  font-size: 1.4rem;
+  font-weight: 450;
+  margin: auto;
+  margin-top: auto;
+  margin-bottom: 5rem;
+}
+div[slot_id="0"] s-chip {
+  font-size: 1.2rem;
+  margin-top: 0.1rem;
+}
+div[slot_id="0"] .chip {
+  margin: auto;
+  margin-top: .2em;
+  margin-bottom: .8rem;
+  font-size: 1rem;
+}
+div[slot_id="0"] #btn {
+  margin: auto;
+  margin-top: 0.8rem;
+  margin-bottom: .2em;
+}
+
+/*脚注*/
+footer {
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #2f3542;
+}
+s-page[dark] footer {
+  background-color: rgba(22, 22, 22, 0.5);
+}
+footer .footer-head {
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 0 0 0;
+  color: #2f3542;
+}
+s-page[dark] footer .footer-head {
+  color: #f1f4f8;
+}
+footer .footer-content {
+  font-size: 0.8em;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0 0 0 0;
+  color: #747d8c;
+}
+s-page[dark] footer .footer-content {
+  color: #dfe4ea;
+}
