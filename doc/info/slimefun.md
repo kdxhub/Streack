@@ -19,4 +19,4 @@ description: "需要修改的Java版"
 安装下方模组后，您可以在JEI/REI/EMI中查询粘液科技配方：<br>
 [*Slimefun Essentials*฿](https://modrinth.com/mod/slimefun-essentials)
 
-<script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/js/pmd.js"></script><script src="https://rs.kdxiaoyi.top/res/scripts/js/pmd-reRender.min.js"></script>
+<script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script><script src="https://kdxiaoyi.top/Streack/_page/js/pmd.js"></script><script src="https://rs.kdxiaoyi.top/res/scripts/js/pmd-reRender.min.js"></script>

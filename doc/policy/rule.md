@@ -57,4 +57,4 @@ description: " "
 1. 定义「恶性作弊功能」的标准是在[Tweakerwoo模组฿](https://www.mcmod.cn/class/2230.html)**官方版**中找不到的功能。
 2. 栈流Streack保留最终解释权。若对处罚结果有异议，可于惩罚结束前[提起申诉](https://kdxiaoyi.top/Streack/#issue)，14个工作日内受理。
 
-<script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script><script src="https://kdxiaoyi.top/Streack/page/js/pmd.js"></script><script src="https://rs.kdxiaoyi.top/res/scripts/js/pmd-reRender.min.js"></script>
+<script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script><script src="https://kdxiaoyi.top/Streack/_page/js/pmd.js"></script><script src="https://rs.kdxiaoyi.top/res/scripts/js/pmd-reRender.min.js"></script>
