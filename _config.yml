@@ -12,9 +12,7 @@ description: "纯净养老MC服务器"
 #
 # Flags below are optional
 #
-Include:
-  - _release
-  - _page
+Include: ["_release", "_page"]
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars.githubusercontent.com/u/169080523?v=4
