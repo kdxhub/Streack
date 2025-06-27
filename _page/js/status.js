@@ -1,6 +1,7 @@
 pageElements = {
   root: document.getElementById("a"),
   no_script: document.getElementById("no_script"),
+  progress: document.getElementById("progress"),
   appbar: {
     root: document.getElementById("appbarRoot"),
     menuBtn: document.getElementById("menuBtn"),
@@ -39,6 +40,16 @@ pageElements = {
     },
     main: {
       root: document.getElementById("pContent"),
+      notice: {
+        root: document.getElementById("notice"),
+        time: document.getElementById("notice-time"),
+      },
+      je: {
+        root: document.getElementById("je"),
+      },
+      be: {
+        root: document.getElementById("be"),
+      },
     },
   },
 };

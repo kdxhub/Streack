@@ -15,6 +15,7 @@
 </head>
 <body>
   <s-page id="pageRoot" theme="light">
+    <s-linear-progress id="progress" indeterminate="true" max="1" value="1"></s-linear-progress>
     <s-appbar id="appbarRoot">
       <s-tooltip slot="navigation">
         <s-icon-button style="display:none;" id="menuBtn" type="filled-tonal" slot="trigger" onclick="document.querySelector('s-drawer').toggle()">
@@ -24,18 +25,18 @@
       </s-tooltip>
       <div id="pageTitle" slot="headline"> 服务器实时状态（Beta） </div>
       <s-tooltip slot="action">
-        <s-icon-button id="newBtn" class="fadeOut" style="opacity: 0;" type="outlined" slot="trigger">
-          <s-icon name="chevron_up"></s-icon>
+        <s-icon-button id="newBtn" type="none" slot="trigger">
+          <s-icon><svg viewBox="0 -960 960 960"><path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg></s-icon>
         </s-icon-button>
         发起新查询
       </s-tooltip>
       <s-tooltip slot="action">
         <s-icon-button id="refreshBtn" type="none" slot="trigger">
-          <s-icon></s-icon>
+          <s-icon><svg viewBox="0 -960 960 960"><path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"></path></svg></s-icon>
         </s-icon-button>
         立即刷新
       </s-tooltip>
-      </s-appbar>
+    </s-appbar>
     <s-drawer id="mainContent">
       <div id="LeftSiderbar" slot="start"><s-scroll-view class="unselectable" style="height: 100%; padding-bottom: 1rem;">
         <s-card id="slot_1" type="" class="sidebar_head">
@@ -81,6 +82,17 @@
         </s-card>
       </div></s-scroll-view>
       <s-scroll-view id="pContent" class="selectable">
+        <s-card id="notice" class="main-card">
+          <p>本工具是由<a href="//kdxiaoyi.top/Streack">栈流Streack</a>提供的在线MC服务器MOTD查询服务，基于mcstatus.io提供的后端。</p>
+          <p>此工具默认查询栈流Streack的状态，您也可以发起对其它服务器的完全查询，但部分为空的项会被隐藏。发起查询生成的链接是永久可用的。</p>
+          <p>剩余刷新时间：<span id="notice-time">Never</span></p>
+        </s-card>
+        <s-card id="je" class="main-card">
+          <div style="margin: 0 0 0 0;" slot="headline">Java版</div>
+        </s-card>
+        <s-card id="be" class="main-card">
+          <div style="margin: 0 0 0 0;" slot="headline">基岩版</div>
+        </s-card>
         <div class="unselectable" id="no_script"><h1>您似乎没有启用JavaScript，而这是此网站正常运行所必须的。<br>此外，该页面不支持过老的浏览器内核。</h1></div>
       </s-scroll-view>
     </s-drawer>
