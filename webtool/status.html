@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
   <meta name="mobile-web-app-capable" content="yes" />
-  <script src="./_page/js/pmd.js"></script>
+  <script src="../_page/js/pmd.js"></script>
   <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script>
   <link rel="stylesheet" href="https://rs.kdxiaoyi.top/res/css/sober-theme-turquoise.css" />
   <link rel="stylesheet" href="../_page/css/status.css" />
@@ -84,7 +84,7 @@
       <s-scroll-view id="pContent" class="selectable">
         <s-card id="notice" class="main-card">
           <p>本工具是由<a href="//kdxiaoyi.top/Streack">栈流Streack</a>提供的在线MC服务器MOTD查询服务，基于mcstatus.io提供的后端。</p>
-          <p>此工具默认查询栈流Streack的状态，您也可以发起对其它服务器的完全查询，但部分为空的项会被隐藏。发起查询生成的链接是永久可用的。</p>
+          <p id="notice-thirdpart">此工具默认查询栈流Streack的状态，您也可以发起对其它服务器的完全查询。发起查询生成的链接是永久可用的。</p>
           <p>剩余刷新时间：<span id="notice-time">Never</span></p>
         </s-card>
         <s-card id="je" class="main-card">
@@ -92,6 +92,7 @@
         </s-card>
         <s-card id="be" class="main-card">
           <div style="margin: 0 0 0 0;" slot="headline">基岩版</div>
+          即将到来……
         </s-card>
         <div class="unselectable" id="no_script"><h1>您似乎没有启用JavaScript，而这是此网站正常运行所必须的。<br>此外，该页面不支持过老的浏览器内核。</h1></div>
       </s-scroll-view>

@@ -1,7 +1,8 @@
 /*字体设置*/
-@font-face{font-family:"din";src:url("https://rs.kdxiaoyi.top/res/fonts/Mojangles.ttf") format("truetype")}
+@font-face{font-family:"Mojangles";src:url("https://rs.kdxiaoyi.top/res/fonts/Mojangles.ttf") format("truetype")}
 html body s-page * .WenQuanWeiMiHei {font-family: "WenQuanWeiMiHei" !important;}
 html body s-page * .DIN {font-family: "din" !important;}
+html body s-page * .Mojangles {font-family: "Mojangles" !important;}
 html body s-page * .MiSans {font-family: "MiSans Normal" !important;}
 html body s-page * .MiSansL3 {font-family: "MiSans L3" !important;}
 html body s-page * .SourceHanSerifCN {font-family: "SourceHanSerifCN" !important;}
