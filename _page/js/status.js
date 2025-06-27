@@ -2,14 +2,11 @@ pageElements = {
   root: document.getElementById("a"),
   no_script: document.getElementById("no_script"),
   appbar: {
-    _: {
-      GithubLink: "",
-    },
     root: document.getElementById("appbarRoot"),
     menuBtn: document.getElementById("menuBtn"),
     title: document.getElementById("pageTitle"),
-    toTopBtn: document.getElementById("toTopBtn"),
-    Github: document.getElementById("githubBtn"),
+    refreshBtn: document.getElementById("refreshBtn"),
+    newBtn: document.getElementById("newBtn"),
   },
   content: {
     root: document.getElementById("mainContent"),
@@ -19,10 +16,6 @@ pageElements = {
       slot2: document.getElementById("slot_2"),
       slot3: {
         root: document.getElementById("slot_3"),
-        index_links: {
-          root: document.getElementById("index_links_parent"),
-          sub: document.getElementById("index_links"),
-        },
         user_setting: {
           root: document.getElementById("user_setting_parent"),
           sub: document.getElementById("user_settings"),
@@ -33,7 +26,6 @@ pageElements = {
             dark: document.getElementById("color_theme_prefer_d"),
           },
         },
-        travellings: document.getElementById("travellings"),
       },
       slot4: {
         _: {
@@ -45,32 +37,10 @@ pageElements = {
         license: document.getElementById("slot_4_license"),
       },
     },
-    origin: {
-      _: {
-        toTop_intervalID: -1,
-        toTop_interval_speed: 0,
-      },
-      root: document.getElementById("originalContent"),
-      header: {
-        root: document.getElementsByClassName("page-header")[0],
-        main: document.getElementsByClassName("project-name")[0],
-        sub: document.getElementsByClassName("project-tagline")[0],
-        view_on_github: document.querySelector("#originalContent > header > a.btn"),
-      },
-      main: {
-        root: document.getElementById("content"),
-        quote: document.querySelectorAll("blockquote"),
-        img: document.querySelectorAll("img"),
-        code: document.querySelectorAll("pre"),
-        link: document.querySelectorAll("a"),
-        header: document.querySelectorAll("h1,h2,h3,h4,h5,h6"),
-        list: document.querySelectorAll("ul,ol"),
-        table: document.querySelectorAll("table"),
-      },
+    main: {
+      root: document.getElementById("pContent"),
     },
   },
-  pageConfig: document.getElementById("mdRender_config"),
-  index_overwrite: document.getElementById("index_overwrite"),
 };
 //API
 function getQueryString(name) { let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); let r = window.location.search.substr(1).match(reg); if (r != null) { return unescape(r[2]); }; return null; };

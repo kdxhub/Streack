@@ -10,7 +10,7 @@ html body s-page * .SourceHanSerifCN {font-family: "SourceHanSerifCN" !important
     #appbarRoot {display: none !important;}
     #LeftSiderbar {display: none !important;}
     .site-footer {display: none !important;}
-    #originalContent {height: min-content !important;}
+    #pContent {height: min-content !important;}
     #pageRoot {height: min-content !important;}
     #mainContent {height: min-content !important;}
     body {
@@ -57,7 +57,7 @@ html body s-page * .SourceHanSerifCN {font-family: "SourceHanSerifCN" !important
     display: flex;
     flex-direction: column;
   }
-#originalContent {
+#pContent {
     display: flex;
     flex-direction: column;
   }
