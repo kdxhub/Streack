@@ -114,13 +114,6 @@ html::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
 }
-#progress {
-  width: 100vw;
-  position: sticky;
-  top: 0;
-  height: min(3px,1vh);
-  z-index: 1001;
-}
 .main-card p {
   margin-top: 0;
   margin-bottom: 7px
@@ -131,6 +124,7 @@ html::-webkit-scrollbar {
   display: block;
   padding: 10px 16px 9px 16px;
 }
+.cardhead {margin:0 0 0 0;}
 
 /*other todo*/
 

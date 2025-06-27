@@ -54,15 +54,14 @@ pageElements = {
       be: "https://api.mcstatus.io/v2/status/bedrock/",
       icon: "https://api.mcstatus.io/v2/icon/",
     },
+    refreshTime: -1,
   },
   root: document.getElementById("a"),
   no_script: document.getElementById("no_script"),
-  progress: document.getElementById("progress"),
   appbar: {
     root: document.getElementById("appbarRoot"),
     menuBtn: document.getElementById("menuBtn"),
     title: document.getElementById("pageTitle"),
-    refreshBtn: document.getElementById("refreshBtn"),
     newBtn: document.getElementById("newBtn"),
   },
   content: {
@@ -103,9 +102,12 @@ pageElements = {
       },
       je: {
         root: document.getElementById("je"),
+        progress: document.getElementById("je-progress"),
+        subtitle: document.getElementById("je-subtitle"),
       },
       be: {
         root: document.getElementById("be"),
+        progress: document.getElementById("be-progress"),
       },
     },
   },
@@ -119,8 +121,9 @@ if (
     pageElements._.fetchUrl.je += pageElements._.goal;
     pageElements._.fetchUrl.be += pageElements._.goal;
     pageElements._.fetchUrl.icon += pageElements._.goal;
-    pageElements.content.main.notice.third.innerHTML=`当前正在查询<big><span class="selectable Mojangles">${pageElements._.goal}</span></big>的状态，仅显示可显示信息。`;
+    pageElements.content.main.notice.third.innerHTML=`当前正在查询 <big><span class="selectable Mojangles">${pageElements._.goal}</span></big> 的状态，仅显示可显示信息。`;
   } else {
+    if (pageElements._.goal != "") {msg("目标服务器地址不合法","好",true);};
     pageElements._.fetchUrl.je += pageElements._.streack;
     pageElements._.fetchUrl.be += pageElements._.streack;
     pageElements._.fetchUrl.icon += pageElements._.streack;
@@ -137,20 +140,52 @@ async function fetchData(url) {
       throw new Error(response.status);
     };
     let jsonData = await response.json();
-    jsonData.cacheTimeRemaining = response.headers.get('X-Cache-Time-Remaining');
+    if (!!jsonData.expires_at) {jsonData.cacheTimeRemaining = Math.floor((jsonData.expires_at - Date.now()) / 1000);};
     return jsonData;
   } catch (error) {
+    console.error(error)
     throw error;
   };
-}
-fetchData(/*je*/pageElements._.fetchUrl.je)
-  .then(result => {
-    console.log("请求成功:", result);
-  })
-  .catch(error => {
-    console.error("请求失败:", error);
-  })
-;
+};
+function update() {
+  pageElements.content.main.je.progress.style = ``;
+  fetchData(/*je*/pageElements._.fetchUrl.je)
+    .then(result => {
+      if (result.online) {
+        pageElements.content.main.je.subtitle.style = `color:#30C496;`;
+        pageElements.content.main.je.subtitle.innerHTML = `✓ 可连接`;
+      } else {
+        pageElements.content.main.je.subtitle.style = `color:#E23B2E;`;
+        pageElements.content.main.je.subtitle.innerHTML = `✕ 未知的服务器`;
+      };
+      if (!result.cacheTimeRemaining) {
+        pageElements._.refreshTime = 60;
+      } else {
+        pageElements.content.main.je.subtitle.innerHTML += `（基于缓存）`;
+        pageElements._.refreshTime = result.cacheTimeRemaining;
+      };
+    })
+    .catch(error => {
+      pageElements.content.main.je.subtitle.style = `color:#FBC116;`;
+      pageElements.content.main.je.subtitle.innerHTML = `✕ API故障`;
+    })
+    .finally(() => {
+      pageElements.content.main.je.progress.style = `display:none;`;
+    })
+  ;
+};
+update();
+
+//初始化计时器
+setInterval(() => {
+  pageElements._.refreshTime -= 1;
+  if (pageElements._.refreshTime == 0) {update();};
+  if (pageElements._.refreshTime >= 1) {
+    pageElements.content.main.notice.time.innerHTML = `${pageElements._.refreshTime}秒`;
+  } else {
+    pageElements.content.main.notice.time.innerHTML = `现在`;
+  };
+}, 1000);
 
 //remove no script tip
 pageElements.no_script.remove();
