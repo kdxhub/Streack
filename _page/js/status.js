@@ -141,7 +141,7 @@ async function fetchData(url) {
       throw new Error(response.status);
     };
     let jsonData = await response.json();
-    if (!!jsonData.expires_at) {jsonData.cacheTimeRemaining = Math.floor((jsonData.expires_at - Date.now()) / 1000);};
+    if (!!jsonData.expires_at) {jsonData.cacheTimeRemaining = Math.floor((jsonData.expires_at - Date.now()) / 1000 + 1);};
     return jsonData;
   } catch (error) {
     console.error(error)
