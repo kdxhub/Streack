@@ -108,6 +108,7 @@ pageElements = {
       be: {
         root: document.getElementById("be"),
         progress: document.getElementById("be-progress"),
+        subtitle: document.getElementById("be-subtitle"),
       },
     },
   },
@@ -148,8 +149,9 @@ async function fetchData(url) {
   };
 };
 function update() {
+  //je
   pageElements.content.main.je.progress.style = ``;
-  fetchData(/*je*/pageElements._.fetchUrl.je)
+  fetchData(pageElements._.fetchUrl.je)
     .then(result => {
       if (result.online) {
         pageElements.content.main.je.subtitle.style = `color:#30C496;`;
@@ -163,6 +165,7 @@ function update() {
       } else {
         pageElements.content.main.je.subtitle.innerHTML += `（基于缓存）`;
         pageElements._.refreshTime = result.cacheTimeRemaining;
+        pageElements._.refreshTime_je = result.cacheTimeRemaining;
       };
     })
     .catch(error => {
@@ -171,6 +174,34 @@ function update() {
     })
     .finally(() => {
       pageElements.content.main.je.progress.style = `display:none;`;
+    })
+  ;
+  //be
+  pageElements.content.main.be.progress.style = ``;
+  fetchData(pageElements._.fetchUrl.be)
+    .then(result => {
+      if (result.online) {
+        pageElements.content.main.be.subtitle.style = `color:#30C496;`;
+        pageElements.content.main.be.subtitle.innerHTML = `✓ 可连接`;
+      } else {
+        pageElements.content.main.be.subtitle.style = `color:#E23B2E;`;
+        pageElements.content.main.be.subtitle.innerHTML = `✕ 未知的服务器`;
+      };
+      if (!result.cacheTimeRemaining) {
+        pageElements._.refreshTime = 60;
+      } else {
+        pageElements.content.main.be.subtitle.innerHTML += `（基于缓存）`;
+        if (pageElements._.refreshTime < pageElements._.refreshTime_je) {
+          pageElements._.refreshTime = result.cacheTimeRemaining;
+        };
+      };
+    })
+    .catch(error => {
+      pageElements.content.main.be.subtitle.style = `color:#FBC116;`;
+      pageElements.content.main.be.subtitle.innerHTML = `✕ API故障`;
+    })
+    .finally(() => {
+      pageElements.content.main.be.progress.style = `display:none;`;
     })
   ;
 };
