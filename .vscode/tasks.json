@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "gitpush", // 任务标签
+      "type": "shell", // 任务类型，shell 类型表示运行 shell 命令
+      "command": "git push origin master&&git push gitee master", // 运行的命令
+      "group": {
+        "kind": "build",
+        "isDefault": true // 设置为默认构建任务
+      }
+    },
+  ]
+}
