@@ -55,7 +55,11 @@ pageElements = {
       icon: "https://api.mcstatus.io/v2/icon/",
     },
     debug: false,
-    refreshTime: -1,
+    refreshTime: {
+      je: -1,
+      be: -1,
+      IntervalID: -1,
+    },
   },
   root: document.getElementById("a"),
   no_script: document.getElementById("no_script"),
@@ -218,7 +222,7 @@ async function fetchData(url) {
       throw new Error(response.status);
     };
     let jsonData = await response.json();
-    if (!!jsonData.expires_at) { jsonData.cacheTimeRemaining = Math.floor((jsonData.expires_at - Date.now()) / 1000); };
+    if (!!jsonData.expires_at) { jsonData.cacheTimeRemaining = Math.floor((jsonData.expires_at - Date.now()) / 1000 + 1); };
     if (pageElements._.debug) {console.log("向",url,"获取数据于",Date.now(),"：", jsonData);};
     return jsonData;
   } catch (error) {
@@ -226,10 +230,9 @@ async function fetchData(url) {
     throw error;
   };
 };
-function update() {
-  pageElements.content.main.je.progress.style = ``;
-  pageElements.content.main.be.progress.style = ``;
+function update_je() {
   //je
+  pageElements.content.main.je.progress.style = ``;
   fetchData(pageElements._.fetchUrl.je)
     .then(result => {
       if (result.online) {
@@ -240,11 +243,10 @@ function update() {
         pageElements.content.main.je.subtitle.innerHTML = `✕ 未知的服务器`;
       };
       if (!result.cacheTimeRemaining) {
-        pageElements._.refreshTime = 60;
+        pageElements._.refreshTime.je = 60;
       } else {
         pageElements.content.main.je.subtitle.innerHTML += `（基于缓存）`;
-        pageElements._.refreshTime = result.cacheTimeRemaining;
-        pageElements._.refreshTime_je = result.cacheTimeRemaining;
+        pageElements._.refreshTime.je = result.cacheTimeRemaining;
       };
     })
     .catch(error => {
@@ -255,7 +257,10 @@ function update() {
       pageElements.content.main.je.progress.style = `display:none;`;
     })
     ;
+};
+function update_be() {
   //be
+  pageElements.content.main.be.progress.style = ``;
   fetchData(pageElements._.fetchUrl.be)
     .then(result => {
       if (result.online) {
@@ -266,12 +271,10 @@ function update() {
         pageElements.content.main.be.subtitle.innerHTML = `✕ 未知的服务器`;
       };
       if (!result.cacheTimeRemaining) {
-        pageElements._.refreshTime = 60;
+        pageElements._.refreshTime.be = 60;
       } else {
         pageElements.content.main.be.subtitle.innerHTML += `（基于缓存）`;
-        if (pageElements._.refreshTime < pageElements._.refreshTime_je) {
-          pageElements._.refreshTime = result.cacheTimeRemaining;
-        };
+        pageElements._.refreshTime.be = result.cacheTimeRemaining;
       };
     })
     .catch(error => {
@@ -283,17 +286,20 @@ function update() {
     })
     ;
 };
-update();
+update_je();
+update_be();
 
 //初始化计时器
-setInterval(() => {
-  pageElements._.refreshTime -= 1;
-  if (pageElements._.refreshTime == 0) { update(); };
-  if (pageElements._.refreshTime >= 1) {
-    pageElements.content.main.notice.time.innerHTML = `${pageElements._.refreshTime}秒`;
-  } else {
-    pageElements.content.main.notice.time.innerHTML = `现在`;
-  };
+pageElements._.refreshTime.IntervalID = setInterval(() => {
+  pageElements._.refreshTime.je -= 1;
+  pageElements._.refreshTime.be -= 1;
+  if (pageElements._.refreshTime.je == 0) { update_je(); };
+  if (pageElements._.refreshTime.jb == 0) { update_be(); };
+  let jeTime="现在";
+  let beTime="现在";
+  if (pageElements._.refreshTime.je >= 1) {jeTime = pageElements._.refreshTime.je.toString() + "秒";};
+  if (pageElements._.refreshTime.be >= 1) {beTime = pageElements._.refreshTime.be.toString() + "秒";};
+  pageElements.content.main.notice.time.innerHTML = `${jeTime} / ${beTime}`;
 }, 1000);
 
 //remove no script tip
