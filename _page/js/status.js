@@ -222,8 +222,9 @@ async function fetchData(url) {
       throw new Error(response.status);
     };
     let jsonData = await response.json();
+    if (!jsonData.retrieved_at) { jsonData.retrieved_at = 1; };
     if (!!jsonData.expires_at) { jsonData.cacheTimeRemaining = Math.floor((jsonData.expires_at - Date.now()) / 1000 + 1); };
-    if (pageElements._.debug) {console.log("向",url,"获取数据于",Date.now(),"：", jsonData);};
+    if (pageElements._.debug) { console.log("向", url, "获取数据于", Date.now(),"：", jsonData);};
     return jsonData;
   } catch (error) {
     console.error(error)
@@ -235,19 +236,19 @@ function update_je() {
   pageElements.content.main.je.progress.style = ``;
   fetchData(pageElements._.fetchUrl.je)
     .then(result => {
-      if (result.online) {
+      if (result.online) {/* 在线时更新信息 */
         pageElements.content.main.je.subtitle.style = `color:#30C496;`;
         pageElements.content.main.je.subtitle.innerHTML = `✓ 可连接`;
-      } else {
+      } else {/* 不在线时更新信息 */
         pageElements.content.main.je.subtitle.style = `color:#E23B2E;`;
         pageElements.content.main.je.subtitle.innerHTML = `✕ 未知的服务器`;
       };
-      if (!result.cacheTimeRemaining) {
+      if (!result.cacheTimeRemaining) {/* 处理下次刷新时间 */
         pageElements._.refreshTime.je = 60;
       } else {
-        pageElements.content.main.je.subtitle.innerHTML += `（基于缓存）`;
         pageElements._.refreshTime.je = result.cacheTimeRemaining;
       };
+      if (result.retrieved_at <= (Date.now() - /* 数据更新旧于则提示*/2000)) {pageElements.content.main.je.subtitle.innerHTML += `（基于缓存）`;}
     })
     .catch(error => {
       pageElements.content.main.je.subtitle.style = `color:#FBC116;`;
@@ -257,25 +258,25 @@ function update_je() {
       pageElements.content.main.je.progress.style = `display:none;`;
     })
     ;
-};
+}
 function update_be() {
   //be
   pageElements.content.main.be.progress.style = ``;
   fetchData(pageElements._.fetchUrl.be)
     .then(result => {
-      if (result.online) {
+      if (result.online) {/* 在线时更新信息 */
         pageElements.content.main.be.subtitle.style = `color:#30C496;`;
         pageElements.content.main.be.subtitle.innerHTML = `✓ 可连接`;
-      } else {
+      } else {/* 不在线时更新信息 */
         pageElements.content.main.be.subtitle.style = `color:#E23B2E;`;
         pageElements.content.main.be.subtitle.innerHTML = `✕ 未知的服务器`;
       };
-      if (!result.cacheTimeRemaining) {
+      if (/* 处理下次刷新时间 */!result.cacheTimeRemaining) {
         pageElements._.refreshTime.be = 60;
       } else {
-        pageElements.content.main.be.subtitle.innerHTML += `（基于缓存）`;
         pageElements._.refreshTime.be = result.cacheTimeRemaining;
       };
+      if (result.retrieved_at <= (Date.now() - /* 数据更新旧于则提示*/2000)) {pageElements.content.main.be.subtitle.innerHTML += `（基于缓存）`;}
     })
     .catch(error => {
       pageElements.content.main.be.subtitle.style = `color:#FBC116;`;
