@@ -118,17 +118,17 @@ pageElements = {
 if (
   /^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])\.){1,}([a-zA-Z]|[a-zA-Z][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])(:[0-9]{1,5})?$/.test(pageElements._.goal)
   ||/*IPv4*/ /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(:[0-9]{1,5})?$/.test(pageElements._.goal)
-  ) {
-    pageElements._.fetchUrl.je += pageElements._.goal;
-    pageElements._.fetchUrl.be += pageElements._.goal;
-    pageElements._.fetchUrl.icon += pageElements._.goal;
-    pageElements.content.main.notice.third.innerHTML=`当前正在查询 <big><span class="selectable Mojangles">${pageElements._.goal}</span></big> 的状态，仅显示可显示信息。`;
-  } else {
-    if (pageElements._.goal != "") {msg("目标服务器地址不合法","好",true);};
-    pageElements._.fetchUrl.je += pageElements._.streack;
-    pageElements._.fetchUrl.be += pageElements._.streack;
-    pageElements._.fetchUrl.icon += pageElements._.streack;
-  };
+) {
+  pageElements._.fetchUrl.je += pageElements._.goal;
+  pageElements._.fetchUrl.be += pageElements._.goal;
+  pageElements._.fetchUrl.icon += pageElements._.goal;
+  pageElements.content.main.notice.third.innerHTML = `当前正在查询 <big><span class="selectable Mojangles">${pageElements._.goal}</span></big> 的状态，仅显示可显示信息。`;
+} else {
+  if (pageElements._.goal != "") { msg("目标服务器地址不合法", "好", true); };
+  pageElements._.fetchUrl.je += pageElements._.streack;
+  pageElements._.fetchUrl.be += pageElements._.streack;
+  pageElements._.fetchUrl.icon += pageElements._.streack;
+};
 async function fetchData(url) {
   try {
     let response = await fetch(url, {
@@ -141,7 +141,7 @@ async function fetchData(url) {
       throw new Error(response.status);
     };
     let jsonData = await response.json();
-    if (!!jsonData.expires_at) {jsonData.cacheTimeRemaining = Math.floor((jsonData.expires_at - Date.now()) / 1000);};
+    if (!!jsonData.expires_at) { jsonData.cacheTimeRemaining = Math.floor((jsonData.expires_at - Date.now()) / 1000); };
     return jsonData;
   } catch (error) {
     console.error(error)
@@ -175,7 +175,7 @@ function update() {
     .finally(() => {
       pageElements.content.main.je.progress.style = `display:none;`;
     })
-  ;
+    ;
   //be
   pageElements.content.main.be.progress.style = ``;
   fetchData(pageElements._.fetchUrl.be)
@@ -203,14 +203,14 @@ function update() {
     .finally(() => {
       pageElements.content.main.be.progress.style = `display:none;`;
     })
-  ;
+    ;
 };
 update();
 
 //初始化计时器
 setInterval(() => {
   pageElements._.refreshTime -= 1;
-  if (pageElements._.refreshTime == 0) {update();};
+  if (pageElements._.refreshTime == 0) { update(); };
   if (pageElements._.refreshTime >= 1) {
     pageElements.content.main.notice.time.innerHTML = `${pageElements._.refreshTime}秒`;
   } else {
