@@ -129,7 +129,22 @@ s-linear-progress {
 }
 s-field {
   width: 49%;
-  margin-top: 0.8em;
+  margin-top: 0.5em;
+}
+.widget {
+  width: inherit;
+  margin: 0.7em 0em 0.5em 0em;
+  padding: 0.5em 0 0.5em 1em;
+  background-image: url("https://rs.kdxiaoyi.top/res/images/icon/mc_dirt.png");
+  overflow: auto;
+}
+.widget>.motd {
+  overflow: visible;
+  text-wrap: nowrap;
+  height: auto;
+}
+.motd span, .motd p, .motd * {
+  font-family: "Mojangles" !important;
 }
 
 a {

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
   <meta name="mobile-web-app-capable" content="yes" />
-  <script src="/Streack/_page/js/pmd.js"></script>
+  <script src="https://kdxiaoyi.top/Streack/_page/js/pmd.js"></script>
   <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script>
   <link rel="stylesheet" href="https://rs.kdxiaoyi.top/res/css/sober-theme-turquoise.css" />
   <link rel="stylesheet" href="../_page/css/status.css" />
@@ -82,13 +82,17 @@
           <div id="je-subtitle" class="cardhead-sub" slot="subhead">正在查询</div>
           <s-linear-progress id="je-progress" indeterminate="true"></s-linear-progress>
           <div class="field" id="je-field" style="display: none;">
-            <s-field>
+            <s-scroll-view class="widget">
+              <img class="icon" id="je-icon"/>
+              <div class="motd selectable" id="je-motd"></div>
+            </s-scroll-view>
+            <s-field content="baseinfo">
               <div slot="label">信息</div>
               <div id="je-player"></div>
             </s-field>
-            <s-field>
-              <div slot="label">MOTD</div>
-              <s-scroll-view id="je-motd"></s-scroll-view>
+            <s-field content="baseinfo">
+              <div slot="label">信息</div>
+              <div id="je-player"></div>
             </s-field>
           </div>
         </s-card>
@@ -107,6 +111,6 @@
       </s-scroll-view>
     </s-drawer>
   </s-page>
-  <script src="/Streack/_page/js/status.js"></script>
+  <script src="../_page/js/status.js"></script>
 </body>
 </html>
