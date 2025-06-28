@@ -54,6 +54,7 @@ pageElements = {
       be: "https://api.mcstatus.io/v2/status/bedrock/",
       icon: "https://api.mcstatus.io/v2/icon/",
     },
+    debug: false,
     refreshTime: -1,
   },
   root: document.getElementById("a"),
@@ -113,6 +114,12 @@ pageElements = {
     },
   },
 };
+if (!!getQueryString("debug")) {
+  pageElements._.debug = true;
+  msg("调试模式已启用", "好")
+  console.warn("Debug模式已启用");
+  console.log("pageElements:", pageElements);
+}
 
 //PMD框架相关处理
 /* 自定义Style */
@@ -191,11 +198,13 @@ if (
   pageElements._.fetchUrl.be += pageElements._.goal;
   pageElements._.fetchUrl.icon += pageElements._.goal;
   pageElements.content.main.notice.third.innerHTML = `当前正在查询 <big><span class="selectable Mojangles">${pageElements._.goal}</span></big> 的状态，仅显示可显示信息。`;
+  if (pageElements._.debug) {console.log("使用地址：",pageElements._.goal);};
 } else {
   if (pageElements._.goal != "") { msg("目标服务器地址不合法", "好", true); };
   pageElements._.fetchUrl.je += pageElements._.streack;
   pageElements._.fetchUrl.be += pageElements._.streack;
   pageElements._.fetchUrl.icon += pageElements._.streack;
+  if (pageElements._.debug) {console.warn("目标服务器地址不合法，已使用默认地址：",pageElements._.goal);};
 };
 async function fetchData(url) {
   try {
@@ -210,6 +219,7 @@ async function fetchData(url) {
     };
     let jsonData = await response.json();
     if (!!jsonData.expires_at) { jsonData.cacheTimeRemaining = Math.floor((jsonData.expires_at - Date.now()) / 1000); };
+    if (pageElements._.debug) {console.log("向",url,"获取数据于",Date.now(),"：", jsonData);};
     return jsonData;
   } catch (error) {
     console.error(error)
@@ -217,8 +227,9 @@ async function fetchData(url) {
   };
 };
 function update() {
-  //je
   pageElements.content.main.je.progress.style = ``;
+  pageElements.content.main.be.progress.style = ``;
+  //je
   fetchData(pageElements._.fetchUrl.je)
     .then(result => {
       if (result.online) {
@@ -245,7 +256,6 @@ function update() {
     })
     ;
   //be
-  pageElements.content.main.be.progress.style = ``;
   fetchData(pageElements._.fetchUrl.be)
     .then(result => {
       if (result.online) {
