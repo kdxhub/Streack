@@ -109,17 +109,23 @@ pageElements = {
         root: document.getElementById("je"),
         progress: document.getElementById("je-progress"),
         subtitle: document.getElementById("je-subtitle"),
-        infobox: {
+        widgetbox: {
           root: document.getElementById("je-field"),
           icon: document.getElementById("je-icon"),
           motd: document.getElementById("je-motd"),
+        },
+        online: {
+          track: document.getElementById("je-player-track"),
+          tip: document.getElementById("je-player-tip"),
+          listBtn: document.getElementById("je-player-list-btn"),
+          list: document.getElementById("je-player-list"),
         },
       },
       be: {
         root: document.getElementById("be"),
         progress: document.getElementById("be-progress"),
         subtitle: document.getElementById("be-subtitle"),
-        infobox: {
+        widgetbox: {
           root: document.getElementById("be-field"),
           motd: document.getElementById("be-motd"),
         },
@@ -243,19 +249,33 @@ async function fetchData(url) {
 function update_je() {
   //je
   pageElements.content.main.je.progress.style = ``;
-  pageElements.content.main.je.infobox.icon.src = "https://rs.kdxiaoyi.top/res/images/icon/mc_unknown_server.png";
   fetchData(pageElements._.fetchUrl.je)
     .then(result => {
       if (result.online) {/* 在线时更新信息 */
         pageElements.content.main.je.subtitle.style = `color:#30C496;`;
         pageElements.content.main.je.subtitle.innerHTML = `✓ 可连接`;
-        pageElements.content.main.je.infobox.root.style = ``;
-        pageElements.content.main.je.infobox.motd.innerHTML = result.motd.html.replace(/* TODO:这里需要处理\\n */"\n", "<br>");
-        pageElements.content.main.je.infobox.icon.src = pageElements._.fetchUrl.icon;
+        /*MOTD卡片信息*/
+        pageElements.content.main.je.widgetbox.root.style = ``;
+        pageElements.content.main.je.widgetbox.motd.innerHTML = result.motd.html.replace(/* TODO:这里需要处理\\n */"\n", "<br>");
+        pageElements.content.main.je.widgetbox.icon.src = pageElements._.fetchUrl.icon;
+        /*在线人数信息*/
+        pageElements.content.main.je.online.track.max = result.players.max;
+        pageElements.content.main.je.online.track.value = result.players.online;
+        pageElements.content.main.je.online.tip.innerHTML = `${result.players.online} / ${result.players.max}`;
+        if (!!result.players.list && result.players.list.length >= 1) {
+          pageElements.content.main.je.online.list.innerHTML = "";
+          result.players.list.forEach((subJson) => {
+            pageElements.content.main.je.online.list.innerHTML += subJson.name_html;
+            pageElements.content.main.je.online.list.innerHTML += "<br>";
+          });
+          pageElements.content.main.je.online.listBtn.style = "";
+        } else {
+          pageElements.content.main.je.online.listBtn.style = "display:none;";
+        };
       } else {/* 不在线时更新信息 */
         pageElements.content.main.je.subtitle.style = `color:#E23B2E;`;
         pageElements.content.main.je.subtitle.innerHTML = `✕ 未知的服务器`;
-        pageElements.content.main.je.infobox.root.style = `display:none;`;
+        pageElements.content.main.je.widgetbox.root.style = `display:none;`;
       };
       if (!result.cacheTimeRemaining) {/* 处理下次刷新时间 */
         pageElements._.refreshTime.je = 60;
@@ -267,6 +287,7 @@ function update_je() {
     .catch(error => {
       pageElements.content.main.je.subtitle.style = `color:#FBC116;`;
       pageElements.content.main.je.subtitle.innerHTML = `✕ API故障`;
+      console.error(error);
     })
     .finally(() => {
       pageElements.content.main.je.progress.style = `display:none;`;
@@ -281,10 +302,10 @@ function update_be() {
       if (result.online) {/* 在线时更新信息 */
         pageElements.content.main.be.subtitle.style = `color:#30C496;`;
         pageElements.content.main.be.subtitle.innerHTML = `✓ 可连接`;
-        pageElements.content.main.be.infobox.root.style = ``;      } else {/* 不在线时更新信息 */
+        pageElements.content.main.be.widgetbox.root.style = ``;      } else {/* 不在线时更新信息 */
         pageElements.content.main.be.subtitle.style = `color:#E23B2E;`;
         pageElements.content.main.be.subtitle.innerHTML = `✕ 未知的服务器`;
-        pageElements.content.main.be.infobox.root.style = `display:none;`;
+        pageElements.content.main.be.widgetbox.root.style = `display:none;`;
       };
       if (/* 处理下次刷新时间 */!result.cacheTimeRemaining) {
         pageElements._.refreshTime.be = 60;
@@ -296,6 +317,7 @@ function update_be() {
     .catch(error => {
       pageElements.content.main.be.subtitle.style = `color:#FBC116;`;
       pageElements.content.main.be.subtitle.innerHTML = `✕ API故障`;
+      console.error(error);
     })
     .finally(() => {
       pageElements.content.main.be.progress.style = `display:none;`;
