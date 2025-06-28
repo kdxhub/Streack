@@ -114,6 +114,12 @@ pageElements = {
   },
 };
 
+//PMD框架相关处理
+pageElements.content.lsidebar.slot1.innerHTML = `<div slot="image"><img title="${conf.sidebar.solt_1.title}" alt="${conf.sidebar.solt_1.alt}" class="ui-img sidebar_img" pmduiimg="true" src="${conf.sidebar.solt_1.src}"></div><div slot="headline"><span>${conf.sidebar.solt_1.alt}</span></div>`;
+pageElements.content.lsidebar.slot2.innerHTML = conf.sidebar.solt_2.innerHTML;
+pageElements.content.lsidebar.slot4.saying.innerHTML = `<center>${conf.info.saying}</center>`;
+pageElements.content.lsidebar.slot4.license.innerHTML = `<center><small>以<a href="${conf.info.licen.link}">${conf.info.licen.what}</a>协议提供内容</small></center>`;
+
 //发起请求
 if (
   /^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])\.){1,}([a-zA-Z]|[a-zA-Z][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])(:[0-9]{1,5})?$/.test(pageElements._.goal)

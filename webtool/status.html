@@ -5,10 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
   <meta name="mobile-web-app-capable" content="yes" />
-  <script src="/Streack/_page/js/pmd.js"></script>
+  <script src="https://kdxiaoyi.top/Streack/_page/js/pmd.js"></script>
   <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script>
   <link rel="stylesheet" href="https://rs.kdxiaoyi.top/res/css/sober-theme-turquoise.css" />
-  <link rel="stylesheet" href="/Streack/_page/css/status.css" />
+  <link rel="stylesheet" href="../_page/css/status.css" />
   <link rel="stylesheet" href="https://rs.kdxiaoyi.top/res/css/font.css" />
   <link rel="stylesheet" href="https://rs.kdxiaoyi.top/res/fonts/SourceHanSerifCN/result.css" />
   <link rel="stylesheet" href="https://rs.kdxiaoyi.top/res/fonts/WenQuanWeiMiHei/result.css" />
@@ -32,11 +32,8 @@
     </s-appbar>
     <s-drawer id="mainContent">
       <div id="LeftSiderbar" slot="start"><s-scroll-view class="unselectable" style="height: 100%; padding-bottom: 1rem;">
-        <s-card id="slot_1" type="" class="sidebar_head">
-          <div slot="image"><img title="${conf.sidebar.solt_1.title}" alt="${conf.sidebar.solt_1.alt}" class="ui-img sidebar_img" pmduiimg="true" src="${conf.sidebar.solt_1.src}"></div>
-          <div slot="headline"><span>${conf.sidebar.solt_1.alt}</span></div>
-        </s-card>
-        <s-card id="slot_2" type="" class="sidebar_head">${conf.sidebar.solt_2.innerHTML}</s-card>
+        <s-card id="slot_1" type="" class="sidebar_head"></s-card>
+        <s-card id="slot_2" type="" class="sidebar_head"></s-card>
         <s-card id="slot_3" type="" class="sidebar_head">
           <s-fold folded="true" id="user_setting_parent">
             <s-chip slot="trigger" clickable="true" class="sidebar_btn">
@@ -69,9 +66,9 @@
           </s-fold>
         </s-card>
         <s-card id="slot_4" type="" class="sidebar_head">
-          <div id="slot_4_saying"><center>${conf.info.saying}</center></div>zz
-          <div id="slot_4_time"><center><small>Since 2022-07-19</small></center></div>
-          <div id="slot_4_license"><center><small>以<a href="${conf.info.licen.link}">${conf.info.licen.what}</a>协议提供内容</small></center></div>
+          <div id="slot_4_saying"></div>
+          <div id="slot_4_time"><center><small>Since 2024-12-25</small></center></div>
+          <div id="slot_4_license"></div>
         </s-card>
       </div></s-scroll-view>
       <s-scroll-view id="pContent" class="selectable">
@@ -94,6 +91,6 @@
       </s-scroll-view>
     </s-drawer>
   </s-page>
-  <script src="/Streack/_page/js/status.js"></script>
+  <script src="../_page/js/status.js"></script>
 </body>
 </html>
