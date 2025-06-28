@@ -111,6 +111,7 @@ pageElements = {
         subtitle: document.getElementById("je-subtitle"),
         infobox: {
           root: document.getElementById("je-field"),
+          icon: document.getElementById("je-icon"),
           motd: document.getElementById("je-motd"),
         },
       },
@@ -242,6 +243,7 @@ async function fetchData(url) {
 function update_je() {
   //je
   pageElements.content.main.je.progress.style = ``;
+  pageElements.content.main.je.infobox.icon.src = "https://rs.kdxiaoyi.top/res/images/icon/mc_unknown_server.png";
   fetchData(pageElements._.fetchUrl.je)
     .then(result => {
       if (result.online) {/* 在线时更新信息 */
@@ -249,6 +251,7 @@ function update_je() {
         pageElements.content.main.je.subtitle.innerHTML = `✓ 可连接`;
         pageElements.content.main.je.infobox.root.style = ``;
         pageElements.content.main.je.infobox.motd.innerHTML = result.motd.html.replace(/* TODO:这里需要处理\\n */"\n", "<br>");
+        pageElements.content.main.je.infobox.icon.src = pageElements._.fetchUrl.icon;
       } else {/* 不在线时更新信息 */
         pageElements.content.main.je.subtitle.style = `color:#E23B2E;`;
         pageElements.content.main.je.subtitle.innerHTML = `✕ 未知的服务器`;
