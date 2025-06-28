@@ -168,6 +168,18 @@ s-field[content=online]>div.field>p {
 s-field[content=online]>div.field>s-popup#je-player-list-btn>s-icon-button {
   margin: 0.4em 0 0 0;
 }
+s-field[content=mod] {
+  display: none;
+}
+s-field[content=plugin] {
+  display: none;
+}
+s-field[content=srv] {
+  display: none;
+}
+s-field[content=protocol] {
+  display: none;
+}
 
 a {
   text-decoration: underline dotted;

@@ -24,7 +24,7 @@
       </s-tooltip>
       <div id="pageTitle" slot="headline"> 服务器实时状态（Beta） </div>
       <s-tooltip slot="action">
-        <s-icon-button id="newBtn" type="none" slot="trigger">
+        <s-icon-button id="newBtn" type="none" slot="trigger" onclick="pageElements.newForm.root.showed=true;">
           <s-icon><svg viewBox="0 -960 960 960"><path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"></path></svg></s-icon>
         </s-icon-button>
         发起新查询
@@ -134,6 +134,21 @@
         <div class="unselectable" id="no_script"><h1>您似乎没有启用JavaScript，而这是此网站正常运行所必须的。<br>此外，该页面不支持过老的浏览器内核。</h1></div>
       </s-scroll-view>
     </s-drawer>
+    <s-bottom-sheet id="newForm">
+      <div slot="text">
+        <h2>发起新查询</h2>
+        <p>在下方填写目标服务器地址即可发起查询。查询链接下次打开仍为该服务器。</p>
+        <s-text-field id="newForm-input" style="display: grid; width: auto" label="目标服务器地址" value>
+          <s-icon-button slot="end" onclick="removeNewFormData();">
+            <s-icon name="close"></s-icon>
+          </s-icon-button>
+          <s-icon-button slot="end" onclick="startNewLookup(pageElements.newForm.url.value);">
+            <s-icon name="arrow_forward"></s-icon>
+          </s-icon-button>
+          <div slot="text">支持SRV解析；若不含端口视为默认端口。</div>
+        </s-text-field>
+      </div>
+    </s-bottom-sheet>
   </s-page>
   <script src="../_page/js/status.js"></script>
 </body>

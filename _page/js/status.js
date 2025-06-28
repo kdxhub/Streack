@@ -1,5 +1,6 @@
 //def
 function/*修改过的func，找不到时返回空字符串*/ getQueryString(name) { let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); let r = window.location.search.substr(1).match(reg); if (r != null) { return unescape(r[2]); }; return ""; };
+String.prototype./*移除指定参数*/removeQuery = function(name) { if (name == undefined) {return this.replace(/[?&].*=[^&]*&?/g, "");} else {return this.replace(`/[?&]` + name + `=[^&]*&?/g`, "");}; };
 function openURL(URI, IsInPresentWindow) {
   let linkEle = document.createElement("a");
   if (!!IsInPresentWindow) {
@@ -68,6 +69,10 @@ pageElements = {
     menuBtn: document.getElementById("menuBtn"),
     title: document.getElementById("pageTitle"),
     newBtn: document.getElementById("newBtn"),
+  },
+  newForm: {
+    root: document.getElementById("newForm"),
+    url: document.getElementById("newForm-input"),
   },
   content: {
     root: document.getElementById("mainContent"),
@@ -217,6 +222,7 @@ if (
   pageElements._.fetchUrl.be += pageElements._.goal;
   pageElements._.fetchUrl.icon += pageElements._.goal;
   pageElements.content.main.notice.third.innerHTML = `当前正在查询 <big><span class="selectable Mojangles">${pageElements._.goal}</span></big> 的状态，仅显示可显示信息。`;
+  pageElements.newForm.url.value = pageElements._.goal;
   if (pageElements._.debug) {console.log("使用地址：",pageElements._.goal);};
 } else {
   if (pageElements._.goal != "") { msg("目标服务器地址不合法", "好", true); };
@@ -326,6 +332,30 @@ function update_be() {
 };
 update_je();
 update_be();
+
+//发起新请求按钮事件
+function removeNewFormData() {
+  pageElements.newForm.url.error = "";
+  pageElements.newForm.url.value = ``;
+};
+function startNewLookup(url) {
+  pageElements.newForm.url.error = "";
+  if (
+    /^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])\.){1,}([a-zA-Z]|[a-zA-Z][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])(:[0-9]{1,5})?$/.test(url)
+    ||/*IPv4*/ /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(:[0-9]{1,5})?$/.test(url)
+  ) {
+    let targetURL = window.location.href.removeQuery();
+    targetURL += "?server=" + url;
+    openURL(targetURL,true)
+  } else {
+    if (!pageElements.newForm.url.value) {
+      openURL(window.location.href.removeQuery(),true)
+    } else {
+      msg("无效的地址，请检查输入", "好", true);
+    };
+    pageElements.newForm.url.error = "true";
+  };
+};
 
 //初始化计时器
 pageElements._.refreshTime.IntervalID = setInterval(() => {
