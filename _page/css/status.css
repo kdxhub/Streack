@@ -115,7 +115,21 @@ html::-webkit-scrollbar {
   padding: 10px 16px 9px 16px;
 }
 .cardhead {
-  margin: 0 0 0 0;
+  margin: 0 auto 0 0;
+  min-width: 100%;
+}
+.cardhead-sub {
+  margin: 0 auto 0 0;
+}
+.field {
+  vertical-align: top;
+}
+s-linear-progress {
+  width: 100%;
+}
+s-field {
+  width: 49%;
+  margin-top: 0.8em;
 }
 
 a {

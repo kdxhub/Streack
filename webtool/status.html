@@ -68,7 +68,7 @@
         <s-card id="slot_4" type="" class="sidebar_head">
           <div id="slot_4_saying"></div>
           <div id="slot_4_time"><center><small>Since 2024-12-25</small></center></div>
-          <div id="slot_4_license"></div>
+          <div id="slot_4_license"></div> 
         </s-card>
       </div></s-scroll-view>
       <s-scroll-view id="pContent" class="selectable">
@@ -79,13 +79,29 @@
         </s-card>
         <s-card id="je" class="main-card">
           <div class="cardhead" slot="headline">Java版</div>
+          <div id="je-subtitle" class="cardhead-sub" slot="subhead">正在查询</div>
           <s-linear-progress id="je-progress" indeterminate="true"></s-linear-progress>
-          <div id="je-subtitle" class="cardhead" slot="subhead">正在查询</div>
+          <div class="field" id="je-field" style="display: none;">
+            <s-field>
+              <div slot="label">信息</div>
+              <div id="je-player"></div>
+            </s-field>
+            <s-field>
+              <div slot="label">MOTD</div>
+              <s-scroll-view id="je-motd"></s-scroll-view>
+            </s-field>
+          </div>
         </s-card>
         <s-card id="be" class="main-card">
           <div class="cardhead" slot="headline">基岩版</div>
+          <div id="be-subtitle" class="cardhead-sub" slot="subhead">正在查询</div>
           <s-linear-progress id="be-progress" indeterminate="true"></s-linear-progress>
-          <div id="be-subtitle" class="cardhead" slot="subhead">正在查询</div>
+          <div class="field" id="be-field" style="display: none;">
+            <s-field>
+              <div slot="label">MOTD</div>
+              <div id="be-motd"></div>
+            </s-field>
+          </div>
         </s-card>
         <div class="unselectable" id="no_script"><h1>您似乎没有启用JavaScript，而这是此网站正常运行所必须的。<br>此外，该页面不支持过老的浏览器内核。</h1></div>
       </s-scroll-view>

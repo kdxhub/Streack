@@ -109,11 +109,19 @@ pageElements = {
         root: document.getElementById("je"),
         progress: document.getElementById("je-progress"),
         subtitle: document.getElementById("je-subtitle"),
+        infobox: {
+          root: document.getElementById("je-field"),
+          motd: document.getElementById("je-motd"),
+        },
       },
       be: {
         root: document.getElementById("be"),
         progress: document.getElementById("be-progress"),
         subtitle: document.getElementById("be-subtitle"),
+        infobox: {
+          root: document.getElementById("be-field"),
+          motd: document.getElementById("be-motd"),
+        },
       },
     },
   },
@@ -239,9 +247,12 @@ function update_je() {
       if (result.online) {/* 在线时更新信息 */
         pageElements.content.main.je.subtitle.style = `color:#30C496;`;
         pageElements.content.main.je.subtitle.innerHTML = `✓ 可连接`;
+        pageElements.content.main.je.infobox.root.style = ``;
+        pageElements.content.main.je.infobox.motd.innerHTML = result.motd.html.replace(/* TODO:这里需要处理\\n */"\n", "<br>");
       } else {/* 不在线时更新信息 */
         pageElements.content.main.je.subtitle.style = `color:#E23B2E;`;
         pageElements.content.main.je.subtitle.innerHTML = `✕ 未知的服务器`;
+        pageElements.content.main.je.infobox.root.style = `display:none;`;
       };
       if (!result.cacheTimeRemaining) {/* 处理下次刷新时间 */
         pageElements._.refreshTime.je = 60;
@@ -267,9 +278,10 @@ function update_be() {
       if (result.online) {/* 在线时更新信息 */
         pageElements.content.main.be.subtitle.style = `color:#30C496;`;
         pageElements.content.main.be.subtitle.innerHTML = `✓ 可连接`;
-      } else {/* 不在线时更新信息 */
+        pageElements.content.main.be.infobox.root.style = ``;      } else {/* 不在线时更新信息 */
         pageElements.content.main.be.subtitle.style = `color:#E23B2E;`;
         pageElements.content.main.be.subtitle.innerHTML = `✕ 未知的服务器`;
+        pageElements.content.main.be.infobox.root.style = `display:none;`;
       };
       if (/* 处理下次刷新时间 */!result.cacheTimeRemaining) {
         pageElements._.refreshTime.be = 60;
