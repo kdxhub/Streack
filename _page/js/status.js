@@ -387,7 +387,6 @@ update_be();
 
 //发起新请求按钮事件
 function removeNewFormData() {
-  pageElements._.closeAllTabs();
   pageElements.newForm.url.error = "";
   pageElements.newForm.url.value = ``;
 };
