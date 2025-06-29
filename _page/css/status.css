@@ -6,6 +6,23 @@ html body s-page * .MiSans {font-family: "MiSans Normal" !important;}
 html body s-page * .MiSansL3 {font-family: "MiSans L3" !important;}
 html body s-page * .SourceHanSerifCN {font-family: "SourceHanSerifCN" !important;}
 
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--s-color-outline-variant, #c0c8cc);
+    border-radius: 3px;
+  }
+  @supports not selector(::-webkit-scrollbar) {
+    * {
+      scrollbar-color: var(--s-color-outline-variant, #c0c8cc) transparent;
+    }
+  }
+}
+
 @media print {
   #appbarRoot {
     display: none !important;
@@ -128,7 +145,7 @@ html::-webkit-scrollbar {
 s-linear-progress {
   width: 100%;
 }
-s-field {
+s-field, .modlist {
   width: 49%;
   margin-top: 0.5em;
   vertical-align: top;
@@ -203,6 +220,9 @@ s-tooltip.eula-tip {
 .eula-tip[yes=true] {
   display: block;
 }
+.modlist {
+  overflow: auto;
+}
 
 a {
   text-decoration: underline dotted;
@@ -242,12 +262,12 @@ a s-icon {
   --header-font-color: #f8f8f8;
 }
 
-.selectable {
+.selectable, .selectable_ * {
   user-select: text;
   -moz-user-select: text;
   -webkit-user-select: text;
 }
-.unselectable {
+.unselectable, .unselectable_ * {
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;

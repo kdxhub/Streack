@@ -135,7 +135,13 @@ pageElements = {
           software: document.getElementById("je-protocol-s"),
           srv: document.getElementById("je-srv"),
           srv_p: document.getElementById("je-srv-p"),
-          },
+        },
+        modlist: {
+          plugin: document.getElementById("je-plugin"),
+          plugin_p: document.getElementById("je-plugin-p"),
+          mod: document.getElementById("je-mod"),
+          mod_p: document.getElementById("je-mod-p"),
+        },
       },
       be: {
         root: document.getElementById("be"),
@@ -299,6 +305,26 @@ function update_je() {
           pageElements.content.main.je.protocol.srv_p.style = ``;
         } else {
           pageElements.content.main.je.protocol.srv_p.style = `display:none;`;
+        };
+        /*插件*/
+        if (!!result.plugins && result.plugins.length >= 1) {
+          pageElements.content.main.je.modlist.plugin.innerHTML = ``;
+          result.plugins.forEach((ele) => {
+            pageElements.content.main.je.modlist.plugin.innerHTML += `<s-tr><s-th>${ele.name}</s-th><s-th>${ele.version}</s-th></s-tr>`;
+          });
+          pageElements.content.main.je.modlist.plugin_p.style = ``;
+        } else {
+          pageElements.content.main.je.modlist.plugin_p.style = `display:none;`;
+        };
+        /*MOD*/
+        if (!!result.mods && result.mods.length >= 1) {
+          pageElements.content.main.je.modlist.mod.innerHTML = ``;
+          result.mods.forEach((ele) => {
+            pageElements.content.main.je.modlist.mod.innerHTML += `<s-tr><s-th>${ele.name}</s-th><s-th>${ele.version}</s-th></s-tr>`;
+          });
+          pageElements.content.main.je.modlist.mod_p.style = ``;
+        } else {
+          pageElements.content.main.je.modlist.mod_p.style = `display:none;`;
         };
         /*显示信息栏*/pageElements.content.main.je.infoRoot.style = ``;
       } else {/* 不在线时更新信息 */

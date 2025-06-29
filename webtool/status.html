@@ -134,14 +134,26 @@
                 </s-tooltip>
               </div>
             </s-field>
-            <s-field content="plugin">
-              <div slot="label">插件</div>
-              <div id="je-plugin"></div>
-            </s-field>
-            <s-field content="mod">
-              <div slot="label">MOD</div>
-              <div id="je-mod"></div>
-            </s-field>
+            <s-table id="je-plugin-p" class="modlist">
+              <s-thead>
+                <s-tr>
+                  <s-th>插件</s-th>
+                  <s-th>版本</s-th>
+                </s-tr>
+              </s-thead>
+              <s-tbody id="je-plugin" class="selectable_">
+              </s-tbody>
+            </s-table>
+            <s-table id="je-mod-p" class="modlist">
+              <s-thead>
+                <s-tr>
+                  <s-th>MOD</s-th>
+                  <s-th>版本</s-th>
+                </s-tr>
+              </s-thead>
+              <s-tbody id="je-mod" class="selectable_">
+              </s-tbody>
+            </s-table>
           </div>
         </s-card>
         <s-card id="be" class="main-card">
