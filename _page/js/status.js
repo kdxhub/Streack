@@ -61,6 +61,10 @@ pageElements = {
       be: -1,
       IntervalID: -1,
     },
+    closeAllTabs: function() {
+      document.querySelector('s-bottom-sheet').showed = false;
+      document.querySelector('s-dialog').showed = false;
+    },
   },
   root: document.getElementById("pageRoot"),
   no_script: document.getElementById("no_script"),
@@ -335,6 +339,7 @@ update_be();
 
 //发起新请求按钮事件
 function removeNewFormData() {
+  pageElements._.closeAllTabs();
   pageElements.newForm.url.error = "";
   pageElements.newForm.url.value = ``;
 };

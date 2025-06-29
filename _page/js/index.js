@@ -1,5 +1,11 @@
 //定义页面元素集合
 pageElements = {
+  _: {
+    closeAllTabs: function() {
+      document.querySelector('s-bottom-sheet').showed = false;
+      document.querySelector('s-dialog').showed = false;
+    },
+  },
   root: document.getElementById("page"),
   no_script: document.getElementById("no_script"),
   main: {
@@ -169,35 +175,27 @@ pageElements.main.root.addEventListener('touchmove', handleScroll, { passive: fa
 
 //Hash识别与处理
 if/*开始游玩*/ (window.location.hash.replace('#', '').toLowerCase() == "play") {
+  pageElements._.closeAllTabs();
   pageElements.startPlay.root.showed = true;
-  pageElements.qunMessage.root.showed = false;
-  pageElements.commentMessage.root.showed = false;
-  pageElements.issueMessage.root.showed = false;
 };
 function qqunlink(/*加群*/) {
-  pageElements.startPlay.root.showed = false;
+  pageElements._.closeAllTabs();
   pageElements.qunMessage.root.showed = true;
-  pageElements.commentMessage.root.showed = false;
-  pageElements.issueMessage.root.showed = false;
   openURL("#qqun_done", true);
   openURL(pageElements.qunMessage.id.href, true);
 };
 if (window.location.hash.replace('#', '').toLowerCase() == "qqun") {qqunlink();};
 if (window.location.hash.replace('#', '').toLowerCase() == "qqun_done") {pageElements.qunMessage.root.showed = true;};
 function commentlink(/*评论*/) {
-  pageElements.startPlay.root.showed = false;
-  pageElements.qunMessage.root.showed = false;
+  pageElements._.closeAllTabs();
   pageElements.commentMessage.root.showed = true;
-  pageElements.issueMessage.root.showed = false;
   openURL("#comment_done", true);
   openURL(pageElements.commentMessage.id.href, true);
 };
 if (window.location.hash.replace('#', '').toLowerCase() == "comment") {qqunlink();};
 if (window.location.hash.replace('#', '').toLowerCase() == "comment_done") {pageElements.commentMessage.root.showed = true;};
 function issuelink(/*发起issue*/open) {
-  pageElements.startPlay.root.showed = false;
-  pageElements.qunMessage.root.showed = false;
-  pageElements.commentMessage.root.showed = false;
+  pageElements._.closeAllTabs();
   pageElements.issueMessage.root.showed = true;
   openURL("#issue_done", true);
 };
