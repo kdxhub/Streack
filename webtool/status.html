@@ -106,6 +106,13 @@
                   </s-tooltip>
                   <div class="player-list"><p id="je-player-list" class="player-list"></p></div>
                 </s-popup>
+                <s-tooltip id="je-eula-tip" class="eula-tip" yes="false">
+                  <p slot="trigger" class="eula-tip"><br>
+                    ⚠ 已被Mojang屏蔽
+                  </p>
+                  这类服务器通常因为违反了Mojang Eula而被Mojang屏蔽。<br>
+                  未经修改的客户端试图连接到被屏蔽的服务器时会以网络理由断开连接。
+                </s-tooltip>
               </div>
             </s-field>
             <s-field content="protocol">
@@ -120,18 +127,12 @@
                   <s-text-field slot="trigger" id="je-protocol-s" label="服务端软件" class="infobox" readonly="true"></s-text-field>
                   服务器所使用的服务端名称，可以被某些插件隐藏。
                 </s-tooltip>
-                <s-tooltip id="je-eula-tip" class="eula-tip" yes="false">
-                  <p slot="trigger" class="eula-tip"><br>
-                    ⚠ 已被Mojang屏蔽
-                  </p>
-                  这类服务器通常因为违反了Mojang Eula而被Mojang屏蔽。<br>
-                  未经修改的客户端试图连接到被屏蔽的服务器时会以网络理由断开连接。
+                <s-tooltip id="je-srv-p">
+                  <s-text-field slot="trigger" id="je-srv" label="SRV记录指向" class="infobox" readonly="true"></s-text-field>
+                  域名的SRV记录可以让客户端连接到服务器时不必指定端口。<br>
+                  这里列出了其真正指向的地址。
                 </s-tooltip>
               </div>
-            </s-field>
-            <s-field content="srv">
-              <div slot="label">SRV支持</div>
-              <div id="je-srv"></div>
             </s-field>
             <s-field content="plugin">
               <div slot="label">插件</div>

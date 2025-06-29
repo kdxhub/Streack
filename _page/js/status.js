@@ -128,11 +128,13 @@ pageElements = {
           tip: document.getElementById("je-player-tip"),
           listBtn: document.getElementById("je-player-list-btn"),
           list: document.getElementById("je-player-list"),
+          eula: document.getElementById("je-eula-tip"),
         },
         protocol: {
           version: document.getElementById("je-protocol-v"),
           software: document.getElementById("je-protocol-s"),
-          eula: document.getElementById("je-eula-tip"),
+          srv: document.getElementById("je-srv"),
+          srv_p: document.getElementById("je-srv-p"),
           },
       },
       be: {
@@ -289,7 +291,15 @@ function update_je() {
         /*协议版本*/
         pageElements.content.main.je.protocol.version.value = `${result.version.name_clean} [${result.version.protocol}]`;
         pageElements.content.main.je.protocol.software.value = result.software;
-        pageElements.content.main.je.protocol.eula.yes = result.eula_blocked;
+        /*EULA Blocked*/
+        pageElements.content.main.je.online.eula.yes = result.eula_blocked;
+        /*SRV*/
+        if (!!result.srv_record) {
+          pageElements.content.main.je.protocol.srv.value = `${result.srv_record.host}:${result.srv_record.port}`;
+          pageElements.content.main.je.protocol.srv_p.style = ``;
+        } else {
+          pageElements.content.main.je.protocol.srv_p.style = `display:none;`;
+        };
         /*显示信息栏*/pageElements.content.main.je.infoRoot.style = ``;
       } else {/* 不在线时更新信息 */
         pageElements.content.main.je.subtitle.style = `color:#E23B2E;`;
