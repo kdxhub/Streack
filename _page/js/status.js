@@ -118,12 +118,20 @@ pageElements = {
         root: document.getElementById("je"),
         progress: document.getElementById("je-progress"),
         subtitle: document.getElementById("je-subtitle"),
+        infoRoot: document.getElementById("je-field"),
         widgetbox: {
-          root: document.getElementById("je-field"),
           icon: document.getElementById("je-icon"),
           motd: document.getElementById("je-motd"),
         },
         online: {
+          root: document.querySelector("s-field[content=online]"),
+          track: document.getElementById("je-player-track"),
+          tip: document.getElementById("je-player-tip"),
+          listBtn: document.getElementById("je-player-list-btn"),
+          list: document.getElementById("je-player-list"),
+        },
+        protocol: {
+          root: document.querySelector("s-field[content=protocol]"),
           track: document.getElementById("je-player-track"),
           tip: document.getElementById("je-player-tip"),
           listBtn: document.getElementById("je-player-list-btn"),
@@ -134,8 +142,8 @@ pageElements = {
         root: document.getElementById("be"),
         progress: document.getElementById("be-progress"),
         subtitle: document.getElementById("be-subtitle"),
+        infoRoot: document.getElementById("be-field"),
         widgetbox: {
-          root: document.getElementById("be-field"),
           motd: document.getElementById("be-motd"),
         },
       },
@@ -265,7 +273,6 @@ function update_je() {
         pageElements.content.main.je.subtitle.style = `color:#30C496;`;
         pageElements.content.main.je.subtitle.innerHTML = `✓ 可连接`;
         /*MOTD卡片信息*/
-        pageElements.content.main.je.widgetbox.root.style = ``;
         pageElements.content.main.je.widgetbox.motd.innerHTML = result.motd.html.replace(/* TODO:这里需要处理\\n */"\n", "<br>");
         pageElements.content.main.je.widgetbox.icon.src = pageElements._.fetchUrl.icon;
         /*在线人数信息*/
@@ -282,10 +289,11 @@ function update_je() {
         } else {
           pageElements.content.main.je.online.listBtn.style = "display:none;";
         };
+        /*显示信息栏*/pageElements.content.main.je.infoRoot.style = ``;
       } else {/* 不在线时更新信息 */
         pageElements.content.main.je.subtitle.style = `color:#E23B2E;`;
         pageElements.content.main.je.subtitle.innerHTML = `✕ 未知的服务器`;
-        pageElements.content.main.je.widgetbox.root.style = `display:none;`;
+        pageElements.content.main.je.infoRoot.style = `display:none;`;
       };
       if (!result.cacheTimeRemaining) {/* 处理下次刷新时间 */
         pageElements._.refreshTime.je = 60;
@@ -295,6 +303,7 @@ function update_je() {
       if (result.retrieved_at <= (Date.now() - /* 数据更新旧于则提示*/2000)) {pageElements.content.main.je.subtitle.innerHTML += `（基于缓存）`;}
     })
     .catch(error => {
+      pageElements.content.main.je.infoRoot.style = `display:none;`;
       pageElements.content.main.je.subtitle.style = `color:#FBC116;`;
       pageElements.content.main.je.subtitle.innerHTML = `✕ API故障`;
       console.error(error);
@@ -312,10 +321,11 @@ function update_be() {
       if (result.online) {/* 在线时更新信息 */
         pageElements.content.main.be.subtitle.style = `color:#30C496;`;
         pageElements.content.main.be.subtitle.innerHTML = `✓ 可连接`;
-        pageElements.content.main.be.widgetbox.root.style = ``;      } else {/* 不在线时更新信息 */
+        /*显示信息栏*/pageElements.content.main.be.infoRoot.style = ``;
+        } else {/* 不在线时更新信息 */
         pageElements.content.main.be.subtitle.style = `color:#E23B2E;`;
         pageElements.content.main.be.subtitle.innerHTML = `✕ 未知的服务器`;
-        pageElements.content.main.be.widgetbox.root.style = `display:none;`;
+        pageElements.content.main.be.infoRoot.style = `display:none;`;
       };
       if (/* 处理下次刷新时间 */!result.cacheTimeRemaining) {
         pageElements._.refreshTime.be = 60;
@@ -325,6 +335,7 @@ function update_be() {
       if (result.retrieved_at <= (Date.now() - /* 数据更新旧于则提示*/2000)) {pageElements.content.main.be.subtitle.innerHTML += `（基于缓存）`;}
     })
     .catch(error => {
+      pageElements.content.main.be.infoRoot.style = `display:none;`;
       pageElements.content.main.be.subtitle.style = `color:#FBC116;`;
       pageElements.content.main.be.subtitle.innerHTML = `✕ API故障`;
       console.error(error);

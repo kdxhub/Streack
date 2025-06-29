@@ -188,18 +188,6 @@ p.player-list {
 p.player-list span {
   font-family: "Mojangles";
 }
-s-field[content=mod] {
-  display: none;
-}
-s-field[content=plugin] {
-  display: none;
-}
-s-field[content=srv] {
-  display: none;
-}
-s-field[content=protocol] {
-  display: none;
-}
 
 a {
   text-decoration: underline dotted;
