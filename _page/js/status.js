@@ -62,7 +62,7 @@ pageElements = {
       IntervalID: -1,
     },
   },
-  root: document.getElementById("a"),
+  root: document.getElementById("pageRoot"),
   no_script: document.getElementById("no_script"),
   appbar: {
     root: document.getElementById("appbarRoot"),
@@ -160,7 +160,7 @@ pageElements.content.lsidebar.slot4.license.innerHTML = `<center><small>以<a hr
 /* 配色功能 */
 function ChangeColorTheme(target, animationCenter) {
   if /* 若传入无效动画中心元素则指定为侧栏按钮 */ (!(animationCenter instanceof HTMLElement)) { animationCenter = pageElements.appbar.menuBtn; };
-  return pageElements.pageRoot.toggle(target, animationCenter);
+  return pageElements.root.toggle(target, animationCenter);
 };
 if (!!pmdStorage.Cookies.get("pmd-prefer_color_theme")) {
   /*如果检测到Cookies中相关设置则启用用户偏好配色*/
