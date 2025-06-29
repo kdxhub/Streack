@@ -93,17 +93,23 @@
                   <s-icon slot="track"><svg viewBox="0 -960 960 960"><path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z"></path></svg></s-icon>
                   <s-icon slot="indicator"><svg viewBox="0 -960 960 960"><path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z"></path></svg></s-icon>
                 </s-rate>
-                <p id="je-player-tip"></p>
-                <s-popup style="style=none;" id="je-player-list-btn" align="right">
-                  <s-icon-button slot="trigger" style="width:1.5em;margin:0 0 0 auto;">
-                    <s-icon name="search"></s-icon>
-                  </s-icon-button>
+                <s-tooltip>
+                  <p slot="trigger" id="je-player-tip" class="player-tip"></p>
+                  当前在线人数 / 最大在线人数
+                </s-tooltip>
+                <s-popup style="display:none;" id="je-player-list-btn">
+                  <s-tooltip slot="trigger">
+                    <s-icon-button slot="trigger" style="width:1em;margin:0 0 0 0;">
+                      <s-icon name="search"></s-icon>
+                    </s-icon-button>
+                    列出全部玩家
+                  </s-tooltip>
                   <div class="player-list"><p id="je-player-list" class="player-list"></p></div>
                 </s-popup>
-                </div>
+              </div>
             </s-field>
             <s-field content="protocol">
-              <div slot="label">协议</div>
+              <div slot="label">协议版本</div>
               <div id="je-protocol"></div>
             </s-field>
             <s-field content="srv">
@@ -139,12 +145,18 @@
         <h2>发起新查询</h2>
         <p>在下方填写目标服务器地址即可发起查询。查询链接下次打开仍为该服务器。</p>
         <s-text-field id="newForm-input" style="display: grid; width: auto" label="目标服务器地址" value>
-          <s-icon-button slot="end" onclick="removeNewFormData();">
-            <s-icon name="close"></s-icon>
-          </s-icon-button>
-          <s-icon-button slot="end" onclick="startNewLookup(pageElements.newForm.url.value);">
-            <s-icon name="arrow_forward"></s-icon>
-          </s-icon-button>
+          <s-tooltip slot="end">
+            <s-icon-button slot="trigger" onclick="removeNewFormData();">
+              <s-icon name="close"></s-icon>
+            </s-icon-button>
+            清空
+          </s-tooltip>
+          <s-tooltip slot="end">
+            <s-icon-button slot="trigger" onclick="startNewLookup(pageElements.newForm.url.value);">
+              <s-icon name="arrow_forward"></s-icon>
+            </s-icon-button>
+            下一步
+          </s-tooltip>
           <div slot="text">支持SRV解析；若不含端口视为默认端口。</div>
         </s-text-field>
       </div>
