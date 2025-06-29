@@ -114,6 +114,10 @@ html::-webkit-scrollbar {
   display: block;
   padding: 10px 16px 9px 16px;
 }
+.main-card #je-field, .main-card #be-field {
+  width: 100%;
+  max-width: 100%;
+}
 .cardhead {
   margin: 0 auto 0 0;
   min-width: 100%;
@@ -172,10 +176,10 @@ s-field[content=online]>div.field>p {
 s-field[content=online]>div.field>s-popup#je-player-list-btn>s-icon-button {
   margin: 0.4em 0 0 0;
 }
-p.player-tip {
+p.player-tip, p.eula-tip {
   margin: 0;
 }
-div.player-list {
+s-popup>div {
   min-height: 2em;
   max-height: 50vh;
   overflow: auto;
@@ -187,6 +191,17 @@ p.player-list {
 }
 p.player-list span {
   font-family: "Mojangles";
+}
+s-text-field.infobox {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+s-tooltip.eula-tip {
+  display: none;
+}
+.eula-tip[yes=true] {
+  display: block;
 }
 
 a {

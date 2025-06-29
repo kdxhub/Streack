@@ -109,8 +109,25 @@
               </div>
             </s-field>
             <s-field content="protocol">
-              <div slot="label">协议版本</div>
-              <div id="je-protocol"></div>
+              <div slot="label">连接信息</div>
+              <div id="je-protocol" class="field">
+                <s-tooltip>
+                  <s-text-field slot="trigger" id="je-protocol-v" label="版本" class="infobox unselectable" readonly="true"></s-text-field>
+                  服务器声明的游戏版本及其协议版本。<br>
+                  只有具有相同协议版本的游戏实例才可相互连接。
+                </s-tooltip>
+                <s-tooltip>
+                  <s-text-field slot="trigger" id="je-protocol-s" label="服务端软件" class="infobox" readonly="true"></s-text-field>
+                  服务器所使用的服务端名称，可以被某些插件隐藏。
+                </s-tooltip>
+                <s-tooltip id="je-eula-tip" class="eula-tip" yes="false">
+                  <p slot="trigger" class="eula-tip"><br>
+                    ⚠ 已被Mojang屏蔽
+                  </p>
+                  这类服务器通常因为违反了Mojang Eula而被Mojang屏蔽。<br>
+                  未经修改的客户端试图连接到被屏蔽的服务器时会以网络理由断开连接。
+                </s-tooltip>
+              </div>
             </s-field>
             <s-field content="srv">
               <div slot="label">SRV支持</div>
