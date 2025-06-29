@@ -168,6 +168,18 @@ s-field[content=online]>div.field>p {
 s-field[content=online]>div.field>s-popup#je-player-list-btn>s-icon-button {
   margin: 0.4em 0 0 0;
 }
+div.player-list {
+  max-height: 70vh;
+  min-height: 2em;
+  max-width: 90vw;
+  min-width: 40vw;
+}
+p.player-list {
+  margin:2% 2% 2% 2%;
+}
+p.player-list span {
+  font-family: "Mojangles";
+}
 s-field[content=mod] {
   display: none;
 }
