@@ -6,27 +6,34 @@ description: "见证每一次变化"
 
 ## 未来计划
 
-> [i] 以下内容不一定会实装。<br>若您有其它建议、BUG反馈、申诉需求等，请前往[Github฿](https://github.com/kdxhub/Streack/issues/new)或[Gitee฿](https://gitee.com/kdxiaoyi/Streack/issues/new)发起Issue。
+> [i] 开发中内容，请以最终实装品质为准。<br>
+> 若您有其它建议、BUG反馈、申诉需求等，请前往[Github฿](https://github.com/kdxhub/Streack/issues/new)或[Gitee฿](https://gitee.com/kdxiaoyi/Streack/issues/new)发起Issue。
 
 ### 即将到来
 
 * 7月月度调查将会征集更新到1.21.5的意愿
-* 在线查询服务器状态功能
 * 在菜单中添加PlaceholderAPI支持以呈现更加丰富的菜单界面
-
-> [x] 关于Vanilla Refresh汉化问题：<br>
-> 由于官方汉化存在以下问题，故只能做第三方汉化资源：
-> 1. 质量低下：机翻痕迹严重，例如「扭曲森林」应为「诡异森林」
-> 2. 汉化不全：我们发现VR中共有约700条待汉化文本，但官方汉化包中仅发现300条左右
-> 3. 协议冲突：其[授权协议฿](https://github.com/SpluoSplatus/Vanilla-Refresh/wiki/License)中不允许以任何方式使用原代码，与本仓库协议冲突
+* 6月月度调查
+  * 调整「重生保护」平衡性
+  * 优化假人背包查看功能
+  * 增加更详细的活动介绍
 
 ### 已知问题
 
 * 附魔「连锁采集」不对树生效，该问题会在后续版本修复
 * 粘液科技拓展包*下界乌托邦 Netheopoiesis*表现异常，该问题会在后续版本扩充粘液科技拓展时修复
 * 命令`/l`接受过多参数时表现异常，后续版本更新时会改为自动丢弃多余参数
+* 部分链接无法被发送到客户端，该问题会在后续版本修复
+* 基岩版菜单中部分材质缺失，该问题会在后续版本修复
 
 ## 历史日志
+
+### 25w27a
+
+* 现在家上限为10个，「流光通证」额外追加15个
+* 现在假人被召唤时重置精英怪等级为`召唤者等级 + 5`
+* 更新反作弊
+* 上线[在线服务器状态查询฿](http://kdxiaoyi.top/Streack/webtool/status)页面
 
 ### 25w26b
 
