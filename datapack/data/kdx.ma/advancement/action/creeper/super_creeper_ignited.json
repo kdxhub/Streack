@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:tnt"
+    },
+    "frame": "challenge",
+    "title": {
+      "text": "你在做什么？",
+      "italic": false
+    },
+    "description": {
+      "text": "防反一场人为灾难",
+      "italic": true
+    },
+    "hidden": true
+  },
+  "parent": "kdx.ma:action/creeper/super_creeper",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "block_ignited_creeper": {
+          "blocked": true,
+          "source_entity": {
+            "type": "minecraft:creeper",
+            "nbt": "{powered:1b,ignited:1b}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 500
+  }
+}

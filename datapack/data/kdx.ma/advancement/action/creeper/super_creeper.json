@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:tnt"
+    },
+    "frame": "task",
+    "title": {
+      "text": "那一炸未被不可企及",
+      "italic": false
+    },
+    "description": {
+      "text": "抵御受雷电祝福的攻击",
+      "italic": true
+    },
+    "hidden": false
+  },
+  "parent": "kdx:_streack",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "block_super_creeper": {
+          "blocked": true,
+          "source_entity": {
+            "type": "minecraft:creeper",
+            "nbt": "{powered:1b,ignited:0b}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 250
+  }
+}

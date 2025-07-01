@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:end_crystal"
+    },
+    "frame": "challenge",
+    "title": {
+      "text": "水晶战争",
+      "italic": false
+    },
+    "description": {
+      "text": "抵挡至高63.75❤的向心爆炸伤害（对于末影龙为5❤）",
+      "italic": true
+    },
+    "hidden": false
+  },
+  "parent": "kdx.ma:action/creeper/super_creeper",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "block_crystal": {
+          "blocked": true,
+          "source_entity": {
+            "type": "minecraft:end_crystal"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 500
+  }
+}
