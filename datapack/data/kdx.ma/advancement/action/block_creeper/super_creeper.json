@@ -1,34 +1,35 @@
 {
   "display": {
     "icon": {
-      "id": "minecraft:end_crystal"
+      "id": "minecraft:tnt"
     },
-    "frame": "challenge",
+    "frame": "task",
     "title": {
-      "text": "水晶战争",
+      "text": "那一炸未被不可企及",
       "italic": false
     },
     "description": {
-      "text": "抵挡至高63.75❤的向心爆炸伤害（对于末影龙为5❤）",
+      "text": "抵御受雷电祝福的攻击",
       "italic": true
     },
     "hidden": false
   },
-  "parent": "kdx.ma:action/creeper/super_creeper",
+  "parent": "kdx:_streack",
   "criteria": {
-    "requirement": {
+    "block_super_creeper": {
       "trigger": "minecraft:entity_hurt_player",
       "conditions": {
-        "block_crystal": {
+        "damage": {
           "blocked": true,
           "source_entity": {
-            "type": "minecraft:end_crystal"
+            "type": "minecraft:creeper",
+            "nbt": "{powered:1b,ignited:0b}"
           }
         }
       }
     }
   },
   "rewards": {
-    "experience": 500
+    "experience": 250
   }
 }

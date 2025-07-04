@@ -3,33 +3,33 @@
     "icon": {
       "id": "minecraft:tnt"
     },
-    "frame": "task",
+    "frame": "challenge",
     "title": {
-      "text": "那一炸未被不可企及",
+      "text": "你在做什么？",
       "italic": false
     },
     "description": {
-      "text": "抵御受雷电祝福的攻击",
+      "text": "防反一场人为灾难",
       "italic": true
     },
-    "hidden": false
+    "hidden": true
   },
-  "parent": "kdx:_streack",
+  "parent": "kdx.ma:action/block_creeper/super_creeper",
   "criteria": {
-    "requirement": {
+    "block_ignited_creeper": {
       "trigger": "minecraft:entity_hurt_player",
       "conditions": {
-        "block_super_creeper": {
+        "damage": {
           "blocked": true,
           "source_entity": {
             "type": "minecraft:creeper",
-            "nbt": "{powered:1b,ignited:0b}"
+            "nbt": "{powered:1b,ignited:1b}"
           }
         }
       }
     }
   },
   "rewards": {
-    "experience": 250
+    "experience": 500
   }
 }
