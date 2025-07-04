@@ -119,7 +119,7 @@ description: "见证每一次变化"
 
 ### 25w25d
 
-* 新熵流卡池[「试用版奖励」]([「熵流·赠」](https://kdxiaoyi.top/Streack/doc/info/entroprix/)
+* 新熵流卡池[「试用版奖励」](https://kdxiaoyi.top/Streack/doc/info/entroprix/)
 * 优化权限分配，执行更严管理
 * 现在部分菜单命令在执行后会关闭菜单
 * 封禁提示现在包含时间信息
@@ -368,7 +368,7 @@ description: "见证每一次变化"
 
 ### 25w16b
 
-* 新增「正版玩家」称号，获取条件见于游戏内。
+* 新增「正版玩家」称号，获取条件见于游戏内
 
 ### 25w16a
 
@@ -381,7 +381,7 @@ description: "见证每一次变化"
 ### 25w15a
 
 * 新增对[*Slimefun Resourcepack*฿](https://modrinth.com/resourcepack/slimefun-resourcepack)和[*Slimefun Essentials*฿](https://modrinth.com/mod/slimefun-essentials)的支持
-  * 由于技术限制，**其它的**粘液科技资源包暂时无法提供支持：安装后可能无效。
+  * 由于技术限制，**其它的**粘液科技资源包暂时无法提供支持：安装后可能无效
 
 ### 25w14d
 
@@ -401,7 +401,7 @@ description: "见证每一次变化"
 ### 25w14a
 
 * 更新*栈流巡礼*机制
-  * 「登录」的定义为：进入服务器完成登录，且在60秒内不以任何形式掉线。
+  * 「登录」的定义为：进入服务器完成登录，且在60秒内不以任何形式掉线
   * 每日签到至多获取1钻石、2金锭、3铁锭的每日奖励，保底1铁锭
   * 连续签到
     * 每签到3天则在当天至少额外获得1金锭和51栈钱
@@ -547,7 +547,7 @@ description: "见证每一次变化"
 * 现在输入命令`/菜单`也可打开菜单了
 * 新增命令`/calc`：
   * 参数：`/calc <formula>`
-    * `formula`：要计算的算式，支持加减乘除、括号和次方(`^`)。
+    * `formula`：要计算的算式，支持加减乘除、括号和次方(`^`)
   * 执行后返回算式结果
 * 新增命令`/debuginfo`：
   * 参数：无
@@ -560,7 +560,7 @@ description: "见证每一次变化"
 
 * 正式上线经济系统
   * 货币名为*栈钱*
-  * 可以通过变卖部分物品以赚取栈钱；详细可在*菜单*中的*信息查询*处查询或直接使用命令`/worthlist`获取。
+  * 可以通过变卖部分物品以赚取栈钱；详细可在*菜单*中的*信息查询*处查询或直接使用命令`/worthlist`获取
   * 现在玩家入服不会获得任何栈钱
 * 正式开放领地创建
   * 每平方米花费1栈钱，高度自动覆盖世界高度
@@ -601,14 +601,14 @@ description: "见证每一次变化"
 
 ### 25w6b
 
-* 新增兑换码插件：`/redeem xxx`或`/cdk use xxx`以使用兑换码。
+* 新增兑换码插件：`/redeem xxx`或`/cdk use xxx`以使用兑换码
 * 移除快速创建假人菜单
 * 实装mcMMO技能插件
 * 实装精英怪玩法
 
 ### 25w6a
 
-* 假人功能正式上线。
+* 假人功能正式上线
   * 修复若干影响假人功能实装的问题
     * 修复假人可以无视领地强制操作的bug
     * 修复假人部分行为不正确的bug
@@ -625,7 +625,7 @@ description: "见证每一次变化"
 * 移除菜单中*诊断模式*选项
 * 数据包更新
   * 新增模块`kdx.policynotice`
-    * 现在进服时会引导用户同意[《用户协议》](https://kdxiaoyi.top/Streack/doc/policy/user)和[《隐私政策》](https://kdxiaoyi.top/Streack/doc/policy/privacy)了。
+    * 现在进服时会引导用户同意[《用户协议》](https://kdxiaoyi.top/Streack/doc/policy/user)和[《隐私政策》](https://kdxiaoyi.top/Streack/doc/policy/privacy)了
   * 统一了代码缩进格式
   * 修复进度「勇气戴于心上」无法正确获取的问题
   * 更新部分文案
@@ -655,7 +655,7 @@ description: "见证每一次变化"
 * 修复在活动地图*幻境：永恒圣城*中跳跃高度异常的问题
 * 修复在活动地图*幻境：永恒圣城*中可以跳跃的异常
 * 移除FZSD数据包
-* 现在”玩家统计共享*由Vanilla Refresh强力驱动。
+* 现在”玩家统计共享*由Vanilla Refresh强力驱动
 
 ### 25w3b
 > [i] 更新补偿：<br>
