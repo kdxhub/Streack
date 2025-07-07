@@ -408,6 +408,16 @@ function startNewLookup(url) {
     pageElements.newForm.url.error = "true";
   };
 };
+/* 向编辑框添加事件 */
+pageElements.newForm.url.addEventListener("keyup", (event) => {
+  console.log(event)
+  if (event.key === "Enter") {
+    event.preventDefault();
+    startNewLookup(pageElements.newForm.url.value);
+  } else if (event.ctrlKey == true && event.key == "Backspace") {
+    removeNewFormData();
+  };
+});
 
 //初始化计时器
 pageElements._.refreshTime.IntervalID = setInterval(() => {
