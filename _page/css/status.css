@@ -134,6 +134,7 @@ html::-webkit-scrollbar {
 .main-card #je-field, .main-card #be-field {
   width: 100%;
   max-width: 100%;
+  padding: 0 0 0 0;
 }
 .cardhead {
   margin: 0 auto 0 0;

@@ -149,7 +149,31 @@ pageElements = {
         subtitle: document.getElementById("be-subtitle"),
         infoRoot: document.getElementById("be-field"),
         widgetbox: {
+          icon: document.getElementById("be-icon"),
           motd: document.getElementById("be-motd"),
+        },
+        online: {
+          track: document.getElementById("be-player-track"),
+          tip: document.getElementById("be-player-tip"),
+          listBtn: document.getElementById("be-player-list-btn"),
+          list: document.getElementById("be-player-list"),
+          eula: document.getElementById("be-eula-tip"),
+        },
+        protocol: {
+          _: {
+            gm: {
+              en: ["Survival", "Creative", "Adventure", "Spectator"],
+              zh_cn: ["生存", "创造", "冒险", "旁观"],
+            },
+            release_version: {
+              en: ["MCPE", "MCEE"],
+              zh_cn: ["普通基岩版", "教育版 (Education Edition)"],
+            },
+          },
+          version: document.getElementById("be-protocol-v"),
+          release_version: document.getElementById("be-protocol-v2"),
+          serverid: document.getElementById("be-serverid"),
+          gamemode: document.getElementById("be-gm"),
         },
       },
     },
@@ -359,7 +383,42 @@ function update_be() {
         pageElements.content.main.be.subtitle.style = `color:#30C496;`;
         pageElements.content.main.be.subtitle.innerHTML = `✓ 可连接`;
         /*显示信息栏*/pageElements.content.main.be.infoRoot.style = ``;
-        } else {/* 不在线时更新信息 */
+        /* MOTD信息 */
+        pageElements.content.main.be.widgetbox.motd.innerHTML = result.motd.html.replace(/* TODO:这里需要处理\\n */"\n", "<br>");
+        pageElements.content.main.be.widgetbox.icon.src = pageElements._.fetchUrl.icon;
+        /*在线人数信息*/
+        pageElements.content.main.be.online.track.max = result.players.max;
+        pageElements.content.main.be.online.track.value = result.players.online;
+        pageElements.content.main.be.online.tip.innerHTML = `${result.players.online} / ${result.players.max}`;
+        if (!!result.players.list && result.players.list.length >= 1) {
+          pageElements.content.main.be.online.list.innerHTML = "";
+          result.players.list.forEach((subJson) => {
+            pageElements.content.main.be.online.list.innerHTML += subJson.name_html;
+            pageElements.content.main.be.online.list.innerHTML += "<br>";
+          });
+          pageElements.content.main.be.online.listBtn.style = "";
+        } else {
+          pageElements.content.main.be.online.listBtn.style = "display:none;";
+        };
+        /* 游戏模式 */
+        if (!!result.gamemode && pageElements.content.main.be.protocol._.gm.en.indexOf(result.gamemode) != -1) {
+          pageElements.content.main.be.protocol.gamemode.value = pageElements.content.main.be.protocol._.gm.zh_cn[pageElements.content.main.be.protocol._.gm.en.indexOf(result.gamemode)];
+        } else {
+          pageElements.content.main.be.protocol.gamemode.value = "未知";
+        };
+        /* 发行版本 */
+        if (!!result.edition && pageElements.content.main.be.protocol._.release_version.en.indexOf(result.edition) != -1) {
+          pageElements.content.main.be.protocol.release_version.value = pageElements.content.main.be.protocol._.release_version.zh_cn[pageElements.content.main.be.protocol._.release_version.en.indexOf(result.edition)];
+        } else {
+          pageElements.content.main.be.protocol.release_version.value = "未知";
+        };
+        /*服务器ID*/
+        pageElements.content.main.be.protocol.serverid.value = result.server_id;
+        /*协议版本*/
+        pageElements.content.main.be.protocol.version.value = `${result.version.name} [${result.version.protocol}]`;
+        /*EULA Blocked*/
+        pageElements.content.main.be.online.eula.yes = result.eula_blocked;
+      } else {/* 不在线时更新信息 */
         pageElements.content.main.be.subtitle.style = `color:#E23B2E;`;
         pageElements.content.main.be.subtitle.innerHTML = `✕ 未知的服务器`;
         pageElements.content.main.be.infoRoot.style = `display:none;`;
