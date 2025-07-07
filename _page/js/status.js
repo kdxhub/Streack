@@ -414,7 +414,7 @@ pageElements._.refreshTime.IntervalID = setInterval(() => {
   pageElements._.refreshTime.je -= 1;
   pageElements._.refreshTime.be -= 1;
   if (pageElements._.refreshTime.je == 0) { update_je(); };
-  if (pageElements._.refreshTime.jb == 0) { update_be(); };
+  if (pageElements._.refreshTime.be == 0) { update_be(); };
   let jeTime="现在";
   let beTime="现在";
   if (pageElements._.refreshTime.je >= 1) {jeTime = pageElements._.refreshTime.je.toString() + "秒";};
