@@ -10,5 +10,14 @@
         "isDefault": true // 设置为默认构建任务
       }
     },
+    {
+      "label": "Gitpull from master@Gitee",
+      "type": "shell",
+      "command": "git pull gitee master",
+      "group": {
+        "kind": "build",
+        "isDefault": true // 设置为默认构建任务
+      }
+    },
   ]
 }
