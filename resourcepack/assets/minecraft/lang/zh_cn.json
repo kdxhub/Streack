@@ -1,6 +1,7 @@
 {
   "kdx.note.disabled": "以.开头的键名表示未翻译",
-  "kdx.note.mc.below": "以下为Minecraft的翻译文本",
+  "kdx.note.veinminer.below": "以下为VeinMiner的翻译文本",
+  "enchantment.veinmine": "连锁采集",
   "kdx.note.vr.below": "以下为Vanilla Refresh的翻译文本",
   "12h Clock": "12小时制钟表",
   "24h Clock": "24小时制钟表",
