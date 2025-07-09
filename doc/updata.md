@@ -27,6 +27,10 @@ description: "见证每一次变化"
 
 ## 历史日志
 
+### 25w28a
+
+* 优化服务器资源包加载，现在会在登录完成后再提示
+
 ### 25w27d
 
 * *Streack Service Datapack*更新
