@@ -187,11 +187,20 @@ if (!!getQueryString("debug")) {
 }
 
 //PMD框架相关处理
+/* 背景图 */
 /* 自定义Style */
+styleEle = document.createElement("style");
+styleEle.innerHTML += `
+  html{
+    --pmd-bg-src: url(${conf.img.background.src});
+    --pmd-bg-blur: blur(${conf.img.background.blur}px);
+    --pmd-bg-alpha-l: ${conf.img.background.alpha[0]};
+    --pmd-bg-alpha-d: ${conf.img.background.alpha[1]};
+  }
+`;
 if (!!conf.info.style) {
-  let styleEle = document.createElement("style");
-  styleEle.innerHTML = conf.info.style;
-  document.body.appendChild(styleEle);
+  styleEle.innerHTML += conf.info.style;
+  document.head.appendChild(styleEle);
 }
 /* 侧栏内容覆写 */
 pageElements.content.lsidebar.slot1.innerHTML = `<div slot="image"><img title="${conf.sidebar.solt_1.title}" alt="${conf.sidebar.solt_1.alt}" class="ui-img sidebar_img" pmduiimg="true" src="${conf.sidebar.solt_1.src}"></div><div slot="headline"><span>${conf.sidebar.solt_1.alt}</span></div>`;
