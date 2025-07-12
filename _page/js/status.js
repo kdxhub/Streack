@@ -203,13 +203,21 @@ function ChangeColorTheme(target, animationCenter) {
   if /* 若传入无效动画中心元素则指定为侧栏按钮 */ (!(animationCenter instanceof HTMLElement)) { animationCenter = pageElements.appbar.menuBtn; };
   return pageElements.root.toggle(target, animationCenter);
 };
-if (!!pmdStorage.Cookies.get("pmd-prefer_color_theme")) {
+if (!!pmdStorage.Cookies.get("pmd-prefer_color_theme") && pmdStorage.Cookies.get("pmd-prefer_color_theme") != "auto") {
   /*如果检测到Cookies中相关设置则启用用户偏好配色*/
   if (pmdStorage.Cookies.get("pmd-prefer_color_theme") == "dark") {
     pageElements.content.lsidebar.slot3.user_setting.color.root.value = "dark";
+    ChangeColorTheme("dark");
   };
   if (pmdStorage.Cookies.get("pmd-prefer_color_theme") == "light") {
     pageElements.content.lsidebar.slot3.user_setting.color.root.value = "light";
+    ChangeColorTheme("light");
+  };
+} else {
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    ChangeColorTheme("dark");
+  } else {
+    ChangeColorTheme("light");
   };
 };
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
