@@ -120,7 +120,6 @@ function mcs {
     echo -e "\033[0;31m$(date +"%Y-%m-%d  %H:%M:%S.%6N  [$Z]")\033[0m"
     echo -e "\033[0;31m[mcs]服务器已停止\033[0m"
     log "服务器已停止"
-    exit 0
   else
     echo -e "\033[0;31m\033[0m"
     echo -e "\033[0;31m$(date +"%Y-%m-%d  %H:%M:%S.%6N  [$Z]")\033[0m"
