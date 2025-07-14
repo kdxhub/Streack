@@ -279,7 +279,7 @@ if (
   pageElements._.fetchUrl.je += pageElements._.goal;
   pageElements._.fetchUrl.be += pageElements._.goal;
   pageElements._.fetchUrl.icon += pageElements._.goal;
-  pageElements.content.main.notice.third.innerHTML = `当前正在查询 <big><span class="selectable Mojangles">${pageElements._.goal}</span></big> 的状态，仅显示可显示信息。`;
+  pageElements.content.main.notice.third.innerHTML = `当前正在查询 <big><span class="selectable Mojangles">${pageElements._.goal}</span></big> 的状态，仅显示可显示信息。<br><b>部分面板服务商由于其防火墙策略可能导致本工具无法正常查询。（104 Connect Timeout）</b>`;
   pageElements.newForm.url.value = pageElements._.goal;
   if (pageElements._.debug) {console.log("使用地址：",pageElements._.goal);};
 } else {
