@@ -27,6 +27,15 @@ description: "见证每一次变化"
 
 ## 历史日志
 
+### 25w29b
+
+* 移除命令`/cracked`、`/unpremium`、`/prem`、`/premium`、`/loginfast`和`/fastlogin`
+* 修复命令`/skin`能对其它玩家生效的问题
+* 修复无法编辑告示牌的问题
+* 修复流光通证的随身末影箱无法使用的问题
+* 优化`[i]`样式
+* 移除了Herobrine
+
 ### 25w29a
 
 * 现在在过高的高度使用鞘翅不会加载区块
