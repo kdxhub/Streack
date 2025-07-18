@@ -1,6 +1,6 @@
 execute store result score kdx.cleaner:killed kdx run kill @e[type=minecraft:item,predicate=!kdx.cleaner:whitelist]
 scoreboard players operation kdx.cleaner:killed.sum kdx += kdx.cleaner:killed kdx
-execute store result score kdx.cleaner:killed kdx run kill @e[type=minecraft:falling_block,predicate=!kdx.cleaner:whitelist_fb]
+execute store result score kdx.cleaner:killed kdx run kill @e[type=minecraft:falling_block,predicate=kdx.cleaner:blacklist_fb]
 scoreboard players operation kdx.cleaner:killed.sum kdx += kdx.cleaner:killed kdx
 tellraw @a [\
   {"text": "扫地姬对累计","color": "white"},\

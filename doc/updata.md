@@ -27,6 +27,15 @@ description: "见证每一次变化"
 
 ## 历史日志
 
+### 25w29c
+
+* *Streack Service Datapack*更新
+  * *扫地姬*模块
+    * 现在不再清除*下落的方块*
+  * *更多配方*模块中新增以下配方
+    * 「下界疣块×1」→「下界疣×9」
+    * 「皮革×3」+「铁锭×1」→「鞍×1」
+
 ### 25w29b
 
 * 移除命令`/cracked`、`/unpremium`、`/prem`、`/premium`、`/loginfast`和`/fastlogin`
