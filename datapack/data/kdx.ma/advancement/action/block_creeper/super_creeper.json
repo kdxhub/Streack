@@ -5,7 +5,7 @@
     },
     "frame": "task",
     "title": {
-      "text": "那一炸未被不可企及",
+      "text": "那一炸未必不可企及",
       "italic": false
     },
     "description": {
@@ -14,7 +14,7 @@
     },
     "hidden": false
   },
-  "parent": "kdx:_streack",
+  "parent": "story/deflect_arrow",
   "criteria": {
     "block_super_creeper": {
       "trigger": "minecraft:entity_hurt_player",

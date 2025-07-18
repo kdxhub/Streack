@@ -1,4 +1,6 @@
 {
+  "type":"crafting_shaped",
+  "category": "equipment",
   "result":{
     "id":"minecraft:elytra"
   },
@@ -7,7 +9,6 @@
     "aca",
     "a a"
   ],
-  "type":"crafting_shaped",
   "key":{
     "a": "phantom_membrane",
     "b": "nether_star",

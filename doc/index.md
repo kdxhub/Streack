@@ -6,6 +6,8 @@ description: "致力于解决您所想知道的一切"
 
 ![栈流Streack的宣传图片，含有栈流Streack的基本信息](https://kdxiaoyi.top/Streack/assets/img/referral_1.png "宣传图")
 
+> [i] 目前服务器仍在快速更迭中，下述文档更新不一定及时。[更新日志](./updata)
+
 ## 基本
 * [资讯一览](./news/)
 * [如何加入服务器](./help/join)

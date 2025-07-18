@@ -1,4 +1,6 @@
 {
+  "type":"crafting_shaped",
+  "category": "equipment",
   "result":{
     "id":"minecraft:trident"
   },
@@ -7,7 +9,6 @@
     " b ",
     " c "
   ],
-  "type":"crafting_shaped",
   "key":{
     "a": "diamond_sword",
     "b": "heart_of_the_sea",

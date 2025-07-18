@@ -1,5 +1,6 @@
 {
   "type": "crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     "minecraft:iron_block",
     "minecraft:damaged_anvil"

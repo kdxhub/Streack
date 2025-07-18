@@ -1,5 +1,6 @@
 {
   "type": "minecraft:smelting",
+  "category": "misc",
   "ingredient": [
      "minecraft:rotten_flesh"
   ],
