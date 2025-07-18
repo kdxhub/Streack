@@ -1,4 +1,6 @@
 {
+  "type":"crafting_shaped",
+  "category": "redstone",
   "result":{
     "id":"minecraft:command_block"
   },
@@ -7,7 +9,6 @@
     "cdc",
     "aba"
   ],
-  "type":"crafting_shaped",
   "key":{
     "a": "reinforced_deepslate",
     "b": "nether_star",

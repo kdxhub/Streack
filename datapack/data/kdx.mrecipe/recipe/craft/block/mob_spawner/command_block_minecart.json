@@ -1,4 +1,6 @@
 {
+  "type":"crafting_shaped",
+  "category": "redstone",
   "result":{
     "id":"minecraft:command_block_minecart"
   },
@@ -7,7 +9,6 @@
     "dxe",
     "fgh"
   ],
-  "type":"crafting_shaped",
   "key":{
     "x": "command_block",
     "a": "diamond_block",

@@ -14,7 +14,7 @@
     },
     "hidden": false
   },
-  "parent": "kdx:_streack",
+  "parent": "story/deflect_arrow",
   "criteria": {
     "block_super_creeper": {
       "trigger": "minecraft:entity_hurt_player",

@@ -1,5 +1,6 @@
 {
   "type": "crafting_transmute",
+  "category": "building",
   "input": "deepslate",
   "material": "netherite_block",
   "result": {
