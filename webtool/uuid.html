@@ -23,7 +23,7 @@
         </s-icon-button>
         切换侧栏
       </s-tooltip>
-      <div id="pageTitle" slot="headline"> UUID生成器 </div>
+      <div id="pageTitle" slot="headline"> UUID生成器（Beta） </div>
     </s-appbar>
     <s-drawer id="mainContent">
       <div id="LeftSiderbar" slot="start"><s-scroll-view class="unselectable" style="height: 100%; padding-bottom: 1rem;">
@@ -76,12 +76,13 @@
             <s-picker-item value="6">V6 ‖ 基于重排时间戳</s-picker-item>
             <s-picker-item value="7">V7 ‖ 基于48位毫秒时间戳和强随机数</s-picker-item>
             <s-picker-item value="8">V8 ‖ 用户自定义生成算法（本工具实际采用V4版本）</s-picker-item>
+            <s-picker-item value="1_6">V1与V6互转（尚未实现）</s-picker-item>
           </s-picker>
           <br><br>
           <s-text-field id="howmany-uuid" label="生成数量" value="1" type="number">
             <div id="howmany-uuid-notice" slot="text"></div>
           </s-text-field>
-          <s-picker id="uuid-format" label="输出格式" value="string">
+          <s-picker id="uuid-format" label="输出格式（尚未实现）" value="string">
             <s-picker-item value="string">字符串 String</s-picker-item>
             <s-picker-item value="bin">二进制 BIN</s-picker-item>
             <s-picker-item value="hex">十六进制 HEX</s-picker-item>
@@ -107,11 +108,11 @@
           </div>
           <br>
           <s-tooltip>
-            <s-checkbox slot="trigger" id="isCapitalized" checked="false"> 使用大写 </s-checkbox>
+            <s-checkbox slot="trigger" id="isCapitalized" checked="false"> 使用大写（尚未实现） </s-checkbox>
             输出结果是否自动大写
           </s-tooltip>
           <s-tooltip>
-            <s-checkbox slot="trigger" id="isDashUsed" checked="true"> 使用中划线 </s-checkbox>
+            <s-checkbox slot="trigger" id="isDashUsed" checked="true"> 使用中划线（尚未实现） </s-checkbox>
             仅对字符串模式生效：是否使用「-」号分割UUID
           </s-tooltip>
           <br>
@@ -149,7 +150,7 @@
         <s-card id="resultCard" class="main-card">
           <div id="result-renderer">
             <div id="line-numbers"></div>
-            <textarea id="result-renderer-text" readonly></textarea>
+            <textarea id="result-renderer-text" readonly>Initalizing……</textarea>
           </div>
           </s-card>
         <div class="unselectable" id="no_script"><h1>您似乎没有启用JavaScript，而这是此网站正常运行所必须的。<br>此外，该页面不支持过老的浏览器内核。</h1></div>

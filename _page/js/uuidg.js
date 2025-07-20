@@ -97,6 +97,11 @@ pageElements = {
       config: {
         _: {
           loaded: false,
+          save_max_spawn_number: 100,
+          process: {
+            still_notice_timeout: -1,
+            promise: null,
+          },
         },
         root: document.getElementById("confCard"),
         version: document.getElementById("uuid-version-picker"),
@@ -136,17 +141,23 @@ import('https://rs.kdxiaoyi.top/res/scripts/js/uuid@11.1.0/dist/esm-browser/inde
   uuid.error = false;
   pageElements.content.main.config._.loaded = true;
   pageElements.content.main.config.spawnBtn.disabled = false;
+  pageElements.content.main.config.clearBtn.click();
+  pageElements.content.main.result.renderer.textarea.value = "Ready...";
+  TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
+  TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
 }).catch((e) => {
   uuid.error = true;
 }).finally(() => {
+  pageElements.content.main.config.loading.style.display = "none";
   if (/* uuid.js加载标志 */uuid.error || /* 上下文不安全时无法使用加密API */ !window.isSecureContext) {
     msg("初始化时发生错误", "好", true);
     pageElements.content.main.config.spawnBtn.disabled = true;
-    pageElements.content.main.config.loading.style.display = "none";
     pageElements.content.main.config.copyBtn.disabled = true;
     pageElements.content.main.config.downloadBtn.disabled = true;
     pageElements.content.main.config.clearBtn.disabled = true;
     pageElements.content.main.result.renderer.textarea.value = "未能加载库：uuid.js。检查网络连接并升级浏览器版本后再试。";
+    TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
+    TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
   }
 });
 
@@ -252,7 +263,7 @@ TextareaHelper = {
 };
 TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
 TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
-pageElements.content.main.result.renderer.textarea.addEventListener("input", (e) => {
+pageElements.content.main.result.renderer.textarea.addEventListener("change", (e) => {
   TextareaHelper.updataHeight(e.srcElement);
   TextareaHelper.updataLineCount(e.srcElement, pageElements.content.main.result.renderer.lineCounter);
 });
@@ -264,8 +275,12 @@ pageElements.content.main.config./* 生成数量检测 */number.addEventListener
     e.srcElement.value = 1;
   };
   pageElements.content.main.config.number_notice.innerHTML = ``;
-  if (value > 100) {
+  if (value > pageElements.content.main.config._.save_max_spawn_number) {
     pageElements.content.main.config.number_notice.innerHTML = `数量过大会引起页面卡顿，同时设置项不会自动保存。`;
+  };
+  if (value > 4294967295) {
+    msg(`指定的数量 ${e.srcElement.value} 超出浏览器所支持上限。`, "好", false);
+    e.srcElement.value = 1;
   };
 });
 
@@ -286,6 +301,16 @@ pageElements.content.main.config.v3_5./* 命名空间选择器 */namespace_selec
     pageElements.content.main.config.v3_5.namespace.value = e.srcElement.options[e.srcElement.selectedIndex].value;
   }
 });
+pageElements.content.main.config.v3_5./* 命名空间改变时移除错误提示 */namespace.addEventListener("change", (e) => {
+  if (e.srcElement.value != "") {
+    e.srcElement.error = false;
+  };
+});
+pageElements.content.main.config.v3_5./* 同上，名称 */name.addEventListener("change", (e) => {
+  if (e.srcElement.value != "") {
+    e.srcElement.error = false;
+  };
+});
 
 //按钮功能实现
 pageElements.content.main.config./* 清空 */clearBtn.addEventListener("click", () => {
@@ -296,7 +321,6 @@ pageElements.content.main.config./* 清空 */clearBtn.addEventListener("click", 
   TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
   TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
 });
-pageElements.content.main.config.clearBtn.click();
 pageElements.content.main.config./* 下载 */downloadBtn.addEventListener("click", () => {
   let text = pageElements.content.main.result.renderer.textarea.value;
   if (text == "Ready...") {
@@ -316,6 +340,81 @@ pageElements.content.main.config./* 复制 */copyBtn.addEventListener("click", (
     return;
   };
   CopyText(text);
+});
+function getUUID() {
+  switch (pageElements.content.main.config.version.value) {
+    case "1":
+      return uuid.v1();
+    case "3":
+      return uuid.v3(pageElements.content.main.config.v3_5.name.value, pageElements.content.main.config.v3_5.namespace.value);
+    case "5":
+      return uuid.v5(pageElements.content.main.config.v3_5.name.value, pageElements.content.main.config.v3_5.namespace.value);
+    case "6":
+      return uuid.v6();
+    case "7":
+      return uuid.v7();
+    default:
+      return uuid.v4();
+  };
+};
+pageElements.content.main.config./* 生成 */spawnBtn.addEventListener("click", ( e) => {
+  /* 校验前置条件 */
+  if (!!e.srcElement.dataset.onprocessing) { return; };
+  if (!pageElements.content.main.config._.loaded) {
+    msg("尚未初始化，请稍后再试……", "好", true);
+    return;
+  };
+  /* v3/v5前置条件判断 */
+  if (pageElements.content.main.config.version.value == "3" || pageElements.content.main.config.version.value == "5") {
+    if (!pageElements.content.main.config.v3_5.name.value) {
+      pageElements.content.main.config.v3_5.name.error = true;
+      msg("「名称」不能为空", "好", true);
+      return;
+    };
+    if (!uuid.validate(pageElements.content.main.config.v3_5.namespace.value)) {
+      pageElements.content.main.config.v3_5.namespace.error = true;
+      msg("「命名空间」需为一个有效UUID", "好", true);
+      return;
+    };
+  };
+  // /* 保存设置 */
+  // if (isNaN(praseInt(pageElements.content.main.config.number.value)) || praseInt(pageElements.content.main.config.number.value) > pageElements.content.main.config._.save_max_spawn_number) {
+  //   saveConf();
+  // };
+  /* 设置自锁 */
+  pageElements.content.main.config.loading.style.display = "";
+  e.srcElement.dataset.onprocessing = "true";
+  /* 异步获取UUID */
+  pageElements.content.main.result.renderer.textarea.value = "正在生成……";
+  TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
+  TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
+  pageElements.content.main.config._.process.still_notice_timeout = setTimeout(() => {
+    pageElements.content.main.result.renderer.textarea.value = "仍在生成……";
+    TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
+    TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
+  }, 10000);
+  pageElements.content.main.config._.process.promise = new Promise((resolve, reject) => {
+    let uuids = [];
+    for (let i = 0; i < parseInt(pageElements.content.main.config.number.value); i++) {
+      uuids.push(getUUID());
+    };
+    resolve(uuids);
+  });
+  pageElements.content.main.config._.process.promise.then((result) => {
+    pageElements.content.main.result.renderer.textarea.value = result.join("\n");
+    pageElements.content.main.config.downloadBtn.disabled = false;
+    pageElements.content.main.config.copyBtn.disabled = false;
+    pageElements.content.main.config.clearBtn.disabled = false;
+    TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
+    TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
+  }).catch((error) => {
+    console.error(error);
+  }).finally(() => {
+    clearTimeout(pageElements.content.main.config._.process.still_notice_timeout);
+    /* 移除自锁 */
+    pageElements.content.main.config.loading.style.display = "none";
+    e.srcElement.dataset.onprocessing = "";
+  });
 });
 
 //remove no script tip
