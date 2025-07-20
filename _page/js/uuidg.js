@@ -111,7 +111,7 @@ pageElements = {
         downloadBtn: document.getElementById("actionBtn-download"),
         clearBtn: document.getElementById("actionBtn-clearAll"),
         v3_5: {
-          root: document.getElementById("v3_5_conf"),
+          root: document.getElementById("v3_5-conf"),
           namespace: document.getElementById("uuidv3_5-namespace-custom"),
           namespace_selector: document.getElementById("uuidv3_5-namespace-select"),
           name: document.getElementById("uuidv3_5-name"),
@@ -269,15 +269,22 @@ pageElements.content.main.config./* 生成数量检测 */number.addEventListener
   };
 });
 
-//v3/v5参数处理
+//v3/v5参数显示处理
 pageElements.content.main.config./* UUID版本选择 */version.addEventListener("change", (e) => {
   if (e.srcElement.value == "3" || e.srcElement.value == "5") {
-    pageElements.content.main.config.output_format.disabled = false;
-    pageElements.content.main.config.output_format.value = "hex";
+    pageElements.content.main.config.v3_5.root.style.display = "";
   } else {
-    pageElements.content.main.config.output_format.disabled = true;
-    pageElements.content.main.config.output_format.value = "string";
+    pageElements.content.main.config.v3_5.root.style.display = "none";
   };
+});
+pageElements.content.main.config.v3_5./* 命名空间选择器 */namespace_selector.addEventListener("change", (e) => {
+  if (e.srcElement.options[e.srcElement.selectedIndex].value == "custom") {
+    pageElements.content.main.config.v3_5.namespace.readOnly = false;
+    pageElements.content.main.config.v3_5.namespace.value = "";
+  } else {
+    pageElements.content.main.config.v3_5.namespace.readOnly = true;
+    pageElements.content.main.config.v3_5.namespace.value = e.srcElement.options[e.srcElement.selectedIndex].value;
+  }
 });
 
 //按钮功能实现
