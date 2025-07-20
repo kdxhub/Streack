@@ -130,6 +130,7 @@ html::-webkit-scrollbar {
   max-width: 90%;
   display: block;
   padding: 10px 16px 9px 16px;
+  font-size: 1em;
 }
 .main-card #je-field, .main-card #be-field {
   width: 100%;
