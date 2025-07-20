@@ -1,0 +1,240 @@
+@font-face{font-family:"Mojangles";src:url("https://rs.kdxiaoyi.top/res/fonts/Mojangles.ttf") format("truetype")}
+html body s-page * .WenQuanWeiMiHei {font-family: "WenQuanWeiMiHei" !important;}
+html body s-page * .DIN {font-family: "din" !important;}
+html body s-page * .Mojangles {font-family: "Mojangles" !important;}
+html body s-page * .MiSans {font-family: "MiSans Normal" !important;}
+html body s-page * .MiSansL3 {font-family: "MiSans L3" !important;}
+html body s-page * .SourceHanSerifCN {font-family: "SourceHanSerifCN" !important;}
+
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--s-color-outline-variant, #c0c8cc);
+    border-radius: 3px;
+  }
+  @supports not selector(::-webkit-scrollbar) {
+    * {
+      scrollbar-color: var(--s-color-outline-variant, #c0c8cc) transparent;
+    }
+  }
+}
+
+@media print {
+  #appbarRoot {
+    display: none !important;
+  }
+
+  #LeftSiderbar {
+    display: none !important;
+  }
+
+  .site-footer {
+    display: none !important;
+  }
+
+  #pContent {
+    height: min-content !important;
+  }
+
+  #pageRoot {
+    height: min-content !important;
+  }
+
+  #mainContent {
+    height: min-content !important;
+  }
+
+  body {
+    height: min-content !important;
+    background-image: none !important;
+  }
+
+  html {
+    height: min-content !important;
+  }
+}
+@page {
+  @top-right {
+    content: "页 " counter(pageNumber);
+  }
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-position: center 0;
+  background-attachment: fixed;
+  background-image: var(--pmd-bg-src);
+  margin: 0 0 0 0;
+}
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+#pageRoot {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+#appbarRoot {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+#mainContent {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+#LeftSiderbar {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar_img {
+  width: 100%;
+  height: 100%;
+}
+.sidebar_head {
+  display: flex;
+  flex-direction: column;
+  width: 94%;
+  padding: 3px 3px 3px 3px;
+  margin: 3% 3% 0% 3%;
+}
+.sidebar_head>div[slot=headline] {
+  margin: 0 16px 0;
+}
+.sidebar_btn {
+  width: 100%;
+  margin: 1% 0 1% 0;
+}
+
+#pContent {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: underline dotted;
+  color: #1e6bb8;
+}
+a:hover {
+  text-decoration: underline;
+}
+a s-icon {
+  width: 1em;
+  height: 1em;
+  transform: translateY(-0.05em) translateX(-0.05em);
+}
+
+#pageRoot[dark] * {
+  color-scheme: dark;
+}
+#pageRoot[dark] .highlight {
+  background-color: rgb(39 43 42);
+}
+#pageRoot[dark] .highlight .kd {
+  color: #ffffff;
+}
+#pageRoot[dark] .highlight .kv {
+  color: #ffffff;
+}
+#pageRoot[dark] .highlight .k {
+  color: #ffffff;
+}
+#pageRoot[dark] .highlight .o {
+  color: #ffffff;
+}
+#pageRoot[dark] .highlight .nt {
+  color: #0080ff;
+}
+#pageRoot[dark] .page-header {
+  --header-font-color: #f8f8f8;
+}
+
+.selectable, .selectable_ * {
+  user-select: text;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+}
+.unselectable, .unselectable_ * {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+#pageRoot {
+  background: rgba(250,253,252,var(--pmd-bg-alpha-l));
+  backdrop-filter: var(--pmd-bg-blur);
+}
+#pageRoot[dark] {
+  background: rgba(5,2,3,var(--pmd-bg-alpha-d));
+  backdrop-filter: var(--pmd-bg-blur);
+}
+
+.main-card p {
+  margin-top: 0;
+  margin-bottom: 7px
+}
+.main-card {
+  margin: 15px 5% 0 5%;
+  max-width: 90%;
+  display: block;
+  padding: 10px 16px 9px 16px;
+  backdrop-filter: blur(10px) saturate(1.5);
+  background-color: rgba(255, 255, 255, .25);
+  font-size: 1em;
+}
+
+#result-renderer {
+  display: flex;
+  border: 1px solid #ccc;
+  font-family: Consolas, Menlo, Monaco, Liberation Mono, Lucida Console, monospace;
+  backdrop-filter: blur(10px) saturate(1.5);
+  background-color: rgba(255, 255, 255, .25);
+}
+#line-numbers {
+  padding: 0 .25em 0 .25em;
+  background: var(--s-color-surface-container);
+  border-right: var(--s-color-on-surface, #191c1d) 1px solid;
+  text-align: right;
+  counter-reset: line;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+#line-numbers span {
+  height: 1rem;
+  counter-increment: line;
+  display: block;
+}
+#line-numbers span::before {
+  font-family: Consolas, Menlo, Monaco, Liberation Mono, Lucida Console, monospace;
+  content: counter(line);
+  color: #999;
+}
+#result-renderer-text {
+  flex: 1;
+  padding: .2rem 0 0 .25em;
+  border: none;
+  resize: none;
+  font-family: Consolas, Menlo, Monaco, Liberation Mono, Lucida Console, monospace;
+  font-size: 1rem;
+  line-height: 1;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  white-space: pre;
+  outline: none;
+  background-color: var(--s-color-surface-container-low);
+  backdrop-filter: opacity(0);
+}
