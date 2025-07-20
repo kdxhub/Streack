@@ -107,6 +107,12 @@ pageElements = {
         copyBtn: document.getElementById("actionBtn-copy"),
         downloadBtn: document.getElementById("actionBtn-download"),
         clearBtn: document.getElementById("actionBtn-clearAll"),
+        v3_5: {
+          root: document.getElementById("v3_5_conf"),
+          namespace: document.getElementById("uuidv3_5-namespace-custom"),
+          namespace_selector: document.getElementById("uuidv3_5-namespace-select"),
+          name: document.getElementById("uuidv3_5-name"),
+        },
       },
       result: {
         root: document.getElementById("resultCard"),
@@ -239,6 +245,17 @@ pageElements.content.main.config./* 生成数量检测 */number.addEventListener
   };
 });
 
+//v3/v5参数处理
+pageElements.content.main.config./* UUID版本选择 */version.addEventListener("change", (e) => {
+  if (e.srcElement.value == "3" || e.srcElement.value == "5") {
+    pageElements.content.main.config.output_format.disabled = false;
+    pageElements.content.main.config.output_format.value = "hex";
+  } else {
+    pageElements.content.main.config.output_format.disabled = true;
+    pageElements.content.main.config.output_format.value = "string";
+  };
+});
+
 //按钮功能实现
 pageElements.content.main.config./* 清空 */clearBtn.addEventListener("click", () => {
   pageElements.content.main.result.renderer.textarea.value = "Ready...";
@@ -271,7 +288,7 @@ pageElements.content.main.config./* 复制 */copyBtn.addEventListener("click", (
 });
 
 //判断uuid.js情况
-if (/* uuid.js加载标志 */uuid.error || /* 上下文不安全时无法使用加密API */!window.isSecureContext) {
+if (/* uuid.js加载标志 */uuid_error || /* 上下文不安全时无法使用加密API */!window.isSecureContext) {
   msg("初始化时发生错误", "好", true);
   pageElements.content.main.config.spawnBtn.disabled = true;
   pageElements.content.main.config.loading.style.display = "none";
