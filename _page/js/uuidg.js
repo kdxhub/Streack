@@ -258,6 +258,14 @@ pageElements.content.main.config./* 下载 */downloadBtn.addEventListener("click
   link.download = `uuid-${new Date().toISOString().replace(/[:.]/g, "-").replace(/T/g, "_")}.txt`;
   link.click();
 });
+pageElements.content.main.config./* 复制 */copyBtn.addEventListener("click", () => {
+  let text = pageElements.content.main.result.renderer.textarea.value;
+  if (text == "Ready...") {
+    msg("你还没有生成任何UUID,该复制什么呢？", "好", true);
+    return;
+  };
+  CopyText(text);
+});
 
 //remove no script tip
 pageElements.no_script.remove();
