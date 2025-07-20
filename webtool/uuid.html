@@ -66,7 +66,7 @@
         </s-card>
       </div></s-scroll-view>
       <s-scroll-view id="pContent" class="selectable">
-        <s-card id="noticeCard" class="main-card">
+        <s-card id="confCard" class="main-card">
           <s-picker label="UUID版本" value="4" style="width: 100%;">
             <s-picker-item value="1">V1 基于随机MAC与当前时间戳</s-picker-item>
             <s-picker-item value="3">V3 基于MD5算法</s-picker-item>
@@ -75,8 +75,35 @@
             <s-picker-item value="6">V6 基于重排时间戳</s-picker-item>
             <s-picker-item value="7">V7 基于48位毫秒时间戳和强随机数</s-picker-item>
             <s-picker-item value="8">V8 标准中定义为用户自定义生成算法，实际采用V4算法</s-picker-item>
-          </s-picker><br><br>
+          </s-picker>
+          <br><br>
           <s-text-field label="生成数量" value="1" type="number"></s-text-field>
+          <s-picker label="输出格式" value="string">
+            <s-picker-item value="string">字符串 String</s-picker-item>
+            <s-picker-item value="bin">二进制 BIN</s-picker-item>
+            <s-picker-item value="hex">十六进制 HEX</s-picker-item>
+            <s-picker-item value="base64">Base64编码</s-picker-item>
+          </s-picker>
+          <br>
+          <s-checkbox checked="false"> 使用大写 </s-checkbox>
+          <s-checkbox checked="true"> 使用中划线 </s-checkbox>
+          <br>
+          <s-button>
+            <s-circular-progress indeterminate="true" slot="start"></s-circular-progress>
+            生成
+          </s-button>
+          <s-button type="elevated">
+            <s-icon slot="start"><svg viewBox="0 -960 960 960"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"></path></svg></s-icon>
+            复制
+          </s-button>
+          <s-button type="elevated">
+            <s-icon slot="start"><svg viewBox="0 -960 960 960"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"></path></svg></s-icon>
+            下载
+          </s-button>
+          <s-button type="elevated">
+            <s-icon slot="start"><svg viewBox="0 -960 960 960"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"></path></svg></s-icon>
+            清空
+          </s-button>
         </s-card>
         <s-card id="resultCard" class="main-card">
           <div id="result-renderer">

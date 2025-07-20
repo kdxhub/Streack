@@ -194,6 +194,12 @@ a s-icon {
   font-size: 1em;
 }
 
+#confCard s-text-field, #confCard s-picker {
+  width: auto;
+  max-width: 100%;
+  min-width: min(100%, max(33%, 5em));
+}
+
 #result-renderer {
   display: flex;
   border: 1px solid #ccc;
