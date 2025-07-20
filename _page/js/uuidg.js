@@ -242,6 +242,9 @@ pageElements.content.main.config./* 生成数量检测 */number.addEventListener
 //按钮功能实现
 pageElements.content.main.config./* 清空 */clearBtn.addEventListener("click", () => {
   pageElements.content.main.result.renderer.textarea.value = "Ready...";
+  pageElements.content.main.config.downloadBtn.disabled = true;
+  pageElements.content.main.config.copyBtn.disabled = true;
+  pageElements.content.main.config.clearBtn.disabled = true;
   TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
   TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
 });
