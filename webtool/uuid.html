@@ -68,13 +68,13 @@
       <s-scroll-view id="pContent" class="selectable">
         <s-card id="confCard" class="main-card">
           <s-picker id="uuid-version-picker" label="UUID版本" value="4" style="width: 100%;">
-            <s-picker-item value="1">V1 基于随机MAC与当前时间戳</s-picker-item>
-            <s-picker-item value="3">V3 基于MD5算法</s-picker-item>
-            <s-picker-item value="4">V4 推荐：纯随机算法</s-picker-item>
-            <s-picker-item value="5">V5 基于SHA-1算法</s-picker-item>
-            <s-picker-item value="6">V6 基于重排时间戳</s-picker-item>
-            <s-picker-item value="7">V7 基于48位毫秒时间戳和强随机数</s-picker-item>
-            <s-picker-item value="8">V8 标准中定义为用户自定义生成算法，实际采用V4算法</s-picker-item>
+            <s-picker-item value="1">V1 ‖ 基于MAC地址与当前时间戳（受限于浏览器，实际采用虚拟MAC生成）</s-picker-item>
+            <s-picker-item value="3">V3 ‖ 基于MD5算法的固定UUID计算</s-picker-item>
+            <s-picker-item value="4">V4 ‖ 纯随机算法</s-picker-item>
+            <s-picker-item value="5">V5 ‖ 基于SHA-1算法的固定UUID计算</s-picker-item>
+            <s-picker-item value="6">V6 ‖ 基于重排时间戳</s-picker-item>
+            <s-picker-item value="7">V7 ‖ 基于48位毫秒时间戳和强随机数</s-picker-item>
+            <s-picker-item value="8">V8 ‖ 用户自定义生成算法（本工具实际采用V4版本）</s-picker-item>
           </s-picker>
           <br><br>
           <s-text-field id="howmany-uuid" label="生成数量" value="1" type="number">

@@ -120,6 +120,127 @@ pageElements = {
   },
 };
 
+// UUID生成器与封装
+let UUIDGeneratorUtil = {
+  hexToBytes:/* 将16进制字符串转为字节数组 */ function (hex) {
+    hex = hex.replace(/-/g, '');
+    const bytes = new Uint8Array(hex.length / 2);
+    for (let i = 0; i < bytes.length; i++) {
+      bytes[i] = parseInt(hex.substr(i * 2, 2), 16);
+    }
+    return bytes;
+  },
+  bytesToHex:/** 将字节数组转换为UUID格式的16进制字符串 */ function (bytes) {
+    return [
+      bytes.slice(0, 4).join(''),
+      bytes.slice(4, 6).join(''),
+      bytes.slice(6, 8).join(''),
+      bytes.slice(8, 10).join(''),
+      bytes.slice(10, 16).join('')
+    ].map(s => s.replace(/([0-9a-f]{2})/g, '$1')).join('-');
+  },
+  hashToUUID:/** 使用指定算法生成哈希型UUID */ async function (algorithm, input, version) {
+    const hash = await crypto.subtle.digest(algorithm, input);
+    const bytes = new Uint8Array(hash);
+    // 设置版本和变体位
+    bytes[6] = (bytes[6] & 0x0F) | (version << 4);
+    bytes[8] = (bytes[8] & 0x3F) | 0x80;
+    return UUIDGeneratorUtil.bytesToHex(bytes.slice(0, 16));
+  }
+};
+let UUIDGenerator = {
+  v1: function () {
+    // 虚拟MAC地址（6字节随机数，符合RFC标准）
+    const mac = Array.from({ length: 6 }, () => Math.floor(Math.random() * 256));
+    mac[0] |= 0x01; // 设置组播位（避免真实MAC）
+    // 当前时间戳（从1582-10-15开始的100ns计数）
+    const now = Date.now();
+    const timestamp = (now * 10000) + 122192928000000000;
+    // 分割时间戳到UUID字段
+    const timeLow = (timestamp & 0xFFFFFFFF) >>> 0;
+    const timeMid = ((timestamp >>> 32) & 0xFFFF) >>> 0;
+    const timeHi = ((timestamp >>> 48) & 0x0FFF) | (1 << 12); // 版本1标记
+    // 时钟序列（2字节随机数）
+    const clockSeq = Math.floor(Math.random() * 0x3FFF);
+    // 组装UUID
+    const hex = (num, length) => num.toString(16).padStart(length, '0');
+    return [
+      hex(timeLow, 8),
+      hex(timeMid, 4),
+      hex(timeHi, 4),
+      hex((clockSeq & 0x3FFF) | 0x8000, 4), // 变体标记
+      hex((mac[0] << 8) | mac[1], 4),
+      hex((mac[2] << 8) | mac[3], 4),
+      hex((mac[4] << 8) | mac[5], 4)
+    ].join('-');
+  },
+  v3: function (namespace, name) {
+    // 预定义命名空间UUID（RFC标准）
+    const NS = {
+      'ns:dns': '6ba7b810-9dad-11d1-80b4-00c04fd430c8',
+      'ns:url': '6ba7b811-9dad-11d1-80b4-00c04fd430c8',
+      'ns:oid': '6ba7b812-9dad-11d1-80b4-00c04fd430c8',
+      'ns:x500': '6ba7b814-9dad-11d1-80b4-00c04fd430c8'
+    };
+    // 将命名空间UUID和名称转换为字节
+    const nsBytes = UUIDGeneratorUtil.hexToBytes(NS[namespace] || namespace);
+    const nameBytes = new TextEncoder().encode(name);
+    const input = new Uint8Array([...nsBytes, ...nameBytes]);
+    // 计算MD5哈希（浏览器原生API）
+    return UUIDGeneratorUtil.hashToUUID('MD5', input, 3);
+  },
+  v4: function () {
+    const bytes = new Uint8Array(16);
+    crypto.getRandomValues(bytes);
+    // 设置版本和变体位
+    bytes[6] = (bytes[6] & 0x0F) | 0x40; // 版本4
+    bytes[8] = (bytes[8] & 0x3F) | 0x80;  // 变体10
+    return UUIDGeneratorUtil.bytesToHex(bytes);
+  },
+  v5: function (namespace, name) {
+    // 同v3，但使用SHA-1
+    const NS = {
+      'ns:dns': '6ba7b810-9dad-11d1-80b4-00c04fd430c8',
+      'ns:url': '6ba7b811-9dad-11d1-80b4-00c04fd430c8'
+    };
+    const nsBytes = UUIDGeneratorUtil.hexToBytes(NS[namespace] || namespace);
+    const nameBytes = new TextEncoder().encode(name);
+    const input = new Uint8Array([...nsBytes, ...nameBytes]);
+    return UUIDGeneratorUtil.hashToUUID('SHA-1', input, 5);
+  },
+  v6: function () {
+    // 类似v1，但时间戳字段顺序调整
+    const uuidv1 = v1().replace(/-/g, '');
+    const bytes = UUIDGeneratorUtil.hexToBytes(uuidv1);
+    // 重新排列时间戳字段
+    const newBytes = new Uint8Array(16);
+    newBytes.set(bytes.slice(4, 10), 0);  // 时间低位
+    newBytes.set(bytes.slice(2, 4), 6);   // 时间中位
+    newBytes.set(bytes.slice(0, 2), 8);   // 时间高位
+    newBytes.set(bytes.slice(10), 10);    // 其余部分
+    // 设置版本6标记
+    newBytes[6] = (newBytes[6] & 0x0F) | 0x60;
+    return UUIDGeneratorUtil.bytesToHex(newBytes);
+  },
+  v7: function () {
+    const timestamp = Date.now();
+    const randBytes = new Uint8Array(10);
+    crypto.getRandomValues(randBytes);
+    // 组装UUID（48位时间戳 + 74位随机数）
+    const bytes = new Uint8Array(16);
+    bytes[0] = (timestamp >>> 40) & 0xFF;
+    bytes[1] = (timestamp >>> 32) & 0xFF;
+    bytes[2] = (timestamp >>> 24) & 0xFF;
+    bytes[3] = (timestamp >>> 16) & 0xFF;
+    bytes[4] = (timestamp >>> 8) & 0xFF;
+    bytes[5] = timestamp & 0xFF;
+    bytes.set(randBytes.slice(0, 10), 6);
+    // 设置版本7标记
+    bytes[6] = (bytes[6] & 0x0F) | 0x70;
+    return UUIDGeneratorUtil.bytesToHex(bytes);
+  },
+};
+
 //PMD框架相关处理
 /* 背景图 */
 /* 自定义Style */
