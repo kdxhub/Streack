@@ -240,10 +240,23 @@ pageElements.content.main.config./* 生成数量检测 */number.addEventListener
 });
 
 //按钮功能实现
-pageElements.content.main.config.clearBtn.addEventListener("click", () => {
-  pageElements.content.main.result.renderer.textarea.value = "就绪";
+pageElements.content.main.config./* 清空 */clearBtn.addEventListener("click", () => {
+  pageElements.content.main.result.renderer.textarea.value = "Ready...";
   TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
   TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
+});
+pageElements.content.main.config.clearBtn.click();
+pageElements.content.main.config./* 下载 */downloadBtn.addEventListener("click", () => {
+  let text = pageElements.content.main.result.renderer.textarea.value;
+  if (text == "Ready...") {
+    msg("你还没有生成任何UUID,该下载什么呢？", "好", true);
+    return;
+  };
+  let blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+  let link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `uuid-${new Date().toISOString().replace(/[:.]/g, "-").replace(/T/g, "_")}.txt`;
+  link.click();
 });
 
 //remove no script tip
