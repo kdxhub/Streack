@@ -384,6 +384,7 @@ pageElements.content.main.config./* 生成 */spawnBtn.addEventListener("click", 
   /* 设置自锁 */
   pageElements.content.main.config.loading.style.display = "";
   e.srcElement.dataset.onprocessing = "true";
+  let temp/*立即重绘页面*/=e.srcElement.offsetHeight;
   /* 异步获取UUID */
   pageElements.content.main.result.renderer.textarea.value = "正在生成……";
   TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
@@ -394,11 +395,12 @@ pageElements.content.main.config./* 生成 */spawnBtn.addEventListener("click", 
     TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
   }, 10000);
   pageElements.content.main.config._.process.promise = new Promise((resolve, reject) => {
+    setTimeout((/*滞后重绘*/)=>{
     let uuids = [];
     for (let i = 0; i < parseInt(pageElements.content.main.config.number.value); i++) {
       uuids.push(getUUID());
     };
-    resolve(uuids);
+    resolve(uuids);},1);
   });
   pageElements.content.main.config._.process.promise.then((result) => {
     pageElements.content.main.result.renderer.textarea.value = result.join("\n");
