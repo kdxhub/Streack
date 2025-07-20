@@ -94,6 +94,22 @@ pageElements = {
     },
     main: {
       root: document.getElementById("pContent"),
+      config: {
+        _: {
+          save_enabled: true,
+        },
+        root: document.getElementById("confCard"),
+        version: document.getElementById("uuid-version-picker"),
+        number: document.getElementById("howmany-uuid"),
+        number_notice: document.getElementById("howmany-uuid-notice"),
+        output_format: document.getElementById("uuid-format"),
+        capitalize: document.getElementById("isCapitalized"),
+        dash: document.getElementById("isDashUsed"),
+        spawnBtn: document.getElementById("actionBtn-spawn"),
+        loading: document.getElementById("actionBtn-spawn-loading"),
+        copyBtn: document.getElementById("actionBtn-copy"),
+        clearBtn: document.getElementById("actionBtn-clear"),
+      },
       result: {
         root: document.getElementById("resultCard"),
         renderer: {
@@ -211,6 +227,18 @@ TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textare
 pageElements.content.main.result.renderer.textarea.addEventListener("input", (e) => {
   TextareaHelper.updataHeight(e.srcElement);
   TextareaHelper.updataLineCount(e.srcElement, pageElements.content.main.result.renderer.lineCounter);
+});
+
+// 检查输入是否合法
+pageElements.content.main.config.number.addEventListener("change", (e) => {
+  let value = parseInt(e.srcElement.value);
+  if (isNaN(value) || value < 1) {
+    e.srcElement.value = 1;
+  };
+  if (value > 100) {
+    pageElements.content.main.config._.save_enabled = false;
+    pageElements.content.main.config.number_notice.innerHTML = `数量过大会引起页面卡顿，同时设置项不会自动保存。`;
+  };
 });
 
 //remove no script tip
