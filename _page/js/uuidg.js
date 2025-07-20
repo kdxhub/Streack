@@ -95,6 +95,9 @@ pageElements = {
     main: {
       root: document.getElementById("pContent"),
       config: {
+        _: {
+          loaded: false,
+        },
         root: document.getElementById("confCard"),
         version: document.getElementById("uuid-version-picker"),
         number: document.getElementById("howmany-uuid"),
@@ -125,6 +128,27 @@ pageElements = {
     },
   },
 };
+/* Import Library: uuidjs@Github.com/uuid | The MIT License @ https://github.com/uuidjs/uuid/blob/main/LICENSE.md */
+pageElements.content.main.config.spawnBtn.disabled = true;
+var uuid = {error: true};
+import('https://rs.kdxiaoyi.top/res/scripts/js/uuid@11.1.0/dist/esm-browser/index.js').then((e) => {
+  uuid = e;
+  uuid.error = false;
+  pageElements.content.main.config._.loaded = true;
+  pageElements.content.main.config.spawnBtn.disabled = false;
+}).catch((e) => {
+  uuid.error = true;
+}).finally(() => {
+  if (/* uuid.js加载标志 */uuid.error || /* 上下文不安全时无法使用加密API */ !window.isSecureContext) {
+    msg("初始化时发生错误", "好", true);
+    pageElements.content.main.config.spawnBtn.disabled = true;
+    pageElements.content.main.config.loading.style.display = "none";
+    pageElements.content.main.config.copyBtn.disabled = true;
+    pageElements.content.main.config.downloadBtn.disabled = true;
+    pageElements.content.main.config.clearBtn.disabled = true;
+    pageElements.content.main.result.renderer.textarea.value = "未能加载库：uuid.js。检查网络连接并升级浏览器版本后再试。";
+  }
+});
 
 //PMD框架相关处理
 /* 背景图 */
@@ -286,17 +310,6 @@ pageElements.content.main.config./* 复制 */copyBtn.addEventListener("click", (
   };
   CopyText(text);
 });
-
-//判断uuid.js情况
-if (/* uuid.js加载标志 */uuid_error || /* 上下文不安全时无法使用加密API */!window.isSecureContext) {
-  msg("初始化时发生错误", "好", true);
-  pageElements.content.main.config.spawnBtn.disabled = true;
-  pageElements.content.main.config.loading.style.display = "none";
-  pageElements.content.main.config.copyBtn.disabled = true;
-  pageElements.content.main.config.downloadBtn.disabled = true;
-  pageElements.content.main.config.clearBtn.disabled = true;
-  pageElements.content.main.result.renderer.textarea.value = "未能加载库：uuid.js。检查网络连接并升级浏览器版本后再试。";
-}
 
 //remove no script tip
 pageElements.no_script.remove();
