@@ -95,9 +95,6 @@ pageElements = {
     main: {
       root: document.getElementById("pContent"),
       config: {
-        _: {
-          save_enabled: true,
-        },
         root: document.getElementById("confCard"),
         version: document.getElementById("uuid-version-picker"),
         number: document.getElementById("howmany-uuid"),
@@ -108,7 +105,8 @@ pageElements = {
         spawnBtn: document.getElementById("actionBtn-spawn"),
         loading: document.getElementById("actionBtn-spawn-loading"),
         copyBtn: document.getElementById("actionBtn-copy"),
-        clearBtn: document.getElementById("actionBtn-clear"),
+        downloadBtn: document.getElementById("actionBtn-download"),
+        clearBtn: document.getElementById("actionBtn-clearAll"),
       },
       result: {
         root: document.getElementById("resultCard"),
@@ -230,15 +228,22 @@ pageElements.content.main.result.renderer.textarea.addEventListener("input", (e)
 });
 
 // 检查输入是否合法
-pageElements.content.main.config.number.addEventListener("change", (e) => {
+pageElements.content.main.config./* 生成数量检测 */number.addEventListener("change", (e) => {
   let value = parseInt(e.srcElement.value);
   if (isNaN(value) || value < 1) {
     e.srcElement.value = 1;
   };
+  pageElements.content.main.config.number_notice.innerHTML = ``;
   if (value > 100) {
-    pageElements.content.main.config._.save_enabled = false;
     pageElements.content.main.config.number_notice.innerHTML = `数量过大会引起页面卡顿，同时设置项不会自动保存。`;
   };
+});
+
+//按钮功能实现
+pageElements.content.main.config.clearBtn.addEventListener("click", () => {
+  pageElements.content.main.result.renderer.textarea.value = "就绪";
+  TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
+  TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
 });
 
 //remove no script tip
