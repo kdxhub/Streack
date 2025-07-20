@@ -270,5 +270,16 @@ pageElements.content.main.config./* 复制 */copyBtn.addEventListener("click", (
   CopyText(text);
 });
 
+//判断uuid.js情况
+if (/* uuid.js加载标志 */uuid.error || /* 上下文不安全时无法使用加密API */!window.isSecureContext) {
+  msg("初始化时发生错误", "好", true);
+  pageElements.content.main.config.spawnBtn.disabled = true;
+  pageElements.content.main.config.loading.style.display = "none";
+  pageElements.content.main.config.copyBtn.disabled = true;
+  pageElements.content.main.config.downloadBtn.disabled = true;
+  pageElements.content.main.config.clearBtn.disabled = true;
+  pageElements.content.main.result.renderer.textarea.value = "未能加载库：uuid.js。检查网络连接并升级浏览器版本后再试。";
+}
+
 //remove no script tip
 pageElements.no_script.remove();
