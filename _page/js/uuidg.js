@@ -45,7 +45,8 @@ function CopyText(text) {
     },
   );
 };
-let uuid = {worker: null};
+var uuidWorker = null;
+let uuid = {};
 String.prototype.lines = function () { return this.split(/\r*\n/); };
 String.prototype.lineCount = function () { return this.lines().length; };
 /*引入pmd里的存储api*/const pmdStorage = { Cookies: { set: function (e, t, o, n) { const s = `${encodeURIComponent(e)}=${encodeURIComponent(t)}`;if(o){const e=new Date;e.setTime(e.getTime()+1e3*o),document.cookie=`${s}; expires=${e.toUTCString()}; path=${n}`}else document.cookie=`${s}; path=${n}`},get:function(e){const t=document.cookie.split("; ");for(const o of t){const[t,n]=o.split("=",2);if(decodeURIComponent(t)===e)return decodeURIComponent(n)}return null},remove:function(e){this.set(e,"",{expires:-1})},getAll:function(){const e=document.cookie.split("; "),t={};for(const o of e){const[e,n]=o.split("=",2);t[decodeURIComponent(e)]=decodeURIComponent(n)}return t},reset_dangerous:function(){const e=this.getAll();for(const t in e)this.remove(t)}},Local:{set:function(e,t){localStorage.setItem(e,JSON.stringify(t))},get:function(e){const t=localStorage.getItem(e);try{return JSON.parse(t)}catch(e){return t}},remove:function(e){localStorage.removeItem(e)},getAll:function(){const e={};for(let t=0;t<localStorage.length;t++){const o=localStorage.key(t);e[o]=this.get(o)}return e},reset_dangerous:function(){localStorage.clear()}},Session:{set:function(e,t){sessionStorage.setItem(e,JSON.stringify(t))},get:function(e){const t=sessionStorage.getItem(e);try{return JSON.parse(t)}catch(e){return t}},remove:function(e){sessionStorage.removeItem(e)},getAll:function(){const e={};for(let t=0;t<sessionStorage.length;t++){const o=sessionStorage.key(t);e[o]=this.get(o)}return e},reset_dangerous:function(){sessionStorage.clear()}}};
@@ -139,10 +140,13 @@ pageElements = {
 
 // Import Library: uuidWorker
 try {
-  uuid.worker = new Worker("./uuidg.worker.js");
+  uuidWorker = new Worker("/_page/js/uuidg.worker.js");
+  if (typeof uuidWorker !== "object") {
+    throw new Error("Worker对象创建失败");
+  };
   pageElements.content.main.config._.loaded.push(true);
 } catch (e) {
-  console.error("[Streack.webtool.uuid/initialize]", "无法加载UUID.WORKER\n", `@ Import {uuidg.worker.js}\n`, e);
+  console.error("[Streack.webtool.uuid/initialize]", "无法加载uuid.Worker\n", `@ Import {uuidg.worker.js}\n`, e);
   pageElements.content.main.config._.loaded.push(e);
   TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, "未能加载库uuid-worker。检查网络连接并升级浏览器版本后再试。", pageElements.content.main.result.renderer.lineCounter);
 };
@@ -355,7 +359,40 @@ pageElements.content.main.config.copyBtn.addEventListener("click", () => {
 });
 
 // 获取UUID按钮功能实现
-pageElements.content.main.config./* 生成 */spawnBtn.addEventListener("click", async (e) => {
+/* 添加Worker消息处理 */
+uuidWorker.onmessage = (e) => {
+  if (/* 自锁判断 */!pageElements.content.main.config.spawnBtn.dataset.onprocessing) { return; };
+  if (!e.data.error) {
+    TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, e.data.result.join("\n"), pageElements.content.main.result.renderer.lineCounter);
+  } else {
+    console.error("[Streack.webtool.uuid/worker]", "Worker返回错误:", e.data.error);
+    msg(`Streack.webtool.uuid/worker 抛出了错误：\n${e.data.errorReazon}`, "好", true, 10000);
+    TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, `发生错误。`, pageElements.content.main.result.renderer.lineCounter);
+  };
+  /* 移除动画并设置状态 */
+  clearTimeout(pageElements.content.main.config._.process.still_notice_timeout);
+  pageElements.content.main.config.downloadBtn.disabled = false;
+  pageElements.content.main.config.copyBtn.disabled = false;
+  pageElements.content.main.config.clearBtn.disabled = false;
+  pageElements.content.main.config.loading.style.display = "none";
+  /* 移除自锁 */
+  pageElements.content.main.config.spawnBtn.dataset.onprocessing = "";
+};
+/* 添加Worker错误处理，提供调试 */
+uuidWorker.onerror = (e) => {
+  console.error("[Streack.webtool.uuid/worker]", "Worker发生错误:", e);
+  msg(`Streack.webtool.uuid/worker 抛出了错误：\n${e.message}`, "好", true, 10000);
+  TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, `发生错误。`, pageElements.content.main.result.renderer.lineCounter);
+  /* 移除动画并设置状态 */
+  clearTimeout(pageElements.content.main.config._.process.still_notice_timeout);
+  pageElements.content.main.config.downloadBtn.disabled = false;
+  pageElements.content.main.config.copyBtn.disabled = false;
+  pageElements.content.main.config.clearBtn.disabled = false;
+  pageElements.content.main.config.loading.style.display = "none";
+  /* 移除自锁 */
+  pageElements.content.main.config.spawnBtn.dataset.onprocessing = "";
+};
+pageElements.content.main.config.spawnBtn.addEventListener("click", async (e) => {
   /* 校验前置条件 */
   if (/* 自锁判断 */!!e.srcElement.dataset.onprocessing) { return; };
   if (/* 初始化状态判断 */!pageElements.content.main.config._.loaded.every(e => e === true)) {
@@ -380,25 +417,26 @@ pageElements.content.main.config./* 生成 */spawnBtn.addEventListener("click", 
   //   saveConf();
   // };
   /* 设置自锁 */
-  pageElements.content.main.config.loading.style.display = "";
   e.srcElement.dataset.onprocessing = "true";
-  let temp/*立即重绘页面*/ = e.srcElement.offsetHeight;
   /* 设置动画 */
+  pageElements.content.main.config.loading.style.display = "";
   TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, "正在生成……", pageElements.content.main.result.renderer.lineCounter);
   pageElements.content.main.config._.process.still_notice_timeout = setTimeout(() => {
     TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, "仍在生成……", pageElements.content.main.result.renderer.lineCounter);
-}, 10000);
+  }, 10000);
+  let temp/*立即重绘页面*/ = e.srcElement.offsetHeight;
   /* 等待UUID生成 */
-  let result = await getUUID(parseInt(pageElements.content.main.config.number.value));
-  /* 处理返回的UUID */
-  TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, result.join("\n"), pageElements.content.main.result.renderer.lineCounter);
-  pageElements.content.main.config.downloadBtn.disabled = false;
-  pageElements.content.main.config.copyBtn.disabled = false;
-  pageElements.content.main.config.clearBtn.disabled = false;
-  clearTimeout(pageElements.content.main.config._.process.still_notice_timeout);
-  /* 移除自锁 */
-  pageElements.content.main.config.loading.style.display = "none";
-  e.srcElement.dataset.onprocessing = "";
+  uuidWorker.postMessage({
+    loop: parseInt(pageElements.content.main.config.number.value),
+    version: pageElements.content.main.config.version.value,
+    v3_5: {
+      namespace: pageElements.content.main.config.v3_5.namespace.value,
+      name: pageElements.content.main.config.v3_5.name.value,
+    },
+    format: pageElements.content.main.config.output_format.value,
+    capitalize: pageElements.content.main.config.capitalize.checked,
+    dash: pageElements.content.main.config.dash.checked,
+  });
 });
 
 //remove no script tip
