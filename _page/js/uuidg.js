@@ -345,23 +345,38 @@ pageElements.content.main.config./* 复制 */copyBtn.addEventListener("click", (
   };
   CopyText(text);
 });
-function getUUID() {
+function getUUID(loop) {
+  let uuids = [];
   switch (pageElements.content.main.config.version.value) {
-    case "1":
-      return uuid.v1();
     case "3":
-      return uuid.v3(pageElements.content.main.config.v3_5.name.value, pageElements.content.main.config.v3_5.namespace.value);
+      for (let i = 0; i < loop; i++) {
+        uuids.push(uuid.v3(pageElements.content.main.config.v3_5.name.value, pageElements.content.main.config.v3_5.namespace.value));
+      };
     case "5":
-      return uuid.v5(pageElements.content.main.config.v3_5.name.value, pageElements.content.main.config.v3_5.namespace.value);
+      for (let i = 0; i < loop; i++) {
+        uuids.push(uuid.v5(pageElements.content.main.config.v3_5.name.value, pageElements.content.main.config.v3_5.namespace.value));
+      };
+    case "1":
+      for (let i = 0; i < loop; i++) {
+        uuids.push(uuid.v1());
+      };
     case "6":
-      return uuid.v6();
+      for (let i = 0; i < loop; i++) {
+        uuids.push(uuid.v6());
+      };
     case "7":
-      return uuid.v7();
+      for (let i = 0; i < loop; i++) {
+        uuids.push(uuid.v7());
+      };
     default:
-      return uuid.v4();
+      for (let i = 0; i < loop; i++) {
+        uuids.push(uuid.v4());
+        let temp = pageElements.content.main.config.spawnBtn.offsetHeight;
+      };
   };
+  return uuids;
 };
-pageElements.content.main.config./* 生成 */spawnBtn.addEventListener("click", ( e) => {
+pageElements.content.main.config./* 生成 */spawnBtn.addEventListener("click", async (e) => {
   /* 校验前置条件 */
   if (!!e.srcElement.dataset.onprocessing) { return; };
   if (!pageElements.content.main.config._.loaded) {
@@ -388,8 +403,8 @@ pageElements.content.main.config./* 生成 */spawnBtn.addEventListener("click", 
   /* 设置自锁 */
   pageElements.content.main.config.loading.style.display = "";
   e.srcElement.dataset.onprocessing = "true";
-  let temp/*立即重绘页面*/=e.srcElement.offsetHeight;
-  /* 异步获取UUID */
+  let temp/*立即重绘页面*/ = e.srcElement.offsetHeight;
+  /* 设置动画 */
   pageElements.content.main.result.renderer.textarea.value = "正在生成……";
   TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
   TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
@@ -398,29 +413,19 @@ pageElements.content.main.config./* 生成 */spawnBtn.addEventListener("click", 
     TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
     TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
   }, 10000);
-  pageElements.content.main.config._.process.promise = new Promise((resolve, reject) => {
-    setTimeout((/*滞后重绘*/)=>{
-    let uuids = [];
-    for (let i = 0; i < parseInt(pageElements.content.main.config.number.value); i++) {
-      uuids.push(getUUID());
-    };
-    resolve(uuids);},100);
-  });
-  pageElements.content.main.config._.process.promise.then((result) => {
-    pageElements.content.main.result.renderer.textarea.value = result.join("\n");
-    pageElements.content.main.config.downloadBtn.disabled = false;
-    pageElements.content.main.config.copyBtn.disabled = false;
-    pageElements.content.main.config.clearBtn.disabled = false;
-    TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
-    TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
-  }).catch((error) => {
-    console.error(error);
-  }).finally(() => {
-    clearTimeout(pageElements.content.main.config._.process.still_notice_timeout);
-    /* 移除自锁 */
-    pageElements.content.main.config.loading.style.display = "none";
-    e.srcElement.dataset.onprocessing = "";
-  });
+  /* 等待UUID生成 */
+  let result = await getUUID(parseInt(pageElements.content.main.config.number.value));
+  /* 处理返回的UUID */
+  pageElements.content.main.result.renderer.textarea.value = result.join("\n");
+  pageElements.content.main.config.downloadBtn.disabled = false;
+  pageElements.content.main.config.copyBtn.disabled = false;
+  pageElements.content.main.config.clearBtn.disabled = false;
+  TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
+  TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
+  clearTimeout(pageElements.content.main.config._.process.still_notice_timeout);
+  /* 移除自锁 */
+  pageElements.content.main.config.loading.style.display = "none";
+  e.srcElement.dataset.onprocessing = "";
 });
 
 //remove no script tip
