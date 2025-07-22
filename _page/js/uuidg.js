@@ -150,7 +150,7 @@ import('https://rs.kdxiaoyi.top/res/scripts/js/uuid@11.1.0/dist/esm-browser/inde
   console.error("[Streack.webtool.uuid/initialize]", "无法加载UUID.JS LIB\n", `@ Import {uuid.js}\n`, e);
 }).finally(() => {
   pageElements.content.main.config.loading.style.display = "none";
-  if (/* uuid.js加载标志 */uuid.error || /* 上下文不安全时无法使用加密API */ !window.isSecureContext) {
+  if (/* uuid.js加载标志 */uuid.error) {
     msg("初始化时发生错误", "好", true);
     pageElements.content.main.config.spawnBtn.disabled = true;
     pageElements.content.main.config.copyBtn.disabled = true;
@@ -159,7 +159,7 @@ import('https://rs.kdxiaoyi.top/res/scripts/js/uuid@11.1.0/dist/esm-browser/inde
     pageElements.content.main.result.renderer.textarea.value = "未能加载库：uuid.js。检查网络连接并升级浏览器版本后再试。";
     TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
     TextareaHelper.updataLineCount(pageElements.content.main.result.renderer.textarea, pageElements.content.main.result.renderer.lineCounter);
-    console.error("[Streack.webtool.uuid/initialize]", "无法加载环境", "\nUUID.js Env:", uuid, "\nUUID.js Err Status:", uuid.error, "\nwindow.isSecureContext: ", window.isSecureContext);
+    console.error("[Streack.webtool.uuid/initialize]", "无法加载环境", "\nUUID.js Env:", uuid, "\nUUID.js Err Status:", uuid.error);
   }
 });
 
