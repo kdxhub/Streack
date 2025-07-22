@@ -251,6 +251,7 @@ TextareaHelper = {
   updataHeight: function(t){
     t.style.height = 'auto';
     t.style.height = t.scrollHeight + 'px';
+    return t.offsetHeight;
   },
   updataLineCount: function (t, d) {
     d.innerHTML = "";
@@ -259,6 +260,7 @@ TextareaHelper = {
       span.dataset.line = i + 1;
       d.appendChild(span);
     };
+    return [t.offsetHeight, d.offsetHeight];
   }
 };
 TextareaHelper.updataHeight(pageElements.content.main.result.renderer.textarea);
@@ -400,7 +402,7 @@ pageElements.content.main.config./* 生成 */spawnBtn.addEventListener("click", 
     for (let i = 0; i < parseInt(pageElements.content.main.config.number.value); i++) {
       uuids.push(getUUID());
     };
-    resolve(uuids);},1);
+    resolve(uuids);},100);
   });
   pageElements.content.main.config._.process.promise.then((result) => {
     pageElements.content.main.result.renderer.textarea.value = result.join("\n");
