@@ -45,6 +45,7 @@ function CopyText(text) {
     },
   );
 };
+let uuid = {worker: null};
 String.prototype.lines = function () { return this.split(/\r*\n/); };
 String.prototype.lineCount = function () { return this.lines().length; };
 /*引入pmd里的存储api*/const pmdStorage = { Cookies: { set: function (e, t, o, n) { const s = `${encodeURIComponent(e)}=${encodeURIComponent(t)}`;if(o){const e=new Date;e.setTime(e.getTime()+1e3*o),document.cookie=`${s}; expires=${e.toUTCString()}; path=${n}`}else document.cookie=`${s}; path=${n}`},get:function(e){const t=document.cookie.split("; ");for(const o of t){const[t,n]=o.split("=",2);if(decodeURIComponent(t)===e)return decodeURIComponent(n)}return null},remove:function(e){this.set(e,"",{expires:-1})},getAll:function(){const e=document.cookie.split("; "),t={};for(const o of e){const[e,n]=o.split("=",2);t[decodeURIComponent(e)]=decodeURIComponent(n)}return t},reset_dangerous:function(){const e=this.getAll();for(const t in e)this.remove(t)}},Local:{set:function(e,t){localStorage.setItem(e,JSON.stringify(t))},get:function(e){const t=localStorage.getItem(e);try{return JSON.parse(t)}catch(e){return t}},remove:function(e){localStorage.removeItem(e)},getAll:function(){const e={};for(let t=0;t<localStorage.length;t++){const o=localStorage.key(t);e[o]=this.get(o)}return e},reset_dangerous:function(){localStorage.clear()}},Session:{set:function(e,t){sessionStorage.setItem(e,JSON.stringify(t))},get:function(e){const t=sessionStorage.getItem(e);try{return JSON.parse(t)}catch(e){return t}},remove:function(e){sessionStorage.removeItem(e)},getAll:function(){const e={};for(let t=0;t<sessionStorage.length;t++){const o=sessionStorage.key(t);e[o]=this.get(o)}return e},reset_dangerous:function(){sessionStorage.clear()}}};
@@ -98,7 +99,7 @@ pageElements = {
       root: document.getElementById("pContent"),
       config: {
         _: {
-          loaded: false,
+          loaded: [],
           save_max_spawn_number: 100,
           process: {
             still_notice_timeout: -1,
@@ -136,30 +137,36 @@ pageElements = {
   },
 };
 
+// Import Library: uuidWorker
+try {
+  uuid.worker = new Worker("./uuidg.worker.js");
+  pageElements.content.main.config._.loaded.push(true);
+} catch (e) {
+  console.error("[Streack.webtool.uuid/initialize]", "无法加载UUID.WORKER\n", `@ Import {uuidg.worker.js}\n`, e);
+  pageElements.content.main.config._.loaded.push(e);
+  TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, "未能加载库uuid-worker。检查网络连接并升级浏览器版本后再试。", pageElements.content.main.result.renderer.lineCounter);
+};
+
 // Import Library: uuidjs@Github.com/uuid | The MIT License @ https://github.com/uuidjs/uuid/blob/main/LICENSE.md
-pageElements.content.main.config.spawnBtn.disabled = true;
-var uuid = { error: true };
 import('https://rs.kdxiaoyi.top/res/scripts/js/uuid@11.1.0/dist/esm-browser/index.js').then((e) => {
   uuid = e;
-  uuid.error = false;
-  pageElements.content.main.config._.loaded = true;
-  pageElements.content.main.config.spawnBtn.disabled = false;
-  pageElements.content.main.config.clearBtn.click();
-  TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, "Ready...", pageElements.content.main.result.renderer.lineCounter);
+  pageElements.content.main.config._.loaded.push(true);
 }).catch((e) => {
-  uuid.error = true;
-  console.error("[Streack.webtool.uuid/initialize]", "无法加载UUID.JS LIB\n", `@ Import {uuid.js}\n`, e);
+  console.error("[Streack.webtool.uuid/initialize]", "无法加载uuid.js\n", `@ Import {uuid.js}\n`, e);
+  pageElements.content.main.config._.loaded.push(e);
+  TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, "未能加载库uuid.js。检查网络连接并升级浏览器版本后再试。", pageElements.content.main.result.renderer.lineCounter);
 }).finally(() => {
-  pageElements.content.main.config.loading.style.display = "none";
-  if (/* uuid.js加载标志 */uuid.error) {
+  if (!pageElements.content.main.config._.loaded.every(e => e === true)) {
     msg("初始化时发生错误", "好", true);
     pageElements.content.main.config.spawnBtn.disabled = true;
     pageElements.content.main.config.copyBtn.disabled = true;
     pageElements.content.main.config.downloadBtn.disabled = true;
     pageElements.content.main.config.clearBtn.disabled = true;
-    TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, "未能加载库：uuid.js。检查网络连接并升级浏览器版本后再试。", pageElements.content.main.result.renderer.lineCounter);
-    console.error("[Streack.webtool.uuid/initialize]", "无法加载环境", "\nUUID.js Env:", uuid, "\nUUID.js Err Status:", uuid.error);
-  }
+  } else {
+    pageElements.content.main.config.spawnBtn.disabled = false;
+    pageElements.content.main.config.clearBtn.click();
+  };
+  pageElements.content.main.config.loading.style.display = "none";
 });
 
 // PMD框架相关处理
@@ -351,7 +358,7 @@ pageElements.content.main.config.copyBtn.addEventListener("click", () => {
 pageElements.content.main.config./* 生成 */spawnBtn.addEventListener("click", async (e) => {
   /* 校验前置条件 */
   if (/* 自锁判断 */!!e.srcElement.dataset.onprocessing) { return; };
-  if (/* 初始化状态判断 */!pageElements.content.main.config._.loaded) {
+  if (/* 初始化状态判断 */!pageElements.content.main.config._.loaded.every(e => e === true)) {
     msg("尚未初始化，请稍后再试……", "好", true);
     return;
   };
@@ -378,7 +385,9 @@ pageElements.content.main.config./* 生成 */spawnBtn.addEventListener("click", 
   let temp/*立即重绘页面*/ = e.srcElement.offsetHeight;
   /* 设置动画 */
   TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, "正在生成……", pageElements.content.main.result.renderer.lineCounter);
-  pageElements.content.main.config._.process.still_notice_timeout = setTimeout(TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, "仍在生成……", pageElements.content.main.result.renderer.lineCounter), 10000);
+  pageElements.content.main.config._.process.still_notice_timeout = setTimeout(() => {
+    TextareaHelper.setValue(pageElements.content.main.result.renderer.textarea, "仍在生成……", pageElements.content.main.result.renderer.lineCounter);
+}, 10000);
   /* 等待UUID生成 */
   let result = await getUUID(parseInt(pageElements.content.main.config.number.value));
   /* 处理返回的UUID */
