@@ -14,9 +14,9 @@ description: "纯净养老MC服务器"
 #
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://avatars.githubusercontent.com/u/169080523?v=4
+avatar: "https://avatars.githubusercontent.com/u/169080523?v=4"
 # 你的favicon（出现在浏览器tab上）图片URL，建议使用较小(64px × 64px)的图片
-favicon: https://kdxiaoyi.top/Streack/assets/img/favicon_2.ico
+favicon: "https://kdxiaoyi.top/Streack/assets/img/favicon_2.ico"
 
 # Pagination
 paginate: 8
