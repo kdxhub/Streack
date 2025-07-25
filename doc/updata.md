@@ -23,6 +23,34 @@ description: "见证每一次变化"
 * 部分链接无法被发送到客户端，该问题会在后续版本修复
 * 基岩版菜单中部分材质缺失，该问题会在后续版本修复
 
+## 分支：「前瞻先行服」[1.21.4-dev]
+
+### dev-25w30a
+* 更新服务器版本至`Java 1.21.4`
+* *Streack Service Datapack*更新
+  * *更多配方*模块：现在默认禁用1.21.3配方机制修复
+  * 更新图标与协议版本
+* *Streack 资源包*更新
+  * 更新图标与协议版本
+* 特性调整
+  * 现在砂轮可以用于叠加带有诅咒的附魔书
+  * 现在铁砧会销毁其砸中的掉落物
+  * 现在处于*旁观模式*的玩家无法获取进度
+  * 现在手（曾）持物品的*末影人*会自然消失
+  * 现在对雪使用「锹」时会减少雪层并掉落雪球
+* 协议支持
+  * 新增[RoughlyEnoughItems฿](https://github.com/shedaniel/RoughlyEnoughItems)协议支持
+  * 新增[ChatImage฿](https://github.com/kitUIN/ChatImage)协议支持
+  * 现在聊天中玩家名会以文本组件的形式发送
+  * 现在世界元数据协议会通过[Servux฿](https://www.mcmod.cn/class/5219.html)发送
+  * 移除[Servux฿](https://www.mcmod.cn/class/5219.html)发送的数据中的世界种子
+  * 现在所有玩家数据会通过[Plusls Carpet Addition฿](https://github.com/Nyan-Work/plusls-carpet-addition/blob/nyan-work/dev/README_ZH_CN.md)发送到对应玩家客户端上
+* 优化
+  * 优化使用「剪刀」调整方块朝向时的行为
+  * 优化区块加载，参见[C2ME引擎฿](https://modrinth.com/mod/c2me-fabric)
+  * 减少服务器核心更新检测频率
+  * 优化实体碰撞检测行为
+
 ## 历史日志
 
 ### 25w30c
