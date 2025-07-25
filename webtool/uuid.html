@@ -83,10 +83,13 @@
           <s-text-field id="howmany-uuid" label="生成数量" value="1" type="number">
             <div id="howmany-uuid-notice" slot="text"></div>
           </s-text-field>
-          <s-picker id="uuid-format" label="输出格式（尚未实现）" value="string">
+          <s-picker id="uuid-format" label="输出格式" value="string">
             <s-picker-item value="string">字符串 String</s-picker-item>
             <s-picker-item value="bin">二进制 BIN</s-picker-item>
-            <s-picker-item value="hex">十六进制 HEX</s-picker-item>
+            <s-picker-item value="binA">二进制数组 Array[BIN]</s-picker-item>
+            <s-picker-item value="dec">十进制 DEC</s-picker-item>
+            <s-picker-item value="decA">十进制数组 Array[DEC]</s-picker-item>
+            <s-picker-item value="hexA">十六进制数组 Array[HEX]</s-picker-item>
             <s-picker-item value="base64">Base64编码</s-picker-item>
           </s-picker>
           <div id="v3_5-conf" style="display: none;">
@@ -109,7 +112,7 @@
           </div>
           <br>
           <s-tooltip>
-            <s-checkbox slot="trigger" id="isCapitalized" checked="false"> 使用大写（尚未实现） </s-checkbox>
+            <s-checkbox slot="trigger" id="isCapitalized" checked="false"> 使用大写 </s-checkbox>
             输出结果是否自动大写
           </s-tooltip>
           <s-tooltip>
