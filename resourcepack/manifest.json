@@ -4,8 +4,8 @@
     "description": "§7Created by @kdxiaoyi.§fFind more @ http://gitee.com/kdxiaoyi/Streack/",
     "name": "§6栈流Streack§b基岩版附加包§r",
     "uuid": "ac30013e-686a-4ddc-8193-0c156e5ba169",
-    "version": [1, 0, 0],
-    "min_engine_version": [1, 13, 0]
+    "version": [1, 1, 0],
+    "min_engine_version": [1, 21, 50]
   },
   "modules": [
     {
