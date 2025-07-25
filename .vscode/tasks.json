@@ -2,21 +2,43 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "gitpush", // 任务标签
-      "type": "shell", // 任务类型，shell 类型表示运行 shell 命令
-      "command": "git push origin master&&git push gitee master", // 运行的命令
+      "label": "Git | PUSH → ~HEAD@Github/Gitee",
+      "promptOnClose": true,
+      "type": "shell",
+      "command": "git push origin&&git push gitee",
       "group": {
         "kind": "build",
-        "isDefault": true // 设置为默认构建任务
+        "isDefault": false
       }
     },
     {
-      "label": "Gitpull from master@Gitee",
+      "label": "Git | PUSH → master@Github/Gitee",
+      "promptOnClose": true,
+      "type": "shell",
+      "command": "git push origin master&&git push gitee master",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "Git | PULL → master@Gitee",
+      "promptOnClose": true,
       "type": "shell",
       "command": "git pull gitee master",
       "group": {
         "kind": "build",
-        "isDefault": true // 设置为默认构建任务
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Git | PULL → master@Github",
+      "promptOnClose": true,
+      "type": "shell",
+      "command": "git pull github master",
+      "group": {
+        "kind": "build",
+        "isDefault": true
       }
     },
   ]
