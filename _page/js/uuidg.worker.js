@@ -9,9 +9,6 @@ import('https://rs.kdxiaoyi.top/res/scripts/js/uuid@11.1.0/dist/esm-browser/inde
 
 String.prototype.UUIDformat = function (dash, capitalize, format) {
   switch (format) {
-    case "string": {
-      return this;
-    };
     case "bin": {
       return uuid.parse(this).join("");
     };
@@ -22,7 +19,11 @@ String.prototype.UUIDformat = function (dash, capitalize, format) {
       return Buffer.from(uuid.parse(this)).toString("base64");
     };
     default: {
-      return this;
+      if (!!dash) {
+        return this;
+      } else {
+        return this.replace(/-/g, "");
+      };
     };
   };
 };
