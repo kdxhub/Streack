@@ -25,7 +25,7 @@ description: "见证每一次变化"
 
 ## 分支：「前瞻先行服」[1.21.4-dev]
 
-### dev-25w30a
+### 25w30-dev-a
 * 更新服务器版本至`Java 1.21.4`
 * *Streack Service Datapack*更新
   * *更多配方*模块：现在默认禁用1.21.3配方机制修复
