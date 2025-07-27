@@ -140,7 +140,7 @@ pageElements = {
 
 // Import Library: uuidWorker
 try {
-  uuidWorker = new Worker("/_page/js/uuidg.worker.js");
+  uuidWorker = new Worker("https://kdxiaoyi.top/Streack/_page/js/uuidg.worker.js");
   if (typeof uuidWorker !== "object") {
     throw new Error("Worker对象创建失败");
   };
