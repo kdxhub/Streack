@@ -21,12 +21,12 @@ html body s-page * .SourceHanSerifCN {font-family: "SourceHanSerifCN" !important
 
 /*页面背景*/
 s-page {
-  background-color: rgba(222, 222, 222, 0);
-  backdrop-filter: blur(100px);
+  background-color: rgba(222, 222, 222, 0.1);
+  backdrop-filter: blur(10px);
 }
 s-page[dark] {
   background-color: rgba(22, 22, 22, 0.5);
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(10px);
 }
 body {
   margin: 0;
@@ -77,7 +77,7 @@ a s-icon {
 }
 #floating s-fab {
   background-color: rgba(254, 254, 254, 0.1);
-  backdrop-filter: blur(200px);
+  backdrop-filter: blur(10px);
 }
 
 /*滚动栏*/
@@ -130,6 +130,37 @@ s-dialog div.dialog {
   background: black;
   top: 0;
 } */
+div[slot_id="0"] {
+  width: 100vw;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  background-image: url("") transparent;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+div[slot_id="0"] div.bg-filter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+div[slot_id="0"] div.bg-filter {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+s-page div[slot_id="0"] div.bg-filter {
+  background-color: rgba(222, 222, 222, 0.3);
+  backdrop-filter: blur(10px);
+}
+s-page[dark] div[slot_id="0"] div.bg-filter {
+  background-color: rgba(22, 22, 22, 0.5);
+  backdrop-filter: blur(10px);
+}
 div[slot_id="0"] h1, div[slot_id="0"] h3 {
   margin: auto;
   margin-top: 0.67rem;
