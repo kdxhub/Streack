@@ -76,7 +76,7 @@ a s-icon {
   bottom: 5rem;
 }
 #floating s-fab {
-  background-color: transparent;
+  background-color: rgba(254, 254, 254, 0.1);
   backdrop-filter: blur(200px);
 }
 
@@ -107,6 +107,29 @@ s-dialog div.dialog {
 }
 
 /*第一栏*/
+@keyframes solt0_in {
+  0%   { transform: translateY(100vh); opacity: 0; }
+  20%  { transform: translateY(100vh); opacity: 0; }
+  50%  { transform: translateY(100vh); opacity: 0; }
+  55%  { transform: translateY(-1px); opacity: 0.1; }
+  65%  { transform: translateY(-3px); opacity: 0.8; }
+  80%  { transform: translateY(-3px); opacity: 0.8; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes solt0_out {
+  0%   { transform: translateY(0); opacity: 1; }
+  20%  { transform: translateY(0); opacity: 1; }
+  50%  { transform: translateY(0); opacity: 1; }
+  55%  { transform: translateY(-1px); opacity: 0.8; }
+  65%  { transform: translateY(-3px); opacity: 0.1; }
+  80%  { transform: translateY(-3px); opacity: 0; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+/* div[slot_id="0"] {
+  position: absolute;
+  background: black;
+  top: 0;
+} */
 div[slot_id="0"] h1, div[slot_id="0"] h3 {
   margin: auto;
   margin-top: 0.67rem;
@@ -116,13 +139,6 @@ div[slot_id="0"] h1 {
   margin-top: auto;
   font-size: 4.75rem;
   font-weight: 650;
-}
-div[slot_id="0"] p {
-  font-size: 1.4rem;
-  font-weight: 450;
-  margin: auto;
-  margin-top: auto;
-  margin-bottom: 5rem;
 }
 div[slot_id="0"] s-chip {
   font-size: 1.2rem;
@@ -138,6 +154,46 @@ div[slot_id="0"] #btn {
   margin: auto;
   margin-top: 0.8rem;
   margin-bottom: .2em;
+}
+@keyframes barMove {
+  0%   { transform:translateY(0); width:6rem; }
+  20%  { transform:translateY(0); width:6rem; }
+  50%  { transform:translateY(0); width:6rem; }
+  65%  { transform:translateY(-4px); width:6.7rem; }
+  80%  { transform:translateY(-8px); width:8rem;}
+  100% { transform:translateY(0); width:6rem; }
+}
+@keyframes barFontMove {
+  0%   { transform:translateY(0); opacity:0;  }
+  20%  { transform:translateY(0); opacity:0;  }
+  50%  { transform:translateY(0); opacity:0;  }
+  55%  { transform:translateY(-1px); opacity:0.1;  }
+  65%  { transform:translateY(-3px); opacity:0.8; }
+  80%  { transform:translateY(-3px); opacity:0.8; }
+  100% { transform:translateY(0); opacity:0;  }
+}
+div[slot_id="0"] .swap-wrap {
+  margin: auto;
+  margin-top: auto;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+div[slot_id="0"] .swap-wrap p {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 450;
+  animation: barFontMove 5s ease-in-out infinite;
+  color: var(--s-color-outline);
+}
+div[slot_id="0"] .swap-bar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+  height: .24rem;
+  background: var(--s-color-outline);
+  border-radius: .12rem;
+  /*transform: translateX(-50%);*/
+  animation: barMove 5s ease-in-out infinite;
 }
 
 /*脚注*/

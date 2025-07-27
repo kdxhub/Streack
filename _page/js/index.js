@@ -139,13 +139,11 @@ function handleScroll(e) {
   };
   if (delta > 5) {/*向下*/
     if (pageElements.main._.CurrentSlot < pageElements.main._.totalSlots - 1) {
-      pageElements.main._.CurrentSlot++;
-      scrollToSlot(pageElements.main._.CurrentSlot);
+      scrollToSlot(pageElements.main._.CurrentSlot + 1);
     };
   } else if (delta < -5) {/*向上*/
     if (pageElements.main._.CurrentSlot > 0) {
-      pageElements.main._.CurrentSlot--;
-      scrollToSlot(pageElements.main._.CurrentSlot);
+      scrollToSlot(pageElements.main._.CurrentSlot - 1);
     };
   };
   pageElements.main._.onScroll = true;
@@ -174,43 +172,53 @@ pageElements.main.root.addEventListener('touchstart', (e) => {
 pageElements.main.root.addEventListener('touchmove', handleScroll, { passive: false });
 
 //Hash识别与处理
-if/*开始游玩*/ (window.location.hash.replace('#', '').toLowerCase() == "play") {
-  pageElements._.closeAllTabs();
-  pageElements.startPlay.root.showed = true;
-};
 function qqunlink(/*加群*/) {
   pageElements._.closeAllTabs();
   pageElements.qunMessage.root.showed = true;
   openURL("#qqun_done", true);
   openURL(pageElements.qunMessage.id.href, true);
 };
-if (window.location.hash.replace('#', '').toLowerCase() == "qqun") {qqunlink();};
-if (window.location.hash.replace('#', '').toLowerCase() == "qqun_done") {pageElements.qunMessage.root.showed = true;};
 function commentlink(/*评论*/) {
   pageElements._.closeAllTabs();
   pageElements.commentMessage.root.showed = true;
   openURL("#comment_done", true);
   openURL(pageElements.commentMessage.id.href, true);
 };
-if (window.location.hash.replace('#', '').toLowerCase() == "comment") {qqunlink();};
-if (window.location.hash.replace('#', '').toLowerCase() == "comment_done") {pageElements.commentMessage.root.showed = true;};
-function issuelink(/*发起issue*/open) {
+function issuelink(/*发起issue*/) {
   pageElements._.closeAllTabs();
   pageElements.issueMessage.root.showed = true;
   openURL("#issue_done", true);
 };
-if (window.location.hash.replace('#', '').toLowerCase() == "issue") {issuelink();};
-if (window.location.hash.replace('#', '').toLowerCase() == "issue_done") {pageElements.issueMessage.root.showed = true;};
-/*TODO:分栏Hash跳转修复*/
-
-//当hash变更时也要滚动
-window.addEventListener('hashchange', () => {
-  if (window.location.hash.replace('#', '').toLowerCase() == "qqun") {qqunlink();return;};
-  let slotIndex = parseInt(window.location.hash.replace('#', ''));
-  if (!isNaN(slotIndex) && slotIndex >= 0 && slotIndex < pageElements.main._.totalSlots) {
-    scrollToSlot(slotIndex);
+function hashChange() {
+  switch (window.location.hash.replace('#', '').toLowerCase()) {
+    case "play": {
+      pageElements._.closeAllTabs();
+      pageElements.startPlay.root.showed = true;
+      break;
+    }
+    case "qqun": { qqunlink(); break; };
+    case "qqun_done": { pageElements.qunMessage.root.showed = true; break; };
+    case "comment": { commentlink(); break; };
+    case "comment_done": { pageElements.commentMessage.root.showed = true; break; };
+    case "issue": { issuelink(); break; };
+    case "issue_done": { pageElements.issueMessage.root.showed = true; break; };
+    default: {
+      let slotIndex = parseInt(window.location.hash.replace('#', ''));
+      if (
+        !isNaN(slotIndex)
+        && slotIndex >= 0
+        && slotIndex < pageElements.main._.totalSlots
+        && slotIndex != pageElements.main._.CurrentSlot
+      ) {
+        scrollToSlot(slotIndex);
+      };
+      break;
+    };
   };
-});
+}
+window.addEventListener('hashchange', hashChange);
+pageElements.main._.CurrentSlot = 0;
+hashChange();
 
 //处理Issue Link Selector
 pageElements.issueMessage.selector.addEventListener("change", (event) => {
