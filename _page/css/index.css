@@ -131,13 +131,16 @@ s-dialog div.dialog {
   top: 0;
 } */
 div[slot_id="0"] {
+  --streack-slot0-head-color: #fafdfc;
   width: 100vw;
   padding: 0 0 0 0;
   margin: 0 0 0 0;
-  background-image: url("") transparent;
-  background-size: 100% 100%;
+  /* TODO: 图片内嵌字方案效果不佳，应考虑用CSS实现 */
+  background-image: url("https://s21.ax1x.com/2025/07/27/pVYEup8.jpg");
+  background-size: auto auto;
   background-position: center center;
   background-repeat: no-repeat;
+  background-position: left;
 }
 div[slot_id="0"] div.bg-filter {
   display: flex;
@@ -154,12 +157,12 @@ div[slot_id="0"] div.bg-filter {
   height: 100vh;
 }
 s-page div[slot_id="0"] div.bg-filter {
-  background-color: rgba(222, 222, 222, 0.3);
-  backdrop-filter: blur(10px);
+  background-color: rgba(22, 22, 22, 0.5);
+  backdrop-filter: blur(1px);
 }
 s-page[dark] div[slot_id="0"] div.bg-filter {
   background-color: rgba(22, 22, 22, 0.5);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(1px);
 }
 div[slot_id="0"] h1, div[slot_id="0"] h3 {
   margin: auto;
