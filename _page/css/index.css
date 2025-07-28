@@ -135,12 +135,26 @@ div[slot_id="0"] {
   width: 100vw;
   padding: 0 0 0 0;
   margin: 0 0 0 0;
-  /* TODO: 图片内嵌字方案效果不佳，应考虑用CSS实现 */
-  background-image: url("https://s21.ax1x.com/2025/07/27/pVYEup8.jpg");
+  background-image: url("https://s21.ax1x.com/2025/07/28/pVY1qXt.png");
   background-size: auto auto;
   background-position: center center;
   background-repeat: no-repeat;
   background-position: left;
+}
+div[slot_id="0"] p.bg-filter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 1.2rem;
+  font-size: min(calc( 100vw / (7 + 2) ), 5rem);
+  font-weight: 650;
+  color: rgba(236, 238, 237, 0.2);
+  transition: all .5s ease-in-out;
+  width: 0;
+}
+div[slot_id="0"] p.bg-filter.show {
+  width: 100%;
 }
 div[slot_id="0"] div.bg-filter {
   display: flex;

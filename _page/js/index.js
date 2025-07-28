@@ -19,6 +19,7 @@ pageElements = {
     },
     root: document.getElementById("main"),
     slot: document.querySelectorAll("div[slot='true']"),
+    slot0_floatP: document.getElementById("slot0-bg-floatingText"),
   },
   startPlay: {
     root: document.getElementById("go-play"),
@@ -154,6 +155,19 @@ function handleScroll(e) {
 function scrollToSlot(slotIndex) {
   let slot = pageElements.main.slot[slotIndex];
   if (!!slot) {
+    if (/* 由首栏至其他栏 */pageElements.main._.CurrentSlot == 0 && slotIndex != 0) {
+      pageElements.main.slot0_floatP.classList.remove("show");
+    };
+    if (/* 返回首栏 */pageElements.main._.CurrentSlot != 0 && slotIndex == 0) {
+      let isScrolling;
+      pageElements.main.root.addEventListener('scroll', function slot0_isScrolledToTop() {
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+          pageElements.main.root.removeEventListener('scroll', slot0_isScrolledToTop);
+          pageElements.main.slot0_floatP.classList.add("show");
+        }, 100);
+      });
+    };
     pageElements.main.root.scrollTo({
       top: slot.offsetTop,
       behavior: 'smooth',
@@ -218,7 +232,12 @@ function hashChange() {
 }
 window.addEventListener('hashchange', hashChange);
 pageElements.main._.CurrentSlot = 0;
-hashChange();
+document.addEventListener('DOMContentLoaded', () => {
+  hashChange();
+  if (pageElements.main._.CurrentSlot == 0) {
+    pageElements.main.slot0_floatP.classList.add("show");
+  };
+});
 
 //处理Issue Link Selector
 pageElements.issueMessage.selector.addEventListener("change", (event) => {
