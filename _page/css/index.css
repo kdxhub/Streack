@@ -50,6 +50,7 @@ body {
   position: fixed;
   right: 5vw;
   bottom: 5rem;
+  z-index: 200;
 }
 #floating s-fab {
   background-color: rgba(254, 254, 254, 0.1);
@@ -64,8 +65,7 @@ s-page {
   width: 100vw;
   height: 100vh;
   background: transparent;
-  overflow-x: scroll;
-  scrollbar-width: none;
+  overflow-x: hidden;
 }
 .slot {
   display: flex;
@@ -74,6 +74,7 @@ s-page {
   /* height: 100vh; */
   background: transparent;
   padding: 0 5% 0 5%;
+  margin: 0 0 2.4rem 0;
 }
 
 /*弹窗样式表*/
@@ -120,6 +121,7 @@ div[slot_id="0"] {
   transition: all .5s ease-in-out;
   position: absolute;
   top: 0;
+  z-index: 100;
 }
 div[slot_id="0"] p.bg-filter {
   display: inline-block;

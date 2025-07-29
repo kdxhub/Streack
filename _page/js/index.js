@@ -19,7 +19,6 @@ pageElements = {
     },
     root: document.getElementById("main"),
     slot: Array.from(document.querySelectorAll("div[slot='true']")),
-    none_slot: Array.from(document.querySelectorAll("*[slot='false'], *[slot='false'] *")),
     slot0_floatP: document.getElementById("slot0-bg-floatingText"),
   },
   startPlay: {
