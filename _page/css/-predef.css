@@ -1,16 +1,26 @@
-.unselectable,#unselectable {user-select:none;}
-.selectable,#selectable {user-select:text;}
+/* 常用样式 */
+.unselectable,#unselectable {user-select: none;}
+.selectable,#selectable {user-select: text;}
+.center {text-align: center; margin-left: auto; margin-right: auto;}
+.right {text-align: right; margin-left: auto;}
+.gradient {
+  color: transparent;
+  background: linear-gradient(to right, var(--streack-predef-gradient-1, #2691d8), var(--streack-predef-gradient-2, #6dd5fa));
+  -webkit-background-clip: text;
+  background-clip: text;
+  width: fit-content;
+}
 
 /*字体设置*/
 @font-face{font-family:"Mojangles";src:url("https://rs.kdxiaoyi.top/res/fonts/Mojangles.ttf") format("truetype")}
-html body s-page * .Mojangles {font-family: "Mojangles" !important;}
-html body s-page * .WenQuanWeiMiHei {font-family: "WenQuanWeiMiHei" !important;}
-html body s-page * .DIN {font-family: "din" !important;}
-html body s-page * .MiSans {font-family: "MiSans Normal" !important;}
-html body s-page * .MiSansL3 {font-family: "MiSans L3" !important;}
-html body s-page * .SourceHanSerifCN {font-family: "SourceHanSerifCN" !important;}
+html body s-page * .Mojangles, html body s-page * .Mojangles * {font-family: "Mojangles" !important;}
+html body s-page * .WenQuanWeiMiHei, html body s-page * .WenQuanWeiMiHei * {font-family: "WenQuanWeiMiHei" !important;}
+html body s-page * .DIN, html body s-page * .DIN * {font-family: "din" !important;}
+html body s-page * .MiSans, html body s-page * .MiSans * {font-family: "MiSans Normal" !important;}
+html body s-page * .MiSansL3, html body s-page * .MiSansL3 * {font-family: "MiSans L3" !important;}
+html body s-page * .SourceHanSerifCN, html body s-page * .SourceHanSerifCN * {font-family: "SourceHanSerifCN" !important;}
 
-/*统一一下链接样式*/
+/*文章元素样式*/
 a {
   text-decoration: underline dotted;
   color: #1e6bb8;
@@ -22,6 +32,25 @@ a s-icon {
   width: 1em;
   height: 1em;
   transform: translateY(-0.05em) translateX(-0.05em);
+}
+h1 {
+  margin-bottom: 0;
+}
+
+/* Sober */
+s-menu {
+  background: var(--s-color-background, #F8F9FB);
+  background-clip: border-box;
+  border-radius: 12px;
+}
+s-menu.sub {
+  background: var(--s-color-surface-container-low, #F2F4F5);
+}
+s-menu-item s-card[slot="menu"] {
+  width: 96%;
+  max-width: 96%;
+  height: max-content;
+  margin: 0 2% 0 2%;
 }
 
 /* 打印格式 */
