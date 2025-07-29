@@ -18,7 +18,8 @@ pageElements = {
       scrollIntervalID: -1,
     },
     root: document.getElementById("main"),
-    slot: document.querySelectorAll("div[slot='true']"),
+    slot: Array.from(document.querySelectorAll("div[slot='true']")),
+    none_slot: Array.from(document.querySelectorAll("*[slot='false'], *[slot='false'] *")),
     slot0_floatP: document.getElementById("slot0-bg-floatingText"),
   },
   startPlay: {
@@ -130,6 +131,7 @@ if (!!(pmdStorage.Cookies.get("pmd-prefer_color_theme") == "dark" || pmdStorage.
 //抽屉滚动动态支持
 pageElements.main._.totalSlots = pageElements.main.slot.length;
 function handleScroll(e) {
+  if (pageElements.main.none_slot.indexOf(e.srcElement) != -1) {return;};
   e.preventDefault();
   if (/*若有正在播放的动画则不响应事件*/pageElements.main._.onScroll) {return;};
   let delta;
