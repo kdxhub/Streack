@@ -129,46 +129,85 @@ if (!!(pmdStorage.Cookies.get("pmd-prefer_color_theme") == "dark" || pmdStorage.
 };
 
 //抽屉滚动动态支持
+const /*防抖函数，减少频繁计算*/debounce = (fn, wait = 16) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), wait);
+  };
+};
 pageElements.main._.totalSlots = pageElements.main.slot.length;
+function calcWhereOfWhichSlot() {
+  const threshold = window.innerHeight * 0;
+  let closestIndex = 0;
+  let minDistance = Infinity;
+  pageElements.main.slot.forEach((el, index) => {
+    const rect = el.getBoundingClientRect();
+    const distance = Math.abs(rect.top - threshold);
+    if (rect.top <= threshold && distance < minDistance) {
+      minDistance = distance;
+      closestIndex = index;
+    }
+  });
+  if (closestIndex == 1 && pageElements.main.slot0_floatP.classList.contains("show")) { closestIndex--; };
+  pageElements.main._.CurrentSlot = closestIndex;
+  window.location.hash = pageElements.main._.CurrentSlot;
+};
 function handleScroll(e) {
-  if (pageElements.main.none_slot.indexOf(e.srcElement) != -1) {return;};
-  e.preventDefault();
-  if (/*若有正在播放的动画则不响应事件*/pageElements.main._.onScroll) {return;};
+  /* 更新CurrentSlot */
+  calcWhereOfWhichSlot();
+  /* 首屏切换 */
   let delta;
+  let deltaMax = 5;
   if (e.type === 'wheel') {
     delta = e.deltaY;
   } else if (e.type === 'touchmove') {
     delta = pageElements.main._.startY - e.touches[0].clientY;
   };
-  if (delta > 5) {/*向下*/
+  if (delta > deltaMax && pageElements.main._.CurrentSlot == 0) {/*离开首屏*/
     if (pageElements.main._.CurrentSlot < pageElements.main._.totalSlots - 1) {
-      scrollToSlot(pageElements.main._.CurrentSlot + 1);
+      e.preventDefault();
+      scrollToSlot(1);
     };
-  } else if (delta < -5) {/*向上*/
+  } else if (delta < -deltaMax && pageElements.main.root.scrollTop == 0) {/*进入首屏*/
     if (pageElements.main._.CurrentSlot > 0) {
-      scrollToSlot(pageElements.main._.CurrentSlot - 1);
+      e.preventDefault();
+      scrollToSlot(0);
     };
   };
-  pageElements.main._.onScroll = true;
-  pageElements.main._.scrollTimeout = setTimeout(() => {
-    pageElements.main._.onScroll = false;
-  }, /*在800毫秒内不允许再次触发事件*/800);
+
+  // if (pageElements.main.none_slot.indexOf(e.srcElement) != -1) {return;};
+  // e.preventDefault();
+  // if (/*若有正在播放的动画则不响应事件*/pageElements.main._.onScroll) {return;};
+  // pageElements.main._.onScroll = true;
+  // pageElements.main._.scrollTimeout = setTimeout(() => {
+  //   pageElements.main._.onScroll = false;
+  // }, /*在800毫秒内不允许再次触发事件*/800);
 };
 function scrollToSlot(slotIndex) {
   let slot = pageElements.main.slot[slotIndex];
   if (!!slot) {
     if (/* 由首栏至其他栏 */pageElements.main._.CurrentSlot == 0 && slotIndex != 0) {
+      pageElements.main.slot[0].style.top = `-100vh`;
       pageElements.main.slot0_floatP.classList.remove("show");
     };
     if (/* 返回首栏 */pageElements.main._.CurrentSlot != 0 && slotIndex == 0) {
-      let isScrolling;
-      pageElements.main.root.addEventListener('scroll', function slot0_isScrolledToTop() {
-        clearTimeout(isScrolling);
-        isScrolling = setTimeout(() => {
-          pageElements.main.root.removeEventListener('scroll', slot0_isScrolledToTop);
-          pageElements.main.slot0_floatP.classList.add("show");
-        }, 100);
-      });
+      pageElements.main.slot[0].style.top = `0`;
+      pageElements.main.root.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        pageElements.main.slot0_floatP.classList.add("show");
+      }, 500);
+      pageElements.main._.CurrentSlot = slotIndex;
+      window.location.hash = slotIndex;
+      // let isScrolling;
+      // pageElements.main.root.addEventListener('scroll', function slot0_isScrolledToTop() {
+      //   clearTimeout(isScrolling);
+      //   isScrolling = setTimeout(() => {
+      //     pageElements.main.root.removeEventListener('scroll', slot0_isScrolledToTop);
+      //     pageElements.main.slot0_floatP.classList.add("show");
+      //   }, 100);
+      // });
+      return;
     };
     pageElements.main.root.scrollTo({
       top: slot.offsetTop,
@@ -176,6 +215,7 @@ function scrollToSlot(slotIndex) {
     });
     pageElements.main._.CurrentSlot = slotIndex;
     window.location.hash = slotIndex;
+    return;
   } else {
     msg("不存在的分栏……", "好", true);
     console.error("捕获了错误：","\n> StreackPage：不存在的分栏\n",`准备跳转目标分栏，但发现了${slotIndex}，其不存在于分栏表中。\n分栏表：`,pageElements.main.slot,`\n上下文：`,this);
