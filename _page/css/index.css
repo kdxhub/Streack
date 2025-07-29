@@ -1,6 +1,3 @@
-.unselectable,#unselectable {user-select:none;}
-.selectable,#selectable {user-select:text;}
-
 html,body {
   height: 100%;
   overflow: hidden;
@@ -11,13 +8,6 @@ html,body {
 /**隐藏未加载的组件**/:not(:defined) {
   display: none;
 }
-
-/*字体设置*/
-html body s-page * .WenQuanWeiMiHei {font-family: "WenQuanWeiMiHei" !important;}
-html body s-page * .DIN {font-family: "din" !important;}
-html body s-page * .MiSans {font-family: "MiSans Normal" !important;}
-html body s-page * .MiSansL3 {font-family: "MiSans L3" !important;}
-html body s-page * .SourceHanSerifCN {font-family: "SourceHanSerifCN" !important;}
 
 /*页面背景*/
 s-page {
@@ -53,20 +43,6 @@ body {
     -30vmax 20vmax,
     50vmax 50vmax;
   background-repeat: no-repeat;
-}
-
-/*统一一下链接样式*/
-a {
-  text-decoration: underline dotted;
-  color: #1e6bb8;
-}
-a:hover {
-  text-decoration: underline;
-}
-a s-icon {
-  width: 1em;
-  height: 1em;
-  transform: translateY(-0.05em) translateX(-0.05em);
 }
 
 /*悬浮按钮*/

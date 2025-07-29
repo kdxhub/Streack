@@ -1,0 +1,66 @@
+.unselectable,#unselectable {user-select:none;}
+.selectable,#selectable {user-select:text;}
+
+/*字体设置*/
+@font-face{font-family:"Mojangles";src:url("https://rs.kdxiaoyi.top/res/fonts/Mojangles.ttf") format("truetype")}
+html body s-page * .Mojangles {font-family: "Mojangles" !important;}
+html body s-page * .WenQuanWeiMiHei {font-family: "WenQuanWeiMiHei" !important;}
+html body s-page * .DIN {font-family: "din" !important;}
+html body s-page * .MiSans {font-family: "MiSans Normal" !important;}
+html body s-page * .MiSansL3 {font-family: "MiSans L3" !important;}
+html body s-page * .SourceHanSerifCN {font-family: "SourceHanSerifCN" !important;}
+
+/*统一一下链接样式*/
+a {
+  text-decoration: underline dotted;
+  color: #1e6bb8;
+}
+a:hover {
+  text-decoration: underline;
+}
+a s-icon {
+  width: 1em;
+  height: 1em;
+  transform: translateY(-0.05em) translateX(-0.05em);
+}
+
+/* 打印格式 */
+@media print {
+  #appbarRoot {
+    display: none !important;
+  }
+
+  #LeftSiderbar {
+    display: none !important;
+  }
+
+  .site-footer {
+    display: none !important;
+  }
+
+  #pContent {
+    height: min-content !important;
+  }
+
+  #pageRoot {
+    height: min-content !important;
+  }
+
+  #mainContent {
+    height: min-content !important;
+  }
+
+  body {
+    height: min-content !important;
+    background-image: none !important;
+  }
+
+  html {
+    height: min-content !important;
+  }
+}
+@page {
+  @top-right {
+    content: "页 " counter(pageNumber);
+  }
+}
