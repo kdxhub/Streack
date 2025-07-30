@@ -258,6 +258,7 @@ function donatelink(/*赞助*/from) {
   };
   pageElements._.closeAllTabs();
   pageElements.donateMessage.root.showed = true;
+  openURL("#donate_done__", true);
 };
 function issuelink(/*发起issue*/) {
   pageElements._.closeAllTabs();
@@ -273,6 +274,7 @@ function hashChange() {
     }
     case "donate": { donatelink("first"); break; };
     case "donate_done": { donatelink("then"); break; };
+    case "donate_done__": { pageElements.donateMessage.thk.innerHTML = `赞助`; pageElements.donateMessage.root.showed = true; break; };
     case "qqun": { qqunlink(); break; };
     case "qqun_done": { pageElements.qunMessage.root.showed = true; break; };
     case "comment": { commentlink(); break; };
