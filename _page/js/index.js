@@ -32,11 +32,6 @@ pageElements = {
     root: document.getElementById("qun_message"),
     id: document.getElementById("qqunid"),
   },
-  donateMessage: {
-    root: document.getElementById("donate_message"),
-    thk: document.getElementById("donate_THK_message"),
-    selector: document.getElementById("donate_link_selector"),
-  },
   commentMessage: {
     root: document.getElementById("comment_message"),
     id: document.getElementById("commentid"),
@@ -244,19 +239,6 @@ function commentlink(/*评论*/) {
   openURL("#comment_done", true);
   openURL(pageElements.commentMessage.id.href, true);
 };
-function donatelink(/*赞助*/from) {
-  if (!from) { from = ""; };
-  switch (from.toLowerCase()) {
-    case "then": {
-      pageElements.donateMessage.thk.innerHTML = `谢谢。`;
-    };
-    default: {
-      pageElements.donateMessage.thk.innerHTML = `赞助`;
-    };
-  };
-  pageElements._.closeAllTabs();
-  pageElements.donateMessage.root.showed = true;
-};
 function issuelink(/*发起issue*/) {
   pageElements._.closeAllTabs();
   pageElements.issueMessage.root.showed = true;
@@ -269,8 +251,6 @@ function hashChange() {
       pageElements.startPlay.root.showed = true;
       break;
     }
-    case "donate": { donatelink("first"); break; };
-    case "donate_done": { donatelink("then"); break; };
     case "qqun": { qqunlink(); break; };
     case "qqun_done": { pageElements.qunMessage.root.showed = true; break; };
     case "comment": { commentlink(); break; };
@@ -303,19 +283,12 @@ document.addEventListener('DOMContentLoaded', () => {
 //处理Issue Link Selector
 pageElements.issueMessage.selector.addEventListener("change", (event) => {
   let index = pageElements.issueMessage._.value.indexOf(event.target.value);
-  if (index >= 0 && index <= pageElements.issueMessage._.link.length - 1) {
-    openURL(pageElements.issueMessage._.link[index], true);
+  if (index >= 0 && index <= pageElements.issueMessage._.link.length -1) {
+    openURL(pageElements.issueMessage._.link[index],true);
   } else {
-    msg("不存在的工单链接标识", "好", true);
-    console.error("捕获了错误：", "\n> JavaScript：数组下标越界\n", `位于Issue_Link_Selector的OpenURL()调用的数组，允许最大下标为${pageElements.issueMessage._.link.length - 1}，但发现了${index}，上下文为`, event, "\n> StreackPage：未知的Issue Link\n", `位于Issue_Link_Selector的getValue，允许的值有`, pageElements.issueMessage._.value, `，但发现了`, event.target.value);
+    msg("不存在的工单链接标识","好",true);
+    console.error("捕获了错误：","\n> JavaScript：数组下标越界\n",`位于Issue_Link_Selector的OpenURL()调用的数组，允许最大下标为${pageElements.issueMessage._.link.length - 1}，但发现了${index}，上下文为`,event,"\n> StreackPage：未知的Issue Link\n",`位于Issue_Link_Selector的getValue，允许的值有`,pageElements.issueMessage._.value,`，但发现了`,event.target.value);
   };
-  event.target.value = "";
-});
-
-//处理Donate Link Selector
-pageElements.issueMessage.selector.addEventListener("change", (event) => {
-  openURL("#donate_done", true);
-  openURL(event.target.value, true);
   event.target.value = "";
 });
 
