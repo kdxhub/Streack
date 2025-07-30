@@ -35,6 +35,8 @@ description: "拓展与协议支持"
 服务器不对除超大型生电机器外的生电设施作过多限制，也允许使用[Tweakerwoo฿](https://www.mcmod.cn/class/2230.html)、投影、[Bedrock Miner฿](https://github.com/bunnyi116/fabric-bedrock-miner/releases)等，甚至是[投影打印机฿](https://www.mcmod.cn/class/8233.html)！
 
 * 以下MOD协议在栈流Streack上得到支持：
+  * [RoughlyEnoughItems฿](https://github.com/shedaniel/RoughlyEnoughItems) - 提供可视化配方支持
+  * [ChatImage฿](https://github.com/kitUIN/ChatImage) - 
   * [Carpet฿](https://www.mcmod.cn/class/2361.html) - 提供部分需Carpet功能的支持
   * [Litematica *轻松放置协议V3*฿](https://www.mcmod.cn/class/2261.html) - 为您借助特定mod实现凭空准确放置正确状态方块提供支持
   * [Bounding Box Outline Reloaded฿](https://www.mcmod.cn/class/1869.html) - 在游戏内显示结构边框

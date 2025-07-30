@@ -18,7 +18,8 @@ pageElements = {
       scrollIntervalID: -1,
     },
     root: document.getElementById("main"),
-    slot: document.querySelectorAll("div[slot='true']"),
+    slot: Array.from(document.querySelectorAll("div[slot='true']")),
+    slot0_floatP: document.getElementById("slot0-bg-floatingText"),
   },
   startPlay: {
     root: document.getElementById("go-play"),
@@ -30,6 +31,11 @@ pageElements = {
   qunMessage: {
     root: document.getElementById("qun_message"),
     id: document.getElementById("qqunid"),
+  },
+  donateMessage: {
+    root: document.getElementById("donate_message"),
+    thk: document.getElementById("donate_THK_message"),
+    selector: document.getElementById("donate_link_selector"),
   },
   commentMessage: {
     root: document.getElementById("comment_message"),
@@ -127,41 +133,93 @@ if (!!(pmdStorage.Cookies.get("pmd-prefer_color_theme") == "dark" || pmdStorage.
 };
 
 //抽屉滚动动态支持
+const /*防抖函数，减少频繁计算*/debounce = (fn, wait = 16) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), wait);
+  };
+};
 pageElements.main._.totalSlots = pageElements.main.slot.length;
+function calcWhereOfWhichSlot() {
+  const threshold = window.innerHeight * 0;
+  let closestIndex = 0;
+  let minDistance = Infinity;
+  pageElements.main.slot.forEach((el, index) => {
+    const rect = el.getBoundingClientRect();
+    const distance = Math.abs(rect.top - threshold);
+    if (rect.top <= threshold && distance < minDistance) {
+      minDistance = distance;
+      closestIndex = index;
+    }
+  });
+  if (closestIndex == 1 && pageElements.main.slot0_floatP.classList.contains("show")) { closestIndex--; };
+  pageElements.main._.CurrentSlot = closestIndex;
+  window.location.hash = pageElements.main._.CurrentSlot;
+};
 function handleScroll(e) {
-  e.preventDefault();
-  if (/*若有正在播放的动画则不响应事件*/pageElements.main._.onScroll) {return;};
+  /* 更新CurrentSlot */
+  calcWhereOfWhichSlot();
+  /* 首屏切换 */
   let delta;
+  let deltaMax = 5;
   if (e.type === 'wheel') {
     delta = e.deltaY;
   } else if (e.type === 'touchmove') {
     delta = pageElements.main._.startY - e.touches[0].clientY;
   };
-  if (delta > 5) {/*向下*/
+  if (delta > deltaMax && pageElements.main._.CurrentSlot == 0) {/*离开首屏*/
     if (pageElements.main._.CurrentSlot < pageElements.main._.totalSlots - 1) {
-      pageElements.main._.CurrentSlot++;
-      scrollToSlot(pageElements.main._.CurrentSlot);
+      e.preventDefault();
+      scrollToSlot(1);
     };
-  } else if (delta < -5) {/*向上*/
+  } else if (delta < -deltaMax && pageElements.main.root.scrollTop == 0) {/*进入首屏*/
     if (pageElements.main._.CurrentSlot > 0) {
-      pageElements.main._.CurrentSlot--;
-      scrollToSlot(pageElements.main._.CurrentSlot);
+      e.preventDefault();
+      scrollToSlot(0);
     };
   };
-  pageElements.main._.onScroll = true;
-  pageElements.main._.scrollTimeout = setTimeout(() => {
-    pageElements.main._.onScroll = false;
-  }, /*在800毫秒内不允许再次触发事件*/800);
+
+  // if (pageElements.main.none_slot.indexOf(e.srcElement) != -1) {return;};
+  // e.preventDefault();
+  // if (/*若有正在播放的动画则不响应事件*/pageElements.main._.onScroll) {return;};
+  // pageElements.main._.onScroll = true;
+  // pageElements.main._.scrollTimeout = setTimeout(() => {
+  //   pageElements.main._.onScroll = false;
+  // }, /*在800毫秒内不允许再次触发事件*/800);
 };
 function scrollToSlot(slotIndex) {
   let slot = pageElements.main.slot[slotIndex];
   if (!!slot) {
+    if (/* 由首栏至其他栏 */pageElements.main._.CurrentSlot == 0 && slotIndex != 0) {
+      pageElements.main.slot[0].style.top = `-100vh`;
+      pageElements.main.slot0_floatP.classList.remove("show");
+    };
+    if (/* 返回首栏 */pageElements.main._.CurrentSlot != 0 && slotIndex == 0) {
+      pageElements.main.slot[0].style.top = `0`;
+      pageElements.main.root.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        pageElements.main.slot0_floatP.classList.add("show");
+      }, 500);
+      pageElements.main._.CurrentSlot = slotIndex;
+      window.location.hash = slotIndex;
+      // let isScrolling;
+      // pageElements.main.root.addEventListener('scroll', function slot0_isScrolledToTop() {
+      //   clearTimeout(isScrolling);
+      //   isScrolling = setTimeout(() => {
+      //     pageElements.main.root.removeEventListener('scroll', slot0_isScrolledToTop);
+      //     pageElements.main.slot0_floatP.classList.add("show");
+      //   }, 100);
+      // });
+      return;
+    };
     pageElements.main.root.scrollTo({
       top: slot.offsetTop,
       behavior: 'smooth',
     });
     pageElements.main._.CurrentSlot = slotIndex;
     window.location.hash = slotIndex;
+    return;
   } else {
     msg("不存在的分栏……", "好", true);
     console.error("捕获了错误：","\n> StreackPage：不存在的分栏\n",`准备跳转目标分栏，但发现了${slotIndex}，其不存在于分栏表中。\n分栏表：`,pageElements.main.slot,`\n上下文：`,this);
@@ -174,53 +232,94 @@ pageElements.main.root.addEventListener('touchstart', (e) => {
 pageElements.main.root.addEventListener('touchmove', handleScroll, { passive: false });
 
 //Hash识别与处理
-if/*开始游玩*/ (window.location.hash.replace('#', '').toLowerCase() == "play") {
-  pageElements._.closeAllTabs();
-  pageElements.startPlay.root.showed = true;
-};
 function qqunlink(/*加群*/) {
   pageElements._.closeAllTabs();
   pageElements.qunMessage.root.showed = true;
   openURL("#qqun_done", true);
   openURL(pageElements.qunMessage.id.href, true);
 };
-if (window.location.hash.replace('#', '').toLowerCase() == "qqun") {qqunlink();};
-if (window.location.hash.replace('#', '').toLowerCase() == "qqun_done") {pageElements.qunMessage.root.showed = true;};
 function commentlink(/*评论*/) {
   pageElements._.closeAllTabs();
   pageElements.commentMessage.root.showed = true;
   openURL("#comment_done", true);
   openURL(pageElements.commentMessage.id.href, true);
 };
-if (window.location.hash.replace('#', '').toLowerCase() == "comment") {qqunlink();};
-if (window.location.hash.replace('#', '').toLowerCase() == "comment_done") {pageElements.commentMessage.root.showed = true;};
-function issuelink(/*发起issue*/open) {
+function donatelink(/*赞助*/from) {
+  if (!from) { from = "first"; };
+  switch (from.toLowerCase()) {
+    case "then": {
+      pageElements.donateMessage.thk.innerHTML = `谢谢。`;
+      break;
+    };
+    case "first": {
+      pageElements.donateMessage.thk.innerHTML = `赞助`;
+      break;
+    };
+  };
+  pageElements._.closeAllTabs();
+  pageElements.donateMessage.root.showed = true;
+  openURL("#donate_done__", true);
+};
+function issuelink(/*发起issue*/) {
   pageElements._.closeAllTabs();
   pageElements.issueMessage.root.showed = true;
   openURL("#issue_done", true);
 };
-if (window.location.hash.replace('#', '').toLowerCase() == "issue") {issuelink();};
-if (window.location.hash.replace('#', '').toLowerCase() == "issue_done") {pageElements.issueMessage.root.showed = true;};
-/*TODO:分栏Hash跳转修复*/
-
-//当hash变更时也要滚动
-window.addEventListener('hashchange', () => {
-  if (window.location.hash.replace('#', '').toLowerCase() == "qqun") {qqunlink();return;};
-  let slotIndex = parseInt(window.location.hash.replace('#', ''));
-  if (!isNaN(slotIndex) && slotIndex >= 0 && slotIndex < pageElements.main._.totalSlots) {
-    scrollToSlot(slotIndex);
+function hashChange() {
+  switch (window.location.hash.replace('#', '').toLowerCase()) {
+    case "play": {
+      pageElements._.closeAllTabs();
+      pageElements.startPlay.root.showed = true;
+      break;
+    }
+    case "donate": { donatelink("first"); break; };
+    case "donate_done": { donatelink("then"); break; };
+    case "donate_done__": { pageElements.donateMessage.thk.innerHTML = `赞助`; pageElements.donateMessage.root.showed = true; break; };
+    case "qqun": { qqunlink(); break; };
+    case "qqun_done": { pageElements.qunMessage.root.showed = true; break; };
+    case "comment": { commentlink(); break; };
+    case "comment_done": { pageElements.commentMessage.root.showed = true; break; };
+    case "issue": { issuelink(); break; };
+    case "issue_done": { pageElements.issueMessage.root.showed = true; break; };
+    default: {
+      let slotIndex = parseInt(window.location.hash.replace('#', ''));
+      if (
+        !isNaN(slotIndex)
+        && slotIndex >= 0
+        && slotIndex < pageElements.main._.totalSlots
+        && slotIndex != pageElements.main._.CurrentSlot
+      ) {
+        scrollToSlot(slotIndex);
+      };
+      break;
+    };
+  };
+}
+window.addEventListener('hashchange', hashChange);
+pageElements.main._.CurrentSlot = 0;
+document.addEventListener('DOMContentLoaded', () => {
+  hashChange();
+  if (pageElements.main._.CurrentSlot == 0) {
+    pageElements.main.slot0_floatP.classList.add("show");
   };
 });
 
 //处理Issue Link Selector
 pageElements.issueMessage.selector.addEventListener("change", (event) => {
   let index = pageElements.issueMessage._.value.indexOf(event.target.value);
-  if (index >= 0 && index <= pageElements.issueMessage._.link.length -1) {
-    openURL(pageElements.issueMessage._.link[index],true);
+  if (index >= 0 && index <= pageElements.issueMessage._.link.length - 1) {
+    openURL(pageElements.issueMessage._.link[index], true);
   } else {
-    msg("不存在的工单链接标识","好",true);
-    console.error("捕获了错误：","\n> JavaScript：数组下标越界\n",`位于Issue_Link_Selector的OpenURL()调用的数组，允许最大下标为${pageElements.issueMessage._.link.length - 1}，但发现了${index}，上下文为`,event,"\n> StreackPage：未知的Issue Link\n",`位于Issue_Link_Selector的getValue，允许的值有`,pageElements.issueMessage._.value,`，但发现了`,event.target.value);
+    msg("不存在的工单链接标识", "好", true);
+    console.error("捕获了错误：", "\n> JavaScript：数组下标越界\n", `位于Issue_Link_Selector的OpenURL()调用的数组，允许最大下标为${pageElements.issueMessage._.link.length - 1}，但发现了${index}，上下文为`, event, "\n> StreackPage：未知的Issue Link\n", `位于Issue_Link_Selector的getValue，允许的值有`, pageElements.issueMessage._.value, `，但发现了`, event.target.value);
   };
+  event.target.value = "";
+});
+
+//处理Donate Link Selector
+pageElements.donateMessage.selector.addEventListener("change", (event) => {
+  openURL("#donate_done", true);
+  openURL(event.target.value, true);
   event.target.value = "";
 });
 

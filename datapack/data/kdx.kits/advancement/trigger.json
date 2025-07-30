@@ -20,14 +20,26 @@
   "criteria": {
     "requirement": {
       "trigger": "minecraft:location",
-      "condition": {
+      "conditions": {
         "player": [
-          {"flags": {
-            "is_on_ground": true,
-            "is_sprinting": false,
-            "is_on_fire": false
-          }},
-          {"movement": {"speed":{"max": 0}}}
+          {
+            "condition": "entity_properties",
+            "entity": "this",
+            "predicate": {
+              "flags": {
+                "is_flying": false,
+                "is_on_ground": true,
+                "is_sprinting": false,
+                "is_swimming": false,
+                "is_on_fire": false
+              },
+              "movement": {
+                "speed": {
+                  "max": 0.1
+                }
+              }
+            }
+          }
         ]
       }
     }
