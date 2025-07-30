@@ -122,7 +122,7 @@
               <s-card type="filled" slot="menu">
                 <div slot="text">
                   在不成为商业服的前提下，我们通过尽可能地压缩成本来高效使用预算。<br>
-                  而资金则来自服主的小金库和玩家的无偿捐赠。<br>
+                  而资金则来自服主的小金库和玩家的无偿<a href="#donate">赞助</a>。<br>
                 </div>
               </s-card>
             </s-menu-item>
@@ -190,6 +190,19 @@
         开始游玩
       </s-tooltip>
     </div>
+    <s-bottom-sheet id="donate_message">
+      <div slot="text" class="unselectable">
+        <h2 id="donate_THK_message">Donate_Message</h2>
+        <p>赞助视为您知悉该行为<b>不会</b>使您获取除“赞助列表”外任何物品、权益或特权。若需广告等商务合作，请<a href="#issue">发邮件</a>。<br>若您愿于「赞助列表」上留名，请在赞助后携带支付单号<a href="#issue">联系我们</a>。</p>
+        <p>请选择您的赞助方式：</p>
+        <s-segmented-button id="donate_link_selector" style="width:100%;">
+          <s-segmented-button-item value="https://qr.alipay.com/fkx10199cvjbyfgrtamdccd">支付宝</s-segmented-button-item>
+          <s-segmented-button-item value="wxp://f2f0bhOq_pqouCqx_barP7Ys1zPi1Gh4U6IWzNsDUm0sF3Q">微信支付</s-segmented-button-item>
+          <s-segmented-button-item value="https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&f=wallet&a=1&u=1291646401&n=kdxiaoyi&ac=CAEQwevz5wQYmp3SwAYyGOWbuuWumumXqOW6l-e7j-iQpeaUtuasvjgBQiAwYjNhYzg1YmY1ZDJmNGJjNWMzMDllODRkZmJiMmMyMQ%3D%3D_xxx_sign">QQ支付</s-segmented-button-item>
+        </s-segmented-button>
+        <img src="https://rs.kdxiaoyi.top/res/images/donate.jpg" style="width: 100%; margin: .5em auto 0 auto;" />
+      </div>
+    </s-bottom-sheet>
     <s-bottom-sheet id="qun_message">
       <div slot="text" class="unselectable">
         <p>
