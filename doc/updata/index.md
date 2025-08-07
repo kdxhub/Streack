@@ -2,7 +2,7 @@
 title: "更新日志"
 description: "见证每一次变化"
 ---
-<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="./">←返回</a></small><br>
+<small id="old_menu"><a href="/Streack/">首页</a> | <a href="/Streack/doc/">文档</a></small><small><a href="../">←返回</a></small><br>
 
 ## 未来计划
 
@@ -11,6 +11,7 @@ description: "见证每一次变化"
 
 ### 即将到来
 
+* 添加服务器侧可选粘液科技资源包
 * 在菜单中添加PlaceholderAPI支持以呈现更加丰富的菜单界面
 * 为「坚守者」增加更多战利品
 * 6月月度调查
@@ -18,6 +19,8 @@ description: "见证每一次变化"
 
 ### 已知问题
 
+* 命令`/debuginfo`展示信息异常，该问题会在后续版本修复
+* 命令`/entroprix_rate`表现异常，该问题会在后续版本修复
 * 命令`/l`接受过多参数时表现异常，后续版本更新时会改为自动丢弃多余参数
 * 部分链接无法被发送到客户端，该问题会在后续版本修复
 * 基岩版菜单中部分材质缺失，该问题会在后续版本修复
@@ -70,5 +73,9 @@ description: "见证每一次变化"
   * 优化区块加载，参见[C2ME引擎฿](https://modrinth.com/mod/c2me-fabric)
   * 减少服务器核心更新检测频率
   * 优化实体碰撞检测行为
+
+## 过往版本更新日志
+
+* [S1P1「樱飘雪霁月」](./s1-je1_21_3)
 
 <script src="https://rs.kdxiaoyi.top/res/scripts/js/sober@1.0.6.min.js"></script><script src="https://kdxiaoyi.top/Streack/_page/js/pmd.js"></script><script src="https://rs.kdxiaoyi.top/res/scripts/js/pmd-reRender.min.js"></script>
