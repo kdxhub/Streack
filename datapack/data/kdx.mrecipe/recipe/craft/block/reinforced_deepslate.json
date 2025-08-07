@@ -2,7 +2,7 @@
   "type": "crafting_transmute",
   "category": "building",
   "input": "deepslate",
-  "material": "netherite_block",
+  "material": "netherite_ingot",
   "result": {
     "id": "reinforced_deepslate",
     "components": {
