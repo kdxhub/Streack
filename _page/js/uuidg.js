@@ -261,7 +261,7 @@ if (conf.info.time[0] && !conf.sidebar.replacement) {
 // 注册高度自适应
 TextareaHelper = {
   updataHeight: function(t){
-    t.style.height = 'auto';
+    t.style.height = 'fit-content';
     t.style.height = t.scrollHeight + 'px';
     return t.offsetHeight;
   },
