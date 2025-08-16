@@ -45,7 +45,7 @@ String.prototype.UUIDformat = function (dash, format) {
       return uuid.parse(this.toString()).toBin().join("");
     };
     case "dec": {
-      return uuid.parse(this.toString()).toDec().joi();
+      return uuid.parse(this.toString()).toDec().join();
     };
     case "binA": {
       return "[" + uuid.parse(this.toString()).toBin().join(",") + "]";
