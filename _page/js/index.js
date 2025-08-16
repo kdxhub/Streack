@@ -49,10 +49,19 @@ pageElements = {
     root: document.getElementById("issue_message"),
     selector: document.getElementById("issue_link_selector"),
   },
+  counting_msg: document.getElementById("counting"),
 };
 pageElements.main.slot = document.querySelectorAll("div[slot='true']");
 
 //API
+function getCurrentTimeZone() {
+  const offset = new Date().getTimezoneOffset();
+  const offsetStr = `UTC${offset <= 0 ? '+' : '-'}${String(Math.abs(offset) / 60).padStart(2, '0')}:${String(Math.abs(offset) % 60).padStart(2, '0')}`;
+  const offsetStrMin = `UTC${offset <= 0 ? '+' : '-'}${Math.abs(offset) / 60}`;
+  const ianaName = Intl.DateTimeFormat().resolvedOptions().timeZone || 'unknown';
+  return { offset, offsetStr, offsetStrMin, ianaName };
+};
+window.timezone = getCurrentTimeZone();
 function getQueryString(name) { let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); let r = window.location.search.substr(1).match(reg); if (r != null) { return unescape(r[2]); }; return null; };
 function openURL(URI, IsInPresentWindow) {
   let linkEle = document.createElement("a");
@@ -97,14 +106,35 @@ function CopyText(text) {
       return false;
     },
   );
-  
 };
 /*引入pmd里的存储api*/const pmdStorage={Cookies:{set:function(e,t,o,n){const s=`${encodeURIComponent(e)}=${encodeURIComponent(t)}`;if(o){const e=new Date;e.setTime(e.getTime()+1e3*o),document.cookie=`${s}; expires=${e.toUTCString()}; path=${n}`}else document.cookie=`${s}; path=${n}`},get:function(e){const t=document.cookie.split("; ");for(const o of t){const[t,n]=o.split("=",2);if(decodeURIComponent(t)===e)return decodeURIComponent(n)}return null},remove:function(e){this.set(e,"",{expires:-1})},getAll:function(){const e=document.cookie.split("; "),t={};for(const o of e){const[e,n]=o.split("=",2);t[decodeURIComponent(e)]=decodeURIComponent(n)}return t},reset_dangerous:function(){const e=this.getAll();for(const t in e)this.remove(t)}},Local:{set:function(e,t){localStorage.setItem(e,JSON.stringify(t))},get:function(e){const t=localStorage.getItem(e);try{return JSON.parse(t)}catch(e){return t}},remove:function(e){localStorage.removeItem(e)},getAll:function(){const e={};for(let t=0;t<localStorage.length;t++){const o=localStorage.key(t);e[o]=this.get(o)}return e},reset_dangerous:function(){localStorage.clear()}},Session:{set:function(e,t){sessionStorage.setItem(e,JSON.stringify(t))},get:function(e){const t=sessionStorage.getItem(e);try{return JSON.parse(t)}catch(e){return t}},remove:function(e){sessionStorage.removeItem(e)},getAll:function(){const e={};for(let t=0;t<sessionStorage.length;t++){const o=sessionStorage.key(t);e[o]=this.get(o)}return e},reset_dangerous:function(){sessionStorage.clear()}}};
 
-// /**TODO 首页施工自动跳转文档 */openURL("./doc",true)
+//pmd框架支持
+/* pmd-计时器（改版） */
+/* 时间显示 */
+function RefreshCountup(countupY, countupM, countupD) {
+  let date = new Date();
+  let yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+  /*计算时间差，JS月份从0开始要减1*/
+  let timeDifference = date - new Date(countupY, countupM - 1, countupD);
+  /*转换日期差*/
+  let countupD_ = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  let countupH = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let countupM_ = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+  let countupS = Math.floor((timeDifference % (1000 * 60)) / 1000);
+  /*今年周数计算(ISO-8601)*/
+  d = new Date(Date(date.getFullYear(), date.getMonth(), date.getDate()));
+  d.setDate(d.getDate() + 4 - (d.getDay() || 7)); // 调整临时日期到本周的周四
+  let weekNumber = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+  /*更新显示*/
+  pageElements.counting_msg.innerHTML = `；今天是${date.getFullYear()}年的第${weekNumber}周，迄今为止我们已有${countupD_}天${countupH}小时${countupM_}分钟${countupS}秒（${window.timezone.offsetStrMin}）`;
+};
+if (conf.info.time[0]) {
+  pageElements.counting_msg.dataset.intervalId = setInterval(() => {RefreshCountup(conf.info.time[1],conf.info.time[2],conf.info.time[3])}, 1000);
+} else {pageElements.counting_msg.remove();};
 
 //safari user-scalable=no
-document.addEventListener('gesturestart', (event) => event.preventDefault())
+document.addEventListener('gesturestart', (event) => event.preventDefault());
 
 //暗黑模式隐式支持
 function ChangeColorTheme(target, animationCenter) {

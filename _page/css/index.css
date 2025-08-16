@@ -45,6 +45,11 @@ body {
   background-repeat: no-repeat;
 }
 
+span#counting_msg {
+  width: fit-content;
+  height: fit-content;
+}
+
 /*悬浮按钮*/
 #floating {
   position: fixed;
