@@ -109,15 +109,8 @@ onmessage = (e) => {
       break;
     };
   };
-  if (e.data.capitalize) {
+  if (e.data.capitalize && e.data.format != "base64") {
     result = result.map((e) => e.toUpperCase());
   };
   postMessage({ error: false, result: result });
 };
-
-// capitalize: false
-// dash: true
-// format: "string"|"bin"|"hex"|"base64"
-// loop: 1
-// v3_5: {namespace: '6ba7b810-9dad-11d1-80b4-00c04fd430c8', name: 'kdxiaoyi.top'}
-// version: "4"
