@@ -136,8 +136,10 @@ if (conf.info.time[0]) {
 //safari user-scalable=no
 document.addEventListener('gesturestart', (event) => event.preventDefault());
 
-//暗黑模式隐式支持
+//暗黑模式隐式支持（弃用）
 function ChangeColorTheme(target, animationCenter) {
+  /*禁用，现在全局黑暗以统一配色*/
+  return;
   if /* 若传入无效动画中心元素则指定为默认元素 */ (!(animationCenter instanceof HTMLElement)) { animationCenter = pageElements.main.root; };
   return pageElements.root.toggle(target, animationCenter);
 };
