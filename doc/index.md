@@ -20,6 +20,11 @@ description: "致力于解决您所想知道的一切"
 * [将Bedrock账户绑定至Java版账户](./help/linkaccount)
 * [群智能体指南](./help/qbot)
 
+## 在线工具
+
+* [服务器状态查询](/Streack/webtool/status)
+* [UUID生成器（Beta）](/Streack/webtool/uuid)
+
 ## 近期活动一览
 * [「诡谲高塔：原初」冲塔迎取丰厚奖励](./event/20250531)
 * [「流光通证」权益助力更好生存](./event/20250614)
