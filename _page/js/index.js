@@ -127,7 +127,7 @@ function RefreshCountup(countupY, countupM, countupD) {
   d.setDate(d.getDate() + 4 - (d.getDay() || 7)); // 调整临时日期到本周的周四
   let weekNumber = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
   /*更新显示*/
-  pageElements.counting_msg.innerHTML = `；今天是${date.getFullYear()}年的第${weekNumber}周，迄今为止我们已有${countupD_}天${countupH}小时${countupM_}分钟${countupS}秒（${window.timezone.offsetStrMin}）`;
+  pageElements.counting_msg.innerHTML = `；今天是${date.getFullYear()}年的第${weekNumber}周，迄今为止我们已运营${countupD_}天${countupH}小时${countupM_}分钟${countupS}秒（${window.timezone.offsetStrMin}）`;
 };
 if (conf.info.time[0]) {
   pageElements.counting_msg.dataset.intervalId = setInterval(() => {RefreshCountup(conf.info.time[1],conf.info.time[2],conf.info.time[3])}, 1000);

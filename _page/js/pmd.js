@@ -6,12 +6,12 @@ const conf = {
     /*启用建站时长计时 [是否启用t/f,年,月,日]*/
     time: [true,2024,12,25],
     /*左侧边栏·一言*/
-    saying: `不是最好的体验却是尽心尽力的服务`,
+    saying: `源于栈流，我们不断前行。`,
     licen: {
       /*文章授权协议*/
-      what: `CC BY-NC 4.0`,
+      what: `ARR`,
       /*文章授权协议链接*/
-      link: `https://creativecommons.org/licenses/by-nc/4.0/legalcode.zh-hans`,
+      link: `https://kdxiaoyi.top/Streack/assets/license`,
     },
     /*自定义CSS样式*/
     style: `s-card#slot_2 {flex-wrap: wrap;flex-direction: row;}`,
@@ -99,7 +99,7 @@ const conf = {
     /*在标题的最后添加一个按钮以复制链接指向这个标题*/
     header_link: true,
     /*在页面底端增加文章脚注，为空不额外添加*/
-    footer: `Copyright © 2025, Streack & kdxiaoyi.<br>此站点与Mojang Studio、Microsoft或网易Netease没有任何关联。`,
+    footer: `Copyright © 2025, Streack & kdxiaoyi. All Right Reserved.<br><a href="https://kdxiaoyi.top/Streack/policy/user" target="_blank">用户协议</a> | <a href="https://kdxiaoyi.top/Streack/policy/privacy" target="_blank">隐私政策</a> | <a href="mailto:streack@kdxiaoyi.top" target="_blank">电子邮箱</a> | <a href="https://github.com/kdxhub/Streack" target="_blank">Github</a> | <a href="https://kdxiaoyi.top/Streack/assets/license">版权许可</a><br>此站点与Mojang Studio、Microsoft或网易Netease没有任何关联。`,
     /*检查引用部分高级语法，详见文档*/
     quotepro: [true,`#1A73E7`,`#FBC116`,`#E23B2E`,`#30C496`],
   },
