@@ -6,19 +6,21 @@
         "discipline": "运营团队",
         "titles": [
           {
-            "title": "服主",
+            "title": "服务器管理员",
             "names": [
               "@kdxiaoyi"
             ]
           },
           {
-            "title": "管理",
+            "title": "交流群管理员",
             "names": [
-              "虚位以待，欢迎申请"
+              "@kdxiaoyi",
+              "@默",
+              "@Hzcyq_Crazy"
             ]
           },
           {
-            "title": "插件维护",
+            "title": "开发",
             "names": [
               "@kdxiaoyi"
             ]
@@ -34,9 +36,10 @@
             ]
           },
           {
-            "title": "Streack Repo",
+            "title": "Streack Project",
             "names": [
               "简幻欢 [https://simpfun.com/]",
+              "MiSans [https://hyperos.mi.com/font/download]",
               "OpenFRP [https://openfrp.net/]",
               "中文我的世界Wiki [https://zh.minecraft.wiki/]",
               "Teahouse Studios/AkariBot [https://github.com/Teahouse-Studios/akari-bot/]",

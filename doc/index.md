@@ -35,6 +35,7 @@ description: "致力于解决您所想知道的一切"
 
 ## 政策方针
 * [栈流Streack基本方针](./policy/rule)
+* [栈流Streack团队成员](../webtool/credits.html)
 * [「熵流」概率公示](./info/entroprix)
 * [历次调研结果公示](./survey/)
 * [封禁信息公示](./info/ban)
