@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:jungle_log",
+      "minecraft:stripped_jungle_log"
+    ]
+  },
+  "result": {
+    "id": "minecraft:jungle_slab",
+    "count": 24
+  }
+}

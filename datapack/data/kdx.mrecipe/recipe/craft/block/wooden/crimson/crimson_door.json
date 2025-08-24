@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:crimson_stem",
+      "minecraft:stripped_crimson_stem"
+    ]
+  },
+  "result": {
+    "id": "minecraft:crimson_door",
+    "count": 12
+  }
+}

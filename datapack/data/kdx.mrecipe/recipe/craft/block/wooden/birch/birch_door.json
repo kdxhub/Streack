@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:birch_log",
+      "minecraft:stripped_birch_log"
+    ]
+  },
+  "result": {
+    "id": "minecraft:birch_door",
+    "count": 12
+  }
+}

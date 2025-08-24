@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a  ",
+    "aa ",
+    "aaa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:cherry_log",
+      "minecraft:stripped_cherry_log"
+    ]
+  },
+  "result": {
+    "id": "minecraft:cherry_stairs",
+    "count": 16
+  }
+}

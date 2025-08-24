@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a  ",
+    "aa ",
+    "aaa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:mangrove_log",
+      "minecraft:stripped_mangrove_log"
+    ]
+  },
+  "result": {
+    "id": "minecraft:mangrove_stairs",
+    "count": 16
+  }
+}

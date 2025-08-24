@@ -1,0 +1,17 @@
+{
+  "category": "redstone",
+  "result":{
+    "id":"minecraft:zombie_spawn_egg",
+    "count": 1
+  },
+  "pattern":[
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "type":"crafting_shaped",
+  "key":{
+    "a": "minecraft:rotten_flesh",
+    "b": "minecraft:reinforced_deepslate"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    " a "
+  ],
+  "key": {
+    "a": "minecraft:cherry_planks"
+  },
+  "result": {
+    "id": "minecraft:cherry_fence_gate",
+    "count": 1
+  }
+}

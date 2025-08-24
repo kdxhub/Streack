@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    " a "
+  ],
+  "key": {
+    "a": "minecraft:bamboo_planks"
+  },
+  "result": {
+    "id": "minecraft:bamboo_fence_gate",
+    "count": 1
+  }
+}

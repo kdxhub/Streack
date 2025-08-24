@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a  ",
+    "aa ",
+    "aaa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:dark_oak_log",
+      "minecraft:stripped_dark_oak_log"
+    ]
+  },
+  "result": {
+    "id": "minecraft:dark_oak_stairs",
+    "count": 16
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    " a ",
+    "bbb",
+    "ccc"
+  ],
+  "key": {
+    "a": "#minecraft:planks",
+    "b": "minecraft:redstone",
+    "c": "minecraft:stone"
+  },
+  "result": {
+    "id": "minecraft:repeater",
+    "count": 1
+  }
+}

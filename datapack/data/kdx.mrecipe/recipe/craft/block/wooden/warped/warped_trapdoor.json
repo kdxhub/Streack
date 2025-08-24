@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:warped_stem",
+      "minecraft:stripped_warped_stem"
+    ]
+  },
+  "result": {
+    "id": "minecraft:warped_trapdoor",
+    "count": 8
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:spruce_log",
+      "minecraft:stripped_spruce_log"
+    ]
+  },
+  "result": {
+    "id": "minecraft:spruce_slab",
+    "count": 24
+  }
+}

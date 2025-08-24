@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a  ",
+    "aa ",
+    "aaa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:oak_log",
+      "minecraft:stripped_oak_log"
+    ]
+  },
+  "result": {
+    "id": "minecraft:oak_stairs",
+    "count": 16
+  }
+}

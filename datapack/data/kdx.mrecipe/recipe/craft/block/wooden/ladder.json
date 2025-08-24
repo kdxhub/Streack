@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "a a",
+    "aaa",
+    "a a"
+  ],
+  "key": {
+    "a": "#minecraft:logs"
+  },
+  "result": {
+    "id": "minecraft:ladder",
+    "count": 24
+  }
+}

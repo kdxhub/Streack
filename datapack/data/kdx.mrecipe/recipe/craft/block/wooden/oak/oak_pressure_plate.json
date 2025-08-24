@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:oak_log",
+      "minecraft:stripped_oak_log"
+    ]
+  },
+  "result": {
+    "id": "minecraft:oak_pressure_plate",
+    "count": 4
+  }
+}

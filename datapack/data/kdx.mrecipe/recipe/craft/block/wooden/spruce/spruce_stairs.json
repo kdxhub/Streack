@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a  ",
+    "aa ",
+    "aaa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:spruce_log",
+      "minecraft:stripped_spruce_log"
+    ]
+  },
+  "result": {
+    "id": "minecraft:spruce_stairs",
+    "count": 16
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redtone",
+  "pattern": [
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": "minecraft:iron_ingot",
+    "b": "minecraft:chest"
+  },
+  "result": {
+    "id": "minecraft:chest_minecart",
+    "count": 1
+  }
+}

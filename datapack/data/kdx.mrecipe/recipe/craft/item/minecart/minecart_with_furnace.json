@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": "minecraft:iron_ingot",
+    "b": "minecraft:furnace"
+  },
+  "result": {
+    "id": "minecraft:furnace_minecart",
+    "count": 1
+  }
+}

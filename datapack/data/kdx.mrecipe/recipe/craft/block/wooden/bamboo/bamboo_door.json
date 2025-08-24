@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa",
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": "minecraft:bamboo_block"
+  },
+  "result": {
+    "id": "minecraft:bamboo_door",
+    "count": 6
+  }
+}

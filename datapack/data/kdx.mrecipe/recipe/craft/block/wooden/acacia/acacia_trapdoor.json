@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:acacia_log",
+      "minecraft:stripped_acacia_log"
+    ]
+  },
+  "result": {
+    "id": "minecraft:acacia_trapdoor",
+    "count": 8
+  }
+}

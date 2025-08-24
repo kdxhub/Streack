@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:acacia_log",
+      "minecraft:stripped_acacia_log"
+    ]
+  },
+  "result": {
+    "id": "minecraft:acacia_pressure_plate",
+    "count": 4
+  }
+}

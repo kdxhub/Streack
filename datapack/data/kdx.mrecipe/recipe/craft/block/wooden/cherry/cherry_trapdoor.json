@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": [
+      "minecraft:cherry_log",
+      "minecraft:stripped_cherry_log"
+    ]
+  },
+  "result": {
+    "id": "minecraft:cherry_trapdoor",
+    "count": 8
+  }
+}

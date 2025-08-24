@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    " a "
+  ],
+  "key": {
+    "a": "minecraft:pale_oak_planks"
+  },
+  "result": {
+    "id": "minecraft:pale_oak_fence_gate",
+    "count": 1
+  }
+}
