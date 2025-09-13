@@ -24,6 +24,12 @@ description: "见证每一次变化"
 
 ## S1P2「樱飘雪霁月」更新日志
 
+### 25w37a
+
+* 添加命令`/recipe`
+* 升级JDK版本
+* 优化服务器性能
+
 ### 25w34d
 
 * *Streack Service Datapack*更新
