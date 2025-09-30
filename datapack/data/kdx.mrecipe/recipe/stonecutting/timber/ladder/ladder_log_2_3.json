@@ -1,8 +1,0 @@
-{
-  "type": "stonecutting",
-  "ingredient": "minecraft:bamboo_block",
-  "result": {
-    "id": "minecraft:ladder",
-    "count": 6
-  }
-}

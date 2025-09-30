@@ -1,8 +1,0 @@
-{
-  "type": "stonecutting",
-  "ingredient": "#minecraft:cherry_logs",
-  "result": {
-    "id": "minecraft:ladder",
-    "count": 6
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "type": "stonecutting",
-  "ingredient": "#minecraft:mangrove_logs",
-  "result": {
-    "id": "minecraft:stick",
-    "count": 16
-  }
-}
