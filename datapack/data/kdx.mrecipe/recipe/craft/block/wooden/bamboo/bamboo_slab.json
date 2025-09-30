@@ -5,7 +5,7 @@
     "aaa"
   ],
   "key": {
-    "a": "#minecraft:bamboo_blocks"
+    "a": "minecraft:bamboo_block"
   },
   "result": {
     "id": "minecraft:bamboo_slab",
