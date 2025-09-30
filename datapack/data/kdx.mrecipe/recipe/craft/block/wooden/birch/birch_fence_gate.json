@@ -6,10 +6,7 @@
     " a "
   ],
   "key": {
-    "a": [
-      "minecraft:birch_log",
-      "minecraft:stripped_birch_log"
-    ]
+    "a": "#minecraft:birch_logs"
   },
   "result": {
     "id": "minecraft:birch_fence_gate",

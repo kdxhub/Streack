@@ -7,7 +7,7 @@
     "aa"
   ],
   "key": {
-    "a": "minecraft:bamboo_block"
+    "a": "#minecraft:bamboo_blocks"
   },
   "result": {
     "id": "minecraft:bamboo_door",

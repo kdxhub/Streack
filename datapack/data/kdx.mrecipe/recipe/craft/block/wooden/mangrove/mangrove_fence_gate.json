@@ -6,10 +6,7 @@
     " a "
   ],
   "key": {
-    "a": [
-      "minecraft:mangrove_log",
-      "minecraft:stripped_mangrove_log"
-    ]
+    "a": "#minecraft:mangrove_logs"
   },
   "result": {
     "id": "minecraft:mangrove_fence_gate",

@@ -6,10 +6,7 @@
     " a "
   ],
   "key": {
-    "a": [
-      "minecraft:crimson_stem",
-      "minecraft:stripped_crimson_stem"
-    ]
+    "a": "#minecraft:crimson_stems"
   },
   "result": {
     "id": "minecraft:crimson_fence_gate",

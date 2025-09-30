@@ -6,10 +6,7 @@
     "aaa"
   ],
   "key": {
-    "a": [
-      "minecraft:acacia_log",
-      "minecraft:stripped_acacia_log"
-    ]
+    "a": "#minecraft:acacia_logs"
   },
   "result": {
     "id": "minecraft:acacia_trapdoor",
