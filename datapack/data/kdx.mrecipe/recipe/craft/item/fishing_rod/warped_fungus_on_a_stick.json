@@ -9,7 +9,7 @@
   "key": {
     "a": "minecraft:stick",
     "b": "minecraft:string",
-    "c": "minecart:warped_fungus"
+    "c": "minecraft:warped_fungus"
   },
   "result": {
     "id": "minecraft:warped_fungus_on_a_stick",

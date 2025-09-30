@@ -1,6 +1,6 @@
 {
   "type": "stonecutting",
-  "ingredient": "#dark_oak"
+  "ingredient": "#minecraft:dark_oak_logs"
   ,
   "result": {
     "id": "minecraft:dark_oak_fence_gate",

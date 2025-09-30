@@ -1,6 +1,6 @@
 {
   "type": "stonecutting",
-  "ingredient": "#oak"
+  "ingredient": "#minecraft:oak_logs"
   ,
   "result": {
     "id": "minecraft:oak_button",

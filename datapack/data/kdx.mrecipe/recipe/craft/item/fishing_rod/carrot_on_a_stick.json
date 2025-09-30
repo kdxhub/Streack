@@ -9,7 +9,7 @@
   "key": {
     "a": "minecraft:stick",
     "b": "minecraft:string",
-    "c": "minecart:carrot"
+    "c": "minecraft:carrot"
   },
   "result": {
     "id": "minecraft:carrot_on_a_stick",

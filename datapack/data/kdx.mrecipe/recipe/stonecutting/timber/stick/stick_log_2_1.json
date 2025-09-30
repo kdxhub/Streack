@@ -1,6 +1,6 @@
 {
   "type": "stonecutting",
-  "ingredient": "#cherry",
+  "ingredient": "#minecraft:cherry_logs",
   "result": {
     "id": "minecraft:stick",
     "count": 16

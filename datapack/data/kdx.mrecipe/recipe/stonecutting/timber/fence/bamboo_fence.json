@@ -1,6 +1,6 @@
 {
   "type": "stonecutting",
-  "ingredient": "#bamboo"
+  "ingredient": "#minecraft:bamboo_blocks"
   ,
   "result": {
     "id": "minecraft:bamboo_fence",
