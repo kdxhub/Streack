@@ -9,7 +9,7 @@
     },
     "description": {
       "text": "使用丝绸之触开采一块长得像铀一样的矿石",
-      "italic": false
+      "italic": true
     },
     "frame": "goal",
     "hidden": false

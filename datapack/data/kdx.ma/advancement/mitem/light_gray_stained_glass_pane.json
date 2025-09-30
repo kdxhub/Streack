@@ -9,7 +9,7 @@
     },
     "description": {
       "text": "请选择包含 淡灰色染色玻璃板 的物品栏",
-      "italic": false
+      "italic": true
     },
     "frame": "task",
     "hidden": true
