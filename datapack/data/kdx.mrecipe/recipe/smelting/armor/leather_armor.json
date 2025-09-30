@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": "#minecraft:leather_armor",
+  "cookingtime": 220,
+  "result": {
+    "id": "minecraft:leather"
+  },
+  "experience": 0.2
+}

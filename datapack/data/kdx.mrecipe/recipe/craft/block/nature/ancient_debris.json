@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "axa",
+    "aaa"
+  ],
+  "key": {
+    "a": "minecraft:netherrack",
+    "x": "minecraft:netherite_scrap"
+  },
+  "result": {
+    "id": "minecraft:ancient_debris",
+    "count": 1
+  }
+}
