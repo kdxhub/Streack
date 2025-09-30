@@ -22,6 +22,23 @@ description: "见证每一次变化"
 
 ## S1P2「樱飘雪霁月」更新日志
 
+### 25w40a
+
+* *Streack Service Datapack*更新
+  * *更多进度*模块
+    * 修改「吓死我了！」为「终止批处理」，调整其父进度
+    * 将进度描述统一格式
+    * 新增进度「批处理脚本生成蛋」「诗人？」「堵桥来」
+  * *更多配方*模块
+    * 将「过于昂贵！」和「极其昂贵！」的触发由*合成*改为*拥有*
+    * 新增以下物品的新配方：
+      * 工作台：「缠根泥土」「工作台」「梯子」「诡异菌钓竿」「胡萝卜钓竿」「铁马铠」「金马铠」「钻石马铠」「远古残骸」
+      * 熔炉：「皮革马铠」「铁马铠」「金马铠」「下界合金 盔甲」
+    * 修复部分原木变种不能参与合成某些物品的Bug
+    * 调整部分配方路径
+    * 移除部分与原版重复的标签和不再使用的标签
+    * 添加标签：`#minecraft:leather_armor`、`#minecraft:iron_armor`、`#minecraft:chainmail_armor`、`#minecraft:golden_armor`、`#minecraft:diamond_armor`、`#minecraft:netherite_armor`
+
 ### 25w38a
 
 * 添加命令`/pdata`
@@ -31,6 +48,8 @@ description: "见证每一次变化"
 ### 25w37a
 
 * 添加命令`/recipe`
+  * 用法：`/recipe <item>`
+  * 查询指定物品的合成配方。
 * 升级JDK版本
 * 优化服务器性能
 
