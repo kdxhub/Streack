@@ -39,6 +39,7 @@
     }
   },
   "rewards": {
-    "experience": 700
+    "experience": 700,
+    "function": "kdx.ma:reward/m700_crossbow"
   }
 }

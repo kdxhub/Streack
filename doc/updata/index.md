@@ -22,6 +22,12 @@ description: "见证每一次变化"
 
 ## S1P2「樱飘雪霁月」更新日志
 
+### 25w40c
+
+* *Streack Service Datapack*更新
+  * *更多进度*模块
+    * 为进度「堵桥来」新增奖励「M700战术十字弩」
+
 ### 25w40b
 
 * *Streack Service Datapack*更新
@@ -58,7 +64,7 @@ description: "见证每一次变化"
 
 * 添加命令`/recipe`
   * 用法：`/recipe <item>`
-  * 查询指定物品的合成配方。
+  * 查询指定物品的合成配方，无需解锁该配方即可使用。
 * 升级JDK版本
 * 优化服务器性能
 
