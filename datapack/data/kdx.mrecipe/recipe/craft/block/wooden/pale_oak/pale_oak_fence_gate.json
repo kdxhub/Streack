@@ -6,10 +6,7 @@
     " a "
   ],
   "key": {
-    "a": [
-      "minecraft:pale_oak_log",
-      "minecraft:stripped_pale_oak_log"
-    ]
+    "a": "#minecraft:pale_oak_logs"
   },
   "result": {
     "id": "minecraft:pale_oak_fence_gate",

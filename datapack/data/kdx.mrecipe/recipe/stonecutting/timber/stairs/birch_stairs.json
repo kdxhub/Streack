@@ -1,6 +1,6 @@
 {
   "type": "stonecutting",
-  "ingredient": "#birch"
+  "ingredient": "#minecraft:birch_logs"
   ,
   "result": {
     "id": "minecraft:birch_stairs",

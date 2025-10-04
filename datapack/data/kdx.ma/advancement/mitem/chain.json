@@ -9,7 +9,7 @@
     },
     "description": {
       "text": "获取一件也许可以用「火」合成的装备……",
-      "italic": false
+      "italic": true
     },
     "frame": "task",
     "hidden": false

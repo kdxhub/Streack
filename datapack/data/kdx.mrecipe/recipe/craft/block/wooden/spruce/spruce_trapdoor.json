@@ -6,10 +6,7 @@
     "aaa"
   ],
   "key": {
-    "a": [
-      "minecraft:spruce_log",
-      "minecraft:stripped_spruce_log"
-    ]
+    "a": "#minecraft:spruce_logs"
   },
   "result": {
     "id": "minecraft:spruce_trapdoor",

@@ -6,10 +6,7 @@
     " a "
   ],
   "key": {
-    "a": [
-      "minecraft:warped_stem",
-      "minecraft:stripped_warped_stem"
-    ]
+    "a": "#minecraft:warped_stems"
   },
   "result": {
     "id": "minecraft:warped_fence_gate",

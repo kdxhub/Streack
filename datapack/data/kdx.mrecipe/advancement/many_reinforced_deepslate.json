@@ -14,10 +14,17 @@
   },
   "parent": "kdx.mrecipe:craft_reinforced_deepslate",
   "criteria": {
-    "cbm": {
-      "trigger": "minecraft:recipe_crafted",
+    "rd64": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "recipe_id": "kdx.mrecipe:craft/block/reinforced_deepslate"
+        "items": [
+          {
+            "items": [
+              "minecraft:reinforced_deepslate"
+            ],
+            "count": 64
+          }
+        ]
       }
     }
   },

@@ -1,16 +1,19 @@
 {
   "display": {
     "icon": {
-      "id":"minecraft:bat_spawn_egg"
+      "id": "minecraft:bat_spawn_egg"
     },
     "frame": "task",
-    "title": "吓死我了！",
-    "description": "你为什么会闲到去杀死蝙蝠？",
+    "title": "终止批处理",
+    "description": {
+      "text": "taskkill /f /im cmd.exe",
+      "italic": true
+    },
     "hidden": true
   },
-  "parent": "kdx:_joyose",
+  "parent": "kdx.ma:mitem/spawner/bat_spawn_egg",
   "criteria": {
-    "kill_bat":{
+    "kill_bat": {
       "trigger": "minecraft:kill_mob_near_sculk_catalyst",
       "conditions": {
         "entity": {
@@ -18,5 +21,8 @@
         }
       }
     }
+  },
+  "rewards": {
+    "experience": 20
   }
 }

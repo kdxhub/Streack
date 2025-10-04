@@ -9,7 +9,7 @@
     },
     "description": {
       "text": "仔细查看一些东西，即使它们已损坏",
-      "italic": false
+      "italic": true
     },
     "frame": "task",
     "hidden": true

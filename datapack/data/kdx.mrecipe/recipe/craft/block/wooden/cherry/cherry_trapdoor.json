@@ -6,10 +6,7 @@
     "aaa"
   ],
   "key": {
-    "a": [
-      "minecraft:cherry_log",
-      "minecraft:stripped_cherry_log"
-    ]
+    "a": "#minecraft:cherry_logs"
   },
   "result": {
     "id": "minecraft:cherry_trapdoor",

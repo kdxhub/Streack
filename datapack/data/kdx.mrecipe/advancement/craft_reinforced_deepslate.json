@@ -7,17 +7,24 @@
       "text": "过于昂贵！"
     },
     "description": {
-      "text": "合成一块「强化深板岩」——这实在是太贵了吧！"
+      "text": "拥有一块「强化深板岩」——这实在是太贵了吧！"
     },
     "frame": "task",
     "hidden": false
   },
   "parent": "kdx:_streack",
   "criteria": {
-    "craft_reinforced_deepslate": {
-      "trigger": "minecraft:recipe_crafted",
+    "rd1": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "recipe_id": "kdx.mrecipe:craft/block/reinforced_deepslate"
+        "items": [
+          {
+            "items": [
+              "minecraft:reinforced_deepslate"
+            ],
+            "count": 1
+          }
+        ]
       }
     }
   },

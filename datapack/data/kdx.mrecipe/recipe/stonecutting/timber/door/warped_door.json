@@ -1,6 +1,6 @@
 {
   "type": "stonecutting",
-  "ingredient": "#warped"
+  "ingredient": "#minecraft:warped_stems"
   ,
   "result": {
     "id": "minecraft:warped_door",

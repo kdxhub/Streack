@@ -3,22 +3,11 @@
     "icon": {
       "id": "minecraft:poppy"
     },
-    "title": {
-      "text": "残忍至极",
-      "color": "red",
-      "bold": false,
-      "italic": false,
-      "underlined": false,
-      "strikethrough": false,
-      "obfuscated": false
-    },
-    "description": {
-      "text": "他还只是个孩子啊",
-      "color": "black"
-    },
+    "title": "残忍至极",
+    "description": "§o他还只是个孩子啊",
     "hidden": true
   },
-  "parent": "minecraft:adventure/root",
+  "parent": "kdx:_streack",
   "criteria": {
     "■": {
       "trigger": "minecraft:player_killed_entity",

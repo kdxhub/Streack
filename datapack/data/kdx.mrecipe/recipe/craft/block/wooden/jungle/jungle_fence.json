@@ -6,10 +6,7 @@
     "a a"
   ],
   "key": {
-    "a": [
-      "minecraft:jungle_log",
-      "minecraft:stripped_jungle_log"
-    ]
+    "a": "#minecraft:jungle_logs"
   },
   "result": {
     "id": "minecraft:jungle_fence",

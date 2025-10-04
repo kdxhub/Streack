@@ -5,10 +5,7 @@
     "aaa"
   ],
   "key": {
-    "a": [
-      "minecraft:oak_log",
-      "minecraft:stripped_oak_log"
-    ]
+    "a": "#minecraft:oak_logs"
   },
   "result": {
     "id": "minecraft:oak_slab",

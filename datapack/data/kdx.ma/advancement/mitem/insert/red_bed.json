@@ -9,7 +9,7 @@
     },
     "description": {
       "text": "2017年4月12日发布的17w15a版本中，彩色床首次被加入游戏。",
-      "italic": false
+      "italic": true
     },
     "frame": "goal",
     "hidden": false

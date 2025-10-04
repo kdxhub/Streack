@@ -6,10 +6,7 @@
     "aaa"
   ],
   "key": {
-    "a": [
-      "minecraft:dark_oak_log",
-      "minecraft:stripped_dark_oak_log"
-    ]
+    "a": "#minecraft:dark_oak_logs"
   },
   "result": {
     "id": "minecraft:dark_oak_trapdoor",
