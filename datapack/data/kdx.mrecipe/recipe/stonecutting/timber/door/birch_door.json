@@ -1,9 +1,0 @@
-{
-  "type": "stonecutting",
-  "ingredient": "#minecraft:birch_logs"
-  ,
-  "result": {
-    "id": "minecraft:birch_door",
-    "count": 2
-  }
-}

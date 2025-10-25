@@ -1,9 +1,0 @@
-{
-  "type": "stonecutting",
-  "ingredient": "#minecraft:birch_logs"
-  ,
-  "result": {
-    "id": "minecraft:birch_pressure_plate",
-    "count": 4
-  }
-}

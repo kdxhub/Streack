@@ -1,3 +1,0 @@
-execute if score "kdx.cleaner:timing.enable" kdx >= "kdx:state.ok" kdx store result bossbar kdx.cleaner:timer value run scoreboard players add "kdx.cleaner:timing" kdx 1
-execute unless score "kdx.cleaner:disabled" kdx >= "kdx:state.ok" kdx run advancement grant @a only kdx.cleaner:enabled
-execute if score "kdx.cleaner:disabled" kdx >= "kdx:state.ok" kdx run advancement revoke @a only kdx.cleaner:enabled

@@ -1,9 +1,0 @@
-{
-  "type": "stonecutting",
-  "ingredient": "#minecraft:jungle_logs"
-  ,
-  "result": {
-    "id": "minecraft:jungle_planks",
-    "count": 4
-  }
-}

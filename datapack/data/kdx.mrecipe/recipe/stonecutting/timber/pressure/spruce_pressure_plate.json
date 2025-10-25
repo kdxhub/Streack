@@ -1,9 +1,0 @@
-{
-  "type": "stonecutting",
-  "ingredient": "#minecraft:spruce_logs"
-  ,
-  "result": {
-    "id": "minecraft:spruce_pressure_plate",
-    "count": 4
-  }
-}

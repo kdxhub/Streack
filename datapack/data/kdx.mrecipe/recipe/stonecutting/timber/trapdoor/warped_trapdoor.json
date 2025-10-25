@@ -1,9 +1,0 @@
-{
-  "type": "stonecutting",
-  "ingredient": "#minecraft:warped_stems"
-  ,
-  "result": {
-    "id": "minecraft:warped_trapdoor",
-    "count": 1
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "env": {
-    "gameVersion": "1.21.4",
-    "exclude": ["*.empty.json*"],
-    "language": "zh_CN"
-  }
-}

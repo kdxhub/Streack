@@ -1,8 +1,0 @@
-{
-  "type": "stonecutting",
-  "ingredient": "#minecraft:logs",
-  "result": {
-    "id": "minecraft:ladder",
-    "count": 6
-  }
-}

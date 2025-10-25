@@ -1,9 +1,0 @@
-{
-  "type": "stonecutting",
-  "ingredient": "#minecraft:acacia_logs"
-  ,
-  "result": {
-    "id": "minecraft:acacia_fence_gate",
-    "count": 1
-  }
-}

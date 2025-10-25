@@ -1,9 +1,0 @@
-{
-  "type": "stonecutting",
-  "ingredient": "#minecraft:spruce_logs"
-  ,
-  "result": {
-    "id": "minecraft:spruce_stairs",
-    "count": 4
-  }
-}

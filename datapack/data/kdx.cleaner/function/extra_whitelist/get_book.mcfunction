@@ -1,1 +1,0 @@
-loot spawn ~ ~ ~ loot {pools:[{rolls:1,entries:[{type:"item",name:"enchanted_book",functions:[{function:"reference",name:"kdx.cleaner:extra_whitelist_book"}]}]}]}

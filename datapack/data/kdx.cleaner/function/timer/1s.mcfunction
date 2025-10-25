@@ -1,1 +1,0 @@
-execute as @a at @s run playsound minecraft:block.note_block.hat voice @a ~ ~ ~ 1 2
